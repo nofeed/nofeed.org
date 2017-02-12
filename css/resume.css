@@ -1,0 +1,91 @@
+body {
+  font-family: 'Fanwood Text', serif;
+  margin-top: 6em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Quattrocento', serif;
+}
+
+h3 {
+  margin: 1em 0 1em 0;
+  color: green;
+  font-weight: bold;
+}
+
+header h1 {
+  color: #F57000;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+header h4 {
+  font-size: 1.2em;
+}
+
+a {
+  color: #5EA9E9;
+}
+
+time {
+  text-decoration: underline;
+}
+
+nav {
+  font-size: 1.2em;
+}
+
+section {
+  padding-top: 2em;
+  margin-top -6em;
+  font-size: 1.2em;
+  margin: 4em;
+}
+
+#contact, #education {
+  font-size: 1.4em;
+}
+
+#contact dl dt {
+  text-align: left;
+}
+
+.header {
+  margin-bottom: 2.2em;
+}
+
+.entry {
+  margin: 1.5em 0 1.5em 0;
+}
+
+.entry img {
+  margin: 0.2em;
+}
+
+.jobtitle {
+  font-weight: bold;
+}
+
+.dead {
+  text-decoration: line-through;
+}
+
+.description {
+  margin-top: 0.8em;
+}
+
+.navbar .navbar-collapse {
+  margin-left: 4em;
+}
+
+.available {
+  margin: 1.5em;
+  padding: 0.5em 1em;
+  background-color: #fffda5;
+  border: 0.1em red dashed;
+}
+
+.available h4 {
+  color: red;
+  font-weight: bold;
+}
