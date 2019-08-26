@@ -4,72 +4,104 @@ description:
 layout: homepage
 ---
 <header>
-  <h1>NoFeed.org</h1>
+  <h1>NoFeed</h1>
 </header>
 
 <div itemscope itemprop="Person" itemtype="http://schema.org/Person">
   <section id="bio">
-    <h2>Bio</h2>
-    <p>My name is <span itemprop="name">Nicholas Wieland</span>
-      (or <acronym title="Nicholas George Wieland" itemprop="additionalName">ngw</acronym>), and I'm a
-      <span itemprop="jobTitle">coder</span>.</p>
-    <p>I love to travel and dwell in different countries, cities and cultures, that's why I'm so fond of my job.</p>
-    <p>
-      I used to live in <a href="https://en.wikipedia.org/wiki/Seattle">Seattle</a>, <a href="https://en.wikipedia.org/wiki/Treviso">Treviso</a>,
-      <a href="https://en.wikipedia.org/wiki/Mantua">Mantua</a>,
-      <a href="https://en.wikipedia.org/wiki/Milan">Milan</a> and
-      <a href="https://en.wikipedia.org/wiki/Moscow">Moscow</a>.
-      I'm currently based in <a href="https://en.wikipedia.org/wiki/London" itemprop="homeLocation">London</a>.
-    </p>
-    <p>At work I like programming languages, servers, data and good startups, possibly together.</p>
-    <p>During my free time I enjoy beer, wine, football, ice hockey, going to the gym and books, possibly all together with a
-      bunch of good friends.</p>
-    <p>I also spend a lot of time with my beautiful wife and my lovely son.</p>
-    <p>In case you want to know more about my work, here's my (as) updated (as possible) <a href="/resume">resume</a>.</p>
+    <div class="columns">
+      <div id="bio-image" class="column">
+        <img src="img/ngw.png" itemprop="image" alt="Photo of Nicholas" class="is-pulled-right" />
+      </div>
+
+      <div id="bio-text" class="column">
+        <h2><i class="far fa-user-circle"></i> <strong>Bio</strong></h2>
+        <p>My name is <span itemprop="name">Nicholas Wieland</span>
+        (or <acronym title="Nicholas George Wieland" itemprop="additionalName">ngw</acronym>), and I'm a
+        <span itemprop="jobTitle">software developer</span>.</p>
+        <p>I love to travel and dwell in different countries, cities and cultures, that's why I'm so fond of my job.</p>
+        <p>
+          I used to live in <a href='https://en.wikipedia.org/wiki/Seattle'>Seattle</a>,
+          <a href='https://en.wikipedia.org/wiki/Treviso' alt='Treviso wikipedia page'>Treviso</a>,
+          <a href='https://en.wikipedia.org/wiki/Mantua' alt='Mantua wikipedia page'>Mantua</a>,
+          <a href='https://en.wikipedia.org/wiki/Milan' alt='Milan wikipedia page'>Milan</a> and
+          <a href='https://en.wikipedia.org/wiki/Moscow' alt='Moscow wikipedia page'>Moscow</a>.
+          I'm currently based in <a href='https://en.wikipedia.org/wiki/London' alt='London wikipedia page' itemprop="homeLocation">London</a>.
+        </p>
+        <p>I'm in love with the web since early 2000s, my first website was a static monstruosity on a free hosting for an
+        <a href='https://en.wikipedia.org/wiki/Ultima_Online' alt='Ultima Online wikipedia page'>Ultima Online</a> independent server.</p>
+        <p>Since then I've learned a lot of programming languages and technologies, mostly specializing in
+        <a href='https://www.ruby-lang.org/en/' alt='Ruby language website'>Ruby</a>
+        and lately some newer technologies like
+        <a href='https://elixir-lang.org/' alt='Elixir language website'>Elixir</a> and
+        <a href='https://elm-lang.org/' alt='Elm language website'>Elm</a>,
+        to which I must add a rather long love story with
+        <a href='https://www.haskell.org/' alt='Haskell language website'>Haskell</a>.</p>
+        <p>During my free time I enjoy beer, wine, football, ice hockey, books, and my Nintendo Switch, and I spend most of it
+        with my beautiful wife, awesome boy and amazing dog.</p>
+        <hr />
+        <p>In case you want to know more about my work, here's my (as) updated (as possible) <a href="/resume">resume</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nofeed">
+    <h2><i class='fas fa-building'></i><strong>NoFeed Limited</strong></h2>
+    <p>After almost 2 decades I made the big step forward (hopefully) into consulting, and NoFeed Limited is my company.</p>
+    <p>It all started more than 15 years ago when I convinced my good old friend <a href="http://www.passiomatic.com/">Deelan</a>
+    to design a frontend for my amazing startup which would be called "NoFeed ~ No music for the masses", a social network based on
+    reviews of musical records that would help discover new music through tagging and metadata (bear with me, seriously
+    a lot of time ago).</p>
+    <p>That name got stuck in my head, when I had to choose a name for my <acronym title='Private Limited Company'>Ltd</acronym> the
+    choice was quite obvious.</p>
   </section>
 
   <section id="contacts">
-    <h2>Contacts</h2>
+    <h2><i class='fas fa-id-card'></i><strong>Contacts</strong></h2>
 
-    <dl>
-      <dt>Email:</dt>
-      <dd itemprop="email"><a href="mailto:ngw@nofeed.org">ngw@nofeed.org</a></dd>
+    <dl class='columns is-multiline'>
+      <dt class='column is-one-quarter'>Email:</dt>
+      <dd itemprop='email' class='column is-three-quarters is-pulled-left'><a href="mailto:ngw@nofeed.org">ngw@nofeed.org</a></dd>
 
-      <dt>GPG key fingerprint:</dt>
-      <dd><code>C818 7AB9 2940 B12E 5B38  E9F4 4582 E7E7 E876 E0E</code></dd>
+      <dt class='column is-one-quarter'>GPG key fingerprint:</dt>
+      <dd class='column is-three-quarters is-pulled-left'><code>ACBF 2140 ED73 923E 58A8  8EDF 35F6 5F0C 183A 86C6</code></dd>
 
-      <dt>Social Networks:</dt>
-      <dd>
-        <ul>
-          <li>
-            <figure>
-              <a href="https://twitter.com/ngw">
-                <img src="img/twitter.png" />
-                <figcaption>
-                    Twitter
-                </figcaption>
-              </a>
-            </figure>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/ngw/">
-              <figure>
-                <img src="img/instagram.png" />
-                <figcaption>Instagram</figcaption>
-              </figure>
+      <dt class='column is-one-quarter' id='social'>Social Networks:</dt>
+      <dd class='column is-three-quarters'>
+        <ul class='columns'>
+          <li class='column is-one-quarter is-pulled-left'>
+            <a href="https://twitter.com/ngw">
+              <i class='fab fa-twitter fa-5x'></i>
             </a>
           </li>
-          <li>
+          <li class='column is-one-quarter is-pulled-left'>
+            <a href="https://www.instagram.com/ngw/">
+              <i class='fab fa-instagram fa-5x'></i>
+            </a>
+          </li>
+          <li class='column is-one-quarter is-pulled-left'>
             <a href="https://www.linkedin.com/in/nwieland">
-              <figure>
-                <img src="img/linkedin.png" />
-                <figcaption>LinkedIn</figcaption>
-              </figure>
+              <i class='fab fa-linkedin fa-5x'></i>
+            </a>
+          </li>
+          <li class='column is-one-quarter is-pulled-left'>
+            <a href='https://github.com/ngw'>
+              <i class='fab fa-github fa-5x'></i>
             </a>
           </li>
         </ul>
       </dd>
-      <sup>Social networks' icons designed by <a href="http://www.flaticon.com/packs/social-network-logo-collection">Freepik from Flaticon</a></sup>
     </dl>
   </section>
 </div>
+
+<footer>
+  <p>Built with 
+  <a href='https://jekyllrb.com/' alt='Jekyll website'>Jekyll</a>
+  , <a href='https://bulma.io/' alt='Bulma website'>Bulma</a>
+  and <a href='https://fontawesome.com/' alt='Fontawesome website'>fontawesome</a>
+  .</p>
+	<p>Hosted on <a href='https://pages.github.com/' alt='Github Pages website'>Github Pages</a>.</p>
+  <p>(C)opyright 2019 Nicholas Wieland.</p>
+  <p><a href='https://github.com/nofeed/nofeed.org/blob/master/LICENSE' alt="This site's license">Beerware license</a> as usual.</p>
+</footer>
