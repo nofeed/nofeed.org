@@ -1,0 +1,59 @@
+body {
+  font-family: 'Fairplay Display', serif;
+  font-size: 1.2em;
+}
+
+a {
+  font-weight: bold;
+}
+
+h1, h2 {
+  font-family: 'Quattrocento', serif;
+  font-weight: bold;
+  color: #b20303;
+}
+
+header h1 {
+  margin: 1em;
+  font-size: 4em;
+  text-align: center;
+}
+
+section {
+  padding: 1em 0 1em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  padding-bottom: 0.4em;
+}
+
+h2 strong {
+  padding-left: 0.4em;
+  color: inherit;
+}
+
+footer {
+  width: 75%;
+  margin: 2em auto;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+#bio #bio-image img {
+  padding: 2em 8em 1em 0;
+  transform: rotate(5deg);
+}
+
+#bio #bio-text {
+  padding: 2em 12em 1em 2em;
+}
+
+#nofeed, #contacts {
+  margin: 0 auto;
+  padding: 4em 10em;
+}
+
+#social {
+  padding-top: 2em;
+}
