@@ -1,0 +1,61 @@
+<html> 
+  <head>
+    <title></title>
+    <meta name="description" content="Nicholas Wieland's cover letter." />
+    <link rel="canonical" href="https://nofeed.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Alice|Mr+Dafoe|Playfair+Display:500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/cover.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <script>
+      let searchParams = new URLSearchParams(window.location.search);
+
+      function print(key) {
+        document.write(searchParams.get(key));
+      }
+    </script>
+    
+    <div class="container">
+      <header>
+        <h1>Nicholas Wieland</h1>
+        <address>
+          6 Perry Court, 1 Maritime Quay,<br />
+          E143QE London,<br />
+          United Kingdom
+        </address>
+      </header>
+
+      <div id="content">
+        <p id='salutation'>Dear <script>print('recipient');</script>,</p>
+
+        <p>Thank you for the opportunity to apply for the <script>print('position');</script> position at your company. After reviewing your 
+        job description, it's clear that you're looking for a candidate that is extremely familiar with the responsabilities associated with 
+        the role, and can perform them confidently. Given these requirements, I am certain that I have the necessary skills to successfully
+        do the job adeptly and perform above expectations.</p>
+
+        <p>I am a quality-oriented professional who has been consistently praised as focused by my co-workers and management. Over the course
+        of my 15-year career I've developed a skill set directly relevant to the <script>print('position');</script> role you are hiring
+        for, spending more than a decade developing Ruby and Ruby on Rails applications, database design and website architecture and 
+        deployment. Overall, I have consistently demonstrated problem-solving, leadership and technical abilities in every aspect of my 
+        <script>print('lastRole');</script>, and I invite you to review my detailed achievements in the attached resume (also available online
+        at <a href="https://nofeed.org/resume">https://nofeed.org/resume</a>).</p>
+
+        <p>After reviewing my resume, I hope you will agree that I am the type of competent and competitive candidate you're looking for. I 
+        look forward to elaborating on how my specific skills and abilities will benefit your organization. Please contact me at 
+        <a href="tel:07548169483">07548169483</a> or via email at <a href="mailto:ngw@nofeed.org">ngw@nofeed.org</a> to arrange for a 
+        convenient meeting time.</p>
+
+        <p>Thank you for your consideration and I look forward to hearing from you soon.</p>
+
+        <p>Sincerely,<br />
+        <span id="signature">Nicholas Wieland</span></p>
+      </div>
+    </div>
+  </body>
+</html>

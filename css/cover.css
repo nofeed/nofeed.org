@@ -1,0 +1,28 @@
+body {
+  font-family: 'Alice', serif;
+}
+
+header {
+  font-family: 'Playfair Display', serif;
+  margin: 1em 0 0 0;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 0.05em dashed;
+}
+
+header address {
+  font-weight: normal;
+  font-size: 0.7em;
+  margin-bottom: 0.8em;
+}
+
+#content {
+  font-size: 1.2em;
+  margin: 2em 0;
+}
+
+#signature {
+  margin-left: 1em;
+  font-size: 1.4em;
+  font-family: 'Mr Dafoe';
+}
