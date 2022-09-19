@@ -89,3 +89,11 @@ section {
   color: red;
   font-weight: bold;
 }
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
