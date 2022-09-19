@@ -1,2 +1,2 @@
 # nofeed
-http://nofeed.org
+https://nofeed.org
