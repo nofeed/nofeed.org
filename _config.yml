@@ -1,5 +1,18 @@
-host:             0.0.0.0
-port:             9001
-
+url: "https://nofeed.org"
+title: "NoFeed Ltd ~ Nicholas Wieland (ngw)"
+tagline: "Nicholas Wieland and NoFeed Ltd's tiny home on the interwebs."
+twitter:
+  username: ngw
+  card: summary
+  
 plugins:
+  - jekyll-seo-tag
   - jekyll-sitemap
+
+postcss:
+  cache: false
+
+sass:
+  style: compressed
+  load_paths:
+    - node_modules
