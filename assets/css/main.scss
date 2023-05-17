@@ -33,6 +33,10 @@ a:hover {
   @apply bg-sky-200;
 }
 
+section {
+  @apply mt-10;
+}
+
 .splide__slide {
   @apply px-10;
 }

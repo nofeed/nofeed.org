@@ -8,6 +8,7 @@ twitter:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-validator
 
 postcss:
   cache: false
@@ -16,3 +17,9 @@ sass:
   style: compressed
   load_paths:
     - node_modules
+
+validator:
+  exclude:
+    - 'css/*.css'
+    - '*resume*'
+    - '*splide*'
