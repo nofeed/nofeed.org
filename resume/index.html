@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Quattrocento|Fanwood+Text' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/resume.css" type="text/css" media="screen" />
+    <link rel="canonical" href="https://nofeed.org/resume/" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <title>Nicholas George Wieland resume</title>
@@ -60,11 +61,11 @@
                 <span itemprop="streetAddress">
                   21 Capstan Square
                 </span>
-                <span itemprop="addressLocality">London</span>,
-                <span itemprop="postalCode">E143EU</span>
+                <span itemprop="addressLocality">Mantova</span>,
+                <span itemprop="postalCode">46100</span>
               </dd>
               <dt>Telephone:</dt>
-              <dd itemprop="telephone">+44 7498 379693</dd>
+              <dd itemprop="telephone">+39 351 4781219</dd>
               <dt>Email:</dt>
               <dd><a href="mailto:ngw@nofeed.org" itemprop="email">ngw@nofeed.org</a></dd>
               <dt>Homepage:</dt>
@@ -82,8 +83,8 @@
         <h3>Skills</h3>
 
         <div class='col-md-12'>
-          <p>I’m an experienced developer with Ruby and Elixir. I know Javascript as well, and I worked in PHP and Python in the past.
-          Lately I got interested in Elm and I've used it very successfully in one of my latest gigs.</p>
+          <p>I’m an experienced developer with Ruby, Elixir, Go and I'm studying with great interest Rust. I don't like working on the frontend, but
+          lately I got interested in Elm and I've used it very successfully in one of my latest gigs.</p>
           <p>I have a lot of experience with RubyOnRails and Sinatra, and I also did some Padrino in the past with great pleasure.</p>
           <p>I love design, I can work with HTML and CSS proficiently. I also love studing the subject and I am a strong proposer of accessibility.
           I’ve conducted some usability tests in the past and I would love to repeat the experience.</p>
@@ -112,9 +113,37 @@
         <div class='col-md-12 entry'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
+            <h4 class='jobtitle' itemprop="jobTitle">Team Lead</h4>
+            <p><a href="https://chorally.com" itemprop="name">Chorally</a></p>
+            <p><time datetime="2023-09-10T00:00:00+00:00">10 September 2023</time> - Current position</p>
+            <p itemprop="address">
+              <span>Smart working</span>
+            </p>
+
+            <div itemprop="description" class='description'>
+              <div class="col-md-12">
+                <div itemtype="http://schema.org/Product">
+                  <div class="col-md-9">
+                    <p>I've been hired by Chorally to rebuild their legacy system.</p>
+                    <p>I've gathered all specs of the old system and rebuilt it on a wildly improved architecture: services in a mixture of Golang and Ruby
+                    (Grape mostly, with a lot of Karafka) to be ran on a K8s environment.</p>
+                    <p>The software now runs using a fraction of the resources it used to use, with improved performances, stability and correctness.</p>
+                  </div>
+                  <div class="col-md-2">
+                    <img src="/img/resume/chorally.png" height='90px' itemprop="image" alt="Chorally" class="no-print" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='col-md-12 entry'>
+          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+
             <h4 class='jobtitle' itemprop="jobTitle">Lead backend engineer</h4>
             <p><a href="https://ifad.org" itemprop="name">IFAD</a></p>
-            <p><time datetime="2023-05-29T00:00:00+00:00">29 May 2023</time> - Current position</p>
+            <p><time datetime="2023-05-29T00:00:00+00:00">29 May 2023</time> - <time datetime="2023-09-10T00:00:00+00:00">10 September 2023</time></p>
             <p itemprop="address">
               <span>Smart working</span>
             </p>
@@ -134,7 +163,7 @@
                     <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://postgresql.org"> PostgreSQL database</a>.</p>
                   </div>
                   <div class="col-md-2">
-                    <img src="/img/resume/ifad.png" height='90px' itemprop="image" alt="Mara" class="no-print" />
+                    <img src="/img/resume/ifad.png" height='90px' itemprop="image" alt="IFAD" class="no-print" />
                   </div>
                 </div>
               </div>
@@ -169,7 +198,7 @@
                     <a href="https://www.docker.com/">Docker</a> and <a href="https://www.heroku.com/platform">Heroku</a>.</p>
                   </div>
                   <div class="col-md-2">
-                    <img src="/img/resume/logo_cabinet.png" height='90px' itemprop="image" alt="Mara" class="no-print" />
+                    <img src="/img/resume/logo_cabinet.png" height='90px' itemprop="image" alt="Cabinet" class="no-print" />
                   </div>
                 </div>
               </div>
