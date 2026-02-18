@@ -104,8 +104,8 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-validator
-  kramdown (~> 2.4)
-  rouge (~> 4.1)
+  kramdown
+  rouge
 
 BUNDLED WITH
   4.0.6
