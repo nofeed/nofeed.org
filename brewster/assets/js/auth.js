@@ -1,28 +1,27 @@
-/**
- * Simple authentication for Brewster documentation
- * Username: admin
- * Password: admin
- */
-
 (function() {
     'use strict';
     
-    const VALID_USERNAME = 'admin';
-    const VALID_PASSWORD = 'admin';
+    const VALID_USERNAME_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918';
+    const VALID_PASSWORD_HASH = '084f1cadd37c14b43f0170ede90a2a3d7f8165142536a9f5a10d94beda9fb6c9';
     const AUTH_KEY = 'brewster_auth';
     
-    // Check if already authenticated (uses localStorage for cross-file persistence)
-    if (localStorage.getItem(AUTH_KEY) === 'authenticated') {
-        return; // User is authenticated, continue
+    async function hashString(str) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(str);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     }
     
-    // Inject CSS to hide body content immediately
+    if (localStorage.getItem(AUTH_KEY) === 'authenticated') {
+        return;
+    }
+    
     const style = document.createElement('style');
     style.id = 'brewster-auth-style';
     style.textContent = 'body { display: none !important; }';
     document.head.appendChild(style);
     
-    // Wait for DOM to be ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', showLoginPrompt);
     } else {
@@ -33,7 +32,7 @@
         let attempts = 0;
         const maxAttempts = 3;
         
-        function attemptLogin() {
+        async function attemptLogin() {
             if (attempts >= maxAttempts) {
                 alert('Troppi tentativi falliti. Ricarica la pagina per riprovare.');
                 return;
@@ -41,28 +40,26 @@
             
             const username = prompt('Username:');
             if (username === null) {
-                // User cancelled
                 showAccessDenied();
                 return;
             }
             
             const password = prompt('Password:');
             if (password === null) {
-                // User cancelled
                 showAccessDenied();
                 return;
             }
             
-            if (username === VALID_USERNAME && password === VALID_PASSWORD) {
-                // Authentication successful
+            const usernameHash = await hashString(username);
+            const passwordHash = await hashString(password);
+            
+            if (usernameHash === VALID_USERNAME_HASH && passwordHash === VALID_PASSWORD_HASH) {
                 localStorage.setItem(AUTH_KEY, 'authenticated');
-                // Remove the hiding style
                 const authStyle = document.getElementById('brewster-auth-style');
                 if (authStyle) {
                     authStyle.remove();
                 }
             } else {
-                // Authentication failed
                 attempts++;
                 alert('Credenziali non valide. Tentativi rimasti: ' + (maxAttempts - attempts));
                 if (attempts < maxAttempts) {
@@ -75,6 +72,7 @@
         
         function showAccessDenied(message = 'Autenticazione richiesta.') {
             document.body.innerHTML = '<div style="padding: 2rem; text-align: center; font-family: sans-serif;"><h1>Accesso Negato</h1><p>' + message + '</p></div>';
+            document.body.style.display = 'block';
             const authStyle = document.getElementById('brewster-auth-style');
             if (authStyle) {
                 authStyle.remove();
