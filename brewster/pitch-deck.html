@@ -493,12 +493,140 @@
 
 </div>
 
+<!-- Navigation Controls -->
+<div class="slide-nav">
+    <button class="slide-nav-btn" id="prevBtn" aria-label="Slide precedente">‹</button>
+    <button class="slide-nav-btn" id="nextBtn" aria-label="Slide successiva">›</button>
+</div>
+<div class="slide-progress" id="slideProgress">
+    <span id="currentSlide">1</span> / <span id="totalSlides">13</span>
+</div>
+
 <script>
-    // Optional: Add slide numbers dynamically if needed
-    document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.slide');
-        console.log(`Pitch deck loaded: ${slides.length} slides total`);
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let presentationMode = false;
+    
+    // Update UI elements
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideSpan = document.getElementById('currentSlide');
+    const totalSlidesSpan = document.getElementById('totalSlides');
+    
+    totalSlidesSpan.textContent = totalSlides;
+    
+    function updateSlide() {
+        if (presentationMode) {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+        } else {
+            // Scroll to slide in normal mode
+            slides[currentSlide].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        currentSlideSpan.textContent = currentSlide + 1;
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+    
+    function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateSlide();
+        }
+    }
+    
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlide();
+        }
+    }
+    
+    function togglePresentationMode() {
+        presentationMode = !presentationMode;
+        document.body.classList.toggle('presentation-mode', presentationMode);
+        updateSlide();
+    }
+    
+    // Button controls
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+            e.preventDefault();
+            nextSlide();
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+            e.preventDefault();
+            prevSlide();
+        } else if (e.key === 'Home') {
+            e.preventDefault();
+            currentSlide = 0;
+            updateSlide();
+        } else if (e.key === 'End') {
+            e.preventDefault();
+            currentSlide = totalSlides - 1;
+            updateSlide();
+        } else if (e.key === 'f' || e.key === 'F' || e.key === 'F5') {
+            e.preventDefault();
+            togglePresentationMode();
+        } else if (e.key === 'Escape') {
+            if (presentationMode) {
+                togglePresentationMode();
+            }
+        }
     });
+    
+    // Touch/Swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    document.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe left - next slide
+                nextSlide();
+            } else {
+                // Swipe right - previous slide
+                prevSlide();
+            }
+        }
+    }
+    
+    // Mouse wheel navigation (optional - commented out by default)
+    // document.addEventListener('wheel', function(e) {
+    //     if (Math.abs(e.deltaY) > 30) {
+    //         if (e.deltaY > 0) {
+    //             nextSlide();
+    //         } else {
+    //             prevSlide();
+    //         }
+    //     }
+    // }, { passive: true });
+    
+    // Initialize
+    updateSlide();
+    console.log(`Pitch deck loaded: ${totalSlides} slides total`);
+    console.log('Navigation: Arrow keys, PageUp/Down, Space, Home, End');
+    console.log('Presentation mode: Press F or F5 (Exit: Escape)');
+});
 </script>
 
 </body>
