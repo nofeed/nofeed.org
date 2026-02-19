@@ -372,6 +372,18 @@
             text-align: center;
         }
 
+        /* Mermaid diagrams */
+        .mermaid {
+            margin: var(--spacing-xl) 0;
+            display: flex;
+            justify-content: center;
+        }
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
         /* Tables */
         .table-wrapper {
             width: 100%;
@@ -1144,14 +1156,14 @@
 <p>Questo modello — detto <strong>asset-light o marketplace puro</strong> — è lo stesso adottato da Airbnb (non possiede appartamenti), Uber (non possiede auto) ed Etsy (non gestisce magazzini). I vantaggi sono strutturali: costi fissi minimi, scalabilità elevata, zero rischio di invenduto, nessuna complessità logistica lato piattaforma.</p>
 <hr>
 <h3>Come funziona il flusso</h3>
-<pre><code>Consumatore → cerca su Brewster → trova il produttore → acquista
-                                                            ↓
-                                          Brewster trattiene la commissione
-                                                            ↓
-                                         Il produttore riceve il pagamento netto
-                                                            ↓
-                                         Il produttore spedisce direttamente al consumatore
-</code></pre>
+<div class="mermaid">
+flowchart LR
+    A[Consumatore] --&gt;|"cerca su Brewster"| B[Trova il produttore]
+    B --&gt; C[Acquista]
+    C --&gt; D[Brewster trattiene la commissione]
+    D --&gt; E[Produttore riceve pagamento netto]
+    E --&gt; F[Produttore spedisce al consumatore]
+</div>
 <p>Brewster gestisce il pagamento in modo centralizzato (gateway di pagamento integrato), garantendo sicurezza per l&#39;acquirente e certezza di incasso per il produttore, al netto della commissione di piattaforma.</p>
 <hr>
 <h3>Flussi di Ricavo</h3>
@@ -1581,18 +1593,16 @@
 <p><strong>Il Modello Operativo: Brewster come Intermediario di Esperienze Locali</strong></p>
 <p>Il produttore crea un&#39;esperienza sulla propria dashboard Brewster (degustazione, tour, corso, cena abbinata) e la pubblica sulla piattaforma. Brewster gestisce la prenotazione, il pagamento anticipato, la comunicazione con i partecipanti e la liquidazione al produttore al netto della commissione. Il produttore non tocca nessuno strumento esterno — prenota, incassa, comunica tutto da Brewster.</p>
 <p>La funzionalità chiave è il <strong>targeting geografico</strong>: il produttore può inviare un invito diretto ai propri clienti Brewster che vivono o hanno consegnato entro un raggio configurabile (default 50 km, espandibile a 80 km). Questi consumatori ricevono una notifica push o email personalizzata — &quot;Il birrificio che hai già acquistato è a 12 km da te e organizza una degustazione il prossimo sabato&quot; — con prenotazione in un clic.</p>
-<pre><code>Produttore crea l&#39;evento su Brewster
-        ↓
-Brewster identifica i clienti entro il raggio configurato (50/80 km)
-        ↓
-Notifica personalizzata ai clienti locali: &quot;Sei vicino, vieni a trovarci&quot;
-        ↓
-Cliente prenota e paga direttamente su Brewster
-        ↓
-Brewster trattiene la commissione, liquida il produttore
-        ↓
-Brewster gestisce promemoria, QR code di accesso, recensione post-evento
-</code></pre>
+<div class="mermaid">
+flowchart TD
+    A["Produttore crea l'evento su Brewster"]
+    B["Brewster identifica clienti nel raggio configurato (50/80 km)"]
+    C["Notifica ai clienti vicini: Sei vicino, vieni a trovarci"]
+    D[Cliente prenota e paga su Brewster]
+    E[Brewster trattiene commissione e liquida il produttore]
+    F["Brewster gestisce promemoria, QR code e recensione post-evento"]
+    A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F
+</div>
 <hr>
 <p><strong>Tipologie di Esperienze</strong></p>
 <p>Le esperienze locali si articolano su tre livelli di coinvolgimento e prezzo:</p>
@@ -2238,49 +2248,24 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <p><strong>Dove React ha senso — la dashboard produttore:</strong><br>React rimane la scelta giusta per le interfacce altamente interattive e stateful dove l&#39;SEO non ha rilevanza: la dashboard interna dei produttori (gestione prodotti, ordini, analytics, editor contenuti) beneficia della reattività di React senza alcun impatto sul posizionamento organico. Questa separazione è la soluzione architetturale corretta: rendering server-side Rails + Hotwire per tutte le pagine pubbliche indicizzabili, React per la dashboard operativa dei produttori.</p>
 <hr>
 <p><strong>Architettura dell&#39;MVP</strong></p>
-<pre><code>┌─────────────────────────────────────────────────┐
-│          PAGINE PUBBLICHE (SEO-first)            │
-│  Rails + Hotwire (Turbo + Stimulus)              │
-│  HTML renderizzato server-side — indicizzabile   │
-│  - Vetrine produttori                            │
-│  - Filtro km 0 (Google Maps API)                 │
-│  - Pagine prodotto con contenuti ricchi          │
-│  - Pagine hub territoriali (regioni, città)      │
-│  - Carrello e checkout                           │
-└──────────────────┬──────────────────────────────┘
-                   │ Rendering MVC
-┌─────────────────────────────────────────────────┐
-│          DASHBOARD PRODUTTORE (interna)          │
-│  React + Tailwind CSS (via API JSON)             │
-│  - Gestione prodotti, ordini, analytics          │
-│  - Editor contenuti                              │
-│  (SEO non rilevante — interfaccia operativa)     │
-└──────────────────┬──────────────────────────────┘
-                   │ REST API / JSON
-┌──────────────────▼──────────────────────────────┐
-│                  BACKEND                         │
-│  Ruby on Rails (full-stack + API per dashboard)  │
-│  - Autenticazione (Devise)                       │
-│  - Gestione produttori e prodotti                │
-│  - Sistema commissioni e piani abbonamento       │
-│  - Editor contenuti (Action Text / Trix)         │
-│  - Verifica età (18+) pre-checkout               │
-│  - Ricerca full-text (pg_search / Elasticsearch) │
-│  - Upload media (Active Storage + S3)            │
-│  - Sitemap dinamica (sitemap_generator gem)      │
-│  - Meta tag e structured data server-side        │
-└──────────────────┬──────────────────────────────┘
-                   │
-┌──────────────────▼──────────────────────────────┐
-│               SERVIZI ESTERNI                    │
-│  Stripe Connect — pagamenti e split commissioni  │
-│  PostgreSQL     — database principale            │
-│  AWS S3         — storage foto e video           │
-│  Google Maps    — filtro geografico km 0         │
-│  Mailchimp/Resend — email marketing              │
-│  Render / Fly.io — hosting (economico, scalabile)│
-└─────────────────────────────────────────────────┘
-</code></pre>
+<div class="mermaid">
+flowchart TD
+    subgraph PUB["Pagine Pubbliche — SEO-first"]
+        p1["Rails + Hotwire · HTML server-side<br>Vetrine · km 0 · Prodotti · Hub territoriali · Checkout"]
+    end
+    subgraph DASH["Dashboard Produttore — Interna"]
+        d1["React + Tailwind CSS via API JSON<br>Prodotti · Ordini · Analytics · Editor"]
+    end
+    subgraph BACK["Backend — Ruby on Rails"]
+        b1["Autenticazione · Commissioni · Abbonamenti<br>Trix · Verifica età 18+ · pg_search · S3 · Sitemap"]
+    end
+    subgraph EXT["Servizi Esterni"]
+        e1["Stripe Connect · PostgreSQL · AWS S3<br>Google Maps · Mailchimp/Resend · Render/Fly.io"]
+    end
+    p1 --&gt;|"Rendering MVC"| b1
+    d1 --&gt;|"REST API / JSON"| b1
+    b1 --&gt; e1
+</div>
 <hr>
 <p><strong>Moduli core dell&#39;MVP — cosa si costruisce per primo</strong></p>
 <p>Il principio è: costruire solo ciò che serve a completare il primo ordine end-to-end. Tutto il resto è post-lancio.</p>
@@ -2979,6 +2964,10 @@ brewster.bar/ingredients/luppolo-nostrano/       → Hub per ingrediente
 <p><em>Fonti: Italian Craft Beer Trends 2025 · Cronache di Birra · Nomisma · Assobirra · La Casetta Craft Beer Crew · Grand View Research · Maltese.beer · Dissapore · Infologis · Business of Apps</em><br><em><a href="https://birrup.com/2025/07/21/trend-2025-del-mercato-birrario-italiano-la-crescita-delle-birre-low-alcohol-e-lascesa-del-km-0/">Birrup – Trend 2025</a> · <a href="https://www.grandviewresearch.com/industry-analysis/craft-beer-market">Grand View Research</a> · <a href="https://maltese.beer">Maltese.beer</a> · <a href="https://www.1001.it">1001.it</a> · <a href="https://www.birraland.it">Birraland</a></em></p>
 
     </div>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    </script>
     <script>
         // Wrap all tables in a scrollable container
         document.querySelectorAll('.markdown-content table').forEach(function(table) {
