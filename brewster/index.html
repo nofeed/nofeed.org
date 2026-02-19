@@ -367,6 +367,11 @@
             margin: var(--spacing-2xl) 0;
         }
 
+        .markdown-content table.competitive-map th:not(:first-child),
+        .markdown-content table.competitive-map td:not(:first-child) {
+            text-align: center;
+        }
+
         /* Tables */
         .table-wrapper {
             width: 100%;
@@ -781,7 +786,7 @@
 </tr>
 <tr>
 <td>Numero distillerie artigianali attive</td>
-<td><strong>~800</strong> (stima conservativa, dato fragmented)</td>
+<td><strong>~800</strong> (stima conservativa, dato frammentato)</td>
 </tr>
 <tr>
 <td>Prodotti distintivi</td>
@@ -875,64 +880,64 @@
 <p><strong>Opportunità per Brewster:</strong> Aggregare questi produttori sotto un&#39;unica piattaforma che ne preservi l&#39;identità individuale, riducendo i costi fissi di marketing e amplificando la visibilità collettiva — senza sottrarre loro il controllo sulla spedizione, che rimane gestita direttamente dal produttore.</p>
 <hr>
 <h3>Mappa Competitiva — Dove si posiziona Brewster</h3>
-<table>
+<table class="competitive-map">
 <thead>
 <tr>
 <th></th>
-<th align="center">Focus km 0</th>
-<th align="center">Marketplace p2p</th>
-<th align="center">Birra + Liquori</th>
-<th align="center">Identità territorio</th>
-<th align="center">UX moderna</th>
+<th>Focus km 0</th>
+<th>Marketplace p2p</th>
+<th>Birra + Liquori</th>
+<th>Identità territorio</th>
+<th>UX moderna</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Etsy</strong></td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
 </tr>
 <tr>
 <td><strong>Maltese.beer</strong></td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">Parziale</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>Parziale</td>
+<td>❌</td>
+<td>✅</td>
 </tr>
 <tr>
 <td><strong>1001.it</strong></td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
 </tr>
 <tr>
 <td><strong>Birraland</strong></td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
 </tr>
 <tr>
 <td><strong>D2C Produttori</strong></td>
-<td align="center">✅</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">Variabile</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>Variabile</td>
 </tr>
 <tr>
 <td><strong>🍺 Brewster</strong></td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
 </tr>
 </tbody></table>
 <hr>
@@ -947,8 +952,8 @@
 </ol>
 <h3>Il Fossato Competitivo (Perché Non Saremo Copiati Facilmente)</h3>
 <p><strong>Network effects:</strong> Più produttori → più backlink SE → più traffico organico → più consumatori → più valore per produttori. Il loop si autoalimenta.</p>
-<p><strong>Content moat:</strong> Ogni produttore genera 5-10 pagine di contenuto unico e ottimizzato SEO. Con 500 produttori = 2.500-5.000 pagine indicizzate che impiegano 2-3 anni a essere replicate.</p>
-<p><strong>SEO compounding:</strong> I backlink organici dai produttori (1.500-4.000 in Anno 3) sono impossibili da replicare con budget pubblicitario. Un competitor dovrebbe spendere 200-500k€ in link building per raggiungere lo stesso Domain Rating.</p>
+<p><strong>Fossato contenutistico:</strong> Ogni produttore genera 5-10 pagine di contenuto unico e ottimizzato SEO. Con 500 produttori = 2.500-5.000 pagine indicizzate che impiegano 2-3 anni a essere replicate.</p>
+<p><strong>Effetto composto SEO:</strong> I backlink organici dai produttori (1.500-4.000 in Anno 3) sono impossibili da replicare con budget pubblicitario. Un competitor dovrebbe spendere 200-500k€ in link building per raggiungere lo stesso Domain Rating.</p>
 <p><strong>Switching cost per produttori:</strong> Una volta che il produttore ha investito tempo nella vetrina, ha costruito recensioni, e ha il link Brewster su tutti i suoi canali, migrare è costoso in termini di tempo e SEO.</p>
 <p><strong>Time-to-market:</strong> Siamo 18-24 mesi avanti ai potenziali imitatori. Il CTO costruisce l&#39;MVP in 3 mesi; un competitor dovrebbe ingaggiare un team esterno (6+ mesi di dev + 50-80k€).</p>
 <hr>
@@ -982,7 +987,7 @@
 <hr>
 <h3>Sequenza di Espansione Rivista</h3>
 <p><strong>Fase A — Consolidamento Italia (Anno 1–2)</strong><br>Prima di espandersi, il modello deve essere collaudato e profittabile in Italia. L&#39;obiettivo è costruire il playbook: come si onboardano i produttori, come si costruisce la community locale, quali feature funzionano, quali no. L&#39;Italia è il laboratorio — e produce la documentazione, i processi e gli strumenti che renderanno ogni espansione successiva più rapida ed economica.</p>
-<p><strong>Fase B — Europa Core: Germania e Belgio (Anno 2–3)</strong><br>Il primo mercato internazionale è tedesco. La Germania ha oltre 1.300 birrifici artigianali attivi, una cultura brassicola tra le più ricche al mondo, un mercato e-commerce maturo (secondo in Europa per volume), e opera nell&#39;euro. I produttori tedeschi hanno lo stesso gap digitale dei produttori italiani — e la stessa risposta emotiva alla proposta &quot;racconta il tuo territorio&quot;. Il Belgio, con la sua densità eccezionale di birrifici di eccellenza mondiale, è il secondo target naturale: piccolo per popolazione ma con un ecosistema craft di altissimo profilo, ideale per costruire credibilità e PR internazionale. Operativamente, espandersi in Germania e Belgio richiede solo la localizzazione della piattaforma in tedesco e francese — già pianificate per AI Translation — senza alcun adempimento normativo aggiuntivo grazie al quadro EU.</p>
+<p><strong>Fase B — Europa Core: Germania e Belgio (Anno 2–3)</strong><br>Il primo mercato internazionale è tedesco. La Germania ha oltre 1.300 birrifici artigianali attivi, una cultura brassicola tra le più ricche al mondo, un mercato e-commerce maturo (secondo in Europa per volume), e opera nell&#39;euro. I produttori tedeschi hanno lo stesso gap digitale dei produttori italiani — e la stessa risposta emotiva alla proposta &quot;racconta il tuo territorio&quot;. Il Belgio, con la sua densità eccezionale di birrifici di eccellenza mondiale, è il secondo target naturale: piccolo per popolazione ma con un ecosistema craft di altissimo profilo, ideale per costruire credibilità e PR internazionale. Operativamente, espandersi in Germania e Belgio richiede la localizzazione dell&#39;interfaccia in tedesco e francese — realizzata con Rails i18n e traduttori professionisti — e l&#39;attivazione dell&#39;AI Translation per i contenuti dei produttori nelle stesse lingue, senza alcun adempimento normativo aggiuntivo grazie al quadro EU.</p>
 <p><strong>Fase C — Europa Secondaria: Francia, Spagna, Paesi Bassi (Anno 3–4)</strong><br>Francia e Spagna hanno mercati del craft in forte crescita ma ancora frammentati — esattamente la fase in cui Brewster può entrare come infrastruttura di riferimento prima che si consolidi un competitor locale. I Paesi Bassi hanno una community craft molto attiva e una propensione all&#39;acquisto online tra le più alte d&#39;Europa. Tutti e tre condividono euro, quadro normativo UE e logistica integrata.</p>
 <p><strong>Fase D — Europa Emergente: Polonia, Repubblica Ceca, Romania (Anno 4)</strong><br>Europa Centrale e dell&#39;Est ospita mercati del craft in rapida espansione, con costi operativi inferiori e una scena artigianale che sta esplodendo. La Repubblica Ceca ha la cultura brassicola più antica d&#39;Europa; la Polonia ha registrato una crescita del craft del 40% negli ultimi tre anni. Sono paesi UE a tutti gli effetti — stessa normativa e-commerce, stesso OSS IVA — ma con minor concorrenza digitale nel settore.</p>
 <p><strong>Fase E — Mercati Extra-EU: USA (Anno 4–5)</strong><br>Solo dopo aver consolidato la presenza europea, Brewster affronta il mercato americano. A quel punto la piattaforma ha già dimostrato la replicabilità del modello in 6–8 paesi, dispone di un playbook rodato, e può permettersi la complessità operativa degli USA: normativa alcol stato per stato, Three-Tier System, assenza di quadro normativo federale per l&#39;e-commerce di bevande alcoliche, rischio valutario USD/EUR. L&#39;approccio resta lo stesso: una regione pilota (Pacific Northwest, o un singolo stato come Oregon o Vermont dove la cultura craft è più radicata), onboarding manuale dei primi produttori locali, costruzione della community.</p>
@@ -1076,7 +1081,7 @@
 <h3>Una nota sull&#39;export cross-border intra-UE</h3>
 <p>A differenza dell&#39;export extra-UE, il cross-border intra-UE è operativamente semplice fin da subito grazie alla libera circolazione. Un consumatore tedesco che ordina da un produttore italiano è tecnicamente già possibile nell&#39;MVP — non ci sono dazi, non ci sono dogane, e l&#39;IVA si gestisce con il regime OSS. Brewster può quindi abilitare questa funzionalità relativamente presto, anche prima dell&#39;onboarding di produttori tedeschi, come primo test di domanda internazionale a basso costo operativo. L&#39;export extra-UE (un consumatore americano che ordina da un produttore italiano) rimane invece una possibilità secondaria e opzionale — complicata da normative doganali sull&#39;alcol, costi di spedizione e dazi — da pianificare solo quando Brewster è consolidata in entrambi i mercati coinvolti.</p>
 <hr>
-<h2>Modello di Business e Monetizzazione</h2>
+<h2>Analisi SWOT</h2>
 <hr>
 <h3>💪 Punti di Forza (Strengths)</h3>
 <p><strong>Mercato in forte crescita.</strong> Il settore della birra artigianale italiana cresce del +27% annuo e il mercato vale ~7,1 miliardi di euro nel 2025, con ampi margini ancora inesplorati online.</p>
@@ -1111,8 +1116,8 @@
 <thead>
 <tr>
 <th></th>
-<th><strong>Helpful</strong></th>
-<th><strong>Harmful</strong></th>
+<th><strong>Favorevole</strong></th>
+<th><strong>Sfavorevole</strong></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -1211,6 +1216,7 @@
 <hr>
 <h4>3. Piano Internazionale — AI Translation powered by Claude <em>(ricavo ad alto margine)</em></h4>
 <p>Questa è la feature che trasforma Brewster da marketplace italiano a <strong>piattaforma globale del made in Italy artigianale</strong>, e rappresenta una delle leve di monetizzazione più interessanti dell&#39;intero modello.</p>
+<p><strong>Distinzione fondamentale:</strong> l&#39;AI Translation riguarda esclusivamente i <strong>contenuti editoriali dei produttori</strong> — storie, descrizioni, schede prodotto, blog. L&#39;interfaccia della piattaforma (navigazione, label, messaggi di sistema, checkout) viene localizzata separatamente tramite il sistema <strong>Rails i18n</strong>, con traduzioni realizzate da traduttori professionisti per garantire qualità comunicativa e adattamento culturale preciso. Le due cose sono indipendenti e viaggiano su binari distinti.</p>
 <p><strong>Il problema:</strong> il 90% dei produttori italiani non ha contenuti in lingua straniera. Le loro storie, i processi di produzione, le descrizioni dei prodotti esistono solo in italiano — rendendoli invisibili ai consumatori internazionali.</p>
 <p><strong>La soluzione:</strong> Brewster integra un modello AI (via API Anthropic/Claude) che traduce automaticamente tutti i contenuti della vetrina del produttore — storia, processo, schede prodotto, blog — nelle lingue dei mercati target. Non una traduzione meccanica, ma una traduzione <strong>editorialmente curata</strong>: il prompt è progettato per preservare il tono autentico della voce del produttore, adattare le espressioni culturalmente, e ottimizzare il testo per il SEO nella lingua di destinazione.</p>
 <p><strong>Lingue disponibili per fase:</strong></p>
@@ -2007,7 +2013,7 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <th><strong>Totale</strong></th>
 <th><strong>Costi Op.</strong></th>
 <th><strong>EBITDA</strong></th>
-<th><strong>Margin</strong></th>
+<th><strong>Margine</strong></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -2060,7 +2066,7 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 </tr>
 </tbody></table>
 <h3>Metriche Finanziarie Chiave per Investitori</h3>
-<p><strong>Break-even operativo:</strong> Fine Anno 1 (mese 12 dal lancio)<br><strong>Profittabilità netta:</strong> Anno 2 (mese 18)<br><strong>Payback period per investitore:</strong> 24-30 mesi<br><strong>ROI potenziale Anno 3:</strong> 15-30x (su base valutazione 4-8M €)<br><strong>Margini EBITDA a regime:</strong> 70-75% (modello asset-light)</p>
+<p><strong>Break-even operativo:</strong> Fine Anno 1 (mese 12 dal lancio)<br><strong>Profittabilità netta:</strong> Anno 2 (mese 18)<br><strong>Periodo di recupero per l'investitore:</strong> 24-30 mesi<br><strong>ROI potenziale Anno 3:</strong> 15-30x (su base valutazione 4-8M €)<br><strong>Margini EBITDA a regime:</strong> 70-75% (modello asset-light)</p>
 <p><strong>Valutazione potenziale Anno 3</strong> (scenari multipli standard SaaS/Marketplace):</p>
 <ul>
 <li>Multiple conservativo 2.5x ricavi: <strong>4,1M €</strong> → ROI 12-16x per angel</li>
@@ -2435,7 +2441,7 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 </tr>
 </thead>
 <tbody><tr>
-<td>Sviluppo MVP + brand identity (team internal)</td>
+<td>Sviluppo MVP + brand identity (team interno)</td>
 <td>15.000 €</td>
 </tr>
 <tr>
@@ -2508,7 +2514,7 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <p>Con budget limitato, la pubblicità a pagamento va usata con parsimonia. Il canale principale è il <strong>contenuto organico</strong>:</p>
 <ul>
 <li><strong>Instagram e TikTok</strong> con format narrativi: &quot;visita al birrificio/distilleria&quot;, &quot;come nasce questa birra/come si distilla un gin botanico&quot;, &quot;il mastro birraio/distillatore di [paese]&quot;, &quot;storia di un amaro di famiglia&quot; — contenuti ad alto engagement a costo quasi zero. Gli spirits hanno appeal visivo forte (alambicchi in rame, botanicals, bottiglie artigianali)</li>
-<li><strong>Blog SEO</strong> su Webflow ottimizzato per ricerche come &quot;birra artigianale [città]&quot;, &quot;gin artigianale [regione]&quot;, &quot;distilleria locale&quot;, &quot;amaro artigianale&quot;, &quot;grappa km 0&quot;</li>
+<li><strong>Blog SEO</strong> integrato nella piattaforma, ottimizzato per ricerche come &quot;birra artigianale [città]&quot;, &quot;gin artigianale [regione]&quot;, &quot;distilleria locale&quot;, &quot;amaro artigianale&quot;, &quot;grappa km 0&quot;</li>
 <li><strong>Newsletter settimanale</strong> con la storia di un produttore (alternanza birra/spirits) e le novità della settimana — costruisce un pubblico fedele e misurabile</li>
 <li><strong>Partnership con locali e ristoranti</strong> nella regione pilota che già servono birre artigianali E bar/cocktail bar che usano spirits artigianali — canale di acquisizione offline a costo zero (target complementari: aperitivo/cena vs cocktail serale)</li>
 <li><strong>PR e media di settore</strong> — Cronache di Birra, Dissapore, Vinix, Spirito di Vino, blog di settore craft beverage. Una storia ben raccontata su una piattaforma nuova che aggrega birra + spirits ha buone probabilità di coverage editoriale gratuito</li>
@@ -2915,7 +2921,7 @@ brewster.it/ingredienti/luppolo-nostrano/       → Hub per ingrediente
 </ul>
 <p><strong>4. Optionality e Exit Paths</strong></p>
 <ul>
-<li><strong>Bootstrap exit:</strong> Brewster raggiunge profittabilità Anno 2-3, genera cashflow, dividend possibili da Anno 3</li>
+<li><strong>Bootstrap exit:</strong> Brewster raggiunge profittabilità Anno 2-3, genera cashflow, dividendi possibili da Anno 3</li>
 <li><strong>Trade sale:</strong> Acquisizione da player consolidati (Tannico, Delivery Hero, Just Eat) interessati a vertical craft</li>
 <li><strong>Equity round:</strong> Se traction è forte, Series A da micro-VC italiano/EU per accelerare espansione internazionale</li>
 <li><strong>IPO/SPAC:</strong> Scenario a lungo termine (Anno 7+) se diventa leader EU</li>
@@ -2956,12 +2962,12 @@ brewster.it/ingredienti/luppolo-nostrano/       → Hub per ingrediente
 </ol>
 <p><strong>Totale: 3-4 settimane dalla prima call al closing.</strong></p>
 <h3>Cosa Ottieni Come Investitore</h3>
-<p>✅ <strong>Equity:</strong> 8-15% (in base a valutazione pre-money concordata e contributo beyond capital)<br>✅ <strong>Reporting mensile:</strong> dashboard KPI condivisa in tempo reale (produttori, GMV, CAC, LTV, burn rate)<br>✅ <strong>Advisory role opzionale:</strong> se hai expertise in marketplace, food &amp; beverage, o growth — il tuo coinvolgimento vale più dell&#39;equity<br>✅ <strong>Pro-rata rights:</strong> diritto di partecipare proporzionalmente a round futuri<br>✅ <strong>Liquidation preference:</strong> 1x non-participating (standard)<br>✅ <strong>Board observer rights:</strong> opzionali, se desiderati<br>✅ <strong>Exit timeline:</strong> 3-5 anni (profittabilità Anno 2-3, possibili dividend da Anno 3 o trade sale)  </p>
+<p>✅ <strong>Equity:</strong> 8-15% (in base a valutazione pre-money concordata e contributo beyond capital)<br>✅ <strong>Reporting mensile:</strong> dashboard KPI condivisa in tempo reale (produttori, GMV, CAC, LTV, burn rate)<br>✅ <strong>Advisory role opzionale:</strong> se hai expertise in marketplace, food &amp; beverage, o growth — il tuo coinvolgimento vale più dell&#39;equity<br>✅ <strong>Pro-rata rights:</strong> diritto di partecipare proporzionalmente a round futuri<br>✅ <strong>Liquidation preference:</strong> 1x non-participating (standard)<br>✅ <strong>Board observer rights:</strong> opzionali, se desiderati<br>✅ <strong>Exit timeline:</strong> 3-5 anni (profittabilità Anno 2-3, possibili dividendi da Anno 3 o trade sale)  </p>
 <h3>Domande Frequenti degli Investitori</h3>
 <p><strong>Q: Perché dovrei investire adesso e non aspettare traction?</strong><br>A: La valutazione adesso è 150-350k€. Con traction validata (50 produttori, 1k utenti, break-even) la valutazione sarà 1-2M€. Investi adesso per entrare a valuation pre-traction con upside massimo.</p>
 <p><strong>Q: Cosa succede se il modello non funziona?</strong><br>A: Validazione completa in 12 mesi. Se le ipotesi non si confermano, pivot options sono già definiti (vedi sezione Risk Assessment). Capital-efficient = impariamo rapidamente senza bruciare capitale.</p>
 <p><strong>Q: Avete bisogno di round successivi?</strong><br>A: No. Il modello è progettato per raggiungere profittabilità in Anno 2-3 senza nuovo capitale. Round seed opzionali solo se vogliamo accelerare espansione internazionale.</p>
-<p><strong>Q: Qual è il mio ritorno atteso e quando?</strong><br>A: ROI 15-30x in scenario realistico Anno 3 (valutazione 4-8M €). Exit possibili: trade sale Anno 3-5 o dividend da cashflow Anno 3+.</p>
+<p><strong>Q: Qual è il mio ritorno atteso e quando?</strong><br>A: ROI 15-30x in scenario realistico Anno 3 (valutazione 4-8M €). Exit possibili: trade sale Anno 3-5 o dividendi da cashflow Anno 3+.</p>
 <p><strong>Q: Chi sono i competitor e perché non vinceranno loro?</strong><br>A: Nessuno ha il modello marketplace + km 0 + SEO organico. Etsy ignora alcol. Maltese/1001.it sono rivenditori, non marketplace. Abbiamo 18-24 mesi di vantaggio.</p>
 <hr>
 <h3>📩 Contatto per Opportunità Investimento</h3>
