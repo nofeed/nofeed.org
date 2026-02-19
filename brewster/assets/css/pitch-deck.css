@@ -8,23 +8,24 @@
    ══════════════════════════════════════════════════ */
 
 :root {
-    /* Brand Colors */
-    --color-primary:        #1d4ed8;
-    --color-primary-dark:   #1e3a8a;
-    --color-accent:         #b45309;
-    --color-success:        #16a34a;
+    /* Brand Colors - Nature, Ecology, Craft, Local */
+    --color-primary:        #15803d;  /* Forest green - natura e territorio */
+    --color-primary-dark:   #14532d;  /* Deep forest - boschi e tradizione */
+    --color-accent:         #d97706;  /* Amber/Gold - birra artigianale */
+    --color-success:        #16a34a;  /* Natural green - sostenibilità */
+    --color-craft:          #92400e;  /* Brown - artigianato e legno */
     
     /* Text Colors */
-    --color-text-primary:   #0f172a;
-    --color-text-secondary: #475569;
-    --color-text-muted:     #94a3b8;
-    --color-text-inverse:   #ffffff;
+    --color-text-primary:   #1c1917;  /* Stone dark - più caldo del nero */
+    --color-text-secondary: #57534e;  /* Stone gray - toni naturali */
+    --color-text-muted:     #a8a29e;  /* Stone light */
+    --color-text-inverse:   #fafaf9;  /* Off-white - più naturale */
     
     /* Background Colors */
     --color-bg-page:        #ffffff;
-    --color-bg-dark:        #0f172a;
-    --color-bg-light:       #f8fafc;
-    --color-bg-accent:      #dbeafe;
+    --color-bg-dark:        #292524;  /* Warm dark - terra e legno */
+    --color-bg-light:       #f5f5f4;  /* Stone 100 - neutro caldo */
+    --color-bg-accent:      #dcfce7;  /* Light green - ecologico */
     
     /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -86,7 +87,7 @@ body {
 
 /* Cover Slide */
 .slide.cover {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #166534 50%, var(--color-craft) 100%);
     color: var(--color-text-inverse);
     justify-content: center;
     align-items: center;
@@ -103,14 +104,12 @@ body {
 .slide.cover .tagline {
     font-size: 1.5rem;
     font-weight: 500;
-    opacity: 0.95;
     margin-bottom: 3rem;
     max-width: 800px;
 }
 
 .slide.cover .meta {
     font-size: 0.9rem;
-    opacity: 0.75;
     margin-top: 2rem;
 }
 
@@ -321,7 +320,7 @@ ul.biglist li {
 }
 
 .callout.warning {
-    background: #fef3c7;
+    background: #fef4e6;
     border-left-color: var(--color-accent);
 }
 
@@ -573,6 +572,7 @@ tr:last-child td {
     .slide.cover .meta {
         font-size: 0.8rem;
         margin-top: 1rem;
+        opacity: 1;
     }
     
     /* Compact headers */
