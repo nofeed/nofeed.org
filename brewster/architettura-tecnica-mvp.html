@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architettura Tecnica MVP - Brewster</title>
+    <meta name="description" content="Documentazione tecnica completa dell'architettura Brewster: stack, database, integrazioni, deployment e timeline">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/brewster.css">
+</head>
+<body>
+    <header class="document-header">
+        <div class="container">
+            <a href="index.html" class="back-link">← Torna al documento principale</a>
+            <h1>Architettura Tecnica MVP</h1>
+            <div class="document-meta">
+                <span><strong>Data:</strong> Gennaio 2026</span>
+                <span><strong>Autore:</strong> Nicholas Wieland (CTO)</span>
+                <span><strong>Status:</strong> Definita e validata, pronta per implementation</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2 id="executive-summary">Executive Summary</h2>
+            <p class="lead">Architettura completa per marketplace bevande artigianali con modello puro intermediario. Stack scelto: <strong>Rails 7.1 + Hotwire + PostgreSQL + Redis + Stripe Connect</strong>. Priorità: SEO-first, time-to-market veloce, costi infrastruttura minimi.</p>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">3 mesi</div>
+                    <div class="metric-label">Timeline sviluppo (1 founder full-time)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">€50-80</div>
+                    <div class="metric-label">Costo infrastruttura MVP/mese</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">1.000+</div>
+                    <div class="metric-label">Produttori scalabili senza refactoring</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="principi">1. Principi Architetturali</h2>
+            
+            <h3>1.1 Core Principles</h3>
+            <ul>
+                <li><strong>SEO-first:</strong> Ogni pagina produttore/prodotto è renderizzata server-side, indicizzabile da Google dal giorno 1</li>
+                <li><strong>Asset-light:</strong> Zero gestione magazzino/logistica, tutto a carico produttore</li>
+                <li><strong>Scalabilità graduale:</strong> MVP semplice che evolve con i ricavi, non over-engineering</li>
+                <li><strong>Developer velocity:</strong> Un solo dev (founder) deve poter mantenere e evolvere la piattaforma</li>
+                <li><strong>Costi fissi minimi:</strong> Nessuna infrastruttura enterprise, scale-up solo quando necessario</li>
+            </ul>
+
+            <h3>1.2 Non-Requirements (MVP)</h3>
+            <ul>
+                <li>❌ App mobile nativa (web-first, responsive)</li>
+                <li>❌ Micro-services (monolite Rails fino a 100k utenti)</li>
+                <li>❌ Real-time notifications (email + polling sufficiente)</li>
+                <li>❌ ML/AI recommendations (curation manuale iniziale)</li>
+                <li>❌ Multi-currency/i18n (solo Italia/€ per MVP)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="stack">2. Stack Tecnologico</h2>
+            
+            <h3>2.1 Backend</h3>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <h4>Framework: Ruby on Rails 7.1</h4>
+                    <ul>
+                        <li>Maturo, stabile, veloce per marketplace</li>
+                        <li>Hotwire (Turbo + Stimulus) per interattività senza SPA</li>
+                        <li>Action Cable per real-time opzionale (post-MVP)</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-item">
+                    <h4>Database: PostgreSQL 15</h4>
+                    <ul>
+                        <li>Relazioni complesse produttore-prodotto-ordine-commissione</li>
+                        <li>Estensioni: <code>pg_search</code> (full-text), <code>earthdistance</code> (geo-filtering km 0)</li>
+                        <li>Backup automatizzato su S3</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-item">
+                    <h4>Cache/Queue: Redis 7</h4>
+                    <ul>
+                        <li>Fragment caching (pagine produttore, liste prodotti)</li>
+                        <li>Background jobs (email, analytics, export)</li>
+                        <li>Session store</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-item">
+                    <h4>Storage: AWS S3</h4>
+                    <ul>
+                        <li>Immagini prodotti/produttori (via ActiveStorage)</li>
+                        <li>PDF fatture/ricevute</li>
+                        <li>Costo: ~€5-10/mese per primi 1.000 produttori</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>2.2 Frontend</h3>
+            <ul>
+                <li><strong>View Layer:</strong> ERB templates + Hotwire (server-rendered HTML per SEO nativo)</li>
+                <li><strong>CSS:</strong> Tailwind CSS 3 (utility-first, build rapido)</li>
+                <li><strong>JavaScript:</strong> Vanilla JS + Stimulus (bundle &lt; 50KB)</li>
+                <li><strong>Maps:</strong> Leaflet.js + OpenStreetMap (zero API costs)</li>
+                <li><strong>Checkout:</strong> Stripe.js (PCI compliance out-of-the-box)</li>
+            </ul>
+
+            <h3>2.3 Dashboard Produttori (Post-MVP Analytics)</h3>
+            <p><strong>Framework:</strong> React 18 (SPA standalone) separato da applicazione principale, mount point: <code>/dashboard</code></p>
+            <p><strong>Rationale separazione:</strong> Il 99% del sito è content pubblico SEO-critical (server-rendered Rails). Solo la dashboard produttori richiede SPA per analytics interattivi.</p>
+        </section>
+
+        <section>
+            <h2 id="database">3. Architettura Dati</h2>
+            
+            <h3>3.1 Schema Database (Core Entities)</h3>
+            
+            <div class="code-block">
+                <h4>Users</h4>
+                <ul class="list-compact">
+                    <li>id, email (unique, index)</li>
+                    <li>password_digest (bcrypt)</li>
+                    <li>role (enum: consumer, producer, admin)</li>
+                    <li>stripe_customer_id, stripe_account_id</li>
+                    <li>timestamps</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <h4>Producers</h4>
+                <ul class="list-compact">
+                    <li>id, user_id (FK)</li>
+                    <li>business_name, slug (unique, SEO-friendly URLs)</li>
+                    <li>story, production_process (Action Text)</li>
+                    <li>address, city, region, postal_code</li>
+                    <li>latitude, longitude (per km 0)</li>
+                    <li>vat_number, license_number</li>
+                    <li>commission_rate (decimal, default 8%)</li>
+                    <li>plan (enum: free, pro, partner)</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <h4>Products</h4>
+                <ul class="list-compact">
+                    <li>id, producer_id (FK, index)</li>
+                    <li>name, slug (scoped to producer)</li>
+                    <li>description (Action Text)</li>
+                    <li>category, subcategory (enums)</li>
+                    <li>alcohol_percentage, volume_ml</li>
+                    <li>price_cents (Money gem)</li>
+                    <li>stock_quantity, published (boolean)</li>
+                    <li>ingredients (text o JSONB)</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <h4>Orders</h4>
+                <ul class="list-compact">
+                    <li>id, user_id (FK consumer)</li>
+                    <li>producer_id (FK, for filtering)</li>
+                    <li>order_number (unique: #BRW-20260215-0042)</li>
+                    <li>status (enum: pending, paid, shipped, delivered, cancelled)</li>
+                    <li>subtotal_cents, commission_cents, total_cents</li>
+                    <li>stripe_payment_intent_id, stripe_transfer_id</li>
+                    <li>shipping_tracking_url, shipped_at, delivered_at</li>
+                </ul>
+            </div>
+
+            <h3>3.2 Relazioni Chiave</h3>
+            <ul>
+                <li><strong>User</strong> <code>has_one</code> <strong>Producer</strong></li>
+                <li><strong>Producer</strong> <code>has_many</code> <strong>Products</strong></li>
+                <li><strong>Order</strong> <code>belongs_to</code> <strong>User</strong> (consumer)</li>
+                <li><strong>Order</strong> <code>belongs_to</code> <strong>Producer</strong></li>
+                <li><strong>Order</strong> <code>has_many</code> <strong>OrderItems</strong></li>
+            </ul>
+
+            <h3>3.3 Indici Critici per Performance</h3>
+            <ul class="list-compact">
+                <li><code>idx_products_producer_published</code> ON products(producer_id, published)</li>
+                <li><code>idx_orders_user_status</code> ON orders(user_id, status)</li>
+                <li><code>idx_producers_location</code> USING GIST per query geospaziali</li>
+                <li><code>idx_producers_slug</code> UNIQUE</li>
+                <li><code>idx_products_slug_producer</code> UNIQUE</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="pagine">4. Pagine Principali (MVP)</h2>
+            
+            <h3>4.1 Pubbliche (SEO-critical)</h3>
+            <ol>
+                <li><strong>Home (<code>/</code>):</strong> Hero con value proposition, Featured producers, "Scopri per regione"</li>
+                <li><strong>Produttori Index (<code>/produttori</code>):</strong> Lista con filtri (regione, prodotto, km 0), paginazione</li>
+                <li><strong>Produttore Single (<code>/produttori/:slug</code>):</strong> Storia, processo produttivo, territorio + lista prodotti + Schema.org LocalBusiness markup</li>
+                <li><strong>Prodotti Index (<code>/prodotti</code>):</strong> Lista cross-produttori con filtri categoria, regione, prezzo, km 0</li>
+                <li><strong>Prodotto Single (<code>/produttori/:producer_slug/prodotti/:product_slug</code>):</strong> Foto, descrizione, ingredients + pricing + Schema.org Product markup</li>
+                <li><strong>Carrello (<code>/cart</code>):</strong> Session-based, raggruppato per produttore</li>
+                <li><strong>Checkout (<code>/checkout</code>):</strong> Login/signup required, Stripe Payment Intent</li>
+            </ol>
+
+            <h3>4.2 Autenticate (Produttori)</h3>
+            <ol>
+                <li><strong>Dashboard (<code>/dashboard</code>):</strong> Ordini recenti, analytics vendite</li>
+                <li><strong>Prodotti (<code>/dashboard/prodotti</code>):</strong> CRUD prodotti, upload foto, gestione inventario</li>
+                <li><strong>Ordini (<code>/dashboard/ordini</code>):</strong> Lista ordini da evadere, azioni spedizione</li>
+                <li><strong>Profilo (<code>/dashboard/profilo</code>):</strong> Modifica storia, processo produttivo, foto</li>
+                <li><strong>Analytics (<code>/dashboard/analytics</code>):</strong> [Post-MVP React] Grafici vendite, breakdown prodotto</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2 id="flussi">5. Flussi Principali</h2>
+            
+            <h3>5.1 Onboarding Produttore</h3>
+            <ol>
+                <li>Produttore richiesta accesso (form pubblico <code>/richiedi-accesso</code>)</li>
+                <li>Admin review (verifica licenze, P.IVA)</li>
+                <li>Admin approva → email invite con link setup</li>
+                <li>Produttore completa profilo (storia, foto, prodotti iniziali)</li>
+                <li>Admin final review → pubblica profilo</li>
+                <li>Stripe Connect onboarding (Standard o Express account)</li>
+            </ol>
+
+            <h3>5.2 Acquisto Consumer</h3>
+            <ol>
+                <li>Consumer naviga <code>/produttori</code> o <code>/prodotti</code></li>
+                <li>Aggiunge prodotti al carrello (session-based)</li>
+                <li>Checkout → login/signup</li>
+                <li>Inserisce indirizzo spedizione</li>
+                <li>Conferma ordine → Stripe Payment Intent</li>
+                <li>Pagamento riuscito: email conferma + notifica produttore</li>
+                <li>Stripe Connect Transfer a produttore (subtotal - commission, hold 7 giorni)</li>
+                <li>Produttore spedisce → segna "shipped" con tracking URL</li>
+                <li>Consumer riceve email con tracking</li>
+            </ol>
+
+            <h3>5.3 Gestione Commissioni (Stripe Connect)</h3>
+            <ul>
+                <li><strong>Application fee model:</strong> Brewster trattiene commissione al momento del pagamento</li>
+                <li><strong>Split payment:</strong> Consumer paga 100% a Brewster → transfer (100% - commission) a produttore</li>
+                <li><strong>Payout produttore:</strong> automatico via Stripe (settimanale o mensile)</li>
+                <li><strong>Costi Stripe:</strong> 1.5% + €0.25 transazione (EU cards) → assorbito nella commissione 8%</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="integrazioni">6. Integrazioni Esterne</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Servizio</th>
+                            <th>Provider</th>
+                            <th>Use Case</th>
+                            <th>Costo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Stripe Connect</strong></td>
+                            <td>Stripe</td>
+                            <td>Pagamenti + trasferimenti produttori</td>
+                            <td>1.5% + €0.25/tx</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email Transazionale</strong></td>
+                            <td>SendGrid / Mailgun</td>
+                            <td>Conferme ordine, shipped, ricevute</td>
+                            <td>€10-20/mese</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storage</strong></td>
+                            <td>AWS S3 + CloudFlare CDN</td>
+                            <td>Immagini prodotti/produttori</td>
+                            <td>€5-10/mese</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analytics</strong></td>
+                            <td>Google Analytics 4</td>
+                            <td>Tracking conversioni, e-commerce events</td>
+                            <td>Gratuito</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maps</strong></td>
+                            <td>Leaflet + OpenStreetMap</td>
+                            <td>Filtro km 0, visualizzazione produttori</td>
+                            <td>Gratuito</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SEO</strong></td>
+                            <td>Schema.org + sitemap_generator</td>
+                            <td>LocalBusiness, Product markup</td>
+                            <td>Gratuito</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="infrastruttura">7. Infrastruttura e Deployment</h2>
+            
+            <h3>7.1 Hosting (MVP)</h3>
+            <div class="comparison">
+                <div class="option">
+                    <h4>Opzione A: Heroku (raccomandato MVP)</h4>
+                    <ul>
+                        <li>Dyno Standard ($25/mese)</li>
+                        <li>+ PostgreSQL Standard 0 ($50/mese)</li>
+                        <li>+ Redis Mini ($3/mese)</li>
+                        <li><strong>= $78/mese (~€72)</strong></li>
+                    </ul>
+                    <p>✅ Deploy con <code>git push heroku main</code>, SSL automatico, logging, metrics</p>
+                </div>
+                
+                <div class="option">
+                    <h4>Opzione B: Fly.io (cost-optimized)</h4>
+                    <ul>
+                        <li>1 shared CPU, 256MB RAM (~$10/mese)</li>
+                        <li>+ Managed Postgres (~$15/mese)</li>
+                        <li>+ Redis (~$5/mese)</li>
+                        <li><strong>= €25-30/mese</strong></li>
+                    </ul>
+                    <p>⚠️ Più economico, meno mature</p>
+                </div>
+            </div>
+            <p><strong>Scelta MVP:</strong> Heroku per time-to-market. Migrazione Fly.io se costi Heroku insostenibili post-Anno 1.</p>
+
+            <h3>7.2 CI/CD</h3>
+            <ul>
+                <li><strong>GitHub Actions</strong> (2k minuti/mese gratuiti)</li>
+                <li>Pipeline: <code>test → lint → deploy staging → manual approval → deploy production</code></li>
+                <li>Test suite: RSpec (model/integration tests), no full E2E MVP</li>
+            </ul>
+
+            <h3>7.3 Monitoring (MVP)</h3>
+            <ul>
+                <li><strong>Heroku Metrics:</strong> CPU, memory, response time</li>
+                <li><strong>Sentry:</strong> Error tracking (€26/mese tier base)</li>
+                <li><strong>Uptime Robot:</strong> Gratuito, ping ogni 5 minuti</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="sicurezza">8. Sicurezza e Compliance</h2>
+            
+            <h3>8.1 Autenticazione</h3>
+            <ul>
+                <li><strong>Devise gem</strong> (Rails standard)</li>
+                <li>Password: bcrypt hashing</li>
+                <li>Session: signed cookies (Rails encrypted)</li>
+                <li>OAuth: OmniAuth (Google, Facebook post-MVP)</li>
+            </ul>
+
+            <h3>8.2 Verifica Età (Compliance Alcol)</h3>
+            <ul>
+                <li><strong>MVP:</strong> Checkbox obbligatorio checkout "Dichiaro di avere almeno 18 anni"</li>
+                <li><strong>Post-MVP:</strong> Integration con servizio verifica ID (Onfido, Veriff)</li>
+            </ul>
+
+            <h3>8.3 GDPR</h3>
+            <ul>
+                <li>Privacy policy e Cookie policy (template legalizzato)</li>
+                <li>Consenso cookie (banner con opt-in analytics)</li>
+                <li>Data export/deletion su richiesta utente</li>
+            </ul>
+
+            <h3>8.4 Payment Security</h3>
+            <p><strong>PCI Compliance:</strong> gestito da Stripe (zero PCI scope per Brewster, usiamo Stripe.js). <strong>No credit card data stored</strong> on Brewster servers.</p>
+        </section>
+
+        <section>
+            <h2 id="performance">9. Performance e Scalabilità</h2>
+            
+            <h3>9.1 Target Performance (MVP)</h3>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">&lt; 300ms</div>
+                    <div class="metric-label">Time to First Byte (TTFB)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">&lt; 1.5s</div>
+                    <div class="metric-label">Page Load Time (Lighthouse)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">100+</div>
+                    <div class="metric-label">Concurrent users senza degradation</div>
+                </div>
+            </div>
+
+            <h3>9.2 Ottimizzazioni MVP</h3>
+            <ul>
+                <li>Fragment caching produttori/prodotti (Redis, TTL 1h)</li>
+                <li>Database connection pooling (PgBouncer via Heroku add-on)</li>
+                <li>Image optimization: ImageMagick resize on upload, WebP format, lazy loading</li>
+                <li>CDN: CloudFlare free tier in front di Heroku</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="timeline">10. Timeline Sviluppo</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Mese 1 - Setup & Core (Settimane 1-4)</h3>
+                    <ul>
+                        <li>Setup progetto Rails 7.1 + PostgreSQL + Redis</li>
+                        <li>Schema database migrations</li>
+                        <li>Models: User, Producer, Product, Order, OrderItem</li>
+                        <li>Autenticazione (Devise) + Autorizzazione (Pundit)</li>
+                        <li>Layout base + Tailwind CSS setup</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Mese 2 - Features MVP (Settimane 5-8)</h3>
+                    <ul>
+                        <li>CRUD Produttori (admin) + CRUD Prodotti (producer dashboard)</li>
+                        <li>Pagine pubbliche: home, produttori index/show, prodotti index/show</li>
+                        <li>Carrello (session-based)</li>
+                        <li>Checkout + Stripe Payment Intent integration</li>
+                        <li>Order management (producer dashboard)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Mese 3 - Polish & Launch (Settimane 9-12)</h3>
+                    <ul>
+                        <li>Action Text per storytelling produttore</li>
+                        <li>Image upload (ActiveStorage + S3)</li>
+                        <li>Email transazionali (SendGrid)</li>
+                        <li>SEO: sitemap, schema.org, meta tags</li>
+                        <li>Testing: RSpec suite core flows</li>
+                        <li>Deploy staging + produzione Heroku</li>
+                        <li>Onboarding manuale primi 5 produttori (beta)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="costi">11. Costi Ricorrenti (MVP - Anno 1)</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Servizio</th>
+                            <th>Costo Mensile</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Heroku (hosting)</td>
+                            <td>$78</td>
+                            <td>Dyno + DB + Redis</td>
+                        </tr>
+                        <tr>
+                            <td>AWS S3 (storage)</td>
+                            <td>$5-10</td>
+                            <td>Immagini prodotti/produttori</td>
+                        </tr>
+                        <tr>
+                            <td>SendGrid (email)</td>
+                            <td>$15</td>
+                            <td>Up to 10k email/mese</td>
+                        </tr>
+                        <tr>
+                            <td>Stripe (payment)</td>
+                            <td>Variabile</td>
+                            <td>1.5% + €0.25 per transazione (assorbito)</td>
+                        </tr>
+                        <tr>
+                            <td>Sentry (monitoring)</td>
+                            <td>$26</td>
+                            <td>Error tracking</td>
+                        </tr>
+                        <tr>
+                            <td>Dominio (.bar o .it)</td>
+                            <td>$2</td>
+                            <td>Registrazione annuale / 12</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Totale fisso</strong></td>
+                            <td><strong>~$126/mese</strong></td>
+                            <td><strong>~€115/mese</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Note:</strong> Costi scalano con traffico, ma restano asset-light. Nessun costo logistica/magazzino.</p>
+        </section>
+
+        <section>
+            <h2 id="rischi">12. Rischi Tecnici e Mitigazione</h2>
+            
+            <div class="risk-item">
+                <h3>Rischio 1: Complessità Stripe Connect</h3>
+                <p><strong>Probabilità:</strong> Media | <strong>Impatto:</strong> Alto</p>
+                <p><strong>Mitigazione:</strong></p>
+                <ul>
+                    <li>Usare Stripe Standard Connect (onboarding hosted, zero custom UI)</li>
+                    <li>Testing su Stripe test mode con account dummy</li>
+                    <li>Consultazione documentazione ufficiale + Rails gem <code>stripe-ruby</code></li>
+                    <li>Fallback: se troppo complesso, MVP con pagamenti diretti PayPal produttore</li>
+                </ul>
+            </div>
+
+            <div class="risk-item">
+                <h3>Rischio 2: Performance Database (1.000+ prodotti)</h3>
+                <p><strong>Probabilità:</strong> Bassa (MVP) | <strong>Impatto:</strong> Medio</p>
+                <p><strong>Mitigazione:</strong></p>
+                <ul>
+                    <li>Indici ottimizzati su query critiche</li>
+                    <li>Fragment caching aggressivo</li>
+                    <li>Monitoring query N+1 (Bullet gem)</li>
+                    <li>Upgrade database plan se necessario (Heroku scaling verticale semplice)</li>
+                </ul>
+            </div>
+
+            <div class="risk-item">
+                <h3>Rischio 3: CTO Single Point of Failure</h3>
+                <p><strong>Probabilità:</strong> Media | <strong>Impatto:</strong> Alto</p>
+                <p><strong>Mitigazione:</strong></p>
+                <ul>
+                    <li>Documentazione inline codice</li>
+                    <li>README completo con setup instructions</li>
+                    <li>Deploy automatizzato (zero deploy manuale)</li>
+                    <li>Co-founder business può gestire contenuti via dashboard admin</li>
+                    <li>Post-Anno 1: onboarding dev junior per supporto manutenzione</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="metriche">13. Metriche Tecniche di Successo MVP</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metrica</th>
+                            <th>Target MVP</th>
+                            <th>Strumento Monitoraggio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Deploy time</td>
+                            <td>&lt; 10 minuti</td>
+                            <td>Heroku pipeline</td>
+                        </tr>
+                        <tr>
+                            <td>Page load time (avg)</td>
+                            <td>&lt; 1.5s</td>
+                            <td>Google Lighthouse</td>
+                        </tr>
+                        <tr>
+                            <td>Uptime</td>
+                            <td>&gt; 99.5%</td>
+                            <td>Uptime Robot</td>
+                        </tr>
+                        <tr>
+                            <td>Error rate</td>
+                            <td>&lt; 1%</td>
+                            <td>Sentry</td>
+                        </tr>
+                        <tr>
+                            <td>Test coverage</td>
+                            <td>&gt; 80% (models/controllers)</td>
+                            <td>SimpleCov</td>
+                        </tr>
+                        <tr>
+                            <td>Database query time (p95)</td>
+                            <td>&lt; 100ms</td>
+                            <td>Heroku Metrics</td>
+                        </tr>
+                        <tr>
+                            <td>Bugs critical (Mese 1)</td>
+                            <td>&lt; 10</td>
+                            <td>GitHub Issues</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="conclusioni">Conclusioni</h2>
+            <div class="callout">
+                <p><strong>Architettura tecnica validata e pronta per execution.</strong></p>
+                <p>Stack scelto (Rails + Hotwire + PostgreSQL + Stripe Connect) è:</p>
+                <ul>
+                    <li>✅ Maturo e battle-tested per marketplace</li>
+                    <li>✅ SEO-first nativo (server-rendering)</li>
+                    <li>✅ Veloce da sviluppare (3 mesi per MVP completo)</li>
+                    <li>✅ Costi fissi bassi (~€115/mese)</li>
+                    <li>✅ Scalabile fino a 1.000 produttori senza rewrite</li>
+                </ul>
+                <p><strong>Prossimo step:</strong> Closing round angel → start sviluppo Mese 1.</p>
+            </div>
+        </section>
+
+        <footer class="document-footer">
+            <p><strong>Documento redatto da:</strong> Nicholas Wieland (CTO)</p>
+            <p><strong>Ultimo aggiornamento:</strong> Gennaio 2026</p>
+        </footer>
+    </main>
+</body>
+</html>

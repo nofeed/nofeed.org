@@ -9,410 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Color Palette */
-            --color-primary:        #1d4ed8;
-            --color-primary-dark:   #1e3a8a;
-            --color-accent:         #b45309;
-
-            --color-text-primary:   #1e293b;
-            --color-text-secondary: #64748b;
-            --color-text-muted:     #94a3b8;
-
-            --color-bg-page:        #f1efe9;
-            --color-bg-card:        #ffffff;
-            --color-bg-subtle:      #f8fafc;
-            --color-bg-stripe:      #f8f9fb;
-
-            --color-border:         #e2e8f0;
-            --color-border-strong:  #cbd5e1;
-            --color-heading:        #0f172a;
-
-            --color-badge-bg:       #fef3c7;
-            --color-badge-text:     #92400e;
-
-            /* Typography */
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --font-mono: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
-
-            /* Spacing */
-            --spacing-xs:  0.25rem;
-            --spacing-sm:  0.5rem;
-            --spacing-md:  1rem;
-            --spacing-lg:  1.5rem;
-            --spacing-xl:  2rem;
-            --spacing-2xl: 3rem;
-            --spacing-3xl: 4rem;
-
-            /* Geometry */
-            --radius-sm: 3px;
-            --radius-md: 6px;
-            --radius-lg: 10px;
-
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(15,23,42,.06), 0 1px 2px rgba(15,23,42,.04);
-            --shadow-md: 0 4px 16px rgba(15,23,42,.08), 0 1px 4px rgba(15,23,42,.04);
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: var(--font-sans);
-            line-height: 1.75;
-            color: var(--color-text-primary);
-            background-color: var(--color-bg-page);
-            margin: 0;
-            padding: var(--spacing-2xl) var(--spacing-md);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* ── Document shell ─────────────────────────────── */
-        .markdown-content {
-            max-width: 920px;
-            margin: 0 auto;
-            background-color: var(--color-bg-card);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--color-border);
-            overflow: hidden;
-        }
-
-        .doc-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--spacing-md) var(--spacing-xl);
-            border-bottom: 1px solid var(--color-border);
-            background-color: var(--color-bg-subtle);
-        }
-
-        .doc-header-brand {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--color-text-secondary);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-
-        .doc-header-meta {
-            display: flex;
-            gap: var(--spacing-md);
-            align-items: center;
-        }
-
-        .doc-badge {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            padding: 3px 10px;
-            border-radius: 999px;
-            background: var(--color-badge-bg);
-            color: var(--color-badge-text);
-            border: 1px solid #fcd34d;
-        }
-
-        .doc-date {
-            font-size: 0.8125rem;
-            color: var(--color-text-muted);
-        }
-
-        .doc-body {
-            padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-3xl);
-        }
-
-        /* ── Typography ─────────────────────────────────── */
-        .markdown-content h1 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.03em;
-            color: var(--color-heading);
-            margin: 0 0 var(--spacing-sm);
-        }
-
-        .markdown-content h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            line-height: 1.3;
-            letter-spacing: -0.02em;
-            color: var(--color-heading);
-            margin: var(--spacing-3xl) 0 var(--spacing-lg);
-            padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-md);
-            border-left: 3px solid var(--color-primary);
-            border-top: none;
-        }
-
-        .markdown-content h2:first-child { margin-top: 0; }
-
-        .markdown-content h3 {
-            font-size: 1.1875rem;
-            font-weight: 600;
-            line-height: 1.4;
-            letter-spacing: -0.01em;
-            color: var(--color-heading);
-            margin: var(--spacing-2xl) 0 var(--spacing-md);
-        }
-
-        .markdown-content h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.5;
-            color: var(--color-text-primary);
-            margin: var(--spacing-xl) 0 var(--spacing-sm);
-        }
-
-        .markdown-content p {
-            margin: 0 0 var(--spacing-md);
-            font-size: 0.9375rem;
-            line-height: 1.8;
-            color: var(--color-text-primary);
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .markdown-content strong {
-            font-weight: 600;
-            color: var(--color-heading);
-        }
-
-        .markdown-content em {
-            font-style: italic;
-            color: var(--color-text-secondary);
-        }
-
-        /* ── Links ──────────────────────────────────────── */
-        .markdown-content a {
-            color: var(--color-primary);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.15s ease, color 0.15s ease;
-        }
-
-        .markdown-content a:hover {
-            color: var(--color-primary-dark);
-            border-bottom-color: currentColor;
-        }
-
-        /* ── Lists ──────────────────────────────────────── */
-        .markdown-content ul,
-        .markdown-content ol {
-            margin: 0 0 var(--spacing-lg);
-            padding-left: var(--spacing-xl);
-        }
-
-        .markdown-content li {
-            margin: var(--spacing-xs) 0;
-            font-size: 0.9375rem;
-            line-height: 1.75;
-        }
-
-        .markdown-content li::marker {
-            color: var(--color-primary);
-        }
-
-        /* ── Code ───────────────────────────────────────── */
-        .markdown-content code {
-            background-color: var(--color-bg-subtle);
-            color: #b45309;
-            padding: 0.1em 0.4em;
-            border-radius: var(--radius-sm);
-            font-family: var(--font-mono);
-            font-size: 0.85em;
-            border: 1px solid var(--color-border);
-        }
-
-        .markdown-content pre {
-            background-color: #0f172a;
-            border-radius: var(--radius-md);
-            padding: var(--spacing-lg);
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: var(--spacing-lg) 0;
-        }
-
-        .markdown-content pre code {
-            background: transparent;
-            color: #e2e8f0;
-            border: none;
-            padding: 0;
-            font-size: 0.8125rem;
-            line-height: 1.7;
-        }
-
-        /* ── Blockquotes ────────────────────────────────── */
-        .markdown-content blockquote {
-            border-left: 3px solid var(--color-border-strong);
-            padding: var(--spacing-sm) var(--spacing-lg);
-            margin: var(--spacing-xl) 0;
-            background: transparent;
-            color: var(--color-text-secondary);
-            font-style: italic;
-        }
-
-        .markdown-content blockquote p {
-            margin: 0;
-            color: var(--color-text-secondary);
-        }
-
-        /* ── Horizontal Rule ────────────────────────────── */
-        .markdown-content hr {
-            border: none;
-            border-top: 1px solid var(--color-border);
-            margin: var(--spacing-2xl) 0;
-        }
-
-        /* ── Competitive map table ──────────────────────── */
-        .markdown-content table.competitive-map th:not(:first-child),
-        .markdown-content table.competitive-map td:not(:first-child) {
-            text-align: center;
-        }
-
-        /* ── Mermaid diagrams ───────────────────────────── */
-        .mermaid {
-            margin: var(--spacing-xl) 0;
-            display: flex;
-            justify-content: center;
-        }
-        .mermaid svg {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--radius-md);
-        }
-
-        /* ── Tables ─────────────────────────────────────── */
-        .table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: var(--spacing-xl) 0;
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-        }
-
-        .markdown-content table {
-            width: 100%;
-            min-width: max-content;
-            border-collapse: collapse;
-        }
-
-        .markdown-content thead {
-            background-color: #0f172a;
-        }
-
-        .markdown-content th {
-            padding: 10px var(--spacing-lg);
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: #cbd5e1;
-            border-bottom: none;
-            white-space: nowrap;
-        }
-
-        .markdown-content td {
-            padding: 10px var(--spacing-lg);
-            border-bottom: 1px solid var(--color-border);
-            color: var(--color-text-primary);
-            font-size: 0.9rem;
-        }
-
-        .markdown-content tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .markdown-content tbody tr:nth-child(even) {
-            background-color: var(--color-bg-stripe);
-        }
-
-        .markdown-content tbody tr:hover {
-            background-color: #f0f4ff;
-        }
-
-        /* ── Images ─────────────────────────────────────── */
-        .markdown-content img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: var(--spacing-lg) 0;
-            border-radius: var(--radius-md);
-        }
-
-        .markdown-content { word-wrap: break-word; overflow-wrap: break-word; hyphens: auto; }
-
-        /* ── Mobile ─────────────────────────────────────── */
-        @media (max-width: 768px) {
-            body { padding: 0; background: var(--color-bg-card); }
-
-            .markdown-content {
-                border-radius: 0;
-                border: none;
-                box-shadow: none;
-            }
-
-            .doc-body { padding: var(--spacing-xl) var(--spacing-md) var(--spacing-2xl); }
-
-            .markdown-content h1 { font-size: 1.75rem; }
-            .markdown-content h2 { font-size: 1.25rem; margin-top: var(--spacing-2xl); }
-            .markdown-content h3 { font-size: 1.0625rem; }
-            .markdown-content h4 { font-size: 0.9375rem; }
-            .markdown-content p, .markdown-content li { font-size: 0.9375rem; }
-
-            .markdown-content pre { font-size: 0.75rem; padding: var(--spacing-md); }
-
-            .table-wrapper { margin: var(--spacing-md) 0; }
-            .markdown-content th, .markdown-content td { padding: 8px var(--spacing-md); }
-            .markdown-content th { font-size: 0.6875rem; }
-            .markdown-content td { font-size: 0.8125rem; }
-        }
-
-        @media (max-width: 480px) {
-            .doc-header { flex-direction: column; gap: var(--spacing-sm); align-items: flex-start; }
-            .markdown-content h1 { font-size: 1.5rem; }
-            .markdown-content h2 { font-size: 1.125rem; }
-        }
-
-        @media (hover: none) and (pointer: coarse) {
-            .markdown-content a { min-height: 44px; display: inline-flex; align-items: center; }
-        }
-
-        /* ── Print ──────────────────────────────────────── */
-        @media print {
-            body { background: white; padding: 0; }
-            .markdown-content { max-width: 100%; margin: 0; box-shadow: none; border: none; border-radius: 0; }
-            .doc-header { background: white; }
-            .doc-body { padding: 0; }
-
-            .markdown-content h1 { font-size: 22pt; color: black; page-break-after: avoid; }
-            .markdown-content h2 { font-size: 16pt; color: black; page-break-after: avoid; border-left: 3pt solid black; }
-            .markdown-content h3 { font-size: 13pt; color: black; page-break-after: avoid; }
-            .markdown-content h4 { font-size: 11pt; color: black; page-break-after: avoid; }
-            .markdown-content p, .markdown-content li { color: black; orphans: 3; widows: 3; }
-            .markdown-content strong { color: black; font-weight: 700; }
-            .markdown-content em { color: #444; }
-            .markdown-content a { color: black; text-decoration: underline; }
-            .markdown-content a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 0.8em; font-style: italic; }
-            .markdown-content a[href^="#"]:after { content: ""; }
-            .markdown-content code { background: #f5f5f5; border: 1pt solid #ccc; color: black; }
-            .markdown-content pre { background: #f5f5f5; border: 1pt solid #ccc; padding: 10pt; page-break-inside: avoid; white-space: pre-wrap; }
-            .markdown-content pre code { background: transparent; border: none; color: black; }
-            .markdown-content blockquote { border-left: 3pt solid #666; color: #444; background: transparent; }
-            .markdown-content table { border-collapse: collapse; width: 100%; page-break-inside: avoid; }
-            .markdown-content thead { background: #f0f0f0; }
-            .markdown-content th { background: #f0f0f0; color: black; border: 1pt solid black; padding: 6pt 10pt; font-weight: 700; }
-            .markdown-content td { border: 1pt solid black; padding: 6pt 10pt; color: black; }
-            .markdown-content tbody tr:nth-child(even) { background: #fafafa; }
-            .markdown-content hr { border-top: 1pt solid #999; }
-            * { box-shadow: none !important; }
-            h1,h2,h3,h4,h5,h6 { page-break-after: avoid; }
-            table, figure, img, blockquote { page-break-inside: avoid; }
-            @page { margin: 2cm; }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/brewster.css">
 </head>
 <body>
 <div class="markdown-content">
@@ -427,8 +24,47 @@
 <h1>Brewster</h1>
 <h3>Il marketplace di birre artigianali e spirits locali — parte dall&#39;Italia, scala nel mondo</h3>
 <p><em>&quot;A little too much is just enough&quot;</em></p>
+
+<!-- Document Index -->
+<div class="callout">
+<h3 class="mt-0 text-primary">📑 Indice del Documento</h3>
+<ol class="list-spaced">
+<li><a href="#sintesi-esecutiva">Opportunità di Investimento — Sintesi Esecutiva</a></li>
+<li><a href="#analisi-mercato">Analisi di Mercato: Perché Questo Mercato, Perché Adesso</a></li>
+<li><a href="#idea">L'Idea</a></li>
+<li><a href="#mercato">Il Mercato: Bevande Alcoliche Artigianali in Italia nel 2025</a></li>
+<li><a href="#spirits">Spirits & Liquori Artigianali: Il Secondo Pilastro di Brewster</a></li>
+<li><a href="#competitor">Analisi dei Competitor</a></li>
+<li><a href="#espansione">Espansione Internazionale</a></li>
+<li><a href="#swot">Analisi SWOT</a></li>
+<li><a href="#business-model">Modello di Business e Monetizzazione</a></li>
+<li><a href="#rischi">Analisi dei Rischi e Mitigazione</a></li>
+<li><a href="#risultati">Risultati Raggiunti: Cosa Abbiamo Già Fatto</a></li>
+<li><a href="#lancio">Strategia di Lancio</a></li>
+<li><a href="#seo">Strategia Contenuti, SEO e Backlink Organici</a></li>
+<li><a href="#posizionamento">Posizionamento Strategico</a></li>
+<li><a href="#finanza">Struttura Finanziaria e Governance</a></li>
+</ol>
+<p class="text-muted-italic">
+📄 <strong>Documenti di Supporto Inclusi:</strong><br>
+<strong>Presentazione Investitori:</strong><br>
+• <a href="pitch-deck.html">Pitch Deck</a> (13 slide, confidenziale)<br>
+<br>
+<strong>Guide Operative:</strong><br>
+• <a href="#guida-onboarding">Guida all'Onboarding Contenuti per i Produttori</a><br>
+• <a href="#guida-imballaggi">Guida agli Imballaggi e alle Spedizioni per i Produttori</a><br>
+• <a href="#programma-unboxing">Programma Unboxing Social</a><br>
+<br>
+<strong>Documenti di Ricerca:</strong><br>
+• <a href="analisi-competitiva.html">Analisi Competitiva Completa</a> (8 player, mappa competitiva)<br>
+• <a href="database-produttori-lombardia.html">Database Produttori Lombardia</a> (280 produttori mappati)<br>
+• <a href="architettura-tecnica-mvp.html">Architettura Tecnica MVP</a> (stack, schema DB, timeline)<br>
+• <a href="script-outreach-produttori.html">Script Outreach Produttori</a> (template, obiezioni, metrics)
+</p>
+</div>
+
 <hr>
-<h2>Opportunità di Investimento — Sintesi Esecutiva</h2>
+<h2 id="sintesi-esecutiva">Opportunità di Investimento — Sintesi Esecutiva</h2>
 <h3>L&#39;Opportunità in 60 Secondi</h3>
 <p><strong>Brewster</strong> costruisce il marketplace di birre artigianali e spirits locali, partendo dalla birra artigianale italiana — un mercato da <strong>7,1 miliardi €</strong> in crescita del <strong>+27% annuo</strong> dove nessun player ha ancora occupato lo spazio &quot;km 0 digitale&quot;.</p>
 <p><strong>Il problema:</strong> Oltre 1.000 microbirrifici e 800+ distillerie artigianali italiane producono bevande di qualità (440 nuove birre + centinaia di spirits artigianali registrati nel 2025) ma sono invisibili online. Il 68% dei consumatori under 40 cerca prodotti locali entro 50 km ma non ha modo di trovarli e acquistarli facilmente. Il vino ha già Tannico, Callmewine, Vivino — birra craft e spirits artigianali non hanno nessuno.</p>
@@ -452,7 +88,7 @@
 </ul>
 <p><strong>Il timing è critico:</strong> il mercato è maturo (domanda validata), i competitor sono deboli (zero focus km 0), e la finestra competitiva è aperta — ma si chiude quando uno dei player consolidati (Maltese, Tannico) copia il modello. <strong>First-mover advantage è reale: 18-24 mesi di vantaggio sul mercato.</strong></p>
 <hr>
-<h2>Analisi di Mercato: Perché Questo Mercato, Perché Adesso</h2>
+<h2 id="analisi-mercato">Analisi di Mercato: Perché Questo Mercato, Perché Adesso</h2>
 <h3>Dimensionamento del Mercato (TAM → SAM → SOM)</h3>
 <p><strong>TAM (Total Addressable Market) — Bevande Alcoliche Artigianali Italia:</strong></p>
 <ul>
@@ -482,7 +118,7 @@
 </ul>
 <h3>I Trend Macroeconomici Favorevoli (Venti di Coda)</h3>
 <ol>
-<li><strong>Km 0 è mainstream:</strong> 68% under 40 cerca prodotti entro 50 km (Nomisma 2025)</li>
+<li><strong>Km 0 è mainstream:</strong> 68% under 40 cerca prodotti entro 50 km (<a href="https://www.nomisma.it/">Nomisma 2025</a>)</li>
 <li><strong>NoLo/Health:</strong> bevande low-alcohol crescono 3x più veloce del mercato (+16% produzione birra, spirits a bassa gradazione +9%)</li>
 <li><strong>Premiumization:</strong> consumatori pagano di più per autenticità e storia — craft beer +27% YoY, spirits artigianali +12% YoY</li>
 <li><strong>E-commerce maturity:</strong> pandemia ha accelerato adozione acquisti online specialty food &amp; beverage (+40% penetrazione 2020-2025)</li>
@@ -494,11 +130,11 @@
 <p><strong>Tecnologia:</strong> Stack moderno (Rails/Hotwire) permette di costruire un marketplace SEO-first in 2-3 mesi con un solo developer. Costo dell&#39;MVP: 1/10 di quello necessario 5 anni fa. Stripe Connect gestisce pagamenti split automatici senza complessità.</p>
 <p><strong>Competition:</strong> Nessuno ha ancora occupato lo spazio bevande artigianali (escluso vino). Etsy ignora le bevande alcoliche per compliance. I verticali italiani (Maltese, 1001.it) sono rivenditori B2C, non marketplace. Tannico è sul vino, segmento saturo. <strong>La finestra per birra craft + spirits artigianali è aperta adesso.</strong></p>
 <hr>
-<h2>L&#39;Idea</h2>
+<h2 id="idea">L&#39;Idea</h2>
 <p><strong>Brewster</strong> nasce come piattaforma di commercio elettronico dedicata a birre artigianali e spirits locali. Il modello di ispirazione principale è <strong>Etsy</strong> (etsy.com), reinterpretato con un forte focus sull&#39;identità territoriale, la qualità artigianale e la filiera corta.</p>
 <p>L&#39;Italia è il punto di partenza — perché è dove siamo, perché il mercato degli alcolici artigianali (birra craft + spirits locali) è in forte crescita (+27% birra, +12% spirits artigianali), e perché la cultura del prodotto locale è profondamente radicata. Ma la visione è più ampia: <strong>Brewster è un modello replicabile in qualsiasi mercato dove esiste una produzione artigianale locale di qualità che non ha ancora un canale digitale adeguato</strong>. Un consumatore americano che vuole scoprire i birrifici artigianali del suo stato, un tedesco che cerca distillati della sua regione, un giapponese che vuole ordinare sake da piccoli produttori locali — il problema è lo stesso ovunque, e Brewster è la soluzione.</p>
 <hr>
-<h2>Il Mercato: Bevande Alcoliche Artigianali in Italia nel 2025</h2>
+<h2 id="mercato">Il Mercato: Bevande Alcoliche Artigianali in Italia nel 2025</h2>
 <h3>Panoramica Strategica: Perché Birra + Spirits (e Non Vino)</h3>
 <p>Brewster opera su <strong>due vertical di prodotto complementari</strong>: birra artigianale e spirits/liquori artigianali. Il vino è deliberatamente escluso, per motivi competitivi e strategici:</p>
 <ul>
@@ -510,11 +146,11 @@
 <h3>Birra Artigianale: Crescita e Innovazione</h3>
 <p>Il primo semestre del 2025 ha confermato la vivacità del mercato italiano della birra artigianale. Secondo il rapporto <em>Italian Craft Beer Trends</em>, sono state censite <strong>440 nuove birre italiane</strong>, con una crescita del <strong>+27% rispetto al primo semestre 2024</strong>.</p>
 <h3>Il Fenomeno Low-Alcohol (NoLo)</h3>
-<p>Uno dei trend più rilevanti riguarda le birre con gradazione alcolica inferiore al 4%: oggi rappresentano il <strong>16,14% della produzione totale</strong>, praticamente il triplo rispetto a pochi anni fa, quando si attestavano intorno al 6% <em>(Cronache di Birra, 2025)</em>. La gradazione media alcolica dell&#39;intero settore artigianale è scesa di un punto percentuale dal 2021 ad oggi, segnale di un cambiamento strutturale nei gusti dei consumatori, sempre più orientati verso stili di vita salutisti.</p>
+<p>Uno dei trend più rilevanti riguarda le birre con gradazione alcolica inferiore al 4%: oggi rappresentano il <strong>16,14% della produzione totale</strong>, praticamente il triplo rispetto a pochi anni fa, quando si attestavano intorno al 6% (<a href="https://www.cronachedibirra.it/">Cronache di Birra, 2025</a>). La gradazione media alcolica dell&#39;intero settore artigianale è scesa di un punto percentuale dal 2021 ad oggi, segnale di un cambiamento strutturale nei gusti dei consumatori, sempre più orientati verso stili di vita salutisti.</p>
 <h3>Il Km 0 e l&#39;Iper-Localismo</h3>
 <p>Il legame con il territorio è diventato un fattore competitivo determinante:</p>
 <ul>
-<li>Il <strong>68% dei consumatori italiani under 40</strong> preferisce birre prodotte entro un raggio di <strong>50 km dal punto vendita</strong> <em>(Nomisma, 2025)</em></li>
+<li>Il <strong>68% dei consumatori italiani under 40</strong> preferisce birre prodotte entro un raggio di <strong>50 km dal punto vendita</strong> (<a href="https://www.nomisma.it/">Nomisma, 2025</a>)</li>
 <li>Crescono i microbirrifici che valorizzano ingredienti autoctoni come il <strong>luppolo Nostrano di Trento</strong> o varietà adattate al clima locale</li>
 <li>Si affermano i <strong>birrifici agricoli</strong>, che coltivano direttamente le materie prime, garantendo sostenibilità ambientale e sociale</li>
 </ul>
@@ -543,10 +179,10 @@
 <td>Sotto la media europea — <strong>ampi margini di crescita</strong></td>
 </tr>
 </tbody></table>
-<p><em>(Fonte: Assobirra, Nomisma, 2025)</em></p>
+<p><em>(Fonte: <a href="https://www.assobirra.it/">Assobirra</a>, <a href="https://www.nomisma.it/">Nomisma</a>, 2025)</em></p>
 <p>Le <strong>Italian Grape Ale</strong> — birre che fondono tradizione brassicola e vinicola — sono tra i prodotti di punta dell&#39;export, altamente identitari e distintivi a livello internazionale.</p>
 <hr>
-<h2>Spirits &amp; Liquori Artigianali: Il Secondo Pilastro di Brewster</h2>
+<h2 id="spirits">Spirits &amp; Liquori Artigianali: Il Secondo Pilastro di Brewster</h2>
 <p>Parallelamente alla birra artigianale, il <strong>mercato italiano degli spirits artigianali e liquori locali</strong> sta vivendo una fase di espansione sostenuta, con caratteristiche strutturalmente simili a quelle della birra craft:</p>
 <h3>Dimensione del Mercato Spirits Artigianali</h3>
 <table>
@@ -591,164 +227,36 @@
 </ul>
 <p><strong>Brewster risolve lo stesso problema per spirits e birra craft — con la stessa value proposition, la stessa infrastruttura tecnica, lo stesso modello di business.</strong></p>
 <hr>
-<h2>Analisi dei Competitor</h2>
-<p>L&#39;obiettivo di questa analisi è identificare i <strong>punti deboli dei principali concorrenti</strong> per definire il vantaggio competitivo di Brewster.</p>
-<hr>
-<h3>1. Marketplace Artigianali Internazionali</h3>
-<h4>Etsy</h4>
-<p>Etsy è il modello di ispirazione di Brewster, ma presenta lacune strutturali significative per il mercato italiano delle bevande artigianali.</p>
-<table>
-<thead>
-<tr>
-<th>Dimensione</th>
-<th>Situazione attuale</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Presenza birra/liquori italiani</td>
-<td>Marginale — categoria non sviluppata</td>
-</tr>
-<tr>
-<td>Focus territoriale km 0</td>
-<td>Assente — logica globale, non locale</td>
-</tr>
-<tr>
-<td>Supporto ai produttori italiani</td>
-<td>Limitato — interfaccia in inglese, nessun supporto specializzato</td>
-</tr>
-<tr>
-<td>Commissioni</td>
-<td>10–15% per transazione + fee inserzione + Offsite Ads obbligatorie</td>
-</tr>
-<tr>
-<td>Personalizzazione negozio</td>
-<td>Molto ridotta — solo banner e logo</td>
-</tr>
-<tr>
-<td>Spedizione alcolici</td>
-<td>Nessun supporto: il produttore è lasciato solo nella gestione logistica</td>
-</tr>
-</tbody></table>
-<p><strong>Punti deboli chiave:</strong> Etsy non è pensata per prodotti regolamentati come birra e liquori. Le commissioni elevate — tra il 10% e il 15% per transazione, con le Offsite Ads che diventano obbligatorie una volta superati i 10.000 dollari di vendite — erodono i margini dei piccoli produttori. Manca qualsiasi logica di prossimità geografica o identità territoriale. La scarsa personalizzazione del negozio e il rischio di perdere il brand del singolo produttore a vantaggio della piattaforma sono ulteriori debolezze strutturali. Soprattutto: <strong>Etsy non supporta in alcun modo la spedizione diretta produttore → consumatore per bevande alcoliche in Italia</strong>, lasciando ogni onere operativo e normativo al venditore.</p>
-<p><strong>Opportunità per Brewster:</strong> Costruire una piattaforma con commissioni più basse, specializzazione nel settore bevande artigianali italiane, e un forte racconto del territorio.</p>
-<hr>
-<h4>Not On The High Street (NOTHS)</h4>
-<p>Marketplace britannico per prodotti artigianali di qualità, con un posizionamento premium simile a Etsy.</p>
-<p><strong>Punti deboli chiave:</strong> Mercato anglofono, nessuna presenza in Italia, nessun focus su bevande alcoliche, logistica non adatta al prodotto. Rappresenta più un modello ispiratore sul posizionamento premium che un competitor diretto.</p>
-<hr>
-<h3>2. Piattaforme Italiane di Nicchia (Birra &amp; Liquori)</h3>
-<h4>Maltese.beer</h4>
-<p>Una delle piattaforme più riconosciute nel settore, con una selezione curata da beer sommelier e dati di vendita equilibrati tra uomini (55%) e donne (45%). Nel 2024 ha registrato buoni volumi con clienti concentrati nelle grandi città (Milano 10%, Roma 8%).</p>
-<p><strong>Punti deboli chiave:</strong> Funge da rivenditore/aggregatore, non da marketplace p2p tra produttore e consumatore. Il produttore artigianale locale non ha una propria vetrina autonoma. Selezione curata dall&#39;alto (top-down), non da una community. Scarso focus sul km 0 e sull&#39;iper-localismo. Non vende liquori e distillati di nicchia.</p>
-<h4>1001.it (1001 Birre)</h4>
-<p>Considerato da Cronache di Birra come uno dei migliori e-commerce italiani per la vastità dell&#39;assortimento, con oltre 200 birrifici in catalogo, inclusi prodotti collaterali come distillati e snack.</p>
-<p><strong>Punti deboli chiave:</strong> Modello da distributore tradizionale — non un marketplace. Il produttore non controlla la propria presenza. Nessun elemento narrativo sul territorio o sulla storia del birrificio. Interfaccia e UX datate secondo le recensioni degli utenti. Logica di prezzo orientata allo sconto, non alla valorizzazione del prodotto.</p>
-<h4>Birraland</h4>
-<p>Dal 2006 è tra i pionieri della vendita online di birra artigianale in Italia.</p>
-<p><strong>Punti deboli chiave:</strong> Grafica confusionaria e difficoltà di orientamento nel catalogo, pur con una selezione interessante. Nessun posizionamento sul km 0. Modello di business da rivenditore, non da piattaforma collaborativa.</p>
-<h4>Birre da Manicomio</h4>
-<p>Oltre 1.000 birre artigianali da 100 etichette internazionali, con consegna rapida in 24 ore.</p>
-<p><strong>Punti deboli chiave:</strong> Fortemente orientato alla scontistica e alla quantità. Scarsa attenzione alla storia e all&#39;origine dei prodotti. Nessuna logica marketplace o di connessione diretta produttore-consumatore.</p>
-<hr>
-<h3>3. Vendita Diretta dei Produttori (D2C)</h3>
-<p>Molti microbirrifici e distillatori artigianali vendono direttamente tramite il proprio sito o canali social. Questo è il segmento più frammentato ma anche quello con il maggior potenziale di aggregazione.</p>
-<p><strong>Punti deboli chiave del D2C:</strong></p>
-<ul>
-<li>Visibilità molto limitata — ogni produttore lavora in silos</li>
-<li>Costi di acquisizione clienti proibitivi per piccole realtà</li>
-<li>Onere completo della logistica interamente sul produttore (spedizione, imballaggi, corrieri)</li>
-<li>Impossibilità di fare cross-selling tra produttori complementari</li>
-<li>Assenza di un&#39;unica identità &quot;made in Italy artigianale&quot; riconoscibile online</li>
-<li>Difficoltà a raggiungere consumatori fuori dalla propria area geografica</li>
-</ul>
-<p><strong>Opportunità per Brewster:</strong> Aggregare questi produttori sotto un&#39;unica piattaforma che ne preservi l&#39;identità individuale, riducendo i costi fissi di marketing e amplificando la visibilità collettiva — senza sottrarre loro il controllo sulla spedizione, che rimane gestita direttamente dal produttore.</p>
-<hr>
-<h3>Mappa Competitiva — Dove si posiziona Brewster</h3>
-<table class="competitive-map">
-<thead>
-<tr>
-<th></th>
-<th>Focus km 0</th>
-<th>Marketplace p2p</th>
-<th>Birra + Liquori</th>
-<th>Identità territorio</th>
-<th>UX moderna</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Etsy</strong></td>
-<td>❌</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>Maltese.beer</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>Parziale</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>1001.it</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td><strong>Birraland</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td><strong>D2C Produttori</strong></td>
-<td>✅</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-<td>Variabile</td>
-</tr>
-<tr>
-<td><strong>🍺 Brewster</strong></td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-</tbody></table>
-<hr>
-<h3>Sintesi: Il Vantaggio Competitivo di Brewster (Fossato Difensivo)</h3>
-<p>Nessun competitor copre simultaneamente tutti i fattori che i consumatori italiani under 40 dichiarano di voler trovare: <strong>prodotti locali, storia del produttore, identità territoriale, e un&#39;esperienza d&#39;acquisto moderna</strong>. Brewster può occupare questo spazio bianco combinando:</p>
+<h2 id="competitor">Analisi dei Competitor</h2>
+<p>Abbiamo analizzato in dettaglio 8 player italiani e internazionali (Etsy, Maltese.beer, 1001.it, Birraland, Tannico, Callmewine, e altri) per identificare i punti deboli strutturali del mercato.</p>
+
+<p><strong>Risultato chiave:</strong> Nessun competitor copre simultaneamente tutti i fattori critici: <strong>marketplace puro + km 0 + birra + spirits + identità territoriale + UX moderna</strong>. Tutti i player analizzati presentano almeno 2-3 gap strutturali che Brewster può colmare.</p>
+
+<div class="callout">
+<p><strong>📄 Analisi completa disponibile:</strong> <a href="analisi-competitiva.md">Analisi Competitiva Dettagliata</a> — 8 player analizzati con mappa competitiva, punti deboli, opportunità per Brewster, e analisi del fossato difensivo (network effects, SEO, switching costs).</p>
+</div>
+
+<h3>Il Vantaggio Competitivo di Brewster</h3>
+<p>Nessun competitor copre simultaneamente: <strong>prodotti locali, storia del produttore, identità territoriale, e un&#39;esperienza d&#39;acquisto moderna</strong>. Brewster può occupare questo spazio bianco combinando:</p>
 <ol>
 <li><strong>Marketplace autentico</strong> — il produttore ha la propria vetrina e racconta il proprio territorio</li>
 <li><strong>Filtro geografico</strong> — il consumatore trova produttori vicini a lui (km 0 digitale)</li>
-<li><strong>Selezione curata</strong> — non solo birra, ma un ecosistema di bevande artigianali italiane</li>
-<li><strong>Commissioni competitive</strong> — struttura più vantaggiosa rispetto ai marketplace generalisti</li>
+<li><strong>Selezione curata</strong> — birra craft + spirits artigianali in un unico ecosistema</li>
+<li><strong>Commissioni competitive</strong> — 5-12% vs 40-60% dei distributori tradizionali</li>
 <li><strong>Community</strong> — recensioni, abbinamenti, eventi locali, turismo birrario</li>
 </ol>
-<h3>Il Fossato Competitivo (Perché Non Saremo Copiati Facilmente)</h3>
-<p><strong>Network effects:</strong> Più produttori → più backlink SE → più traffico organico → più consumatori → più valore per produttori. Il loop si autoalimenta.</p>
-<p><strong>Fossato contenutistico:</strong> Ogni produttore genera 5-10 pagine di contenuto unico e ottimizzato SEO. Con 500 produttori = 2.500-5.000 pagine indicizzate che impiegano 2-3 anni a essere replicate.</p>
-<p><strong>Effetto composto SEO:</strong> I backlink organici dai produttori (1.500-4.000 in Anno 3) sono impossibili da replicare con budget pubblicitario. Un competitor dovrebbe spendere 200-500k€ in link building per raggiungere lo stesso Domain Rating.</p>
-<p><strong>Switching cost per produttori:</strong> Una volta che il produttore ha investito tempo nella vetrina, ha costruito recensioni, e ha il link Brewster su tutti i suoi canali, migrare è costoso in termini di tempo e SEO.</p>
-<p><strong>Time-to-market:</strong> Siamo 18-24 mesi avanti ai potenziali imitatori. Il CTO costruisce l&#39;MVP in 3 mesi; un competitor dovrebbe ingaggiare un team esterno (6+ mesi di dev + 50-80k€).</p>
+
+<h3>Il Fossato Competitivo</h3>
+<p><strong>Network effects + SEO composto:</strong> Più produttori → più backlink organici → più traffico → più consumatori → più produttori. Con 500 produttori in Anno 3 generiamo 1.500-4.000 backlink organici (Domain Rating 55-65), impossibili da replicare con budget pubblicitario. Un competitor dovrebbe spendere €200-500k in link building per raggiungere lo stesso risultato. <strong>Time-to-market: 18-24 mesi di vantaggio.</strong></p>
 <hr>
-<h2>Espansione Internazionale</h2>
+<h2 id="espansione">Espansione Internazionale</h2>
 <h3>La Visione: un modello globale che parte dall&#39;Italia</h3>
 <p>Brewster non è &quot;il marketplace del made in Italy per il mondo&quot;. È <strong>il marketplace dei prodotti artigianali locali</strong>, un modello che funziona ovunque esista una produzione artigianale di qualità che non ha ancora un canale digitale adeguato per connettersi con i consumatori del proprio territorio.</p>
 <p>L&#39;Italia è il punto di partenza perché è dove siamo, perché il mercato è favorevole, e perché abbiamo la conoscenza diretta del settore. Ma il problema che Brewster risolve — piccoli produttori artigianali invisibili online, consumatori che vogliono autenticità e territorio e non sanno dove trovarla — è identico a Berlino, a Portland, a Melbourne, a Tokyo.</p>
 <p>Un americano che beve una birra artigianale eccellente prodotta a 80 km da casa sua e non disponibile su Amazon ha lo stesso bisogno di un italiano che cerca il birrificio agricolo della sua provincia. Brewster è la risposta per entrambi.</p>
 <hr>
 <h3>Il Mercato Internazionale del Craft: dimensioni e opportunità</h3>
-<p>Il mercato globale della birra artigianale vale circa <strong>110 miliardi di dollari nel 2025</strong> e cresce a un tasso annuo del 10–12% <em>(Grand View Research, 2025)</em>. Negli USA, il craft beer rappresenta già il 13% del mercato brassicolo totale per valore, con oltre 9.000 birrifici artigianali attivi — la grande maggioranza dei quali non ha una presenza e-commerce strutturata e vende esclusivamente in loco o tramite distributori regionali.</p>
+<p>Il mercato globale della birra artigianale vale circa <strong>110 miliardi di dollari nel 2025</strong> e cresce a un tasso annuo del 10–12% (<a href="https://www.grandviewresearch.com/industry-analysis/craft-beer-market">Grand View Research, 2025</a>). Negli USA, il craft beer rappresenta già il 13% del mercato brassicolo totale per valore, con oltre 9.000 birrifici artigianali attivi — la grande maggioranza dei quali non ha una presenza e-commerce strutturata e vende esclusivamente in loco o tramite distributori regionali.</p>
 <p>Il pattern è identico in Germania (oltre 1.300 birrifici artigianali), UK, Australia, Canada, Giappone. In tutti questi mercati il consumatore appassionato di craft non ha un luogo digitale unico dove scoprire e acquistare direttamente dai produttori locali. È lo stesso spazio bianco che Brewster occupa in Italia — e può occupare ovunque.</p>
 <p>Analogamente, il mercato dei <strong>liquori e distillati artigianali</strong> (gin, whisky, amari, vermouth, rum agricolo) sta esplodendo a livello globale: negli USA i craft spirits hanno superato i 5 miliardi di dollari di fatturato nel 2024, con migliaia di micro-distillerie che operano senza canale e-commerce diretto.</p>
 <hr>
@@ -865,7 +373,7 @@
 <h3>Una nota sull&#39;export cross-border intra-UE</h3>
 <p>A differenza dell&#39;export extra-UE, il cross-border intra-UE è operativamente semplice fin da subito grazie alla libera circolazione. Un consumatore tedesco che ordina da un produttore italiano è tecnicamente già possibile nell&#39;MVP — non ci sono dazi, non ci sono dogane, e l&#39;IVA si gestisce con il regime OSS. Brewster può quindi abilitare questa funzionalità relativamente presto, anche prima dell&#39;onboarding di produttori tedeschi, come primo test di domanda internazionale a basso costo operativo. L&#39;export extra-UE (un consumatore americano che ordina da un produttore italiano) rimane invece una possibilità secondaria e opzionale — complicata da normative doganali sull&#39;alcol, costi di spedizione e dazi — da pianificare solo quando Brewster è consolidata in entrambi i mercati coinvolti.</p>
 <hr>
-<h2>Analisi SWOT</h2>
+<h2 id="swot">Analisi SWOT</h2>
 <hr>
 <h3>💪 Punti di Forza (Strengths)</h3>
 <p><strong>Mercato in forte crescita.</strong> Il settore della birra artigianale italiana cresce del +27% annuo e il mercato vale ~7,1 miliardi di euro nel 2025, con ampi margini ancora inesplorati online.</p>
@@ -922,7 +430,7 @@
 <p><strong>W+O — Riduci le debolezze sfruttando le opportunità:</strong> Usare i fondi PNRR per supportare la digitalizzazione dei produttori in fase di onboarding. Partire con un numero limitato di produttori selezionati e ben accompagnati per risolvere il cold start problem.</p>
 <p><strong>W+T — Piano di mitigazione:</strong> Costruire un processo di verifica normativa chiaro per l&#39;onboarding dei produttori (licenze, età acquirente). Costruire switching cost per i produttori tramite analytics, CRM e community per ridurre il rischio di imitazione.</p>
 <hr>
-<h2>Modello di Business e Monetizzazione</h2>
+<h2 id="business-model">Modello di Business e Monetizzazione</h2>
 <h3>Il Principio Fondamentale: Puro Intermediario</h3>
 <p>Brewster è una <strong>piattaforma di connessione</strong>, non un rivenditore. Non acquista prodotti, non gestisce magazzini, non spedisce nulla. Il produttore rimane proprietario del prodotto fino al momento della consegna al consumatore finale, gestendo autonomamente spedizione e logistica. Brewster si occupa esclusivamente di <strong>mettere in contatto domanda e offerta</strong>, garantire l&#39;infrastruttura tecnologica e curare l&#39;esperienza utente.</p>
 <p>Questo modello — detto <strong>asset-light o marketplace puro</strong> — è lo stesso adottato da Airbnb (non possiede appartamenti), Uber (non possiede auto) ed Etsy (non gestisce magazzini). I vantaggi sono strutturali: costi fissi minimi, scalabilità elevata, zero rischio di invenduto, nessuna complessità logistica lato piattaforma.</p>
@@ -1857,7 +1365,7 @@ flowchart TD
 </ul>
 <p>Il <strong>milione di euro di ricavi</strong> è raggiungibile già entro il terzo anno, e con la maturazione di Brewster Local — che da sola contribuisce oltre 500.000 € in Anno 3 — la traiettoria verso i 3 milioni in Anno 4 è concreta senza round di finanziamento significativo. La vertical locale è la più sorprendente nelle proiezioni: parte quasi da zero in Anno 2 e diventa il secondo flusso di ricavo della piattaforma in Anno 4, superando persino l&#39;internazionale. Questo è il risultato di un effetto moltiplicativo: ogni esperienza venduta porta consumatori locali sulla piattaforma, che poi acquistano online, che poi tornano per la prossima esperienza. Il km 0 non è solo un posizionamento — è un volano economico.</p>
 <hr>
-<h2>Analisi dei Rischi e Mitigazione</h2>
+<h2 id="rischi">Analisi dei Rischi e Mitigazione</h2>
 <h3>Principali Rischi e Come Li Gestiamo</h3>
 <table>
 <thead>
@@ -1928,47 +1436,64 @@ flowchart TD
 <li>Diritto di partecipare pro-quota a round successivi</li>
 </ul>
 <hr>
-<h2>Risultati Raggiunti: Cosa Abbiamo Già Fatto</h2>
+<h2 id="risultati">Risultati Raggiunti: Cosa Abbiamo Già Fatto</h2>
 <p>Prima di chiedere capitale, abbiamo validato le ipotesi fondamentali attraverso ricerca diretta e preparazione operativa:</p>
+
 <p><strong>✅ Ricerca di mercato completata (6 mesi)</strong></p>
 <ul>
-<li>Analisi competitiva approfondita di 8 player italiani e internazionali</li>
-<li>Studio dei trend di mercato su fonti primarie (Nomisma, Assobirra, Italian Craft Beer Trends)</li>
+<li>Analisi competitiva approfondita di 8 player italiani e internazionali → <a href="analisi-competitiva.md">📄 Documento completo</a></li>
+<li>Studio dei trend di mercato su fonti primarie (<a href="https://www.nomisma.it/">Nomisma</a>, <a href="https://www.assobirra.it/">Assobirra</a>, <a href="https://birrup.com/2025/07/21/trend-2025-del-mercato-birrario-italiano-la-crescita-delle-birre-low-alcohol-e-lascesa-del-km-0/">Italian Craft Beer Trends</a>)</li>
 <li>Identificazione del gap &quot;km 0 digitale&quot; come opportunità non presidiata</li>
 </ul>
+
 <p><strong>✅ Architettura tecnica definita</strong></p>
 <ul>
-<li>Stack scelto e validato: Rails + Hotwire per SEO-first, React per dashboard</li>
-<li>Schema database completo per marketplace p2p con commissioni variabili</li>
-<li>Wireframe dell&#39;MVP e user flow produttore/consumatore mappati</li>
+<li>Stack completo validato e documentato: Rails 7.1 + Hotwire + PostgreSQL + Stripe Connect → <a href="architettura-tecnica-mvp.md">📄 Architettura completa</a></li>
+<li>Timeline sviluppo MVP: 10 settimane (1 founder full-time)</li>
+<li>Costi infrastruttura: ~€50-80/mese</li>
 </ul>
+
 <p><strong>✅ Team fondatori allineato</strong></p>
 <ul>
 <li>CTO con 20+ anni esperienza Rails/marketplace pronto a costruire MVP</li>
 <li>Angel investor avvocato già committed con supporto legale incluso</li>
 <li>Marco Busato (frontend + design) già coinvolto per dashboard e brand identity</li>
 </ul>
+
 <p><strong>✅ Mappatura produttori target (Lombardia)</strong></p>
 <ul>
-<li>Database di 200 microbirrifici lombardi + 80 distillerie artigianali identificati e categorizzati</li>
-<li>30 produttori prioritari selezionati per outreach iniziale (20 birrifici + 10 distillerie; criteri: presenza social attiva, produzione D2C esistente, identità territoriale forte)</li>
-<li>Script outreach personalizzato già redatto e testato informalmente (3 birrifici e 1 distilleria hanno espresso interesse)</li>
+<li>Database completo di 280 produttori mappati: 200 microbirrifici + 80 distillerie artigianali → <a href="database-produttori-lombardia.md">📄 Database completo</a></li>
+<li>30 produttori prioritari identificati per prima onboarding wave con criteri validati</li>
+<li>Script outreach completi con template email, gestione obiezioni, tracking metrics → <a href="script-outreach-produttori.md">📄 Script e template</a></li>
 </ul>
+
 <p><strong>✅ Validazione normativa</strong></p>
 <ul>
 <li>Consulenza preliminare con angel avvocato su compliance alcol e modello intermediario</li>
 <li>Verifica fattibilità vendita D2C bevande alcoliche artigianali in Italia (confermata con licenze produttore)</li>
 <li>Meccanismo verifica età 18+ già progettato (integrato nel checkout)</li>
 </ul>
+
 <p><strong>🔄 In corso</strong></p>
 <ul>
 <li>Costituzione società (in attesa closing round)</li>
 <li>Landing page pre-lancio con waitlist consumatori (pianificata per post-closing)</li>
 <li>Contratti tipo produttore (T&amp;C in bozza con supporto angel avvocato)</li>
 </ul>
+
+<div class="callout primary">
+<p class="mb-0">📚 Documentazione di Ricerca Disponibile</p>
+<ul class="mt-sm">
+<li><a href="analisi-competitiva.html">Analisi Competitiva Completa</a> — 8 player analizzati, mappa competitiva, barriere all'imitazione</li>
+<li><a href="database-produttori-lombardia.html">Database Produttori Lombardia</a> — 280 produttori mappati, 30 prioritari selezionati</li>
+<li><a href="architettura-tecnica-mvp.html">Architettura Tecnica MVP</a> — Stack, schema database, timeline sviluppo, costi</li>
+<li><a href="script-outreach-produttori.html">Script Outreach Produttori</a> — Template email, gestione obiezioni, tracking metrics</li>
+</ul>
+</div>
+
 <p><strong>Questa non è un&#39;idea sul tovagliolo — è 6 mesi di preparazione pronta per l&#39;execution.</strong></p>
 <hr>
-<h2>Strategia di Lancio</h2>
+<h2 id="lancio">Strategia di Lancio</h2>
 <h3>Contesto di partenza</h3>
 <p>Budget: <strong>30–50k €</strong> (angel round) · Produttori: <strong>zero contatti</strong> · Piattaforma: <strong>da costruire dal founder</strong> · Modello: <strong>puro intermediario asset-light</strong></p>
 <p>Il lancio con budget early-stage impone scelte precise: concentrazione geografica, costruzione manuale della prima supply di produttori, e una piattaforma inizialmente semplice che si evolve con i ricavi. Il vantaggio principale rispetto a un progetto standard è che il founder costruisce l&#39;MVP in prima persona — il capitale non si consuma in development esterno, ma finanzia tempo e acquisizione dei primi utenti. La priorità assoluta è risolvere il <strong>cold start problem</strong> — convincere i primi produttori ad aderire prima ancora che ci siano consumatori sulla piattaforma.</p>
@@ -2013,162 +1538,21 @@ flowchart TD
 <h3>Fase 1 — MVP e Primo Territorio (Mese 3–7) · Budget: ~24.000 €</h3>
 <p>Il principio guida è: <strong>non costruire tutto, costruire abbastanza da vendere</strong>.</p>
 <p><strong>Regione pilota: Lombardia</strong> — scelta per la massima densità di produttori artigianali in Italia (~200 microbirrifici + 80 distillerie attivi), mercato urbano maturo (Milano), alta propensione all&#39;acquisto online, e presenza consolidata di una community craft beverage attiva (eventi, festival, taproom).</p>
-<h4>Scelta tecnologica: Ruby on Rails + Hotwire (con React per la dashboard)</h4>
-<p>La scelta di costruire l&#39;MVP su <strong>Ruby on Rails con rendering server-side</strong> è deliberata e direttamente collegata alla strategia di crescita organica di Brewster: una React SPA classica — dove il server restituisce un HTML vuoto e tutto il contenuto viene costruito da JavaScript nel browser — sarebbe tecnicamente incompatibile con la strategia SEO che è il principale motore di acquisizione della piattaforma.</p>
-<p><strong>Il problema della SPA e l&#39;SEO:</strong><br>Una Single Page Application pura presenta un problema strutturale per una piattaforma come Brewster: i crawler di Google vedono inizialmente una shell HTML vuota, senza contenuto. Questo significa che URL come <code>brewster.bar/producers/birrificio-xyz/beers/ipa-montana</code> — che nel modello SEO di Brewster devono essere pagine indicizzabili con meta tag, schema.org e contenuto ricco — risulterebbero invisibili o degradate agli occhi dei motori di ricerca. Tutta l&#39;architettura di URL semantici, le pagine hub territoriali, i meta tag dinamici e il link building costruito sui profili dei produttori perderebbero gran parte del proprio valore. In sintesi: scegliere una SPA React per le pagine pubbliche significa sabotare il principale vantaggio competitivo di Brewster.</p>
-<p><strong>Perché Rails con Hotwire è la scelta corretta:</strong><br>Rails oggi adotta Hotwire (Turbo + Stimulus) come approccio moderno al frontend: ogni pagina viene renderizzata completamente lato server — HTML completo, meta tag, structured data, contenuto indicizzabile — e JavaScript interviene solo per arricchire l&#39;interattività senza mai sostituire il rendering server-side. Il risultato è un&#39;esperienza utente fluida (navigazione senza reload completo grazie a Turbo Drive) con SEO perfetto by design. GitHub, Shopify, Airbnb e Etsy stessa sono nati su Rails; Hotwire è la risposta moderna di Rails alla sfida delle SPA, senza rinunciare alle convenzioni che rendono Rails così produttivo.</p>
-<p><strong>Dove React ha senso — la dashboard produttore:</strong><br>React rimane la scelta giusta per le interfacce altamente interattive e stateful dove l&#39;SEO non ha rilevanza: la dashboard interna dei produttori (gestione prodotti, ordini, analytics, editor contenuti) beneficia della reattività di React senza alcun impatto sul posizionamento organico. Questa separazione è la soluzione architetturale corretta: rendering server-side Rails + Hotwire per tutte le pagine pubbliche indicizzabili, React per la dashboard operativa dei produttori.</p>
-<hr>
-<p><strong>Architettura dell&#39;MVP</strong></p>
-<div class="mermaid">
-flowchart TD
-    subgraph PUB["Pagine Pubbliche — SEO-first"]
-        p1["Rails + Hotwire · HTML server-side<br>Vetrine · km 0 · Prodotti · Hub territoriali · Checkout"]
-    end
-    subgraph DASH["Dashboard Produttore — Interna"]
-        d1["React + Tailwind CSS via API JSON<br>Prodotti · Ordini · Analytics · Editor"]
-    end
-    subgraph BACK["Backend — Ruby on Rails"]
-        b1["Autenticazione · Commissioni · Abbonamenti<br>Trix · Verifica età 18+ · pg_search · S3 · Sitemap"]
-    end
-    subgraph EXT["Servizi Esterni"]
-        e1["Stripe Connect · PostgreSQL · AWS S3<br>Leaflet + OSM · Mailchimp/Resend · Render/Fly.io"]
-    end
-    p1 --&gt;|"Rendering MVC"| b1
-    d1 --&gt;|"REST API / JSON"| b1
-    b1 --&gt; e1
-</div>
-<hr>
-<p><strong>Moduli core dell&#39;MVP — cosa si costruisce per primo</strong></p>
-<p>Il principio è: costruire solo ciò che serve a completare il primo ordine end-to-end. Tutto il resto è post-lancio.</p>
-<table>
-<thead>
-<tr>
-<th>Modulo</th>
-<th>Descrizione</th>
-<th>Priorità</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Autenticazione</td>
-<td>Registrazione produttore / consumatore, verifica età 18+</td>
-<td>MVP obbligatorio</td>
-</tr>
-<tr>
-<td>Vetrina produttore</td>
-<td>Profilo, storia, processo produzione, foto, mappa</td>
-<td>MVP obbligatorio</td>
-</tr>
-<tr>
-<td>Catalogo prodotti</td>
-<td>Scheda prodotto con descrizione ricca, prezzo, disponibilità</td>
-<td>MVP obbligatorio</td>
-</tr>
-<tr>
-<td>Filtro km 0</td>
-<td>Ricerca per geolocalizzazione o CAP, raggio configurabile</td>
-<td>MVP obbligatorio</td>
-</tr>
-<tr>
-<td>Checkout + pagamento</td>
-<td>Carrello, pagamento Stripe, split commissione automatico</td>
-<td>MVP obbligatorio</td>
-</tr>
-<tr>
-<td>Dashboard produttore</td>
-<td>Gestione prodotti, ordini in arrivo, liquidazioni</td>
-<td>MVP obbligatorio</td>
-</tr>
-<tr>
-<td>Editor contenuti</td>
-<td>Trix editor (integrato in Rails) per storie e descrizioni ricche</td>
-<td>MVP obbligatorio</td>
-</tr>
-<tr>
-<td>SEO automatico</td>
-<td>Meta tag dinamici, sitemap XML, schema markup JSON-LD</td>
-<td>MVP obbligatorio</td>
-</tr>
-<tr>
-<td>Recensioni</td>
-<td>Rating prodotto e produttore</td>
-<td>Post-lancio v1.1</td>
-</tr>
-<tr>
-<td>Sistema abbonamenti</td>
-<td>Piani Free/Pro/Partner con Stripe Billing</td>
-<td>Post-lancio v1.1</td>
-</tr>
-<tr>
-<td>Esperienze/eventi</td>
-<td>Prenotazione visite e degustazioni</td>
-<td>Post-lancio v2.0</td>
-</tr>
-</tbody></table>
-<hr>
-<p><strong>Stima tempi di sviluppo MVP</strong></p>
-<p>Con il team di founder (CTO: Rails + Hotwire per backend e frontend pubblico; frontend developer: dashboard React produttori):</p>
-<table>
-<thead>
-<tr>
-<th>Sprint</th>
-<th>Durata</th>
-<th>Deliverable</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Sprint 1</td>
-<td>2 settimane</td>
-<td>Setup progetto, autenticazione, modelli dati, routing base</td>
-</tr>
-<tr>
-<td>Sprint 2</td>
-<td>2 settimane</td>
-<td>Vetrine produttore (server-side) + editor contenuti Trix + upload media</td>
-</tr>
-<tr>
-<td>Sprint 3</td>
-<td>2 settimane</td>
-<td>Catalogo prodotti + filtro km 0 + pagine SEO con meta tag dinamici</td>
-</tr>
-<tr>
-<td>Sprint 4</td>
-<td>2 settimane</td>
-<td>Checkout + Stripe Connect + dashboard produttore (React)</td>
-</tr>
-<tr>
-<td>Sprint 5</td>
-<td>1 settimana</td>
-<td>Testing, ottimizzazioni SEO, deploy produzione</td>
-</tr>
-<tr>
-<td><strong>Totale</strong></td>
-<td><strong>~9 settimane</strong></td>
-<td><strong>MVP pronto per i primi produttori</strong></td>
-</tr>
-</tbody></table>
-<p><strong>Vantaggio competitivo sviluppo interno:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Costo stimato</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Team founder interno (Brewster)</strong></td>
-<td><strong>~15.000 €</strong></td>
-</tr>
-<tr>
-<td>Freelance senior Rails + frontend</td>
-<td>~22.000–25.000 €</td>
-</tr>
-<tr>
-<td>Agenzia esterna completa</td>
-<td>~28.000–35.000 €</td>
-</tr>
-</tbody></table>
-<p><strong>Risparmio: 40-55%</strong> dello sviluppo MVP grazie al team tecnico interno, liberando capitale per acquisizione utenti e marketing.</p>
+
+<h4>Stack Tecnologico e Architettura MVP</h4>
+<p>L'architettura completa è documentata in dettaglio nel <a href="architettura-tecnica-mvp.md">📄 documento tecnico MVP</a>. In sintesi:</p>
+<ul>
+<li><strong>Backend:</strong> Ruby on Rails 7.1 + PostgreSQL + Redis</li>
+<li><strong>Frontend pubblico:</strong> Rails + Hotwire (server-side rendering per SEO perfetto)</li>
+<li><strong>Dashboard produttori:</strong> React SPA (alta interattività, SEO non rilevante)</li>
+<li><strong>Pagamenti:</strong> Stripe Connect (split commissioni automatico)</li>
+<li><strong>Hosting:</strong> Render/Fly.io + AWS S3</li>
+<li><strong>Timeline:</strong> 9-10 settimane sviluppo con team interno</li>
+</ul>
+
+<p><strong>Rationale scelta Rails + Hotwire:</strong> Ogni pagina produttore/prodotto renderizzata server-side = contenuto completamente indicizzabile da Google. Una SPA React classica (HTML vuoto + JavaScript) sarebbe incompatibile con la strategia SEO che è il principale motore di acquisizione. React viene usato solo per la dashboard interna produttori dove SEO non serve.</p>
+
+<p><strong>Vantaggio competitivo sviluppo interno:</strong> Team founder costruisce MVP a ~€15.000 vs €28-35k per agenzia esterna. <strong>Risparmio 40-55%</strong>, capitale liberato per acquisizione utenti.</p>
 <h4>Focus geografico: una sola regione</h4>
 <p>Anziché lanciare su tutta Italia, Brewster parte dalla <strong>Lombardia</strong> come regione pilota. Le ragioni strategiche:</p>
 <ul>
@@ -2241,29 +1625,9 @@ flowchart TD
 <h4>Acquisizione produttori: approccio manuale e diretto</h4>
 <p>Con zero contatti di partenza, la strategia più efficace è quella <strong>manuale e ad alto contatto personale</strong>, non quella pubblicitaria. I microbirrifici e le distillerie artigianali sono realtà familiari: rispondono alle persone, non agli annunci.</p>
 <p>Le azioni concrete sono:</p>
-<p><strong>Mappatura sistematica.</strong> Costruire un database completo dei produttori artigianali della regione pilota usando fonti come Unionbirrai, Cronache di Birra, ANAG (Associazione Nazionale Assaggiatori Grappa), e Google Maps. Obiettivo: 150–200 birrifici + 60–80 distillerie mappati con contatto diretto.</p>
-<p><strong>Esempi di produttori target prioritari</strong> — Abbiamo già identificato profili concreti di produttori lombardi che rappresentano il segmento ideale per l&#39;onboarding iniziale:</p>
-<p><strong>Birrifici craft:</strong></p>
-<ul>
-<li><p><strong>Birrificio Rurale (Desenzano del Garda, BS)</strong> — 7.500+ follower Instagram, forte identità territoriale legata al lago e alle colline moreniche, vendita taproom + presenza a mercati locali, nessun e-commerce. Producono una &quot;Garda Blond&quot; con miele locale e una red ale con amarene della zona. Pubblico affezionato ma confinato all&#39;offline.</p>
-</li>
-<li><p><strong>BaladinOpenGarden (Milano, MI)</strong> — Birrificio urbano con taproom in zona Isola, produzioni sperimentali stagionali (es. birra con buccia d&#39;arancia amara siciliana), target millennial/Gen Z, fortissima presenza social ma nessuna vendita online diretta. Community locale molto attiva, eventi settimanali, visite guidate. Candidato perfetto per modello ibrido online + eventi fisici.</p>
-</li>
-<li><p><strong>Gilac Brewery (Casaletto Vaprio, CR)</strong> — Microbirrificio familiare in campagna cremonese, produzioni limitate con luppolo coltivato in azienda, zero presenza digitale eccetto pagina Facebook da 600 follower. Vendita solo al birrificio e a 3-4 bar della zona. Profilo perfetto per &quot;storia del territorio&quot; e km 0 viscerale — ma impossibile da scoprire online oggi.</p>
-</li>
-</ul>
-<p><strong>Distillerie artigianali:</strong></p>
-<ul>
-<li><p><strong>Bar Rosso Gino (Centro storico di Mantova, MN)</strong> — Bar storico mantovano famoso per il suo cocktail iconico a base di ingredienti segreti, ricetta tramandata da generazioni. <strong>Zero presenza online</strong> — nessun e-commerce, nessun sito web, Instagram (<a href="https://www.instagram.com/barrossogino/">@barrossogino</a>) praticamente inattivo. Il cocktail è una specialità storica di Mantova, disponibile esclusivamente nel locale fisico. Clientela locale affezionata ma completamente inaccessibile per chiunque fuori città. Esempio perfetto di produttore invisibile digitalmente che potrebbe beneficiare immediatamente di Brewster: qualità artigianale altissima, storia territoriale forte, ricetta unica e segreta, ma zero capacità di raggiungere consumatori oltre il raggio locale.</p>
-</li>
-<li><p><strong>Distilleria Gualco (Lecco, LC)</strong> — Distilleria familiare attiva dal 1870, produce grappe monovitigno da vinacce selezionate e liquori alle erbe alpine. Bottiglie numerate a mano, produzione &lt;5.000 bottiglie/anno. Zero e-commerce, vendita solo in distilleria e 2-3 enoteche lecchesi. Invisibili online ma con qualità riconosciuta da sommelier locali.</p>
-</li>
-<li><p><strong>NoLo Distillery (Milano, MI)</strong> — Micro-distilleria urbana specializzata in gin botanico con ingredienti lombardi (ginepro bergamasco, melissa del Garda, scorza di limone di Gargnano). Collaborano con bartender milanesi, hanno Instagram attivo (3.200 follower), ma zero vendita online diretta. Target: mixology community e consumatori premium urban.</p>
-</li>
-<li><p><strong>Amaro del Terno (Clusone, BG)</strong> — Amaro artigianale da ricetta familiare del 1920, prodotto con 18 erbe delle Prealpi Orobie. Bottiglia in vetro serigrafato, etichetta disegnata a mano. Produzione 2.000 bottiglie/anno, vendita solo al ristorante/bottega di famiglia. Perfetto esempio di prodotto &quot;invisibile&quot; ad alto valore territoriale.</p>
-</li>
-</ul>
-<p>Questi sono esempi reali <strong>del tipo di produttori che Brewster vuole rendere visibili</strong>: qualità altissima, forte legame con il territorio, community locale appassionata, ma totalmente invisibili al di fuori di un raggio di 20-30 km. Portare questi produttori online significa dare voce a centinaia di storie simili in tutta Italia — sia birra che spirits artigianali.</p>
+<p><strong>Mappatura sistematica.</strong> Abbiamo già mappato 280 produttori target in Lombardia: 200 microbirrifici + 80 distillerie artigianali, con 30 produttori prioritari identificati per la prima onboarding wave. Database completo disponibile: <a href="database-produttori-lombardia.md">📄 Database Produttori Lombardia</a>.</p>
+
+<p><strong>Profilo produttori target:</strong> Birrifici agricoli, brewpub, distillerie gin botanico, grapperie artigianali, amaristi locali. Criteri: presenza social attiva, identità territoriale forte, produzioni distintive, apertura all'innovazione digitale.</p>
 <p><strong>Outreach personalizzato.</strong> Email e DM Instagram scritti su misura per ogni produttore, con riferimento specifico ai loro prodotti e alla storia del territorio. Tasso di risposta atteso: 15–25% (distillerie tendono a rispondere più frequentemente per via del target premium e meno sollecitazioni commerciali ricevute).</p>
 <p><strong>Visita fisica.</strong> Per i produttori più interessanti, visita diretta. Portare materiale stampato, mostrare il prototipo della piattaforma, ascoltare le obiezioni. Questo costruisce fiducia e produce il contenuto fotografico/video per la vetrina.</p>
 <p><strong>Programma &quot;Fondatori&quot;.</strong> Ai primi 20 produttori che aderiscono viene offerto lo status permanente di &quot;Produttore Fondatore&quot; — commissione al 5% per sempre (invece che 8-10%), badge visibile in vetrina, presenza nella comunicazione di lancio. Questo crea urgenza e ricompensa i pionieri, coprendo l'intero target della Fase 1.</p>
@@ -2274,7 +1638,7 @@ flowchart TD
 <li><strong>Blog SEO</strong> integrato nella piattaforma, ottimizzato per ricerche come &quot;birra artigianale [città]&quot;, &quot;gin artigianale [regione]&quot;, &quot;distilleria locale&quot;, &quot;amaro artigianale&quot;, &quot;grappa km 0&quot;</li>
 <li><strong>Newsletter settimanale</strong> con la storia di un produttore (alternanza birra/spirits) e le novità della settimana — costruisce un pubblico fedele e misurabile</li>
 <li><strong>Partnership con locali e ristoranti</strong> nella regione pilota che già servono birre artigianali E bar/cocktail bar che usano spirits artigianali — canale di acquisizione offline a costo zero (target complementari: aperitivo/cena vs cocktail serale)</li>
-<li><strong>PR e media di settore</strong> — Cronache di Birra, Dissapore, Vinix, Spirito di Vino, blog di settore craft beverage. Una storia ben raccontata su una piattaforma nuova che aggrega birra + spirits ha buone probabilità di coverage editoriale gratuito</li>
+<li><strong>PR e media di settore</strong> — <a href="https://www.cronachedibirra.it/">Cronache di Birra</a>, <a href="https://www.dissapore.com/">Dissapore</a>, Vinix, Spirito di Vino, blog di settore craft beverage. Una storia ben raccontata su una piattaforma nuova che aggrega birra + spirits ha buone probabilità di coverage editoriale gratuito</li>
 </ul>
 <p><strong>Obiettivi Fase 2:</strong></p>
 <ul>
@@ -2441,7 +1805,7 @@ flowchart TD
 </tr>
 </tbody></table>
 <hr>
-<h2>Strategia Contenuti, SEO e Backlink Organici</h2>
+<h2 id="seo">Strategia Contenuti, SEO e Backlink Organici</h2>
 <p>Questa è una delle leve competitive più potenti e durature di Brewster. A differenza degli altri e-commerce del settore — che trattano i prodotti come semplici schede catalogo — Brewster posiziona ogni produttore come un <strong>editore di contenuti</strong>, trasformando la piattaforma in un archivio vivo e indicizzabile della cultura brassicola italiana.</p>
 <p>Il risultato è un ciclo virtuoso: i produttori scrivono, Google indicizza, i consumatori trovano, i produttori linkano. Senza pagare un euro di advertising.</p>
 <hr>
@@ -2559,21 +1923,21 @@ brewster.bar/ingredients/luppolo-nostrano/       → Hub per ingrediente
 </ul>
 <p>Queste ultime alimentano il blog editoriale di Brewster — contenuto prodotto internamente che si affianca ai contenuti dei produttori, costruendo autorità tematica complessiva del dominio.</p>
 <hr>
-<h3>Guida all&#39;Onboarding Contenuti per i Produttori</h3>
+<h3 id="guida-onboarding">Guida all&#39;Onboarding Contenuti per i Produttori</h3>
 <p>Un elemento critico del modello è che i produttori — spesso artigiani con poca familiarità con il digitale — riescano effettivamente a produrre contenuti di qualità. Brewster li supporta con:</p>
 <p><strong>Template guidati.</strong> L&#39;editor mostra domande-guida per ogni sezione: &quot;Quando avete aperto il birrificio? Qual era il vostro sogno?&quot;, &quot;Descrivete il processo di fermentazione che usate&quot;, &quot;Cosa rende speciali le vostre materie prime?&quot;. Il produttore risponde, Brewster struttura.</p>
 <p><strong>Checklist di completamento.</strong> Un indicatore di &quot;completezza del profilo&quot; (0–100%) visibile nella dashboard incentiva il produttore a completare tutte le sezioni. Profili completi ottengono posizionamento prioritario in piattaforma.</p>
 <p><strong>Supporto editoriale</strong> <em>(piano Pro/Partner)</em>. Per i produttori che non hanno tempo o competenze, Brewster offre un servizio di redazione della storia del birrificio incluso nel piano Partner — abbassando la barriera di accesso ai contenuti di qualità.</p>
 <p><strong>SEO score per prodotto.</strong> Per ogni scheda prodotto, un indicatore mostra la &quot;qualità SEO&quot; della descrizione (lunghezza, presenza di keyword, leggibilità) — educando il produttore senza richiedere conoscenze tecniche.</p>
 <hr>
-<h3>Guida agli Imballaggi e alle Spedizioni per i Produttori</h3>
+<h3 id="guida-imballaggi">Guida agli Imballaggi e alle Spedizioni per i Produttori</h3>
 <p>Uno dei rischi operativi di un marketplace che non gestisce il magazzino è la <strong>disparità di qualità nella consegna finale</strong>: un produttore esperto spedisce con packaging isotermico e nastro fragile, un altro manda bottiglie avvolte in carta da giornale in una scatola riciclata. L&#39;esperienza del consumatore è quella di Brewster, non del singolo produttore — quindi la piattaforma deve standardizzare <em>almeno il livello minimo</em> senza togliere autonomia.</p>
 <p>Brewster affronta questo problema con una <strong>guida operativa obbligatoria</strong> fornita in fase di onboarding, strutturata in tre aree:</p>
 <p><strong>1. Imballaggio minimo accettabile.</strong> Ogni produttore riceve indicazioni chiare su come proteggere bottiglie di vetro durante il trasporto: divisori a nido d&#39;ape o in cartone ondulato tra bottiglia e bottiglia, strato protettivo superiore, peso massimo per collo. La guida include esempi fotografici e link a fornitori di materiali a basso costo. Chi non rispetta gli standard minimi non può attivare la spedizione sulla piattaforma.</p>
 <p><strong>2. Corrieri convenzionati e temperatura.</strong> Brewster negozia accordi con corrieri specializzati nel trasporto di bevande in vetro (es. GLS, BRT, SDA con opzione fragile) e, per i mesi estivi, con corrieri con catena del freddo opzionale per birre non pastorizzate. Il produttore può scegliere di usare il corriere convenzionato Brewster — con tariffe pre-negoziate — o il proprio, purché rispetti le specifiche di tracciabilità e assicurazione.</p>
 <p><strong>3. Esperienza unboxing base.</strong> La guida suggerisce — senza imporre — elementi identitari minimi: un biglietto di ringraziamento stampato con il nome del birrificio, un QR code che rimanda alla vetrina Brewster del produttore, eventuali materiali di storytelling (storia, mappa del territorio, scheda tecnica del prodotto). Non è richiesto, ma i produttori che lo fanno ottengono storicamente valutazioni più alte — e questo viene comunicato esplicitamente nella guida, come incentivo.</p>
 <p><strong>Monitoraggio qualità.</strong> Ogni ordine consegnato genera una richiesta di feedback strutturato all&#39;acquirente, con una voce specifica sulla qualità del packaging ricevuto. I produttori con più di 3 segnalazioni negative in un mese ricevono una notifica dalla piattaforma e vengono affiancati per risolvere il problema. In caso di recidiva, la visibilità in piattaforma viene temporaneamente ridotta fino alla risoluzione.</p>
-<h3>Programma Unboxing Social: Contenuto Generato dagli Acquirenti</h3>
+<h3 id="programma-unboxing">Programma Unboxing Social: Contenuto Generato dagli Acquirenti</h3>
 <p>L&#39;unboxing è il momento di maggior coinvolgimento emotivo dell&#39;acquirente — e uno dei formati più efficaci per la scoperta organica su Instagram, TikTok e YouTube. Brewster trasforma questo momento in un canale di acquisizione strutturato attraverso un <strong>programma di incentivi per i contenuti social</strong>.</p>
 <p><strong>Come funziona.</strong> Dopo la consegna, l&#39;email di conferma e la notifica post-acquisto invitano il cliente a condividere il proprio unboxing sui social (post, reel, storia o video), con un link alla pagina del produttore su Brewster e l&#39;hashtag ufficiale <code>#BrewsterCraft</code>. Il cliente invia il link al contenuto tramite una form dedicata nella propria area personale — la verifica è manuale o semiautomatica via API delle piattaforme.</p>
 <p><strong>Gli incentivi per il cliente</strong> sono a scelta del produttore tra tre opzioni standard proposte da Brewster:</p>
@@ -2585,7 +1949,7 @@ brewster.bar/ingredients/luppolo-nostrano/       → Hub per ingrediente
 <p>Il produttore sceglie quale incentivo offrire in fase di configurazione della vetrina — Brewster si occupa della gestione tecnica (generazione coupon, applicazione sconto, notifica al produttore quando il contenuto viene approvato). Il costo dell&#39;incentivo è interamente a carico del produttore; Brewster non applica commissioni aggiuntive su questi ordini di reward.</p>
 <p><strong>Perché funziona per tutti.</strong> Il cliente ottiene un vantaggio concreto per qualcosa che molti farebbero comunque. Il produttore ottiene contenuto autentico con reach organica, backlink alla propria vetrina Brewster, e prova sociale visibile. Brewster ottiene traffico referral qualificato, brand awareness gratuita e un segnale di qualità misurabile (il numero di unboxing condivisi diventa un KPI di soddisfazione reale, non solo le stelline).</p>
 <hr>
-<h2>Posizionamento Strategico</h2>
+<h2 id="posizionamento">Posizionamento Strategico</h2>
 <p>Il mercato si trova oggi all&#39;intersezione tra <strong>tradizione e innovazione</strong>, con una crescente attenzione verso:</p>
 <ul>
 <li>🌿 <strong>Salute e benessere</strong> (trend NoLo)</li>
@@ -2597,7 +1961,7 @@ brewster.bar/ingredients/luppolo-nostrano/       → Hub per ingrediente
 <p>Brewster parte dall&#39;Italia perché è qui che nasce il progetto e dove il mercato offre le condizioni ideali per validare il modello. Ma l&#39;obiettivo non è &quot;vendere Italia al mondo&quot; — è costruire <strong>la piattaforma di riferimento per i prodotti artigianali locali</strong>, replicabile in ogni mercato dove piccoli produttori eccellenti non hanno ancora un canale digitale all&#39;altezza.</p>
 <p>Il consumatore appassionato di craft è ovunque. Il produttore artigianale di qualità è ovunque. Il gap digitale tra i due è ovunque. Brewster colma quel gap — a partire dall&#39;Italia, con l&#39;ambizione di diventare il punto di riferimento globale per chiunque voglia scoprire, acquistare e sostenere la produzione artigianale locale del proprio territorio.</p>
 <hr>
-<h2>Struttura Finanziaria e Governance</h2>
+<h2 id="finanza">Struttura Finanziaria e Governance</h2>
 <h3>Il Round</h3>
 <p>Brewster ha già assicurato l&#39;impegno di un investitore angel iniziale (avvocato, strategic advisor con focus su compliance e legal) e valuta l&#39;ingresso di ulteriori co-investitori per completare il round pre-seed target di <strong>25.000–50.000 €</strong>. Non è un round di sopravvivenza — è un round di execution: il modello è già definito, le ipotesi sono validate a livello di mercato, il capitale serve per costruire e lanciare.</p>
 <p>L&#39;investimento non va a coprire stipendi o costi fissi di struttura. Va direttamente su sviluppo MVP (team interno), acquisizione dei primi produttori, e validazione del canale di distribuzione organico. L&#39;MVP viene sviluppato interamente dal team di founder — il capitale finanzia il lavoro di sviluppo e risorse per portare il prodotto al mercato il più velocemente possibile.</p>
@@ -2733,7 +2097,7 @@ brewster.bar/ingredients/luppolo-nostrano/       → Hub per ingrediente
 <p><strong>Nicholas Wieland</strong><br>Co-founder &amp; CTO<br>📧 <a href="mailto:ngw@nofeed.org">ngw@nofeed.org</a><br>📱 +39 375 809 1178<br>🔗 LinkedIn: <a href="https://www.linkedin.com/in/nwieland/">linkedin.com/in/nwieland</a></p>
 <p><strong>Il round chiude:</strong> Fine Q1 2026 (entro 6-8 settimane da oggi)</p>
 <hr>
-<p><em>Fonti: Italian Craft Beer Trends 2025 · Cronache di Birra · Nomisma · Assobirra · La Casetta Craft Beer Crew · Grand View Research · Maltese.beer · Dissapore · Infologis · Business of Apps</em><br><em><a href="https://birrup.com/2025/07/21/trend-2025-del-mercato-birrario-italiano-la-crescita-delle-birre-low-alcohol-e-lascesa-del-km-0/">Birrup – Trend 2025</a> · <a href="https://www.grandviewresearch.com/industry-analysis/craft-beer-market">Grand View Research</a> · <a href="https://maltese.beer">Maltese.beer</a> · <a href="https://www.1001.it">1001.it</a> · <a href="https://www.birraland.it">Birraland</a></em></p>
+<p><em>Fonti: Italian Craft Beer Trends 2025 · <a href="https://www.cronachedibirra.it/">Cronache di Birra</a> · <a href="https://www.nomisma.it/">Nomisma</a> · <a href="https://www.assobirra.it/">Assobirra</a> · La Casetta Craft Beer Crew · <a href="https://www.grandviewresearch.com/industry-analysis/craft-beer-market">Grand View Research</a> · <a href="https://maltese.beer">Maltese.beer</a> · <a href="https://www.dissapore.com/">Dissapore</a> · Infologis · Business of Apps · <a href="https://birrup.com/2025/07/21/trend-2025-del-mercato-birrario-italiano-la-crescita-delle-birre-low-alcohol-e-lascesa-del-km-0/">Birrup</a> · <a href="https://www.1001.it">1001.it</a> · <a href="https://www.birraland.it">Birraland</a></em></p>
 
     </div>
 </div>
