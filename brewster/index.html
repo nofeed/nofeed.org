@@ -152,31 +152,6 @@
                 word-wrap: break-word;
             }
 
-            /* Mobile-friendly tables with horizontal scroll */
-            .markdown-content table {
-                display: block;
-                width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                font-size: 0.875rem;
-                margin: var(--spacing-md) 0;
-            }
-
-            .markdown-content thead {
-                display: table-header-group;
-            }
-
-            .markdown-content tbody {
-                display: table-row-group;
-            }
-
-            .markdown-content th,
-            .markdown-content td {
-                padding: var(--spacing-sm) var(--spacing-md);
-                white-space: nowrap;
-                min-width: 100px;
-            }
-
             /* Make links more tappable */
             .markdown-content a {
                 padding: 2px 0;
@@ -217,12 +192,6 @@
 
             .markdown-content blockquote {
                 padding: var(--spacing-sm) var(--spacing-md);
-            }
-
-            .markdown-content th,
-            .markdown-content td {
-                padding: var(--spacing-xs) var(--spacing-sm);
-                font-size: 0.813rem;
             }
         }
 
@@ -420,6 +389,7 @@
             letter-spacing: 0.05em;
             color: var(--color-text-tertiary);
             border-bottom: 2px solid var(--color-border-dark);
+            white-space: nowrap;
         }
 
         .markdown-content td {
@@ -434,6 +404,61 @@
 
         .markdown-content tbody tr:hover {
             background-color: var(--color-bg-secondary);
+        }
+
+        /* Mobile Tables - Horizontal Scroll */
+        @media (max-width: 768px) {
+            .markdown-content table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                font-size: 0.875rem;
+                margin: var(--spacing-md) 0;
+                box-shadow: var(--shadow-sm);
+            }
+
+            .markdown-content thead,
+            .markdown-content tbody,
+            .markdown-content tr {
+                display: table;
+                width: 100%;
+            }
+
+            .markdown-content thead {
+                width: 100%;
+            }
+
+            .markdown-content th,
+            .markdown-content td {
+                padding: var(--spacing-sm) var(--spacing-md);
+                white-space: nowrap;
+            }
+
+            .markdown-content th {
+                font-size: 0.75rem;
+                position: sticky;
+                top: 0;
+                background-color: var(--color-bg-tertiary);
+                z-index: 10;
+            }
+
+            .markdown-content td {
+                font-size: 0.813rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .markdown-content table {
+                font-size: 0.813rem;
+            }
+
+            .markdown-content th,
+            .markdown-content td {
+                padding: var(--spacing-xs) var(--spacing-sm);
+                font-size: 0.75rem;
+            }
         }
 
         /* Print Styles */
@@ -637,7 +662,7 @@
 <li><strong>Tesi validata:</strong> 6 mesi di ricerca mercato, analisi competitiva, architettura tecnica completa</li>
 </ul>
 <h3>Il Round</h3>
-<p><strong>Importo:</strong> 25.000-50.000 € (completamento round pre-seed)<br><strong>Uso:</strong> 57% sviluppo MVP + infra (team interno), 28% acquisizione produttori + marketing, 15% legal/brand/buffer<br><strong>Valutazione pre-money:</strong> 150.000-350.000 € (equity 8-15% da negoziare)<br><strong>Break-even operativo:</strong> 12 mesi dal lancio<br><strong>Profittabilità:</strong> Anno 2-3 senza necessità di round successivi</p>
+<p><strong>Importo:</strong> 25.000-50.000 € (completamento round pre-seed)<br><strong>Uso:</strong> 57% sviluppo MVP + infra (team interno), 26% acquisizione produttori + marketing, 17% legal/brand/buffer<br><strong>Valutazione pre-money:</strong> 150.000-350.000 € (equity 8-15% da negoziare)<br><strong>Break-even operativo:</strong> 12 mesi dal lancio<br><strong>Profittabilità:</strong> Anno 2-3 senza necessità di round successivi</p>
 <h3>Il Ritorno Potenziale</h3>
 <p><strong>Anno 3 scenario conservativo:</strong></p>
 <ul>
@@ -668,8 +693,8 @@
 </ul>
 <p><strong>SOM (Serviceable Obtainable Market) — Target Brewster Anno 3:</strong></p>
 <ul>
-<li>500 produttori attivi (350 birrifici + 150 distillerie) × 12.000 € GMV medio/anno = <strong>6 milioni € GMV</strong> (conservativo)</li>
-<li>Commissione media 8% = <strong>480.000 € ricavi da transazioni</strong></li>
+<li>500 produttori attivi (350 birrifici + 150 distillerie) × 15.000 € GMV medio/anno = <strong>7,5 milioni € GMV</strong> (conservativo)</li>
+<li>Commissione media 8% = <strong>600.000 € ricavi da transazioni</strong></li>
 <li><ul>
 <li>Abbonamenti + AI Translation + Local + Shipping = <strong>~1.645.000 € ricavi totali</strong></li>
 </ul>
@@ -933,7 +958,7 @@
 <h3>Il Moat Competitivo (Perché Non Saremo Copiati Facilmente)</h3>
 <p><strong>Network effects:</strong> Più produttori → più backlink SE → più traffico organico → più consumatori → più valore per produttori. Il loop si autoalimenta.</p>
 <p><strong>Content moat:</strong> Ogni produttore genera 5-10 pagine di contenuto unico e ottimizzato SEO. Con 500 produttori = 2.500-5.000 pagine indicizzate che impiegano 2-3 anni a essere replicate.</p>
-<p><strong>SEO compounding:</strong> I backlink organici dai produttori (600-1.600 in Anno 3) sono impossibili da replicare con budget pubblicitario. Un competitor dovrebbe spendere 100-300k€ in link building per raggiungere lo stesso Domain Rating.</p>
+<p><strong>SEO compounding:</strong> I backlink organici dai produttori (1.500-4.000 in Anno 3) sono impossibili da replicare con budget pubblicitario. Un competitor dovrebbe spendere 200-500k€ in link building per raggiungere lo stesso Domain Rating.</p>
 <p><strong>Switching cost per produttori:</strong> Una volta che il produttore ha investito tempo nella vetrina, ha costruito recensioni, e ha il link Brewster su tutti i suoi canali, migrare è costoso in termini di tempo e SEO.</p>
 <p><strong>Time-to-market:</strong> Siamo 18-24 mesi avanti ai potenziali imitatori. Il CTO costruisce l&#39;MVP in 3 mesi; un competitor dovrebbe ingaggiare un team esterno (6+ mesi di dev + 50-80k€).</p>
 <hr>
@@ -2075,7 +2100,7 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <td><strong>Competitor copia il modello</strong></td>
 <td>Media</td>
 <td>Medio</td>
-<td>First-mover advantage 18-24 mesi, moat SEO difendibile (600-1.600 backlink organici impossibili da replicare rapidamente), switching cost per produttori</td>
+<td>First-mover advantage 18-24 mesi, moat SEO difendibile (1.500-4.000 backlink organici in Anno 3 impossibili da replicare rapidamente), switching cost per produttori</td>
 </tr>
 <tr>
 <td><strong>CAC troppo alto, non raggiunge break-even</strong></td>
@@ -2170,7 +2195,7 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <p>Budget: <strong>30–50k €</strong> (angel round) · Produttori: <strong>zero contatti</strong> · Piattaforma: <strong>da costruire dal founder</strong> · Modello: <strong>puro intermediario asset-light</strong></p>
 <p>Il lancio con budget early-stage impone scelte precise: concentrazione geografica, costruzione manuale della prima supply di produttori, e una piattaforma inizialmente semplice che si evolve con i ricavi. Il vantaggio principale rispetto a un progetto standard è che il founder costruisce l&#39;MVP in prima persona — il capitale non si consuma in development esterno, ma finanzia tempo e acquisizione dei primi utenti. La priorità assoluta è risolvere il <strong>cold start problem</strong> — convincere i primi produttori ad aderire prima ancora che ci siano consumatori sulla piattaforma.</p>
 <hr>
-<h3>Fase 0 — Fondamenta (Mese 1–2) · Budget: ~3.000 €</h3>
+<h3>Fase 0 — Fondamenta (Mese 1–2) · Budget: ~1.300 €</h3>
 <p>Prima di costruire qualsiasi cosa, vanno poste le basi operative e legali.</p>
 <p><strong>Obiettivi:</strong></p>
 <ul>
@@ -2420,16 +2445,24 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 </tr>
 </thead>
 <tbody><tr>
+<td>Sviluppo MVP + brand identity (team internal)</td>
+<td>15.000 €</td>
+</tr>
+<tr>
 <td>Infrastruttura (Render/Fly.io + AWS S3, annuale)</td>
 <td>600 €</td>
+</tr>
+<tr>
+<td>Google Maps API + integrazioni</td>
+<td>200 €</td>
 </tr>
 <tr>
 <td>Stripe Connect (setup + primo anno)</td>
 <td>0 € (% per transazione)</td>
 </tr>
 <tr>
-<td>Google Maps API + integrazioni</td>
-<td>200 €</td>
+<td>Acquisizione produttori (visite, content creation, outreach)</td>
+<td>3.400 €</td>
 </tr>
 <tr>
 <td>Contenuti fotografici (shooting birrifici pilota)</td>
@@ -2437,25 +2470,20 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 </tr>
 <tr>
 <td>Marketing digitale lancio (Meta Ads, micro-influencer)</td>
-<td>2.500 €</td>
+<td>2.200 €</td>
 </tr>
 <tr>
 <td>Evento fisico lancio nella regione pilota</td>
 <td>800 €</td>
 </tr>
 <tr>
-<td><strong>Totale costi diretti Fase 1</strong></td>
-<td><strong>~6.100 €</strong></td>
+<td><strong>Totale Fase 1</strong></td>
+<td><strong>~24.200 €</strong></td>
 </tr>
 </tbody></table>
-<blockquote>
-<p><em>Il risparmio rispetto a un MVP con sviluppatore esterno (~20.000 €) è la principale leva di capital efficiency del progetto. Il founder costruisce l&#39;MVP — il capitale finanzia l&#39;acquisizione degli utenti, non il codice.</em></p>
-</blockquote>
-<blockquote>
-<p><em>Nota: se si trova un co-founder tecnico con equity, questa fase scende a ~6.000 € di costi cash, liberando budget per marketing e acquisizione produttori.</em></p>
-</blockquote>
+
 <hr>
-<h3>Fase 2 — Traction e Crescita Organica (Mese 6–9) · Budget: ~12.000 €</h3>
+<h3>Fase 2 — Traction e Crescita Organica (Mese 8–12) · Budget: ~4.500 €</h3>
 <p>L&#39;obiettivo di questa fase è trasformare la validazione in traction misurabile e replicabile.</p>
 <h4>Acquisizione produttori: approccio manuale e diretto</h4>
 <p>Con zero contatti di partenza, la strategia più efficace è quella <strong>manuale e ad alto contatto personale</strong>, non quella pubblicitaria. I microbirrifici e le distillerie artigianali sono realtà familiari: rispondono alle persone, non agli annunci.</p>
@@ -2485,7 +2513,7 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <p>Questi sono esempi reali <strong>del tipo di produttori che Brewster vuole rendere visibili</strong>: qualità altissima, forte legame con il territorio, community locale appassionata, ma totalmente invisibili al di fuori di un raggio di 20-30 km. Portare questi produttori online significa dare voce a centinaia di storie simili in tutta Italia — sia birra che spirits artigianali.</p>
 <p><strong>Outreach personalizzato.</strong> Email e DM Instagram scritti su misura per ogni produttore, con riferimento specifico ai loro prodotti e alla storia del territorio. Tasso di risposta atteso: 15–25% (distillerie tendono a rispondere più frequentemente per via del target premium e meno sollecitazioni commerciali ricevute).</p>
 <p><strong>Visita fisica.</strong> Per i produttori più interessanti, visita diretta. Portare materiale stampato, mostrare il prototipo della piattaforma, ascoltare le obiezioni. Questo costruisce fiducia e produce il contenuto fotografico/video per la vetrina.</p>
-<p><strong>Programma &quot;Fondatori&quot;.</strong> Ai primi 30 produttori che aderiscono (target: 20 birrifici + 10 distillerie) viene offerto lo status permanente di &quot;Produttore Fondatore&quot; — commissione al 5% per sempre, badge visibile in vetrina, presenza nella comunicazione di lancio. Questo crea urgenza e ricompensa i pionieri.</p>
+<p><strong>Programma &quot;Fondatori&quot;.</strong> Ai primi 20 produttori che aderiscono viene offerto lo status permanente di &quot;Produttore Fondatore&quot; — commissione al 5% per sempre (invece che 8-10%), badge visibile in vetrina, presenza nella comunicazione di lancio. Questo crea urgenza e ricompensa i pionieri, coprendo l'intero target della Fase 1.</p>
 <h4>Acquisizione consumatori: content + community</h4>
 <p>Con budget limitato, la pubblicità a pagamento va usata con parsimonia. Il canale principale è il <strong>contenuto organico</strong>:</p>
 <ul>
@@ -2512,32 +2540,21 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 </tr>
 </thead>
 <tbody><tr>
-<td>Content creation (foto, video, copywriting)</td>
-<td>4.000 €</td>
+<td>Marketing digitale aggiuntivo (retargeting, micro-influencer)</td>
+<td>700 €</td>
 </tr>
 <tr>
-<td>Meta/Google Ads (retargeting e acquisizione mirata)</td>
-<td>4.000 €</td>
-</tr>
-<tr>
-<td>PR e ufficio stampa (3 mesi)</td>
-<td>2.500 €</td>
-</tr>
-<tr>
-<td>Tool (email marketing, CRM, analytics)</td>
-<td>600 €</td>
-</tr>
-<tr>
-<td>Evento community (degustazione, meet the brewer)</td>
-<td>900 €</td>
+<td>Buffer imprevisti e opportunità</td>
+<td>3.800 €</td>
 </tr>
 <tr>
 <td><strong>Totale</strong></td>
-<td><strong>~12.000 €</strong></td>
+<td><strong>~4.500 €</strong></td>
 </tr>
 </tbody></table>
+<p><em>Nota: In questa fase il modello si concentra sulla crescita organica tramite SEO, backlink dai produttori, e content marketing. La maggior parte del budget (circa l'85%) rimane allocato alla Fase 1 per un MVP solido e il lancio iniziale. Il buffer in Fase 2 copre eventuali costi di scala imprevisti e opportunità che emergono dalla traction iniziale.</em></p>
 <hr>
-<h3>Fase 3 — Espansione Geografica (Mese 10–18) · Autofinanziata</h3>
+<h3>Fase 3 — Espansione Geografica (Mese 13–24) · Autofinanziata</h3>
 <p>Se la Fase 2 genera i ricavi attesi, la Fase 3 si autofinanzia con i ricavi da commissioni e abbonamenti. Il modello pilota viene <strong>replicato in 2–3 nuove regioni</strong>, con le stesse modalità ma un playbook già collaudato e un brand riconoscibile.</p>
 <p>L&#39;espansione segue un ordine di priorità basato su densità di produttori artigianali (birrifici + distillerie) e mercato D2C già attivo. Le vertical birra e spirits crescono in parallelo — ogni nuova regione porta onboard entrambe le categorie di produttori simultaneamente.</p>
 <p><strong>Obiettivi Fase 3:</strong></p>
@@ -2573,13 +2590,13 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 </tr>
 <tr>
 <td><strong>2 — Traction</strong></td>
-<td>Mese 8–11</td>
+<td>Mese 8–12</td>
 <td>50 produttori, 1.000 utenti, break-even operativo</td>
 <td>~4.500 €</td>
 </tr>
 <tr>
 <td><strong>3 — Espansione</strong></td>
-<td>Mese 12–24</td>
+<td>Mese 13–24</td>
 <td>3–4 regioni, 200 produttori, 5.000 utenti</td>
 <td>Autofinanziata</td>
 </tr>
@@ -2590,7 +2607,7 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <td><strong>Totale: ~30.000 €</strong></td>
 </tr>
 </tbody></table>
-<p><strong>Breakdown Fase 1:</strong> Sviluppo MVP + brand identity (15.000 €) + Infrastruttura (2.200 €) + Acquisizione produttori (5.000 €) + Marketing lancio (2.000 €)<br><strong>Breakdown Fase 2:</strong> Marketing aggiuntivo (700 €) + Buffer imprevisti (3.800 €)</p>
+<p><strong>Breakdown Fase 1:</strong> Sviluppo MVP + brand identity (15.000 €) + Infrastruttura e tools (800 €) + Acquisizione produttori e content (5.400 €) + Marketing e lancio (3.000 €)<br><strong>Breakdown Fase 2:</strong> Marketing aggiuntivo (700 €) + Buffer imprevisti e opportunità (3.800 €)</p>
 <p><em>Nota: Il supporto legale principale è fornito dall&#39;angel investor avvocato, riducendo i costi esterni a 500€ (solo registrazioni/costi vivi). La brand identity completa (logo, palette, materiali) è sviluppata da Marco Busato come parte del lavoro di sviluppo frontend. Queste efficienze permettono di allocare un buffer maggiore per flessibilità operativa.</em></p>
 <p>Il budget totale si attesta a <strong>30.000 €</strong> per MVP live e traction iniziale validata. Con 50.000 € il budget sviluppo si estende per coprire un periodo più lungo di lavoro full-time del team, il buffer aumenta significativamente, e si può anticipare parte dell&#39;espansione alla seconda regione.</p>
 <hr>
