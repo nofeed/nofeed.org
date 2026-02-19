@@ -18,7 +18,7 @@
          ═══════════════════════════════════════ -->
     <section class="slide cover">
         <h1>Brewster</h1>
-        <p class="tagline">Il marketplace di birre artigianali e spirits locali<br>che scala dall'Italia al mondo</p>
+        <p class="tagline">Il marketplace di birre artigianali e liquori locali<br>che scala dall'Italia al mondo</p>
         <div class="meta">
             <strong>Pitch Deck — Confidenziale</strong><br>
             Febbraio 2026
@@ -40,7 +40,7 @@
                 <li><strong>Zero marketplace aggregatore</strong> — ogni produttore ha il proprio sito (quando esiste), nessuna discoverability</li>
                 <li><strong>Domanda insoddisfatta</strong> — il 68% dei consumatori under 40 cerca prodotti locali entro 50 km ma non sa dove trovarli online</li>
                 <li><strong>Margini erosi</strong> — distributori e enoteche prendono 40-60% del margine, i produttori non hanno alternative</li>
-                <li><strong>Mercato immaturo</strong> — il vino ha già Tannico, Callmewine, Vivino. Birra craft e spirits artigianali non hanno nessuno</li>
+                <li><strong>Mercato immaturo</strong> — il vino ha già Tannico, Callmewine, Vivino. Birra craft e liquori artigianali non hanno nessuno</li>
             </ul>
             
             <div class="callout warning">
@@ -58,7 +58,7 @@
             <h2>La Soluzione</h2>
         </div>
         <div class="slide-content">
-            <p class="lead"><strong>Brewster</strong> è il marketplace puro (modello Etsy) per birre artigianali e spirits locali.</p>
+            <p class="lead"><strong>Brewster</strong> è il marketplace puro (modello Etsy) per birre artigianali e liquori locali.</p>
             
             <div class="two-columns">
                 <div class="column">
@@ -120,7 +120,7 @@
                 <li><strong>Km 0 è mainstream:</strong> 68% under 40 cerca prodotti locali entro 50 km</li>
                 <li><strong>Low alcohol boom:</strong> birre sotto 4% sono passate dal 6% al 16% della produzione in 3 anni</li>
                 <li><strong>Export in crescita:</strong> +22% annuo per birra craft italiana (Italian Grape Ale leader)</li>
-                <li><strong>Spirits artigianali emergenti:</strong> gin botanici territoriali, amari locali, grappe monovitigno — mercato da €2,8 miliardi in crescita del +12%</li>
+                <li><strong>Liquori artigianali emergenti:</strong> gin botanici territoriali, amari locali, grappe monovitigno — mercato da €2,8 miliardi in crescita del +12%</li>
             </ul>
             
             <p class="mt-1-5"><em>Fonti: <a href="https://www.nomisma.it/" class="link-inherit">Nomisma</a>, <a href="https://www.assobirra.it/" class="link-inherit">Assobirra</a>, <a href="https://www.grandviewresearch.com/industry-analysis/craft-beer-market" class="link-inherit">Grand View Research</a>, <a href="https://www.cronachedibirra.it/" class="link-inherit">Cronache di Birra</a> (2025)</em></p>
@@ -391,7 +391,7 @@
                     <tr>
                         <td><strong>Tannico / Callmewine</strong></td>
                         <td>Vino online</td>
-                        <td>100% focalizzati su vino, mercato saturo, non entrano in birra craft/spirits</td>
+                        <td>100% focalizzati su vino, mercato saturo, non entrano in birra craft/liquori</td>
                     </tr>
                     <tr>
                         <td><strong>Birraland</strong></td>
@@ -540,8 +540,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 slide.classList.toggle('active', index === currentSlide);
             });
         } else {
+            // Add animation classes
+            const previousSlide = document.querySelector('.slide.slide-active');
+            if (previousSlide) {
+                previousSlide.classList.remove('slide-active');
+                previousSlide.classList.add('slide-exit');
+            }
+            
+            const targetSlide = slides[currentSlide];
+            targetSlide.classList.add('slide-enter');
+            
             // Scroll to slide in normal mode
             slides[currentSlide].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Trigger animation
+            setTimeout(() => {
+                targetSlide.classList.remove('slide-enter');
+                targetSlide.classList.add('slide-active');
+                
+                // Clean up previous slide classes
+                if (previousSlide) {
+                    setTimeout(() => {
+                        previousSlide.classList.remove('slide-exit');
+                    }, 400);
+                }
+            }, 50);
         }
         
         currentSlideSpan.textContent = currentSlide + 1;
@@ -638,7 +661,8 @@ document.addEventListener('DOMContentLoaded', function() {
     //     }
     // }, { passive: true });
     
-    // Initialize
+    // Initialize first slide with active class
+    slides[0].classList.add('slide-active');
     updateSlide();
     console.log(`Pitch deck loaded: ${totalSlides} slides total`);
     console.log('Navigation: Arrow keys, PageUp/Down, Space, Home, End');
