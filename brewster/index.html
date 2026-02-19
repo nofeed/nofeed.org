@@ -2233,7 +2233,7 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <p><strong>Regione pilota: Lombardia</strong> — scelta per la massima densità di produttori artigianali in Italia (~200 microbirrifici + 80 distillerie attivi), mercato urbano maturo (Milano), alta propensione all&#39;acquisto online, e presenza consolidata di una community craft beverage attiva (eventi, festival, taproom).</p>
 <h4>Scelta tecnologica: Ruby on Rails + Hotwire (con React per la dashboard)</h4>
 <p>La scelta di costruire l&#39;MVP su <strong>Ruby on Rails con rendering server-side</strong> è deliberata e direttamente collegata alla strategia di crescita organica di Brewster: una React SPA classica — dove il server restituisce un HTML vuoto e tutto il contenuto viene costruito da JavaScript nel browser — sarebbe tecnicamente incompatibile con la strategia SEO che è il principale motore di acquisizione della piattaforma.</p>
-<p><strong>Il problema della SPA e l&#39;SEO:</strong><br>Una Single Page Application pura presenta un problema strutturale per una piattaforma come Brewster: i crawler di Google vedono inizialmente una shell HTML vuota, senza contenuto. Questo significa che URL come <code>brewster.it/produttori/birrificio-xyz/birre/ipa-montana</code> — che nel modello SEO di Brewster devono essere pagine indicizzabili con meta tag, schema.org e contenuto ricco — risulterebbero invisibili o degradate agli occhi dei motori di ricerca. Tutta l&#39;architettura di URL semantici, le pagine hub territoriali, i meta tag dinamici e il link building costruito sui profili dei produttori perderebbero gran parte del proprio valore. In sintesi: scegliere una SPA React per le pagine pubbliche significa sabotare il principale vantaggio competitivo di Brewster.</p>
+<p><strong>Il problema della SPA e l&#39;SEO:</strong><br>Una Single Page Application pura presenta un problema strutturale per una piattaforma come Brewster: i crawler di Google vedono inizialmente una shell HTML vuota, senza contenuto. Questo significa che URL come <code>brewster.bar/produttori/birrificio-xyz/birre/ipa-montana</code> — che nel modello SEO di Brewster devono essere pagine indicizzabili con meta tag, schema.org e contenuto ricco — risulterebbero invisibili o degradate agli occhi dei motori di ricerca. Tutta l&#39;architettura di URL semantici, le pagine hub territoriali, i meta tag dinamici e il link building costruito sui profili dei produttori perderebbero gran parte del proprio valore. In sintesi: scegliere una SPA React per le pagine pubbliche significa sabotare il principale vantaggio competitivo di Brewster.</p>
 <p><strong>Perché Rails con Hotwire è la scelta corretta:</strong><br>Rails oggi adotta Hotwire (Turbo + Stimulus) come approccio moderno al frontend: ogni pagina viene renderizzata completamente lato server — HTML completo, meta tag, structured data, contenuto indicizzabile — e JavaScript interviene solo per arricchire l&#39;interattività senza mai sostituire il rendering server-side. Il risultato è un&#39;esperienza utente fluida (navigazione senza reload completo grazie a Turbo Drive) con SEO perfetto by design. GitHub, Shopify, Airbnb e Etsy stessa sono nati su Rails; Hotwire è la risposta moderna di Rails alla sfida delle SPA, senza rinunciare alle convenzioni che rendono Rails così produttivo.</p>
 <p><strong>Dove React ha senso — la dashboard produttore:</strong><br>React rimane la scelta giusta per le interfacce altamente interattive e stateful dove l&#39;SEO non ha rilevanza: la dashboard interna dei produttori (gestione prodotti, ordini, analytics, editor contenuti) beneficia della reattività di React senza alcun impatto sul posizionamento organico. Questa separazione è la soluzione architetturale corretta: rendering server-side Rails + Hotwire per tutte le pagine pubbliche indicizzabili, React per la dashboard operativa dei produttori.</p>
 <hr>
@@ -2690,24 +2690,24 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <hr>
 <h3>Il Produttore come Narratore: la Vetrina Contenuto</h3>
 <p>Ogni produttore su Brewster non ha solo una &quot;scheda negozio&quot; — ha un <strong>profilo editoriale completo</strong>, composto da sezioni strutturate che Brewster guida e suggerisce durante l&#39;onboarding:</p>
-<p><strong>1. La Storia del Birrificio</strong><br>Chi siete, da dove venite, perché avete iniziato. Non un comunicato stampa, ma una narrazione autentica. Il produttore scrive con un editor WYSIWYG (Trix, integrato in Rails con Action Text) che supporta testo, immagini, video embed e formattazione ricca. Ogni storia è una pagina indicizzata da Google con URL univoco: <code>brewster.it/produttori/birrificio-del-monte</code>.</p>
+<p><strong>1. La Storia del Birrificio</strong><br>Chi siete, da dove venite, perché avete iniziato. Non un comunicato stampa, ma una narrazione autentica. Il produttore scrive con un editor WYSIWYG (Trix, integrato in Rails con Action Text) che supporta testo, immagini, video embed e formattazione ricca. Ogni storia è una pagina indicizzata da Google con URL univoco: <code>brewster.bar/produttori/birrificio-del-monte</code>.</p>
 <p><strong>2. Il Processo di Produzione</strong><br>Come nasce la birra, in dettaglio. Le materie prime, la fermentazione, la maturazione, le scelte stilistiche. Questo contenuto è altamente specifico, difficile da replicare automaticamente, e ricchissimo di keyword di coda lunga che nessun competitor presidia: &quot;fermentazione spontanea con luppolo Nostrano Trentino&quot;, &quot;birra agricola con farro monococco lombardo&quot;, &quot;doppio malto affinato in botte di rovere&quot;.</p>
 <p><strong>3. Gli Ingredienti e il Territorio</strong><br>Dove vengono coltivati i cereali, chi fornisce il luppolo, l&#39;acqua di quale sorgente. Questo crea contenuto iper-locale che intercetta ricerche geografiche estremamente specifiche e quasi prive di concorrenza SEO.</p>
-<p><strong>4. Le Schede Prodotto</strong><br>Ogni birra ha la propria pagina con: descrizione organolettica, storia della ricetta, abbinamenti consigliati, note di degustazione. Non &quot;birra ambrata 6.2%&quot; ma una pagina di 500–800 parole che racconta perché quella birra esiste. URL strutturato: <code>brewster.it/produttori/birrificio-del-monte/birre/ambrata-autunnale</code>.</p>
+<p><strong>4. Le Schede Prodotto</strong><br>Ogni birra ha la propria pagina con: descrizione organolettica, storia della ricetta, abbinamenti consigliati, note di degustazione. Non &quot;birra ambrata 6.2%&quot; ma una pagina di 500–800 parole che racconta perché quella birra esiste. URL strutturato: <code>brewster.bar/produttori/birrificio-del-monte/birre/ambrata-autunnale</code>.</p>
 <p><strong>5. Il Diario del Birrificio</strong> <em>(feature post-lancio)</em><br>Un blog leggero integrato nel profilo del produttore: nuove uscite stagionali, partecipazione a festival, collaborazioni con altri produttori. Ogni post è nuovo contenuto indicizzabile, prodotto dal produttore stesso a costo zero per Brewster.</p>
 <hr>
 <h3>Architettura SEO della Piattaforma</h3>
 <p>Rails permette di costruire un&#39;architettura SEO solida fin dall&#39;inizio, con logiche automatizzate che non richiedono intervento manuale post-lancio.</p>
 <p><strong>URL semantici e gerarchici:</strong></p>
-<pre><code>brewster.it/                                    → Homepage
-brewster.it/regioni/lombardia/                  → Hub regionale
-brewster.it/regioni/lombardia/milano/           → Hub città
-brewster.it/produttori/                         → Directory produttori
-brewster.it/produttori/[slug-birrificio]/       → Profilo produttore
-brewster.it/produttori/[slug]/birre/            → Catalogo birre
-brewster.it/produttori/[slug]/birre/[slug-birra]/ → Scheda prodotto
-brewster.it/stili/ipa/                          → Hub per stile birra
-brewster.it/ingredienti/luppolo-nostrano/       → Hub per ingrediente
+<pre><code>brewster.bar/                                    → Homepage
+brewster.bar/regioni/lombardia/                  → Hub regionale
+brewster.bar/regioni/lombardia/milano/           → Hub città
+brewster.bar/produttori/                         → Directory produttori
+brewster.bar/produttori/[slug-birrificio]/       → Profilo produttore
+brewster.bar/produttori/[slug]/birre/            → Catalogo birre
+brewster.bar/produttori/[slug]/birre/[slug-birra]/ → Scheda prodotto
+brewster.bar/stili/ipa/                          → Hub per stile birra
+brewster.bar/ingredienti/luppolo-nostrano/       → Hub per ingrediente
 </code></pre>
 <p>Ogni livello dell&#39;URL è una pagina indicizzabile con contenuto proprio, titolo H1 unico, meta description dinamica generata da Rails, e breadcrumb strutturati.</p>
 <p><strong>Meta tag e structured data automatici:</strong><br>Rails genera automaticamente per ogni pagina:</p>
@@ -2718,7 +2718,7 @@ brewster.it/ingredienti/luppolo-nostrano/       → Hub per ingrediente
 <li><strong>Sitemap XML dinamica</strong> aggiornata ad ogni nuovo produttore o prodotto aggiunto (gem <code>sitemap_generator</code>)</li>
 <li><strong>Canonical tag</strong> per evitare contenuto duplicato tra filtri e pagine categorie</li>
 </ul>
-<p><strong>Pagine Hub territoriali ad alto potenziale SEO:</strong><br>Le pagine regionali e cittadine (<code>brewster.it/regioni/lombardia/</code>) sono hub che aggregano tutti i produttori dell&#39;area, con testo introduttivo ottimizzato, mappa interattiva, e prodotti in evidenza. Queste pagine intercettano ricerche come &quot;birra artigianale Lombardia&quot;, &quot;microbirrifici Milano&quot;, &quot;birra km 0 Torino&quot; — query con volume significativo e concorrenza limitata.</p>
+<p><strong>Pagine Hub territoriali ad alto potenziale SEO:</strong><br>Le pagine regionali e cittadine (<code>brewster.bar/regioni/lombardia/</code>) sono hub che aggregano tutti i produttori dell&#39;area, con testo introduttivo ottimizzato, mappa interattiva, e prodotti in evidenza. Queste pagine intercettano ricerche come &quot;birra artigianale Lombardia&quot;, &quot;microbirrifici Milano&quot;, &quot;birra km 0 Torino&quot; — query con volume significativo e concorrenza limitata.</p>
 <hr>
 <h3>La Strategia Backlink: il Volano Organico</h3>
 <p>Questo è il meccanismo più elegante del modello Brewster, e uno dei punti di forza che i competitor non possono replicare senza cambiare radicalmente il proprio modello.</p>
