@@ -16,8 +16,11 @@
         return; // User is authenticated, continue
     }
     
-    // Hide body content until authenticated
-    document.body.style.display = 'none';
+    // Inject CSS to hide body content immediately
+    const style = document.createElement('style');
+    style.id = 'brewster-auth-style';
+    style.textContent = 'body { display: none !important; }';
+    document.head.appendChild(style);
     
     // Wait for DOM to be ready
     if (document.readyState === 'loading') {
@@ -39,23 +42,25 @@
             const username = prompt('Username:');
             if (username === null) {
                 // User cancelled
-                document.body.innerHTML = '<div style="padding: 2rem; text-align: center; font-family: sans-serif;"><h1>Accesso Negato</h1><p>Autenticazione richiesta.</p></div>';
-                document.body.style.display = 'block';
+                showAccessDenied();
                 return;
             }
             
             const password = prompt('Password:');
             if (password === null) {
                 // User cancelled
-                document.body.innerHTML = '<div style="padding: 2rem; text-align: center; font-family: sans-serif;"><h1>Accesso Negato</h1><p>Autenticazione richiesta.</p></div>';
-                document.body.style.display = 'block';
+                showAccessDenied();
                 return;
             }
             
             if (username === VALID_USERNAME && password === VALID_PASSWORD) {
                 // Authentication successful
                 localStorage.setItem(AUTH_KEY, 'authenticated');
-                document.body.style.display = 'block';
+                // Remove the hiding style
+                const authStyle = document.getElementById('brewster-auth-style');
+                if (authStyle) {
+                    authStyle.remove();
+                }
             } else {
                 // Authentication failed
                 attempts++;
@@ -63,9 +68,16 @@
                 if (attempts < maxAttempts) {
                     attemptLogin();
                 } else {
-                    document.body.innerHTML = '<div style="padding: 2rem; text-align: center; font-family: sans-serif;"><h1>Accesso Negato</h1><p>Troppi tentativi falliti. <a href="javascript:location.reload()">Ricarica la pagina</a> per riprovare.</p></div>';
-                    document.body.style.display = 'block';
+                    showAccessDenied('Troppi tentativi falliti. <a href="javascript:location.reload()">Ricarica la pagina</a> per riprovare.');
                 }
+            }
+        }
+        
+        function showAccessDenied(message = 'Autenticazione richiesta.') {
+            document.body.innerHTML = '<div style="padding: 2rem; text-align: center; font-family: sans-serif;"><h1>Accesso Negato</h1><p>' + message + '</p></div>';
+            const authStyle = document.getElementById('brewster-auth-style');
+            if (authStyle) {
+                authStyle.remove();
             }
         }
         
