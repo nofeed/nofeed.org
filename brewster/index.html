@@ -2700,8 +2700,9 @@ Brewster gestisce promemoria, QR code di accesso, recensione post-evento
 <p>Rails permette di costruire un&#39;architettura SEO solida fin dall&#39;inizio, con logiche automatizzate che non richiedono intervento manuale post-lancio.</p>
 <p><strong>URL semantici e gerarchici:</strong></p>
 <pre><code>brewster.bar/                                    → Homepage
-brewster.bar/regioni/lombardia/                  → Hub regionale
-brewster.bar/regioni/lombardia/milano/           → Hub città
+brewster.bar/regioni/lombardia/                  → Hub regionale (= hub km 0 Lombardia)
+brewster.bar/regioni/lombardia/milano/           → Hub città (= hub km 0 Milano)
+brewster.bar/km0/                                → Pagina filosofia km 0 (cos'è, perché conta)
 brewster.bar/produttori/                         → Directory produttori
 brewster.bar/produttori/[slug-birrificio]/       → Profilo produttore
 brewster.bar/produttori/[slug]/birre/            → Catalogo birre
@@ -2718,7 +2719,8 @@ brewster.bar/ingredienti/luppolo-nostrano/       → Hub per ingrediente
 <li><strong>Sitemap XML dinamica</strong> aggiornata ad ogni nuovo produttore o prodotto aggiunto (gem <code>sitemap_generator</code>)</li>
 <li><strong>Canonical tag</strong> per evitare contenuto duplicato tra filtri e pagine categorie</li>
 </ul>
-<p><strong>Pagine Hub territoriali ad alto potenziale SEO:</strong><br>Le pagine regionali e cittadine (<code>brewster.bar/regioni/lombardia/</code>) sono hub che aggregano tutti i produttori dell&#39;area, con testo introduttivo ottimizzato, mappa interattiva, e prodotti in evidenza. Queste pagine intercettano ricerche come &quot;birra artigianale Lombardia&quot;, &quot;microbirrifici Milano&quot;, &quot;birra km 0 Torino&quot; — query con volume significativo e concorrenza limitata.</p>
+<p><strong>Pagine Hub territoriali ad alto potenziale SEO:</strong><br>Le pagine regionali e cittadine (<code>brewster.bar/regioni/lombardia/</code>, <code>brewster.bar/regioni/lombardia/milano/</code>) sono <strong>pagine statiche server-side</strong> con contenuto fisso: tutti i produttori di quell&#39;area, testo introduttivo ottimizzato sul territorio, mappa interattiva. Il loro contenuto è identico per qualsiasi visitatore — utente, bot di Google, crawler — indipendentemente dalla sua posizione geografica. Non c&#39;è geolocalizzazione: sono pagine tradizionali, pienamente indicizzabili. Intercettano ricerche come &quot;birra artigianale Lombardia&quot;, &quot;microbirrifici Milano&quot;, &quot;birra km 0 Torino&quot; — query con volume significativo e concorrenza limitata.</p>
+<p><em>Nota architetturale:</em> il <strong>filtro km 0 geolocalizzato</strong> (ricerca per raggio a partire dalla posizione dell&#39;utente) è una funzionalità separata dell&#39;<strong>interfaccia utente</strong> — attiva solo per utenti loggati, generata client-side con browser Geolocation API + Google Maps, <strong>non indicizzabile e non necessario che lo sia</strong>. Le due cose risolvono bisogni diversi: le pagine hub per la scoperta organica via Google, il filtro UI per trovare il produttore più vicino in tempo reale.</p>
 <hr>
 <h3>La Strategia Backlink: il Volano Organico</h3>
 <p>Questo è il meccanismo più elegante del modello Brewster, e uno dei punti di forza che i competitor non possono replicare senza cambiare radicalmente il proprio modello.</p>
