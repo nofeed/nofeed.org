@@ -8,7 +8,6 @@ twitter:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-validator
 
 postcss:
   cache: false
