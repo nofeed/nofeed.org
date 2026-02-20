@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://nofeed.org/resume/" />
     <title>Nicholas George Wieland — Software Developer</title>
     <link href="/img/resume/favicon.ico" rel="icon" type="image/x-icon" />
-    <meta name="description" content="Nicholas George Wieland (ngw) resume. Backend Developer & Team Lead specializing in Ruby, Elixir, and Go. Last update February 2026.">
+    <meta name="description" content="Nicholas George Wieland (ngw) resume. Last update 8/12/2022.">
     <meta name="author" content="Nicholas George Wieland (ngw)">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
@@ -35,7 +35,7 @@
             <span class='name-accent'>ngw</span>
           </h1>
           <p class='hero-subtitle'>Software Developer & Team Lead</p>
-          <p class='hero-meta'>Last updated: <time datetime="2026-02-20">February 20, 2026</time></p>
+          <p class='hero-meta'>Last updated: <time datetime="2022-12-8 10:46:05.09548 +0100">December 8, 2022</time></p>
         </div>
       </header>
 
@@ -83,14 +83,19 @@
         <h2 class='section-title'>Skills</h2>
 
         <div class='skills-content'>
-          <p>Experienced backend developer specializing in <strong>Ruby</strong>, <strong>Elixir</strong>, and <strong>Go</strong>, with active exploration of <strong>Rust</strong>. Successfully delivered frontend projects using <strong>Elm</strong> for functional reactive programming.</p>
-          <p>Deep expertise in <strong>Ruby on Rails</strong> and <strong>Sinatra</strong>, with production experience in Padrino. Proficient in modern <strong>HTML</strong> and <strong>CSS</strong>, with strong focus on accessibility standards and usability testing methodologies.</p>
-          <p>Extensive database experience across multiple systems (MySQL, SQLServer, Oracle), with <strong>PostgreSQL</strong> as primary choice. Production-level experience with NoSQL solutions, particularly <strong>Redis</strong> for caching and session management.</p>
-          <p>Comfortable working across Unix-based systems, with 15+ years on macOS and deep Linux experience. Capable of system administration tasks when needed.</p>
-          <p>Production experience deploying and managing infrastructure on <strong>AWS</strong>, including EC2, S3, RDS, and Kubernetes clusters.</p>
-          <p class='note'><strong>Note:</strong> I work best in Unix/Linux environments. Windows-only positions are not a good fit.</p>
+          <p>I'm an experienced developer with <strong>Ruby</strong>, <strong>Elixir</strong>, <strong>Go</strong> and I'm studying with great interest <strong>Rust</strong>. I don't like working on the frontend, but
+          lately I got interested in <strong>Elm</strong> and I've used it very successfully in one of my latest gigs.</p>
+          <p>I have a lot of experience with <strong>RubyOnRails</strong> and <strong>Sinatra</strong>, and I also did some Padrino in the past with great pleasure.</p>
+          <p>I love design, I can work with <strong>HTML</strong> and <strong>CSS</strong> proficiently. I also love studing the subject and I am a strong proposer of accessibility.
+          I’ve conducted some usability tests in the past and I would love to repeat the experience.</p>
+          <p>I enjoy database systems, and I’ve used most of them during my work life: MySQL, SQLServer, Oracle are just some names.
+          I strongly support <strong>PostgreSQL</strong> as my DB server of choice. I'm also fond of NoSQL databases, especially <strong>Redis</strong>,
+          which I used in production.</p>
+          <p>I can work on any kind of Unix system, and even if I’m not a sysadmin I can also administer them.
+          I prefer working on Linux, but I've been an OS X user for 15 years. Then they started shipping terrible keyboards.</p>
+          <p>I can operate successfully in an <strong>AWS</strong> environment.</p>
+          <p class='note'><strong>Note:</strong> I do not enjoy working on Windows, so please, don't be silly and give me an environment I'm productive with.</p>
         </div>
-
       </section>
 
       <section id='education' class='section'>
@@ -219,7 +224,7 @@
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
             <h4 class='jobtitle' itemprop="jobTitle">Lead backend engineer</h4>
-            <p><a href="https://www.sohohouse.com/en-us/" itemprop="name">Soho House</a></p>
+            <p><a href="hhttps://www.sohohouse.com/en-us/" itemprop="name">Soho House</a></p>
             <p><time datetime="2022-02-01T00:00:00+00:00">1 February 2022</time> - <time datetime="2022-09-30T00:00:00+00:00">30 September 2022</time></p>
             <p itemprop="address">
               <span>Smart working</span>
@@ -229,8 +234,13 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>Backend developer on the Connect team, contributing to  multiple microservices across Soho House's distributed architecture, including <em>profile-service</em>, <em>checkin-service</em>, and <em>hook</em>.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, RabbitMQ, Kubernetes</p>
+                    <p>I was part of the connect team, helping on a number of projects and services throughout SohoHouse microservice architecture, most notably 
+                      <em>profile-service</em>, <em>checkin-service</em> and <em>hook</em>.                    
+                    </p>
+
+                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
+                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://postgresql.org"> PostgreSQL</a>, <a href="https://www.docker.com/">Docker</a>,
+                    <a href="https://www.rabbitmq.com/"></a>, <a href="https://kubernetes.io/">Kubernetes</a> and <a href="https://github.com/">Github</a>.</p>
                   </div>
                   <div >
                     <img src="/img/resume/sh.png" height='90px' itemprop="image" alt="Soho House" class="no-print" />
@@ -255,8 +265,11 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>Core contributor to the <a href='https://github.com/DFE-Digital/early-careers-framework'>Early Career Framework</a> application, supporting teacher professional development across England.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, GitHub Actions</p>
+                    <p>I helped to build the <a href="https://github.com/DFE-Digital/early-careers-framework">Early Career Framework</a> application</p>
+
+                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
+                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://postgresql.org"> PostgreSQL</a>, <a href="https://www.docker.com/">Docker</a>,
+                    and <a href="https://github.com/">Github</a>.</p>
                   </div>
                   <div >
                     <img src="/img/resume/doe.svg" height='90px' itemprop="image" alt="Department of Education logo" class="no-print" />
@@ -281,9 +294,14 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>Led dependency management and security vulnerability remediation across multiple production applications.</p>
-                    <p>Orchestrated cloud migration strategy: containerized legacy applications with Docker, implemented security scanning pipelines, and deployed to AWS infrastructure with CI/CD automation via CircleCI and Jenkins.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Docker, CircleCI, Jenkins</p>
+                    <p>I was in charge of updating a number of applications managing dependencies and fixing security vulnerabilities.</p>
+
+                    <p>These applications had to be dockerized and moved into the cloud, scanned to check for
+                    vulnerabilities, and updated.</p>
+
+                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
+                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://aws.amazon.com">AWS</a>, <a href="https://www.docker.com/">Docker</a>,
+                    <a href="https://circleci.com/">CircleCI</a> and <a href="https://www.jenkins.io/">Jenkins</a>.</p>
                   </div>
                   <div >
                     <img src="/img/resume/funding-circle.png" height='90px' itemprop="image" alt="Funding Circle logo" class="no-print" />
@@ -308,9 +326,14 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>Lead backend developer for complete platform rewrite, architecting microservices-based solution.</p>
-                    <p>Designed and built multiple microservices, developed custom CMS administration panel, and collaborated with external teams on main portal rebuild.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Kubernetes</p>
+                    <p>I was for most of the time the main backend developer in charge of the rewrite of the Lawbite platform.</p>
+
+                    <p>Work included building several microservices, writing the administration panel for the company's CMS, helping external
+                    developers in rebuilding the main portal.</p>
+
+                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
+                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://aws.amazon.com">AWS</a>
+                    with <a href='https://kubernetes.io/'>Kubernetes</a>.</p>
                   </div>
                   <div >
                     <img src="/img/resume/lawbite.jpg" width='150px' height='90px' itemprop="image" alt="Lawbite logo"  class="no-print" />
@@ -335,10 +358,17 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>Solo backend developer for <a href='https://github.com/ministryofjustice/hmpps-book-secure-move-api'>Book a Secure Move API</a>, managing prisoner transport logistics across UK prison system.</p>
-                    <p>Normalized complex data structures, implemented document upload system with ActiveStorage, and built webhook infrastructure for real-time event notifications.</p>
-                    <p>Gained expertise in API documentation with Swagger and JSON API specification compliance.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Kubernetes, Swagger, JSON API</p>
+                    <p>I was for most of the time the only backend developer in charge of the 
+                    <a href='https://github.com/ministryofjustice/hmpps-book-secure-move-api'>book a secure move API application</a>.</p>
+
+                    <p>Work included normalizing the data structure, implementing document uploads with 
+                    <a href='https://edgeguides.rubyonrails.org/active_storage_overview.html'>ActiveStorage</a>, and implememntig Webhooks.</p>
+
+                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
+                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://aws.amazon.com">AWS</a>
+                    with <a href='https://kubernetes.io/'>Kubernetes</a>. I also acquired some good experience
+                    of <a href='https://swagger.io/'>Swagger</a> and <a href='https://jsonapi.org/'>JSON API</a>.
+                    </p>
                   </div>
                   <div >
                     <img src="/img/resume/moj.png" width='150px' height='90px' itemprop="image" alt="Ministry of Justice logo"  class="no-print" />
@@ -363,9 +393,16 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>Tech lead maintaining video hosting platform and architecting microservices migration following <a href="https://dacast.com">Dacast</a> merger.</p>
-                    <p>Balanced legacy application maintenance with new feature development while planning and executing service decomposition strategy.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Serverless Framework</p>
+                    <p>
+                    My duties involved maintaining the old application, developing new features and, after the merger
+                    with <a href="https://dacast.com">Dacast</a>, work on splitting the two main applications in
+                    microservices.
+                    </p>
+
+                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
+                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://aws.amazon.com">AWS</a>
+                    and the <a href="https://serverless.com">Serverless framework</a>.
+                    </p>
                   </div>
                   <div >
                     <img src="/img/resume/vzaar.png" itemprop="image" alt="Vzaar logo"  class="no-print" />
@@ -390,10 +427,23 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>Evaluated existing application and led development relocation from Ljubljana to London.</p>
-                    <p>Recruited and mentored junior developer, selected modern technology stack (Rails + Elm), and rebuilt entire platform including AWS infrastructure with guidance from <a href="https://www.scalefactory.com/">The Scale Factory</a> engineers.</p>
-                    <p>Successfully implemented functional reactive programming with <a href='https://elm-lang.org'>Elm</a> for frontend, demonstrating ability to adopt emerging technologies.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, Elm, AWS</p>
+                    <p>
+                    I was involved in evaluating the old application and move development to London.
+                    </p>
+
+                    <p>
+                    My duties involved traveling to Ljubljana to make an evaluation of the software we had in house,
+                    then recruiting a developer to move the development to London.
+                    I could choose my own stack and mentor a junior developer, but also build the whole system, including
+                    rebuilding the AWS infrastructure under the supervision of a senior engineer at
+                    <a href="https://www.scalefactory.com/">The Scale Factory</a>.
+                    </p>
+
+                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
+                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework.
+                    I also had the immense pleasure to use <a href='https://elm-lang.org'>the Elm language</a>
+                    to build the frontend.
+                    </p>
                   </div>
                   <div >
                     <img src="/img/resume/utelier.png" itemprop="image" alt="Utelier logo"  class="no-print" />
@@ -418,9 +468,19 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>Payments team member developing unified administration interface for all company services, built from scratch with Phoenix Framework and PostgreSQL.</p>
-                    <p>Built authentication layer for Ruby API endpoints and developed Elixir library enabling cross-service communication between Phoenix admin application and Ruby microservices.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, Elixir, Phoenix Framework, PostgreSQL</p>
+                    <p>
+                    I worked in the Payments team developing the main administration interface that manages all their services.<br />
+                    The project is built from the ground up using the Phoenix Framework and PostgreSQL.
+                    </p>
+
+                    <p>
+                    As part of my day to day duties I also had to build the authentication layer for all their Ruby API endpoints,
+                    and later an Elixir library to let the administration application query these services.
+                    </p>
+
+                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> and
+                    <a href="http://elixir-lang.org/">Elixir</a> with the <a href='http://rubyonrails.org/'>RubyOnRails</a>
+                    and <a href="http://www.phoenixframework.org/">Phoenix</a> frameworks.</p>
                   </div>
                   <div >
                     <img src="/img/resume/mGage_Vivial_logo_rgb.png" itemprop="image" alt="mGage logo"  class="no-print" />
@@ -436,7 +496,7 @@
 
             <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
             <p><a href="http://thefool.it" itemprop="name">The Fool s.r.l.</a></p>
-            <p><time datetime="2014-09-01T00:00:00+00:00">1st September 2014</time> - <time datetime="2016-07-01T00:00:00+00:00">15th July 2016</time></p>
+            <p><time datetime="2014-09-01T00:00:00+00:00">1st September 2014</time> - <time datetime="datetime="2016-07-01T00:00:00+00:00">15t July 2016</time></p>
             <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="addressLocality">Milan, Italy</span>
             </p>

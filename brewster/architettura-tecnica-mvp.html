@@ -118,9 +118,9 @@
                 <li><strong>Checkout:</strong> Stripe.js (PCI compliance out-of-the-box)</li>
             </ul>
 
-            <h3>2.3 Dashboard Produttori (Post-MVP Analytics)</h3>
-            <p><strong>Framework:</strong> React 18 (SPA standalone) separato da applicazione principale, mount point: <code>/dashboard</code></p>
-            <p><strong>Rationale separazione:</strong> Il 99% del sito è content pubblico SEO-critical (server-rendered Rails). Solo la dashboard produttori richiede SPA per analytics interattivi.</p>
+            <h3>2.3 Dashboard Produttori</h3>
+            <p><strong>Framework:</strong> Rails + Hotwire (Turbo + Stimulus) — stesso stack del frontend pubblico</p>
+            <p><strong>Rationale stack unificato:</strong> Hotwire fornisce reattività sufficiente per dashboard analytics con aggiornamenti real-time (Turbo Streams) e interazioni complesse (Stimulus controllers). Evita complessità double-stack, riduce bundle size, facilita manutenzione.</p>
         </section>
 
         <section>
@@ -219,7 +219,7 @@
                 <li><strong>Prodotti (<code>/dashboard/prodotti</code>):</strong> CRUD prodotti, upload foto, gestione inventario</li>
                 <li><strong>Ordini (<code>/dashboard/ordini</code>):</strong> Lista ordini da evadere, azioni spedizione</li>
                 <li><strong>Profilo (<code>/dashboard/profilo</code>):</strong> Modifica storia, processo produttivo, foto + <em>export PDF profilo stampabile (con QR code per marketing offline)</em> + <strong>[Post-MVP Fase 2]</strong> <em>ordina copie stampate e rilegati professionalmente (Brewster Print)</em></li>
-                <li><strong>Analytics (<code>/dashboard/analytics</code>):</strong> [Post-MVP React] Grafici vendite, breakdown prodotto</li>
+                <li><strong>Analytics (<code>/dashboard/analytics</code>):</strong> [Post-MVP] Grafici vendite, breakdown prodotto (Hotwire + Stimulus + Chart.js)</li>
             </ol>
         </section>
 
@@ -406,10 +406,11 @@
 
             <h3>9.2 Ottimizzazioni MVP</h3>
             <ul>
-                <li>Fragment caching produttori/prodotti (Redis, TTL 1h)</li>
+                <li>Fragment caching produttori/prodotti (Redis, TTL 1h, invalidazione automatica on update)</li>
+                <li>HTTP headers: <code>Cache-Control: no-cache</code> per pagine dinamiche (browser richiede sempre ultima versione)</li>
                 <li>Database connection pooling (PgBouncer via Heroku add-on)</li>
                 <li>Image optimization: ImageMagick resize on upload, WebP format, lazy loading</li>
-                <li>CDN: CloudFlare free tier in front di Heroku</li>
+                <li>CDN: CloudFlare free tier in front di Heroku (caching solo assets statici CSS/JS/immagini, HTML sempre fresco)</li>
             </ul>
         </section>
 
@@ -529,7 +530,7 @@
                 <p><strong>Mitigazione:</strong></p>
                 <ul>
                     <li>Indici ottimizzati su query critiche</li>
-                    <li>Fragment caching aggressivo</li>
+                    <li>Fragment caching aggressivo (invalidazione smart on update)</li>
                     <li>Monitoring query N+1 (Bullet gem)</li>
                     <li>Upgrade database plan se necessario (Heroku scaling verticale semplice)</li>
                 </ul>

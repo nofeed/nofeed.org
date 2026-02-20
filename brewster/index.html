@@ -1667,13 +1667,13 @@ flowchart TD
 <ul>
 <li><strong>Backend:</strong> Ruby on Rails 7.1 + PostgreSQL + Redis</li>
 <li><strong>Frontend pubblico:</strong> Rails + Hotwire (server-side rendering per SEO perfetto)</li>
-<li><strong>Dashboard produttori:</strong> React SPA (alta interattività, SEO non rilevante)</li>
+<li><strong>Dashboard produttori:</strong> Rails + Hotwire (Turbo + Stimulus per interattività)</li>
 <li><strong>Pagamenti:</strong> Stripe Connect (split commissioni automatico)</li>
 <li><strong>Hosting:</strong> Render/Fly.io + AWS S3</li>
 <li><strong>Timeline:</strong> 9-10 settimane sviluppo con team interno</li>
 </ul>
 
-<p><strong>Rationale scelta Rails + Hotwire:</strong> Ogni pagina produttore/prodotto renderizzata server-side = contenuto completamente indicizzabile da Google. Una SPA React classica (HTML vuoto + JavaScript) sarebbe incompatibile con la strategia SEO che è il principale motore di acquisizione. React viene usato solo per la dashboard interna produttori dove SEO non serve.</p>
+<p><strong>Rationale scelta Rails + Hotwire:</strong> Ogni pagina renderizzata server-side = contenuto completamente indicizzabile da Google. Hotwire (Turbo + Stimulus) offre interattività moderna senza SPA JavaScript-heavy, mantenendo velocità di caricamento ottimale e SEO perfetto. Stack unificato front-pubblico + dashboard = zero complessità architetturale, manutenzione semplificata, time-to-market ridotto.</p>
 
 <p><strong>Vantaggio competitivo sviluppo interno:</strong> Team founder costruisce MVP a ~€15.000 vs €28-35k per agenzia esterna. <strong>Risparmio 40-55%</strong>, capitale liberato per acquisizione utenti.</p>
 <h4>Focus geografico: una sola regione</h4>
