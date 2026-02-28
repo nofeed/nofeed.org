@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Invito produttore — Brewster</title>
+    <link rel="stylesheet" href="assets/css/brewster.css">
+    <style>
+        .panel{max-width:900px;margin:24px auto;padding:18px}
+        .field{margin-bottom:12px}
+        .preview{white-space:pre-wrap;background:#fff;padding:18px;border-radius:6px;border:1px solid #eee}
+        .controls{display:flex;gap:12px;flex-wrap:wrap}
+        label.inline{display:inline-flex;align-items:center;gap:8px}
+    </style>
+</head>
+<body>
+    <main class="panel">
+        <a href="index.html">← Torna al documento principale</a>
+        <h1>Invito personalizzabile per produttori</h1>
+        <p class="lead">Compila i campi sotto per generare automaticamente un testo di outreach personalizzato in base al profilo del produttore.</p>
+
+        <div class="field">
+            <label>Nome produttore<br>
+                <input id="producerName" type="text" placeholder="Es. Birrificio La Montanara" style="width:100%">
+            </label>
+        </div>
+
+        <div class="field">
+            <label>Regione / Città<br>
+                <input id="region" type="text" placeholder="Es. Lombardia / Bergamo" style="width:100%">
+            </label>
+        </div>
+
+        <div class="field">
+            <label>Prodotto di riferimento (opzionale)<br>
+                <input id="product" type="text" placeholder="Es. IPA al luppolo locale" style="width:100%">
+            </label>
+        </div>
+
+        <div class="field controls">
+            <label class="inline"><input id="isLocal" type="checkbox"> Produttore locale (km 0)</label>
+            <label class="inline"><input id="ships" type="checkbox"> Spedisce ai clienti</label>
+            <label class="inline"><input id="hasEcom" type="checkbox"> Ha e‑commerce proprio</label>
+            <label class="inline"><input id="hasOnline" type="checkbox"> Presenza online / social attiva</label>
+        </div>
+
+        <div class="field">
+            <button id="generate" class="btn">Genera testo</button>
+            <button id="copy" class="btn" style="margin-left:8px">Copia negli appunti</button>
+        </div>
+
+        <h2>Anteprima invito</h2>
+        <div id="preview" class="preview">Il testo generato apparirà qui dopo aver cliccato "Genera testo".</div>
+
+        <h3>Note</h3>
+        <ul>
+            <li>Template basato sugli script di outreach esistenti (script-outreach-produttori).</li>
+            <li>Modifica i dettagli (commissione, contatti) prima di inviare.</li>
+        </ul>
+
+        <footer style="margin-top:18px">
+            <p><strong>Contatto demo:</strong> Nicholas Wieland — ngw@nofeed.org — +39 375 809 1178</p>
+        </footer>
+    </main>
+
+    <script>
+        function sentence(s){ return s ? s + "\n\n" : "" }
+
+        function generate(){
+            const name = document.getElementById('producerName').value.trim() || '[Nome produttore]';
+            const region = document.getElementById('region').value.trim();
+            const product = document.getElementById('product').value.trim();
+            const isLocal = document.getElementById('isLocal').checked;
+            const ships = document.getElementById('ships').checked;
+            const hasEcom = document.getElementById('hasEcom').checked;
+            const hasOnline = document.getElementById('hasOnline').checked;
+
+            let out = '';
+            out += `Ciao ${name},\n\n`;
+
+            // Opening: reference product or social if present
+            if(product) out += `Ho visto la vostra ${product} e mi ha colpito molto — il tipo di prodotto che il pubblico apprezza per autenticità e territorio.\n\n`;
+            else if(hasOnline) out += `Ti seguo sui social e mi piace molto come raccontate il vostro lavoro.\n\n`;
+            else out += `Mi chiamo Nicholas, co-founder di Brewster: il marketplace dedicato a birre artigianali e liquori locali.\n\n`;
+
+            // Locality
+            if(isLocal){
+                out += `Vedo che siete un produttore locale${region ? ' di ' + region : ''} — per noi questo è esattamente il profilo ideale. Gli utenti cercano sempre più prodotti 'km 0' e vogliono sostenere produttori del territorio.\n\n`;
+            }
+
+            // Value proposition based on e-commerce
+            if(hasEcom){
+                out += `So che avete già un e‑commerce: ottimo punto di partenza. Brewster vi aiuta a portare traffico organico qualificato (persone che cercano "birra artigianale ${region || ''}" su Google) e clienti che comprano direttamente. Su Brewster pagate solo commissione sulle vendite, nessun costo fisso.\n\n`;
+            } else {
+                out += `Se non avete ancora un e‑commerce, Brewster vi offre una vetrina digitale pronta in poche ore: pagina prodotto, storytelling, SEO e integrazione pagamenti. Non serve costruire un sito da zero.\n\n`;
+            }
+
+            // Shipping
+            if(ships){
+                out += `Voi spedite già ai clienti: perfetto — con Brewster ricevete ordini e spedite come fate adesso. Noi ci occupiamo del sistema di pagamento e della vetrina.\n\n`;
+            } else {
+                out += `Capisco che ancora non spedite (vendete soprattutto in taproom/distributori). Possiamo comunque partire con poche SKU e testare la domanda online: quando finite stock si riattiva lo stato 'sold out'.\n\n`;
+            }
+
+            // Online presence
+            if(hasOnline){
+                out += `La vostra presenza online è già un asset: collegando i vostri social e linkando la pagina Brewster miglioriamo insieme il vostro SEO, portando utenti che cercano prodotti locali direttamente a voi.\n\n`;
+            } else {
+                out += `Anche senza una presenza social forte, possiamo creare una vetrina efficace che racconti la vostra storia e posizioni il vostro brand per le ricerche locali su Google.\n\n`;
+            }
+
+            // Competitive / margin message
+            out += `A differenza dei grandi marketplace che comprano a prezzo distributore, su Brewster mantenete il controllo di prezzi, descrizioni e storytelling. Le commissioni sono competitive (8-12%) e non ci sono costi fissi: pagate solo quando vendete.\n\n`;
+
+            // CTA
+            out += `Se vi va, vi mando subito un accesso demo alla piattaforma (beta) e vi accompagnerò nell'onboarding gratuito come founding producer — setup 1-2 ore, posizione prioritaria in piattaforma e zero commissioni i primi 30 giorni.\n\n`;
+
+            out += `Preferite che vi mandi una demo via email o fissiamo una call di 15 minuti?\n\n`;
+
+            out += `Grazie per il vostro lavoro — fateci sapere se volete provarla.\n\n`;
+            out += `Nicholas Wieland\nCo-founder, Brewster\nngw@nofeed.org — +39 375 809 1178`;
+
+            document.getElementById('preview').textContent = out;
+        }
+
+        document.getElementById('generate').addEventListener('click', generate);
+        document.getElementById('copy').addEventListener('click', async function(){
+            const text = document.getElementById('preview').textContent;
+            try{ await navigator.clipboard.writeText(text); alert('Testo copiato negli appunti'); }
+            catch(e){ alert('Impossibile copiare: usa seleziona+copia'); }
+        });
+    </script>
+</body>
+</html>

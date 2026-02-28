@@ -21,6 +21,8 @@ Script e template per outreach manuale verso produttori target (birrifici e dist
 
 **Per produttori senza e-commerce:**
 > "I tuoi clienti ti cercano online ma non ti trovano. Brewster ti dà una vetrina digitale pronta in 1 ora, con SEO incluso e backlink automatici dai tuoi social — senza costruire un sito da zero."
+**Per produttori senza e-commerce:**
+> "I tuoi clienti ti cercano online ma non ti trovano. Brewster ti dà una vetrina digitale pronta in 1 ora, con SEO incluso e backlink automatici dai vostri social — senza costruire un sito da zero. Inoltre, la piattaforma coordina attività di marketing a pagamento mirate per aumentare visibilità e prime conversioni; essendo Brewster in divenire, partiremo con sforzi contenuti e li intensificheremo progressivamente man mano che i risultati e i dati lo permetteranno."
 
 **Per produttori che vendono su Maltese/distributori:**
 > "Su Maltese vendi ma non controlli la tua storia. Su Brewster hai la tua pagina, racconti il territorio, e costruisci relazione diretta col cliente — mantenendo margini migliori."
@@ -50,6 +52,10 @@ Ho seguito [Nome Birrificio] su Instagram da un po', e le vostre [prodotto speci
 
 **Come funziamo:** Brewster aggrega produttori come voi in un'unica piattaforma ottimizzata per Google. Quando qualcuno cerca "microbirrificio Lombardia" o "IPA artigianale km 0", trova voi — insieme ad altri produttori locali. Ogni birrificio ha la propria vetrina dove racconta storia, territorio e processo produttivo. Voi spedite, noi portiamo i clienti.
 
+La piattaforma include inoltre attività SEO progressiva e, quando opportuno, campagne di marketing a pagamento gestite centralmente da Brewster; dato che siamo in fase di crescita, partiremo con investimenti mirati e li aumenteremo con il tempo in base ai dati e al ritorno. 
+
+Importante: il traffico organico e le campagne portano gli utenti direttamente alla vostra pagina su Brewster — la vostra "casa digitale" — e non a siti terzi. Questo significa che il cliente trova la vostra storia, i vostri prodotti e il vostro prezzo direttamente sulla pagina che controllate voi, con tutti i benefici in termini di visibilità e conversione.
+
 **Cosa vi costa:** Zero costi fissi. Pagate commissione solo quando vendete (8-12% in base al volume, più bassa di Maltese). Il profilo su Brewster è gratuito, lo setup vi prende 1-2 ore, e da quel momento siete indicizzati su Google con il vostro nome + le keyword che contano ("birrificio agricolo", "IGA", "km 0").
 
 **Cosa ottenete:**
@@ -57,6 +63,8 @@ Ho seguito [Nome Birrificio] su Instagram da un po', e le vostre [prodotto speci
 ✅ Backlink automatici: ogni volta che linkate Brewster dai vostri social, migliorate il vostro SEO
 ✅ Vetrina vostra: storia, territorio, prodotti — nessuno vi confonde con altri
 ✅ Dashboard: vedete gli ordini, gestite spedizioni, monitorate vendite
+
+Nota: il traffico organico indicato arriva direttamente alla vostra pagina su Brewster (non rimanda a siti esterni), quindi il cliente vede subito la vostra vetrina, la storia del birrificio e le opzioni di acquisto controllate da voi.
 
 Stiamo onboardando i primi 20 birrifici in Lombardia — vogliamo produttori che curano il prodotto e sanno raccontarlo (come voi). Non un catalogo anonimo tipo Maltese.
 
@@ -104,7 +112,7 @@ Ho visto che producete [prodotto specifico] e vendete soprattutto nel vostro tap
 **Cosa NON vi serve:**
 - Costruire un sito web (€2-5k setup + manutenzione)
 - Gestire hosting/dominio/aggiornamenti (pensiamo a tutto noi)
-- Fare advertising su Google/Meta (il traffico ve lo portiamo noi, SEO incluso)
+- Fare advertising su Google/Meta (il traffico ve lo portiamo noi: SEO incluso e campagne a pagamento coordinate dalla piattaforma; partiremo con sforzi modesti e poi scaleremo in base ai risultati)
 
 Stiamo onboardando i primi produttori in [Regione]. Se siete interessati, **vi faccio vedere la piattaforma in demo** e decidiamo insieme se fa per voi.
 
@@ -303,6 +311,8 @@ Brewster aggrega produttori come te in un marketplace ottimizzato per Google. Qu
 ✅ Tua vetrina: storia, territorio, prodotti — nessuno ti confonde con altri  
 ✅ Zero costi fissi (paxi commissione solo quando vendi)  
 ✅ Dashboard: ordini, spedizioni, analytics
+
+Nota: il traffico generato dalla piattaforma punta alla vostra pagina su Brewster (la vostra "casa digitale") e non a siti terzi; così il visitatore trova immediatamente la vostra storia e i prodotti che vendete direttamente sulla vetrina che controllate.
 
 **Richiedi accesso (è gratis):**  
 [Form: Nome, Email, Nome Birrificio/Distilleria, Città, Telefono, Sito web (opzionale), Note]
