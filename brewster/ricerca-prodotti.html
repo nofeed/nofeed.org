@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ricerca dei prodotti — Brewster</title>
+  <link rel="stylesheet" href="assets/css/brewster.css">
+  <style>
+    .container{max-width:980px;margin:28px auto;padding:18px;background:#fff;border-radius:6px}
+    pre#md{display:none}
+    .lead{color:#333}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a href="index.html">← Torna al documento principale</a>
+    <h1>Ricerca dei prodotti: confronto tra ricerca libera e ricerca a tag</h1>
+    <div id="content">Caricamento...</div>
+  </main>
+
+  <pre id="md">
+# Ricerca dei prodotti: confronto tra ricerca libera e ricerca a tag + bookmark
+
+Data: 28 Febbraio 2026
+
+Scopo: analizzare in modo pratico e strategico i vantaggi e i limiti di due modalità di discovery per una piattaforma come Brewster: la ricerca libera (full‑text / query libera) e la ricerca basata su tag + bookmark (filtro categoriale). Il documento fornisce raccomandazioni implementative e criteri di prioritizzazione.
+
+## 1. Introduzione
+
+La discovery dei prodotti è il fulcro di un marketplace verticale. Per Brewster l'obiettivo non è solo far vedere prodotti, ma far sì che l'utente trovi rapidamente la birra o il liquore più rilevante per contesto, territorio e preferenze. Esistono due grandi paradigmi di ricerca:
+
+- Ricerca libera: l'utente scrive query testuali libere (es. "IPA bergamo luppolo locale").
+- Ricerca a tag + bookmark: l'utente naviga tramite tag/categorie e salva (bookmark) pagine/prodotti per ricerche future.
+
+Entrambi i paradigmi possono coesistere; la scelta è su priorità UX, accuratezza dei risultati e costi di mantenimento (data curation).
+
+## 2. Metodologia di valutazione
+
+Valuteremo ciascuna modalità secondo i seguenti criteri:
+
+- Precisione: pertinenza dei risultati rispetto all'intento dell'utente.
+- Copertura: quanti prodotti rilevanti vengono mostrati.
+- Robustezza: come la modalità regge query non standard o errori di digitazione.
+- Sforzo lato produttore: quanto lavoro richiede taggare/arricchire i prodotti.
+- Scalabilità operativa: costi di gestione e ottimizzazione (SEO, taxonomie).
+- Impatto SEO e traffico organico.
+- Metriche di conversione attese.
+
+## 3. Ricerca libera — pro e contro
+
+Vantaggi:
+
+- Naturale per l'utente: chi cerca usa parole libere (es. "birrificio vicino a me", "birra all'arancia").
+- Alta flessibilità: consente ricerche molto specifiche (ingredienti, stile, anno di produzione).
+- Buona sinergia con SEO: pagine prodotto ricche di contenuto testuale vengono indicizzate e rispondono a query long‑tail.
+
+Limiti:
+
+- Richiede un motore di ricerca con ranking sofisticato (stemming, fuzzy match, boosting per campo, gestione entità come luogo/ingrediente).
+- Sensibile alla qualità dei metadati e del contenuto testuale: descrizioni impoverite riducono rilevanza.
+- Può restituire troppi risultati non filtrati senza segnali di preferenza (es. locale vs non locale).
+
+Implicazioni pratiche:
+
+- Necessario indicizzare campi strutturati (nome prodotto, ingredienti, stile, regione, metodo, SKU) e testuali (storytelling, note di degustazione) separatamente e applicare boosting su campi chiave (territorio, "km0").
+- Implementare suggerimenti (autocomplete), correzione automatica e filtri rapidi per aiutare l'utente a restringere i risultati.
+
+## 4. Ricerca a tag + bookmark — pro e contro
+
+Vantaggi:
+
+- Facilita la navigazione esplorativa: utile per utenti che preferiscono ``scoprire`` piuttosto che cercare.
+- Tag ben progettati (stile, regione, metodo) rendono i filtri molto interpretabili e consentono landing page SEO mirate.
+- Bookmark consente retention: l'utente salva prodotti/brand da ritrovare e questo migliora il lifetime value.
+
+Limiti:
+
+- Richiede governance dei tag: ambiguità semantica (es. "IPA" vs "India Pale Ale") richiede normalizzazione.
+- Carico lato produttore/operazione: i prodotti devono essere categorizzati, e il tagging manuale è costoso.
+- Rischio di silo: utenti che si affidano solo ai tag possono perdere risultati long‑tail non taggati correttamente.
+
+Implicazioni pratiche:
+
+- Definire una tassonomia minima obbligatoria (regione, stile, formato) e campi opzionali avanzati (ingredienti, metodi speciali).
+- Fornire strumenti di auto‑tagging (NLP) per suggerire tag dalle descrizioni, con revisione umana per i primi mesi.
+
+## 5. Impatto su SEO e traffico organico
+
+Entrambi i modelli influenzano SEO, ma in modo diverso:
+
+- Ricerca libera + pagine prodotto ricche -> ottimo per query long‑tail e intenti di acquisto specifici. Necessita contenuti testuali di qualità e microdati strutturati (schema.org) per migliorare il posizionamento.
+- Tag + landing page per tag -> ottimo per query di categoria e per costruire pagine hub (es. "birrifici Lombardia", "stili: Saison"). Queste pagine facilitano acquisizione organica su volumi più generici.
+
+Raccomandazione: usare entrambe le leve. Priorità iniziale: assicurare che ogni produttore abbia una pagina completa e che i campi strategici (regione, stile, ecommerce/ship) siano sempre presenti — così il traffico organico atterrerà sulla pagina controllata dal produttore (vetrina Brewster) e aumenterà la conversione.
+
+## 6. Casi d'uso e suggerimenti UX
+
+- Utente con intento di scoperta (explore): mostrare tag, categorie e raccomandazioni editoriali (es. "Prodotti in evidenza della regione").
+- Utente con intento di acquisto specifico: priorità alla ricerca libera con filtri laterali (regione, spedizione, prezzo, disponibilità).
+- Mobile: interfaccia principale con barra di ricerca prominente + filtri rapidi e pulsanti di tag popolare.
+
+## 7. Metriche da monitorare
+
+- Query volume per parola chiave (long‑tail vs head terms).
+- CTR da SERP verso pagina Brewster del produttore.
+- Conversion rate per tipo di discovery (ricerca libera vs tag navigation).
+- Time to first purchase dopo scoperta.
+- Numero di prodotti con tag mancanti / incompletezza metadati.
+
+## 8. Raccomandazioni tecniche e roadmap
+
+Fase 1 (MVP, 0‑3 mesi):
+
+- Implementare ricerca libera base (elastic/algolia/Meili) con supporto fuzzy e boosting su campo `regione` e `km0`.
+- Richiedere ai produttori i campi minimi obbligatori: `regione`, `stile`, `spedizione` (sì/no), `ecommerce` (sì/no`).
+- Creare landing page tag principali (regioni, stili) per ottenere traffico organico iniziale.
+
+Fase 2 (3‑6 mesi):
+
+- Aggiungere autocomplete intelligente, suggerimenti basati su trend locali, e ranking che tenga conto di segnali social e performance (vendite, click-through).
+- Introdurre auto‑tagging con modello NLP che suggerisca tag dalla descrizione del prodotto; pipeline di revisione umana per qualità.
+
+Fase 3 (6+ mesi):
+
+- Raffinare ranking con A/B test (es. preferire prodotti locali/eco‑friendly), integrare segnali di stock/recensioni e personalizzazione utente.
+- Sviluppare routing di marketing: campagne paid su keyword di alto valore indirizzate a landing tag e pagine produttore (traffico sulla pagina Brewster del produttore, non su siti terzi).
+
+## 9. Raccomandazioni operative
+
+- Priorità: completare metadati minimi per il 80% dei produttori onboarded.
+- Policy: definire linee guida per tag canonical e sinonimi.
+- Strumenti: import CSV per popolamento massivo + editor di massa per correzioni taxonomiche.
+- Monitoraggio: dashboard editoria/SEO per misurare quali tag/landing convertono meglio.
+
+## 10. Conclusione
+
+La scelta non è binaria: la combinazione di ricerca libera potente e una solida tassonomia a tag offre sia flessibilità sia navigazione guidata. Per Brewster la priorità operativa è garantire che ogni produttore abbia una vetrina completa e metadati minimi; da lì abilitare ricerca libera con boosting territoriale e landing tag per scalare il traffico organico. Le campagne a pagamento dovrebbero indirizzare sempre le visite alla pagina Brewster del produttore per massimizzare conversione e proprietà del cliente.
+
+---
+
+Se vuoi, posso:
+
+- creare una checklist di metadati minimi da usare in onboarding;
+- generare esempi di query e tag mapping per i primi 5 stili/regioni;
+- integrare parti del testo in `invito-produttore.html` per ricordare ai produttori perché la loro pagina Brewster è il punto di arrivo del traffico.
+
+  </pre>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const md = document.getElementById('md').textContent;
+    document.getElementById('content').innerHTML = marked.parse(md);
+  </script>
+</body>
+</html>
