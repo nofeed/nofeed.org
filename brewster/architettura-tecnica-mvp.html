@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Architettura Tecnica MVP - Brewster</title>
     <meta name="description" content="Documentazione tecnica completa dell'architettura Brewster: stack, database, integrazioni, deployment e timeline">
+    <meta name="robots" content="noindex, nofollow">
     <script src="assets/js/auth.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +18,7 @@
             <a href="index.html" class="back-link">← Torna al documento principale</a>
             <h1>Architettura Tecnica MVP</h1>
             <div class="document-meta">
-                <span><strong>Data:</strong> Gennaio 2026</span>
+                <span><strong>Data:</strong> Marzo 2026</span>
                 <span><strong>Autore:</strong> Nicholas Wieland (CTO)</span>
                 <span><strong>Status:</strong> Definita e validata, pronta per implementation</span>
             </div>
@@ -619,9 +620,76 @@
             </div>
         </section>
 
+        <section>
+            <h2 id="riferimenti">Riferimenti Tecnici</h2>
+            <p>Documentazione ufficiale e fonti per ogni tecnologia adottata nello stack MVP.</p>
+
+            <h3>Framework e Linguaggi</h3>
+            <ul>
+                <li><strong>Ruby on Rails 8</strong> — <a href="https://rubyonrails.org" target="_blank">rubyonrails.org</a> | <a href="https://guides.rubyonrails.org" target="_blank">Rails Guides</a><br>
+                <em>Motivazione scelta:</em> server-rendering nativo (SEO-first), convention over configuration, ecosistema maturo per marketplace (Stripe, Devise, Pundit, ActionMailer).</li>
+
+                <li><strong>Hotwire (Turbo + Stimulus)</strong> — <a href="https://hotwired.dev" target="_blank">hotwired.dev</a><br>
+                <em>Motivazione:</em> SPA-like UX senza JavaScript framework separato; reduce complexity; stessa base Rails.</li>
+            </ul>
+
+            <h3>Database e Storage</h3>
+            <ul>
+                <li><strong>PostgreSQL 15</strong> — <a href="https://www.postgresql.org/docs/15/" target="_blank">postgresql.org/docs/15</a><br>
+                <em>Motivazione:</em> Full-text search nativo (tsvector), PostGIS per geolocalizzazione km 0, ACID transactions per pagamenti.</li>
+
+                <li><strong>Redis 7</strong> — <a href="https://redis.io/docs/" target="_blank">redis.io/docs</a><br>
+                <em>Usato per:</em> caching fragment (TTL 1h), Sidekiq queue per job asincroni (email, Stripe webhook processing).</li>
+
+                <li><strong>AWS S3</strong> — <a href="https://aws.amazon.com/s3/" target="_blank">aws.amazon.com/s3</a><br>
+                <em>Usato per:</em> storage immagini prodotti e profili produttori (~€5-10/mese per primi 1.000 produttori).</li>
+            </ul>
+
+            <h3>Pagamenti</h3>
+            <ul>
+                <li><strong>Stripe Connect</strong> — <a href="https://stripe.com/connect" target="_blank">stripe.com/connect</a> | <a href="https://stripe.com/it/pricing" target="_blank">Pricing EU</a><br>
+                <em>Usato per:</em> split payment (consumer → Brewster → produttore), KYC produttori via Stripe Express, payout automatici. Costo: 1,5% + €0,25/tx (EU cards).</li>
+
+                <li><strong>Stripe.js / Stripe Elements</strong> — <a href="https://stripe.com/docs/stripe-js" target="_blank">stripe.com/docs/stripe-js</a><br>
+                <em>Motivazione:</em> PCI DSS compliance out-of-the-box; zero card data stored su server Brewster.</li>
+            </ul>
+
+            <h3>Hosting e Infrastruttura</h3>
+            <ul>
+                <li><strong>Heroku (MVP)</strong> — <a href="https://www.heroku.com/pricing" target="_blank">heroku.com/pricing</a><br>
+                Dyno Standard 1X + PostgreSQL Standard-0 + Redis Mini = ~$78/mese (~€72). Con Sentry e SendGrid: ~€115/mese totale. Motivazione: zero-ops, deploy in minuti, PostgreSQL managed.</li>
+
+                <li><strong>Fly.io (opzione post-MVP)</strong> — <a href="https://fly.io/docs/about/pricing/" target="_blank">fly.io/docs/about/pricing</a><br>
+                Alternativa Heroku a costi inferiori (~€25-30/mese) se il round non si chiude a condizioni ottimali. Migrazione stimata 1-2 giorni.</li>
+
+                <li><strong>CloudFlare (CDN)</strong> — <a href="https://www.cloudflare.com/plans/" target="_blank">cloudflare.com/plans</a><br>
+                Free tier: caching asset statici (CSS/JS/immagini), DDoS protection, SSL automatico. HTML sempre servito fresco (no cache HTML su CDN).</li>
+            </ul>
+
+            <h3>Monitoring e Qualità</h3>
+            <ul>
+                <li><strong>Sentry</strong> — <a href="https://sentry.io/pricing/" target="_blank">sentry.io/pricing</a> — Error tracking, performance monitoring. Team tier ~€26/mese.</li>
+                <li><strong>SendGrid</strong> — <a href="https://sendgrid.com/pricing/" target="_blank">sendgrid.com/pricing</a> — Transactional email (conferme ordine, onboarding produttori, notifiche pagamento). Free tier 100 email/giorno; Essentials ~€15/mese oltre la soglia.</li>
+                <li><strong>SimpleCov</strong> — <a href="https://github.com/simplecov-ruby/simplecov" target="_blank">github.com/simplecov-ruby/simplecov</a> — Code coverage Ruby. Target: >80% su models/controllers.</li>
+                <li><strong>RuboCop</strong> — <a href="https://rubocop.org" target="_blank">rubocop.org</a> — Linter e formatter Ruby standard.</li>
+            </ul>
+
+            <h3>Autenticazione e Sicurezza</h3>
+            <ul>
+                <li><strong>Devise gem</strong> — <a href="https://github.com/heartcombo/devise" target="_blank">github.com/heartcombo/devise</a> — Authentication standard Rails: registrazione, login, password reset, email verification.</li>
+                <li><strong>Pundit gem</strong> — <a href="https://github.com/varvet/pundit" target="_blank">github.com/varvet/pundit</a> — Authorization policies (produttore può gestire solo la propria vetrina).</li>
+            </ul>
+
+            <h3>SEO e Performance</h3>
+            <ul>
+                <li><strong>Google Search Console</strong> — <a href="https://search.google.com/search-console" target="_blank">search.google.com/search-console</a> — Monitoraggio indicizzazione, Core Web Vitals, backlink organici.</li>
+                <li><strong>Schema.org — LocalBusiness / Product Markup</strong> — <a href="https://schema.org/LocalBusiness" target="_blank">schema.org/LocalBusiness</a> — Structured data per rich snippet in SERP (produttore locale, prodotti con prezzo e disponibilità).</li>
+            </ul>
+        </section>
+
         <footer class="document-footer">
             <p><strong>Documento redatto da:</strong> Nicholas Wieland (CTO)</p>
-            <p><strong>Ultimo aggiornamento:</strong> Gennaio 2026</p>
+            <p><strong>Ultimo aggiornamento:</strong> Marzo 2026</p>
         </footer>
     </main>
 </body>
