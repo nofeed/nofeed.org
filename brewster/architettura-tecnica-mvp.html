@@ -27,7 +27,7 @@
     <main class="container">
         <section>
             <h2 id="executive-summary">Executive Summary</h2>
-            <p class="lead">Architettura completa per marketplace bevande artigianali con modello puro intermediario. Stack scelto: <strong>Rails 7.1 + Hotwire + PostgreSQL + Redis + Stripe Connect</strong>. Priorità: SEO-first, time-to-market veloce, costi infrastruttura minimi.</p>
+            <p class="lead">Architettura completa per marketplace bevande artigianali con modello puro intermediario. Stack scelto: <strong>Rails 8 + Hotwire + PostgreSQL + Redis + Stripe Connect</strong>. Priorità: SEO-first, time-to-market veloce, costi infrastruttura minimi.</p>
             
             <div class="metrics">
                 <div class="metric">
@@ -35,8 +35,8 @@
                     <div class="metric-label">Timeline sviluppo (1 founder full-time)</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">€50-80</div>
-                    <div class="metric-label">Costo infrastruttura MVP/mese</div>
+                    <div class="metric-value">~€115</div>
+                    <div class="metric-label">Costo infrastruttura MVP/mese (hosting + storage + email + monitoring)</div>
                 </div>
                 <div class="metric">
                     <div class="metric-value">1.000+</div>
@@ -73,7 +73,7 @@
             <h3>2.1 Backend</h3>
             <div class="tech-stack">
                 <div class="tech-item">
-                    <h4>Framework: Ruby on Rails 7.1</h4>
+                    <h4>Framework: Ruby on Rails 8</h4>
                     <ul>
                         <li>Maturo, stabile, veloce per marketplace</li>
                         <li>Hotwire (Turbo + Stimulus) per interattività senza SPA</li>
@@ -148,7 +148,7 @@
                     <li>address, city, region, postal_code</li>
                     <li>latitude, longitude (per km 0)</li>
                     <li>vat_number, license_number</li>
-                    <li>commission_rate (decimal, default 8%)</li>
+                    <li>commission_rate (decimal, default 12% — scala a 8% oltre soglia volume)</li>
                     <li>plan (enum: free, pro, partner)</li>
                 </ul>
             </div>
@@ -421,7 +421,7 @@
                 <div class="timeline-item">
                     <h3>Mese 1 - Setup & Core (Settimane 1-4)</h3>
                     <ul>
-                        <li>Setup progetto Rails 7.1 + PostgreSQL + Redis</li>
+                        <li>Setup progetto Rails 8 + PostgreSQL + Redis</li>
                         <li>Schema database migrations</li>
                         <li>Models: User, Producer, Product, Order, OrderItem</li>
                         <li>Autenticazione (Devise) + Autorizzazione (Pundit)</li>
