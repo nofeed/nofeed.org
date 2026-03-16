@@ -420,14 +420,16 @@ tr:last-child td {
 
 @media print {
     @page {
-        size: 1024px 576px;
+        size: landscape;
         margin: 0;
     }
     
-    body {
+    html, body {
         background: white;
         margin: 0;
         padding: 0;
+        width: 100%;
+        height: 100%;
     }
     
     .deck {
@@ -437,20 +439,30 @@ tr:last-child td {
     }
     
     .slide {
-        width: 1024px;
-        height: 576px;
+        width: 100vw;
+        height: 100vh;
         margin: 0;
         padding: 3rem 4rem;
+        box-sizing: border-box;
         box-shadow: none;
+        border: none;
+        border-radius: 0;
         page-break-after: always;
         page-break-inside: avoid;
+        break-after: page;
+        break-inside: avoid;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
         color-adjust: exact;
+        display: flex !important;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
     }
     
     .slide:last-child {
         page-break-after: auto;
+        break-after: auto;
     }
     
     /* Ensure gradients and colors print correctly */
@@ -466,16 +478,18 @@ tr:last-child td {
         -moz-osx-font-smoothing: grayscale;
     }
     
-    /* Prevent any content overflow */
-    .slide {
-        overflow: hidden;
-    }
-    
     /* Ensure metric boxes print with backgrounds */
     .metric,
     .callout {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+    }
+    
+    /* Hide all interactive/navigation elements */
+    .slide-nav,
+    .slide-progress,
+    .slide-counter {
+        display: none !important;
     }
 }
 
@@ -874,12 +888,7 @@ tr:last-child td {
     z-index: 1000;
 }
 
-@media print {
-    .slide-nav,
-    .slide-progress {
-        display: none !important;
-    }
-}
+
 
 /* ══════════════════════════════════════════════════
    PRESENTATION MODE (FULLSCREEN)
