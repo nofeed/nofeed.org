@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Brewsters — Business Model</title>
+    <script src="assets/js/auth.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/brewsters.css">
+</head>
+<body>
+<div class="markdown-content">
+    <div class="doc-header">
+        <span class="doc-header-brand">Brewsters</span>
+        <div class="doc-header-meta">
+            <span class="doc-badge">Riservato &amp; Confidenziale</span>
+            <span class="doc-date">Marzo 2026</span>
+        </div>
+    </div>
+    <div class="doc-body">
+
+<h1>Business Model</h1>
+<h3>Marketplace di birre artigianali e liquori locali — modello operativo e monetizzazione</h3>
+
+<div class="callout">
+<h3 class="mt-0 text-primary">📑 Indice</h3>
+<ol class="list-spaced">
+    <li><a href="#modello">Il Modello: Marketplace Puro</a></li>
+    <li><a href="#clienti">Segmenti di Clientela</a></li>
+    <li><a href="#valore">Proposta di Valore</a></li>
+    <li><a href="#ricavi">Flussi di Ricavo</a></li>
+    <li><a href="#unit-economics">Unit Economics</a></li>
+    <li><a href="#costi">Struttura dei Costi</a></li>
+    <li><a href="#moat">Vantaggio Competitivo (Moat)</a></li>
+    <li><a href="#canali">Canali e Go-to-Market</a></li>
+    <li><a href="#roadmap">Roadmap (dal rilascio dell'MVP)</a></li>
+    <li><a href="#proiezioni">Proiezioni Finanziarie</a></li>
+    <li><a href="#rischi">Rischi e Mitigazioni</a></li>
+    <li><a href="#rtd-rts">RTD &amp; RTS — Terzo Pilastro di Crescita</a></li>
+    <li><a href="#bibliografia">Fonti e Bibliografia</a></li>
+</ol>
+<p class="text-muted-italic">
+    📄 <strong>Documenti correlati:</strong><br>
+    • <a href="pitch-deck.html">Pitch Deck</a> (13 slide)<br>
+    • <a href="analisi-competitiva.html">Analisi Competitiva</a><br>
+    • <a href="architettura-tecnica-mvp.html">Architettura Tecnica MVP</a><br>
+    • <a href="database-produttori-lombardia.html">Database Produttori Lombardia</a>
+</p>
+</div>
+
+<hr>
+
+<h2 id="modello">1. Il Modello: Marketplace Puro</h2>
+
+<p>Brewsters è un <strong>marketplace puro</strong> (modello Etsy) per birre artigianali e liquori locali italiani. Non tiene magazzino, non gestisce la logistica, non compete con i produttori: abilita la vendita diretta produttore → consumatore con filtro geografico km 0 integrato.</p>
+
+<div class="callout">
+<p><strong>Come funziona:</strong></p>
+<ul>
+    <li>Il produttore crea la propria vetrina con storytelling del territorio, catalogo prodotti, prezzi.</li>
+    <li>Il consumatore trova produttori locali tramite ricerca geografica, stile o ingrediente.</li>
+    <li>L'ordine arriva direttamente al produttore; Brewsters trattiene una commissione sulla transazione.</li>
+    <li>La spedizione è a carico del produttore (no last-mile, no warehousing).</li>
+</ul>
+</div>
+
+<hr>
+
+<h2 id="clienti">2. Segmenti di Clientela</h2>
+
+<h3>Lato Offerta — Produttori</h3>
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Segmento</th><th>Dimensione (Italia)</th><th>Priorità lancio</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Microbirrifici artigianali</td><td>1.000+</td><td>⭐ Primaria</td></tr>
+        <tr><td>Birrifici agricoli</td><td>~180</td><td>⭐ Primaria (storytelling territorio)</td></tr>
+        <tr><td>Distillerie artigianali (gin, grappa, amari)</td><td>800+</td><td>⭐ Primaria</td></tr>
+        <tr><td>Beer firm (produzioni conto terzi)</td><td>~150</td><td>Secondaria</td></tr>
+        <tr><td>Brewpub con produzione</td><td>~400</td><td>Secondaria</td></tr>
+        <tr><td><strong>Produttori RTD artigianali</strong> (canned cocktail, canned craft beer, seltzer)</td><td>~150 stimati</td><td>⭐ Emergente — Fase 2</td></tr>
+        <tr><td><strong>Produttori RTS</strong> (cocktail pre-batched, kit mixology artigianali)</td><td>~60 stimati</td><td>Fase 3</td></tr>
+    </tbody>
+</table>
+</div>
+
+<h3>Lato Domanda — Consumatori</h3>
+<ul>
+    <li><strong>Consumatori km 0:</strong> under 40, cercano prodotti locali entro 50 km (68% del target).</li>
+    <li><strong>Appassionati craft:</strong> bevitori di birra artigianale e spirit premium, cultura del prodotto.</li>
+    <li><strong>Regalo premium:</strong> acquisti per occasioni, box tematici, prodotti del territorio.</li>
+    <li><strong>HoReCa locale:</strong> ristoranti, bar e wine bar in cerca di fornitori locali non rintracciabili altrimenti.</li>
+    <li><strong>Consumatori RTD/RTS:</strong> under 35, cercano cocktail artigianali pronti da bere senza attrezzatura da bar; staple da frigo; alto tasso di riacquisto.</li>
+</ul>
+
+<hr>
+
+<h2 id="valore">3. Proposta di Valore</h2>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Soggetto</th><th>Problema attuale</th><th>Beneficio Brewsters</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Produttore piccolo</strong></td>
+            <td>Invisibile online, distributori prendono 40–60% del margine, Shopify €29–79/mese + commission</td>
+            <td>Vetrina immediata, commissione 5–12% (vs 40–60%), backlink SEO gratuiti, zero costi fissi</td>
+        </tr>
+        <tr>
+            <td><strong>Produttore con e-commerce proprio</strong></td>
+            <td>Zero traffico organico, costi alti, nessuna discovery esterna</td>
+            <td>Traffico aggregato dal marketplace, SEO domain authority condivisa, vetrina aggiuntiva senza costi mensili</td>
+        </tr>
+        <tr>
+            <td><strong>Consumatore km 0</strong></td>
+            <td>Non sa dove trovare produttori locali online, costretti ai rivenditori generalisti</td>
+            <td>Ricerca geografica integrata, acquisto diretto, racconto del territorio e del produttore</td>
+        </tr>
+        <tr>
+            <td><strong>HoReCa</strong></td>
+            <td>Sourcing da distributori senza alternativa, catalogo opaco</td>
+            <td>Accesso diretto a produttori regionali certificati, contatti diretti, prezzo franco produttore</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p><strong>Differenziatore chiave vs competitor</strong> (1001.it, Maltese.beer, Birraland): i rivenditori <em>competono</em> con i produttori. Brewsters li <em>abilita</em> — il produttore mantiene il brand e il margine, Brewsters prende solo una fee sulla transazione.</p>
+
+<hr>
+
+<h2 id="ricavi">4. Flussi di Ricavo</h2>
+
+<h3>Piano abbonamento produttori — commissione + feature bundle</h3>
+<p>Il modello principale combina commissione per transazione e abbonamento mensile opzionale. I produttori partono gratis (piano Free, commissione 12%) e passano ai piani superiori man mano che il volume lo giustifica — riducendo la commissione e sbloccando feature avanzate di vetrina e marketing.</p>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Piano</th><th>Costo mensile</th><th>Commissione</th><th>Feature incluse</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Free</strong></td>
+            <td>0 €</td>
+            <td>12%</td>
+            <td>Vetrina base, 10 prodotti, analytics base, editor contenuti</td>
+        </tr>
+        <tr>
+            <td><strong>Pro</strong></td>
+            <td>29 €/mese</td>
+            <td>8%</td>
+            <td>Vetrina avanzata, prodotti illimitati, SEO score, badge "Verificato", statistiche avanzate, vendita internazionale (cross-border intra-UE)</td>
+        </tr>
+        <tr>
+            <td><strong>Partner</strong></td>
+            <td>79 €/mese</td>
+            <td>5%</td>
+            <td>Tutto il Pro + posizionamento prioritario, newsletter dedicata, campagne social, redazione storia inclusa</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p><em>La vendita internazionale (cross-border intra-UE) è inclusa nei piani Pro e Partner. Si attiva contestualmente al lancio dei mercati DACH (mese 12), senza costi aggiuntivi. Il piano Free rimane limitato al mercato italiano.</em></p>
+
+<h3>Add-on e servizi aggiuntivi</h3>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Stream</th><th>Meccanismo</th><th>Pricing</th><th>Timing</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>AI Translation — Piani Global</strong></td>
+            <td>Traduzione automatica vetrine in DE/EN/FR (Claude API) — aggiuntivo al piano base</td>
+            <td>19–99 €/mese</td>
+            <td>Fase 3 (mese 12+)</td>
+        </tr>
+        <tr>
+            <td><strong>Featured listing</strong></td>
+            <td>Visibilità prioritaria in homepage e risultati di ricerca</td>
+            <td>€49–99 / mese</td>
+            <td>Fase 2 (mese 8+)</td>
+        </tr>
+        <tr>
+            <td><strong>Brewsters Print</strong></td>
+            <td>Export PDF del profilo produttore in formato rilegato (softcover/hardcover) — per taproom, eventi, gifting</td>
+            <td>€18–35 / copia</td>
+            <td>Fase 2–3</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="callout">
+<p><strong>Revenue mix target (Anno 3):</strong> commissioni + abbonamenti Pro/Partner ~85% del fatturato, AI Translation + featured listing ~9%, Brewsters Print ~6%.</p>
+</div>
+
+<hr>
+
+<h2 id="unit-economics">5. Unit Economics</h2>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Metrica</th><th>Valore</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>GMV medio per produttore / mese</td><td><strong>€800–1.500</strong></td></tr>
+        <tr><td>Take rate medio</td><td><strong>9–10%</strong></td></tr>
+        <tr><td>Revenue per produttore / anno</td><td><strong>€900–1.800</strong></td></tr>
+        <tr><td>CAC produttore (outreach diretto)</td><td><strong>€150–300</strong></td></tr>
+        <tr><td>Payback period CAC</td><td><strong>2–4 mesi</strong></td></tr>
+        <tr><td>LTV stimato (produttore attivo 3 anni)</td><td><strong>€2.700–5.400</strong></td></tr>
+        <tr><td>LTV/CAC</td><td><strong>9–18x</strong></td></tr>
+    </tbody>
+</table>
+</div>
+
+<p class="text-muted-italic">I numeri si basano sul database produttori Lombardia (280 produttori mappati) e sull'outreach informale già condotto su 4 produttori.</p>
+
+<hr>
+
+<h2 id="costi">6. Struttura dei Costi</h2>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Voce</th><th>Tipo</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Sviluppo MVP (Rails 8 + PostgreSQL)</td><td>Fisso una-tantum</td><td>Costruito internamente dal CTO — 10–12 settimane</td></tr>
+        <tr><td>Infrastruttura cloud (hosting, CDN, storage, email, monitoring)</td><td>Variabile</td><td>~€115/mese fissi (Heroku + S3 + SendGrid + Sentry) in Fase 1; scala con traffico da Fase 2</td></tr>
+        <tr><td>Stripe Connect (payment processing)</td><td>Variabile</td><td>1,5% + €0,25 per transazione (EU cards) — su ordine medio €55: incidenza effettiva ~2%</td></tr>
+        <tr><td>Legal / compliance alcol</td><td>Fisso</td><td>Consulente legale specializzato in e-commerce e alcol</td></tr>
+        <tr><td>Marketing e acquisizione produttori</td><td>Variabile</td><td>Outreach diretto (script già pronti); fiere di settore</td></tr>
+        <tr><td>Branding e contenuti</td><td>Una-tantum</td><td>Identità visiva, copy, guide onboarding produttori</td></tr>
+        <tr><td>Costi operativi (team full-time)</td><td>Fisso</td><td>Team lean fino a break-even; profilo commerciale da aggiungere in Fase 2</td></tr>
+    </tbody>
+</table>
+</div>
+
+<div class="callout">
+<p><strong>Costi operativi stimati Anno 3:</strong> €420.000 — con EBITDA del 74% su ricavi di €1.645.000 (scenario conservativo).<br>
+<strong>Nota:</strong> I costi includono stipendi founder parziali e un profilo operativo/commerciale da Anno 2. In Fase 1 (mesi 0–12) i fondatori operano senza stipendio pieno; il break-even a 12 mesi è calcolato su questa ipotesi.</p>
+</div>
+
+<hr>
+
+<h2 id="moat">7. Vantaggio Competitivo (Moat)</h2>
+
+<h3>SEO Flywheel — inarrestabile e non replicabile</h3>
+<p>Ogni produttore sul marketplace genera <strong>3–8 backlink organici</strong> dai propri canali (sito, Instagram, newsletter) verso la propria vetrina su Brewsters. Con 500 produttori attivi:</p>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Anno</th><th>Produttori attivi</th><th>Backlink organici cumulativi</th><th>Domain Rating (Ahrefs) stimato</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>50</td><td>150–400</td><td>DR 20–30</td></tr>
+        <tr><td>2</td><td>200</td><td>600–1.600</td><td>DR 40–50</td></tr>
+        <tr><td>3</td><td>500</td><td>1.500–4.000</td><td>DR 55–65</td></tr>
+    </tbody>
+</table>
+</div>
+
+<ul>
+    <li>DR 55–65 = equivalente a una testata di settore consolidata — raggiunto <strong>senza spendere un euro in link building</strong>.</li>
+    <li>Nessun rivenditore competitor (1001.it, Maltese.beer) può replicarlo: i produttori non linkanno naturalmente un rivenditore che li compete.</li>
+    <li>Più produttori → più traffico organico → più consumatori → più produttori: <strong>flywheel auto-rinforzante</strong>.</li>
+</ul>
+
+<hr>
+
+<h2 id="canali">8. Canali e Go-to-Market</h2>
+
+<h3>Acquisizione produttori (lato offerta)</h3>
+<ul>
+    <li><strong>Outreach diretto</strong> — email personalizzate (script già pronti), priorità cintura Milano (8 produttori Fase 1).</li>
+    <li><strong>Networking eventi</strong> — fiere craft beer (FermentiVivi, Pianeta Birra), festival gin e spirits locali.</li>
+    <li><strong>Referral produttori</strong> — attivare "ambassador" per referral ad altri birrifici dalla Fase 2.</li>
+    <li><strong>Associazioni di categoria</strong> — Assobirra, Unionbirrai, ANAG (grappa).</li>
+</ul>
+
+<h3>Acquisizione consumatori (lato domanda)</h3>
+<ul>
+    <li><strong>SEO organico</strong> — traffico da long-tail (es. "birra artigianale km 0 Milano"); cresce automaticamente con i produttori.</li>
+    <li><strong>PR di settore</strong> — Cronache di Birra, Dissapore, Spirito di Vino.</li>
+    <li><strong>Social dei produttori</strong> — ogni produttore porta la propria community.</li>
+    <li><strong>Content marketing</strong> — guide territorio, storie dei produttori, abbinamenti cibo.</li>
+</ul>
+
+<hr>
+
+<h2 id="roadmap">9. Roadmap (dal rilascio dell'MVP)</h2>
+
+<p><em>Strategia parallela a partire dal mese 12: mentre si completa la copertura italiana (≤ 18 mesi totali), si apre simultaneamente la testa di ponte in Germania, Svizzera, Austria e Belgio. L'espansione privilegia il Mercato Unico EU — nessun dazio, OSS IVA, quadro normativo armonizzato — prima di affrontare i mercati extra-EU (USA, UK post-Brexit, Giappone) con la loro complessità operativa aggiuntiva. Vedere <a href="index.html#espansione">Espansione Internazionale</a> per la strategia completa.</em></p>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Fase</th><th>Periodo (dall'MVP)</th><th>Obiettivi</th><th>KPI target</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Fase 1 — Pilota Lombardia</strong></td>
+            <td>Mesi 0–8</td>
+            <td>Onboarding 15–20 produttori cintura Milano, primi ordini completati, validazione product-market fit</td>
+            <td>200 utenti registrati, 10+ ordini, €5–10K GMV/mese</td>
+        </tr>
+        <tr>
+            <td><strong>Fase 2 — Trazione Italia + Prep Estero</strong></td>
+            <td>Mesi 8–12</td>
+            <td>40–50 produttori attivi, espansione Piemonte/Veneto/Emilia, attivazione featured listing e analytics premium. Avvio localizzazione piattaforma (DE/EN), identificazione partner distributori DACH, pre-outreach 10 birrifici tedeschi/svizzeri.</td>
+            <td>1.000+ utenti, €15–25K GMV/mese, 3+ mercati italiani attivi</td>
+        </tr>
+        <tr>
+            <td><strong>Fase 3 — Italia + Lancio DACH (doppio binario)</strong></td>
+            <td>Mesi 12–18</td>
+            <td><strong>Track Italia:</strong> copertura nazionale, 200+ produttori, SEO dominance regionale. <strong>Track DACH (parallelo):</strong> lancio soft in Germania, Svizzera, Austria e Belgio — produttori italiani visibili cross-border + onboarding primi 20–30 produttori locali DACH. Piattaforma in tedesco. Cross-border attivato per piani Pro e Partner.</td>
+            <td>Italia: 200+ produttori, DR 45+. DACH: 20–30 produttori, prime transazioni cross-border, €5–10K GMV/mese internazionale</td>
+        </tr>
+        <tr>
+            <td><strong>Fase 4 — Europa Secondaria: Francia, Spagna, Paesi Bassi</strong></td>
+            <td>Anno 2–3</td>
+            <td>Scala DACH a 100+ produttori locali. Ingresso in Francia, Spagna e Paesi Bassi: mercati craft in forte crescita, ancora frammentati, tutti nell'Eurozona — nessun adempimento normativo aggiuntivo rispetto all'infrastruttura EU esistente. Localizzazione FR/ES/NL. Team 5–8 persone.</td>
+            <td>GMV totale €10–12M, 500+ produttori EU, EBITDA positivo su mercato italiano, DR 55–65</td>
+        </tr>
+        <tr>
+            <td><strong>Fase 5 — Europa Emergente: Polonia, Repubblica Ceca, Romania</strong></td>
+            <td>Anno 3–4</td>
+            <td>Europa Centrale e dell'Est: mercati craft in rapida espansione, costi operativi inferiori, concorrenza digitale assente nel segmento. La Repubblica Ceca ha la cultura brassicola più antica d'Europa; la Polonia ha registrato +40% craft negli ultimi tre anni. Tutti e tre paesi UE — stessa normativa e-commerce, stesso regime OSS IVA.</td>
+            <td>GMV totale Anno 4: €20–30M, 1.000+ produttori EU</td>
+        </tr>
+        <tr>
+            <td><strong>Fase 6 — Mercati Extra-EU: USA, UK, Giappone, Australia, Canada</strong></td>
+            <td>Anno 4–5+</td>
+            <td>Solo dopo aver consolidato la presenza in 6–8 paesi EU. USA: Pacific Northwest o singolo stato pilota, gestione Three-Tier System tramite partner licenziati locali. UK post-Brexit: dogana e licenze separate. Giappone e Australia per il craft locale con gap digitale identico. Round Serie A per accelerare.</td>
+            <td>GMV Anno 5: €40–60M, 2.000+ produttori globali, 10+ mercati attivi</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="proiezioni">10. Proiezioni Finanziarie</h2>
+
+<h3>Anno 3 — Scenario Conservativo</h3>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Metrica</th><th>Valore</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Produttori attivi</td><td><strong>500</strong></td></tr>
+        <tr><td>GMV totale</td><td><strong>€7.500.000</strong></td></tr>
+        <tr><td>Revenue totale (commissioni + servizi)</td><td><strong>€1.645.000</strong></td></tr>
+        <tr><td>Costi operativi</td><td><strong>€420.000</strong></td></tr>
+        <tr><td>EBITDA</td><td><strong>€1.225.000</strong></td></tr>
+        <tr><td>Margine EBITDA</td><td><strong>74%</strong></td></tr>
+        <tr><td>Valutazione stimata (2.5–5x revenue)</td><td><strong>€4–8M</strong></td></tr>
+    </tbody>
+</table>
+</div>
+
+<div class="callout">
+<p><strong>Break-even operativo:</strong> 12 mesi dal lancio MVP.<br>
+<strong>Profittabilità:</strong> Anno 2–3 senza necessità di round successivi.<br>
+<strong>Round attuale (Pre-Seed):</strong> €25.000–50.000 — 57% sviluppo MVP, 26% acquisizione produttori e marketing, 17% legal e buffer.</p>
+</div>
+
+<hr>
+
+<h2 id="rischi">11. Rischi e Mitigazioni</h2>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Rischio</th><th>Probabilità</th><th>Mitigazione</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Adozione lenta produttori (diffidenza verso piattaforme terze)</td>
+            <td>Media</td>
+            <td>Outreach informale già positivo su 4 produttori; fee bassa vs distributori; mantenimento brand del produttore</td>
+        </tr>
+        <tr>
+            <td>Compliance normativa alcol online</td>
+            <td>Media</td>
+            <td>Consulente legale specializzato in compliance alcol; inserita in uso fondi (17% legal)</td>
+        </tr>
+        <tr>
+            <td>Competitor consolida il modello marketplace prima (Tannico, 1001.it)</td>
+            <td>Bassa (18–24 mesi)</td>
+            <td>SEO flywheel inreplicabile senza cambiare modello; first-mover su km 0 craft beer/spirits</td>
+        </tr>
+        <tr>
+            <td>Qualità dei produttori onboardati (reputazione piattaforma)</td>
+            <td>Bassa</td>
+            <td>Selezione manuale prima wave (20 produttori scelti tra 280 mappati); criteri di validazione già definiti</td>
+        </tr>
+        <tr>
+            <td>Logistica e resi (gestiti dai produttori)</td>
+            <td>Media</td>
+            <td>Guida imballaggi e spedizioni per produttori; responsabilità contrattuale rimane al produttore</td>
+        </tr>
+        <tr>
+            <td>CAC consumatori troppo alto</td>
+            <td>Bassa</td>
+            <td>Traffico organico SEO è il canale principale; community dei produttori porta utenti gratis</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="rtd-rts">12. RTD &amp; RTS — Terzo Pilastro di Crescita</h2>
+
+<h3>Mercato</h3>
+<p>RTD (<em>Ready to Drink</em>) e RTS (<em>Ready to Serve</em>) sono le categorie a crescita più rapida nel segmento alcol premium in Italia. Si tratta di cocktail artigianali già miscelati — in lattina, bottiglia o formato concentrato — prodotti spesso dalle stesse distillerie già nel target di Brewsters.</p>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Segmento</th><th>Mercato Italia 2025 (est.)</th><th>Crescita YoY</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>RTD totale (tutti i canali)</td><td><strong>~€620M</strong></td><td>+15%</td><td>Fonte: IWSR 2025</td></tr>
+        <tr><td>Canned cocktail artigianali</td><td><strong>~€85M</strong></td><td>+19%</td><td>Negroni, G&amp;T, Spritz in lattina</td></tr>
+        <tr><td>Hard seltzer (incluso craft)</td><td><strong>~€42M</strong></td><td>+28%</td><td>Segmento nascente, margini alti</td></tr>
+        <tr><td>RTD craft/artigianale (sottoinsieme)</td><td><strong>~€55M</strong></td><td>+22%</td><td>Target diretto Brewsters (~9% del RTD totale)</td></tr>
+        <tr><td>RTS pre-batched (cocktail da bar) <em>— sottoinsieme del RTD totale, separato per canale HoReCa</em></td><td><strong>~€12M</strong></td><td>+35%</td><td>Canale HoReCa principalmente; ancora nessun marketplace dedicato. <strong>Non aggiungere a €620M RTD per evitare double-counting.</strong></td></tr>
+    </tbody>
+</table>
+</div>
+
+<h3>Perché RTD/RTS si integra perfettamente in Brewsters</h3>
+<ul>
+    <li><strong>Stessi produttori, nuova categoria:</strong> distillerie già in portafoglio (gin, amaro, grappa) producono o possono produrre RTD — nessun nuovo costo di acquisizione offerta.</li>
+    <li><strong>Canned craft beer già presente:</strong> birrifici come Brewfist ed Elav vendono già in lattina; Brewsters diventa il canale online naturale.</li>
+    <li><strong>Basket size superiore:</strong> un ordine RTD (12-pack lattine) vale mediamente il 35–40% in più rispetto a un ordine di bottiglie singole.</li>
+    <li><strong>Frequenza di riacquisto più alta:</strong> il RTD è un consumo quotidiano/settimanale (aperitivo, after work), non solo occasionale come una bottiglia da collezione.</li>
+    <li><strong>Zero competitor nel segmento km 0 RTD:</strong> nessun marketplace italiano aggrega RTD artigianali con filtro geografico.</li>
+</ul>
+
+<h3>Unit Economics RTD vs. prodotto standard</h3>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Metrica</th><th>Prodotto standard (birra/spirits)</th><th>RTD / RTS</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Scontrino medio per ordine</td><td>€45–70</td><td><strong>€60–95</strong> (+35%)</td></tr>
+        <tr><td>Frequenza ordini / anno per cliente</td><td>2–3x</td><td><strong>6–10x</strong></td></tr>
+        <tr><td>LTV consumatore (3 anni)</td><td>€270–630</td><td><strong>€1.080–2.850</strong></td></tr>
+        <tr><td>Commissione Brewsters (take rate)</td><td>9–10%</td><td><strong>9–10%</strong> (invariata)</td></tr>
+        <tr><td>GMV addizionale per produttore RTD/anno</td><td>—</td><td><strong>+€400–800/mese</strong></td></tr>
+    </tbody>
+</table>
+</div>
+
+<h3>Impatto sulle proiezioni (revisione Anno 3 con RTD/RTS)</h3>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Scenario</th><th>Produttori RTD/RTS attivi (Anno 3)</th><th>GMV addizionale</th><th>Revenue addizionale</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Conservativo</td><td>60 (12% del totale 500)</td><td>+€360.000/anno</td><td><strong>+€32.400</strong></td></tr>
+        <tr><td>Base</td><td>100 (20% del totale)</td><td>+€720.000/anno</td><td><strong>+€64.800</strong></td></tr>
+        <tr><td>Ottimistico</td><td>150 (30% del totale)</td><td>+€1.080.000/anno</td><td><strong>+€97.200</strong></td></tr>
+    </tbody>
+</table>
+</div>
+
+<p>Nello scenario base, l'integrazione RTD/RTS porta il GMV totale Anno 3 da <strong>€7,5M a €8,2M</strong> e la revenue da <strong>€1.645.000 a €1.710.000</strong> (+3,9%), senza alcun costo addizionale di acquisizione produttori.</p>
+
+<h3>Go-to-Market RTD/RTS</h3>
+<ul>
+    <li><strong>Fase 2 (mese 8+):</strong> abilitare categoria RTD nel catalogo; onboarding birrifici già in lattina dalla wave 1 (Brewfist, Elav).</li>
+    <li><strong>Fase 2–3:</strong> outreach mirato a distillerie con linea RTD esistente (gin RTD, Negroni in can, Spritz artigianale).</li>
+    <li><strong>Fase 3:</strong> attivare RTS (cocktail kit, pre-batched) per canale HoReCa — bundle con profilo produttore premium.</li>
+    <li><strong>Contenuti dedicati:</strong> guide abbinamento RTD + cibo, tutorial cocktail km 0, content SEO su "cocktail artigianale" e "aperitivo locale".</li>
+</ul>
+
+<hr>
+
+<h2 id="bibliografia">13. Fonti e Bibliografia</h2>
+
+<p class="text-muted-italic">Le fonti di seguito sono usate a supporto delle stime di mercato, dei dati strutturali di settore e dei benchmark tecnologici presenti in questo documento. Le proiezioni finanziarie e le stime operative (GMV, CAC, LTV, produttori RTD/RTS) sono elaborazioni interne Brewsters basate su dati primari raccolti via outreach diretto e database produttori Lombardia.</p>
+
+<h3>Mercato Birra Artigianale</h3>
+<ul>
+    <li><strong>Assobirra — Annuario della Birra 2025.</strong> Associazione dei Produttori di Birra e Malto, Roma, 2025.<br>
+    <em>Utilizzato per:</em> numero microbirrifici attivi in Italia (1.000+), birrifici agricoli (~180), trend produzione low-alcohol (6%→16%), crescita craft beer +27% YoY.</li>
+
+    <li><strong>Unionbirrai — Report Settore 2025.</strong> Unione Italiana Piccoli Birrifici, 2025.<br>
+    <em>Utilizzato per:</em> numero brewpub con produzione (~400), nuove birre certificate 2025 (~440), dati strutturali su microbirrifici e birrifici artigianali italiani.</li>
+
+    <li><strong>Nomisma — Osservatorio Birra 2025.</strong> Nomisma S.p.A., Bologna, 2025.<br>
+    <em>Utilizzato per:</em> crescita mercato birra craft, dati consumo, trend on-trade vs off-trade.</li>
+
+    <li><strong>ICE Agenzia — Export Agroalimentare Italia 2025.</strong> Istituto Nazionale per il Commercio Estero, Roma, 2025.<br>
+    <em>Utilizzato per:</em> export birra craft italiana +22% YoY, principali mercati di destinazione (DACH, UK, USA).</li>
+</ul>
+
+<h3>Mercato Spirits Artigianali</h3>
+<ul>
+    <li><strong>Assodistil — Rapporto Annuale 2025.</strong> Associazione Nazionale Produttori di Alcol e delle Acqueviti Italiane, Roma, 2025.<br>
+    <em>Utilizzato per:</em> numero distillerie artigianali attive in Italia (800+), dati produzione grappa, gin e amari.</li>
+
+    <li><strong>Federvini — Osservatorio Vini e Spirits 2025.</strong> Federazione Italiana Produttori, Esportatori e Importatori di Vini, Acquaviti, Liquori, Sciroppi, Aceti e Affini, Roma, 2025.<br>
+    <em>Utilizzato per:</em> dimensione mercato spirits premium Italy (~€2,8 miliardi), trend segmento premium e artisanal.</li>
+
+    <li><strong>IWSR Drinks Market Analysis — Italy Spirits Report 2025.</strong> IWSR, Londra, 2025.<br>
+    <em>Utilizzato per:</em> spirits premium Italia ~€2,8 miliardi, trend crescita segmento artigianale.</li>
+</ul>
+
+<h3>Comportamenti d'Acquisto e E-commerce</h3>
+<ul>
+    <li><strong>Nomisma — Osservatorio Stili di Vita 2025.</strong> Nomisma S.p.A., Bologna, 2025.<br>
+    <em>Utilizzato per:</em> 68% dei consumatori under 40 cerca prodotti km 0 entro 50 km, preferenza per filiera corta e tracciabilità del produttore.</li>
+
+    <li><strong>Netcomm — E-commerce Report Italia 2025.</strong> Consorzio del Commercio Digitale Italiano, Milano, 2025.<br>
+    <em>Utilizzato per:</em> penetrazione e-commerce nel food &amp; beverage in Italia (~5%), confronto con media europea.</li>
+</ul>
+
+<h3>RTD / RTS (Ready to Drink / Ready to Serve)</h3>
+<ul>
+    <li><strong>IWSR Drinks Market Analysis — Global RTD Report 2025.</strong> IWSR, Londra, 2025.<br>
+    <em>Utilizzato per:</em> mercato RTD totale Italia ~€620M (+15% YoY); canned cocktail artigianali ~€85M (+19%); hard seltzer ~€42M (+28%); RTD craft/artigianale ~€55M (+22%); RTS pre-batched HoReCa ~€12M (+35%).</li>
+
+    <li><strong>Grand View Research — Craft RTD Cocktails Market Report 2025.</strong> Grand View Research Inc., San Francisco, 2025.<br>
+    <em>Utilizzato per:</em> conferma crescita segmento hard seltzer e canned cocktail artigianali; benchmark europei vs mercato italiano.</li>
+</ul>
+
+<h3>Distribuzione e Canale Tradizionale</h3>
+<ul>
+    <li><strong>Assobirra — Standard di settore: margini distributori.</strong> Assobirra / Unionbirrai, 2025.<br>
+    <em>Utilizzato per:</em> margine tipico dei distributori tradizionali nel canale birra e spirits in Italia (40–60% sul prezzo franco produttore).</li>
+</ul>
+
+<h3>Tecnologia e Infrastruttura</h3>
+<ul>
+    <li><strong>Stripe — Prezzi e commissioni EU (2025).</strong> Stripe, Inc. — <a href="https://stripe.com/it/pricing" target="_blank" rel="noopener">stripe.com/it/pricing</a>.<br>
+    <em>Utilizzato per:</em> struttura commissioni Stripe Connect: 1,5% + €0,25 per transazione (carte europee).</li>
+
+    <li><strong>Heroku — Pricing Plans (2025).</strong> Heroku (Salesforce) — <a href="https://www.heroku.com/pricing" target="_blank" rel="noopener">heroku.com/pricing</a>.<br>
+    <em>Utilizzato per:</em> stima costi hosting cloud Fase 1 (~€115/mese su stack Basic/Standard + add-on storage e monitoring).</li>
+
+    <li><strong>Ruby on Rails 8 — Documentazione ufficiale.</strong> Rails Core Team — <a href="https://rubyonrails.org" target="_blank" rel="noopener">rubyonrails.org</a>, 2024.<br>
+    <em>Utilizzato per:</em> stack tecnologico MVP (Rails 8 + PostgreSQL + Hotwire); riferimento per stima tempi di sviluppo.</li>
+
+    <li><strong>Shopify — Pricing Plans (2025).</strong> Shopify Inc. — <a href="https://www.shopify.com/pricing" target="_blank" rel="noopener">shopify.com/pricing</a>.<br>
+    <em>Utilizzato per:</em> confronto costi alternativa per produttori (€29–79/mese + commissione), usato nella proposta di valore §3.</li>
+</ul>
+
+<h3>Benchmark Valutazione e SaaS/Marketplace</h3>
+<ul>
+    <li><strong>Gartner / CB Insights — SaaS and Marketplace Valuation Multiples 2024–2025.</strong> Diversi report settoriali, 2024–2025.<br>
+    <em>Utilizzato per:</em> multiplo di valutazione revenue 2,5–5x applicato alle proiezioni Anno 3 (benchmark per marketplace verticali early-stage Europa).</li>
+</ul>
+
+<h3>Dati e Stime Interne Brewsters</h3>
+<ul>
+    <li><strong>Database Produttori Lombardia — rilevazione interna Brewsters, Gennaio–Febbraio 2026.</strong> 280 produttori mappati (birrifici, distillerie, brewpub) nella regione Lombardia; include: tipologia prodotto, canali di vendita attivi, presenza online, stima GMV mensile per categoria.</li>
+
+    <li><strong>Outreach produttori — dati preliminari Q1 2026.</strong> Contatti informali con 4 produttori pilota; feedback su pricing, frizione canali attuali, interesse al modello Brewsters. Utilizzato per: stima CAC (€150–300), interest rate iniziale, stima GMV medio per produttore (€800–1.500/mese).</li>
+
+    <li><strong>Stime interne RTD/RTS — Brewsters, Marzo 2026.</strong> Stima numero produttori RTD artigianali in Italia (~150) e RTS (~60) basata su ricerca desk (LinkedIn, siti produttori, fiere di settore). Basket size RTD +35–40% e frequenza riacquisto 6–10x/anno sono stime interne non ancora validate su campione.</li>
+
+    <li><strong>Proiezioni finanziarie Anno 3 — modello interno Brewsters.</strong> GMV €7,5M–€8,2M, revenue €1.645.000–€1.710.000, costi operativi €420.000, EBITDA 74%: proiezioni basate su curva di adozione stimata, take rate medio pesato 9–10%, mix piani Free/Pro/Partner ipotizzato (60%/30%/10%). Non revisionate da terzi.</li>
+</ul>
+
+<p class="text-muted-italic mt-2">
+    <strong>Documento redatto su base dei materiali interni Brewsters:</strong> pitch deck (13 slide), analisi competitiva (8 player), database produttori Lombardia (280 produttori), architettura tecnica MVP, script outreach produttori. — Marzo 2026.
+</p>
+
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.markdown-content table').forEach(function(table) {
+        if (!table.parentNode.classList.contains('table-wrapper')) {
+            var wrapper = document.createElement('div');
+            wrapper.className = 'table-wrapper';
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        }
+    });
+</script>
+
+</body>
+</html>
