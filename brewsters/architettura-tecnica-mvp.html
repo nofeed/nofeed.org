@@ -320,28 +320,16 @@
             <h3>7.1 Hosting (MVP)</h3>
             <div class="comparison">
                 <div class="option">
-                    <h4>Opzione A: Heroku (raccomandato MVP)</h4>
-                    <ul>
-                        <li>Dyno Standard ($25/mese)</li>
-                        <li>+ PostgreSQL Standard 0 ($50/mese)</li>
-                        <li>+ Redis Mini ($3/mese)</li>
-                        <li><strong>= $78/mese (~€72)</strong></li>
-                    </ul>
-                    <p>✅ Deploy con <code>git push heroku main</code>, SSL automatico, logging, metrics</p>
-                </div>
-                
-                <div class="option">
-                    <h4>Opzione B: Fly.io (cost-optimized)</h4>
+                    <h4>Fly.io (scelta MVP)</h4>
                     <ul>
                         <li>1 shared CPU, 256MB RAM (~$10/mese)</li>
                         <li>+ Managed Postgres (~$15/mese)</li>
                         <li>+ Redis (~$5/mese)</li>
-                        <li><strong>= €25-30/mese</strong></li>
+                        <li><strong>= ~$30/mese (~€28)</strong></li>
                     </ul>
-                    <p>⚠️ Più economico, meno mature</p>
+                    <p>✅ Deploy con <code>fly deploy</code>, SSL automatico, logging, metrics. Ottimo rapporto costo/prestazioni per MVP Rails.</p>
                 </div>
             </div>
-            <p><strong>Scelta MVP:</strong> Heroku per time-to-market. Migrazione Fly.io se costi Heroku insostenibili post-Anno 1.</p>
 
             <h3>7.2 CI/CD</h3>
             <ul>
@@ -352,7 +340,7 @@
 
             <h3>7.3 Monitoring (MVP)</h3>
             <ul>
-                <li><strong>Heroku Metrics:</strong> CPU, memory, response time</li>
+                <li><strong>Fly.io Metrics:</strong> CPU, memory, response time</li>
                 <li><strong>Sentry:</strong> Error tracking (€26/mese tier base)</li>
                 <li><strong>Uptime Robot:</strong> Gratuito, ping ogni 5 minuti</li>
             </ul>
@@ -409,9 +397,9 @@
             <ul>
                 <li>Fragment caching produttori/prodotti (Redis, TTL 1h, invalidazione automatica on update)</li>
                 <li>HTTP headers: <code>Cache-Control: no-cache</code> per pagine dinamiche (browser richiede sempre ultima versione)</li>
-                <li>Database connection pooling (PgBouncer via Heroku add-on)</li>
+                <li>Database connection pooling (PgBouncer integrato in Fly Postgres)</li>
                 <li>Image optimization: ImageMagick resize on upload, WebP format, lazy loading</li>
-                <li>CDN: CloudFlare free tier in front di Heroku (caching solo assets statici CSS/JS/immagini, HTML sempre fresco)</li>
+                <li>CDN: CloudFlare free tier in front di Fly.io (caching solo assets statici CSS/JS/immagini, HTML sempre fresco)</li>
             </ul>
         </section>
 
@@ -449,7 +437,7 @@
                         <li>Email transazionali (SendGrid)</li>
                         <li>SEO: sitemap, schema.org, meta tags</li>
                         <li>Testing: RSpec suite core flows</li>
-                        <li>Deploy staging + produzione Heroku</li>
+                        <li>Deploy staging + produzione Fly.io</li>
                         <li>Onboarding manuale primi 5 produttori (beta)</li>
                     </ul>
                 </div>
@@ -470,9 +458,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Heroku (hosting)</td>
-                            <td>$78</td>
-                            <td>Dyno + DB + Redis</td>
+                            <td>Fly.io (hosting)</td>
+                            <td>$30</td>
+                            <td>App + Postgres + Redis</td>
                         </tr>
                         <tr>
                             <td>AWS S3 (storage)</td>
@@ -533,7 +521,7 @@
                     <li>Indici ottimizzati su query critiche</li>
                     <li>Fragment caching aggressivo (invalidazione smart on update)</li>
                     <li>Monitoring query N+1 (Bullet gem)</li>
-                    <li>Upgrade database plan se necessario (Heroku scaling verticale semplice)</li>
+                    <li>Upgrade database plan se necessario (Fly.io scaling verticale semplice)</li>
                 </ul>
             </div>
 
@@ -545,7 +533,7 @@
                     <li>Documentazione inline codice</li>
                     <li>README completo con setup instructions</li>
                     <li>Deploy automatizzato (zero deploy manuale)</li>
-                    <li>Co-founder business può gestire contenuti via dashboard admin</li>
+                    <li>Utente non tecnico può gestire contenuti via dashboard admin</li>
                     <li>Post-Anno 1: onboarding dev junior per supporto manutenzione</li>
                 </ul>
             </div>
@@ -567,7 +555,7 @@
                         <tr>
                             <td>Deploy time</td>
                             <td>&lt; 10 minuti</td>
-                            <td>Heroku pipeline</td>
+                            <td>Fly.io deploy</td>
                         </tr>
                         <tr>
                             <td>Page load time (avg)</td>
@@ -592,7 +580,7 @@
                         <tr>
                             <td>Database query time (p95)</td>
                             <td>&lt; 100ms</td>
-                            <td>Heroku Metrics</td>
+                            <td>Fly.io Metrics</td>
                         </tr>
                         <tr>
                             <td>Bugs critical (Mese 1)</td>
@@ -616,7 +604,7 @@
                     <li>✅ Costi fissi bassi (~€115/mese)</li>
                     <li>✅ Scalabile fino a 1.000 produttori senza rewrite</li>
                 </ul>
-                <p><strong>Prossimo step:</strong> Closing round pre-seed → start sviluppo Mese 1.</p>
+                <p><strong>Prossimo step:</strong> Start sviluppo Mese 1.</p>
             </div>
         </section>
 
@@ -656,11 +644,8 @@
 
             <h3>Hosting e Infrastruttura</h3>
             <ul>
-                <li><strong>Heroku (MVP)</strong> — <a href="https://www.heroku.com/pricing" target="_blank">heroku.com/pricing</a><br>
-                Dyno Standard 1X + PostgreSQL Standard-0 + Redis Mini = ~$78/mese (~€72). Con Sentry e SendGrid: ~€115/mese totale. Motivazione: zero-ops, deploy in minuti, PostgreSQL managed.</li>
-
-                <li><strong>Fly.io (opzione post-MVP)</strong> — <a href="https://fly.io/docs/about/pricing/" target="_blank">fly.io/docs/about/pricing</a><br>
-                Alternativa Heroku a costi inferiori (~€25-30/mese) se il round non si chiude a condizioni ottimali. Migrazione stimata 1-2 giorni.</li>
+                <li><strong>Fly.io (MVP)</strong> — <a href="https://fly.io/docs/about/pricing/" target="_blank">fly.io/docs/about/pricing</a><br>
+                App + Managed Postgres + Redis = ~$30/mese (~€28). Con Sentry e SendGrid: ~€75/mese totale. Motivazione: costi contenuti, deploy con <code>fly deploy</code>, PostgreSQL managed, SSL automatico.</li>
 
                 <li><strong>CloudFlare (CDN)</strong> — <a href="https://www.cloudflare.com/plans/" target="_blank">cloudflare.com/plans</a><br>
                 Free tier: caching asset statici (CSS/JS/immagini), DDoS protection, SSL automatico. HTML sempre servito fresco (no cache HTML su CDN).</li>
