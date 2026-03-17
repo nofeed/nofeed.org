@@ -713,7 +713,7 @@
 <ul>
 <li>Mercato totale birra Italia: <strong>~€7,1 miliardi</strong> (2025) — comparto craft (TAM diretto): <strong>~€450M</strong> (+27% YoY, fonte Assobirra/Nomisma 2025)</li>
 <li>Mercato spirits &amp; liquori artigianali/premium: mercato spirits premium Italia <strong>~€2,8 miliardi</strong> (2025) — segmento artigianale/craft: 12-15% del totale = <strong>~€350-420M</strong> (+12% YoY)</li>
-<li><strong>TAM diretto Brewsters (craft beer + spirit artigianali): ~€850M-900M</strong></li>
+<li><strong>TAM diretto Brewsters (craft beer + spirit artigianali): ~€800-870M</strong></li>
 <li>Numero produttori: 1.000+ microbirrifici + ~800 distillerie artigianali attive</li>
 <li><strong>Nota strategica:</strong> Il mercato vino (14 miliardi €) è escluso — già saturato da player consolidati (Tannico 30M€ revenue, Callmewine, Vivino). Brewsters si posiziona su segmenti <strong>meno presidiati digitalmente</strong>: craft beer e spirits/liquori artigianali.</li>
 </ul>
@@ -762,7 +762,7 @@
 <h3>Birra Artigianale: Crescita e Innovazione</h3>
 <p>Il primo semestre del 2025 ha confermato la vivacità del mercato italiano della birra artigianale. Secondo il rapporto <em>Italian Craft Beer Trends</em>, sono state censite <strong>440 nuove birre italiane</strong>, con una crescita del <strong>+27% rispetto al primo semestre 2024</strong>.</p>
 <h3>Il Fenomeno Low-Alcohol (NoLo)</h3>
-<p>Uno dei trend più rilevanti riguarda le birre con gradazione alcolica inferiore al 4%: oggi rappresentano il <strong>16,14% della produzione totale</strong>, praticamente il triplo rispetto a pochi anni fa, quando si attestavano intorno al 6% <em>(Cronache di Birra, 2025)</em>. La gradazione media alcolica dell&#39;intero settore artigianale è scesa di un punto percentuale dal 2021 ad oggi, segnale di un cambiamento strutturale nei gusti dei consumatori, sempre più orientati verso stili di vita salutisti.</p>
+<p>Uno dei trend più rilevanti riguarda le birre con gradazione alcolica inferiore al 4%: oggi rappresentano il <strong>16,14% della produzione totale</strong>, quasi il triplo rispetto a pochi anni fa, quando si attestavano intorno al 6% <em>(Cronache di Birra, 2025)</em>. La gradazione media alcolica dell&#39;intero settore artigianale è scesa di un punto percentuale dal 2021 ad oggi, segnale di un cambiamento strutturale nei gusti dei consumatori, sempre più orientati verso stili di vita salutisti.</p>
 <h3>Il Km 0 e l&#39;Iper-Localismo</h3>
 <p>Il legame con il territorio è diventato un fattore competitivo determinante:</p>
 <ul>
@@ -988,7 +988,7 @@
 </ol>
 <h3>Il Fossato Competitivo (Perché Non Saremo Copiati Facilmente)</h3>
 <p><strong>Network effects:</strong> Più produttori → più backlink SE → più traffico organico → più consumatori → più valore per produttori. Il loop si autoalimenta.</p>
-<p><strong>Fossato contenutistico:</strong> Ogni produttore genera 5-10 pagine di contenuto unico e ottimizzato SEO. I contenuti non vengono copiati dai siti dei produttori — vengono <strong>rigenerati dall'AI</strong> (Claude via API Anthropic) a partire dalle informazioni fornite dal produttore, producendo testi originali, ottimizzati per il SEO e privi di duplicazione rispetto al sito di origine. Con 500 produttori = 2.500-5.000 pagine indicizzate con contenuto unico che impiegano 2-3 anni a essere replicate.</p>
+<p><strong>Fossato contenutistico:</strong> Ogni produttore genera 5-10 pagine di contenuto unico e ottimizzato SEO. I contenuti non vengono copiati dai siti dei produttori — vengono <strong>rigenerati dall'AI</strong> (Claude via API Anthropic) a partire dalle informazioni fornite dal produttore, producendo testi originali, ottimizzati per la SEO e privi di duplicazione rispetto al sito di origine. Con 500 produttori = 2.500-5.000 pagine indicizzate con contenuto unico che impiegano 2-3 anni a essere replicate.</p>
 <p><strong>Effetto composto SEO:</strong> I backlink organici dai produttori (1.500-4.000 in Anno 3) sono impossibili da replicare con budget pubblicitario. Un competitor dovrebbe spendere 200-500k€ in link building per raggiungere lo stesso Domain Rating.</p>
 <p><strong>Switching cost per produttori:</strong> Una volta che il produttore ha investito tempo nella vetrina, ha costruito recensioni, e ha il link Brewsters su tutti i suoi canali, migrare è costoso in termini di tempo e SEO.</p>
 <p><strong>Time-to-market:</strong> Siamo 18-24 mesi avanti ai potenziali imitatori. Il CTO costruisce l&#39;MVP in 3 mesi; un competitor dovrebbe ingaggiare un team esterno (6+ mesi di dev + 50-80k€).</p>
@@ -1262,7 +1262,7 @@ flowchart LR
 <p>Questa è la feature che trasforma Brewsters da marketplace italiano a <strong>piattaforma globale del made in Italy artigianale</strong>, e rappresenta una delle leve di monetizzazione più interessanti dell&#39;intero modello.</p>
 <p><strong>Distinzione fondamentale:</strong> l&#39;AI Translation riguarda esclusivamente i <strong>contenuti editoriali dei produttori</strong> — storie, descrizioni, schede prodotto, blog. L&#39;interfaccia della piattaforma (navigazione, label, messaggi di sistema, checkout) viene localizzata separatamente tramite il sistema <strong>Rails i18n</strong>, con traduzioni realizzate da traduttori professionisti per garantire qualità comunicativa e adattamento culturale preciso. Le due cose sono indipendenti e viaggiano su binari distinti.</p>
 <p><strong>Il problema:</strong> il 90% dei produttori italiani non ha contenuti in lingua straniera. Le loro storie, i processi di produzione, le descrizioni dei prodotti esistono solo in italiano — rendendoli invisibili ai consumatori internazionali.</p>
-<p><strong>La soluzione:</strong> Brewsters integra un modello AI (via API Anthropic/Claude) che traduce automaticamente tutti i contenuti della vetrina del produttore — storia, processo, schede prodotto, blog — nelle lingue dei mercati target. Non una traduzione meccanica, ma una traduzione <strong>editorialmente curata</strong>: il prompt è progettato per preservare il tono autentico della voce del produttore, adattare le espressioni culturalmente, e ottimizzare il testo per il SEO nella lingua di destinazione.</p>
+<p><strong>La soluzione:</strong> Brewsters integra un modello AI (via API Anthropic/Claude) che traduce automaticamente tutti i contenuti della vetrina del produttore — storia, processo, schede prodotto, blog — nelle lingue dei mercati target. Non una traduzione meccanica, ma una traduzione <strong>editorialmente curata</strong>: il prompt è progettato per preservare il tono autentico della voce del produttore, adattare le espressioni culturalmente, e ottimizzare il testo per la SEO nella lingua di destinazione.</p>
 <p><strong>Lingue disponibili per fase:</strong></p>
 <ul>
 <li>Fase A: Tedesco, Francese (Germania e Belgio — primo target UE, espansione a costo normativo zero)</li>
@@ -2192,7 +2192,7 @@ flowchart TD
 </ul>
 <p><strong>✅ Architettura tecnica definita</strong></p>
 <ul>
-<li>Stack scelto e validato: Rails + Hotwire per SEO-first, React per dashboard</li>
+<li>Stack scelto e validato: Rails + Hotwire (Turbo + Stimulus) per SEO-first e interattività</li>
 <li>Schema database completo per marketplace p2p con commissioni variabili</li>
 <li>Wireframe dell&#39;MVP e user flow produttore/consumatore mappati</li>
 </ul>
@@ -2266,11 +2266,11 @@ flowchart TD
 <h3>Fase 1 — MVP e Primo Territorio (Mese 3–7) · Budget: ~24.200 €</h3>
 <p>Il principio guida è: <strong>non costruire tutto, costruire abbastanza da vendere</strong>.</p>
 <p><strong>Regione pilota: Lombardia</strong> — scelta per la massima densità di produttori artigianali in Italia (~200 microbirrifici + 80 distillerie attivi), mercato urbano maturo (Milano), alta propensione all&#39;acquisto online, e presenza consolidata di una community craft beverage attiva (eventi, festival, taproom).</p>
-<h4>Scelta tecnologica: Ruby on Rails + Hotwire (con React per la dashboard)</h4>
-<p>La scelta di costruire l&#39;MVP su <strong>Ruby on Rails con rendering server-side</strong> è deliberata e direttamente collegata alla strategia di crescita organica di Brewsters: una React SPA classica — dove il server restituisce un HTML vuoto e tutto il contenuto viene costruito da JavaScript nel browser — sarebbe tecnicamente incompatibile con la strategia SEO che è il principale motore di acquisizione della piattaforma.</p>
-<p><strong>Il problema della SPA e l&#39;SEO:</strong><br>Una Single Page Application pura presenta un problema strutturale per una piattaforma come Brewsters: i crawler di Google vedono inizialmente una shell HTML vuota, senza contenuto. Questo significa che URL come <code>brewsters.it/it/produttori/birrificio-xyz/products/ipa-montana</code> — che nel modello SEO di Brewsters devono essere pagine indicizzabili con meta tag, schema.org e contenuto ricco — risulterebbero invisibili o degradate agli occhi dei motori di ricerca. Tutta l&#39;architettura di URL semantici, le pagine hub territoriali, i meta tag dinamici e il link building costruito sui profili dei produttori perderebbero gran parte del proprio valore. In sintesi: scegliere una SPA React per le pagine pubbliche significa sabotare il principale vantaggio competitivo di Brewsters.</p>
+<h4>Scelta tecnologica: Ruby on Rails + Hotwire (Turbo + Stimulus)</h4>
+<p>La scelta di costruire l&#39;MVP su <strong>Ruby on Rails con rendering server-side</strong> è deliberata e direttamente collegata alla strategia di crescita organica di Brewsters: una SPA classica — dove il server restituisce un HTML vuoto e tutto il contenuto viene costruito da JavaScript nel browser — sarebbe tecnicamente incompatibile con la strategia SEO che è il principale motore di acquisizione della piattaforma.</p>
+<p><strong>Il problema della SPA e la SEO:</strong><br>Una Single Page Application pura presenta un problema strutturale per una piattaforma come Brewsters: i crawler di Google vedono inizialmente una shell HTML vuota, senza contenuto. Questo significa che URL come <code>brewsters.it/it/produttori/birrificio-xyz/products/ipa-montana</code> — che nel modello SEO di Brewsters devono essere pagine indicizzabili con meta tag, schema.org e contenuto ricco — risulterebbero invisibili o degradate agli occhi dei motori di ricerca. Tutta l&#39;architettura di URL semantici, le pagine hub territoriali, i meta tag dinamici e il link building costruito sui profili dei produttori perderebbero gran parte del proprio valore. In sintesi: scegliere una SPA per le pagine pubbliche significa sabotare il principale vantaggio competitivo di Brewsters.</p>
 <p><strong>Perché Rails con Hotwire è la scelta corretta:</strong><br>Rails oggi adotta Hotwire (Turbo + Stimulus) come approccio moderno al frontend: ogni pagina viene renderizzata completamente lato server — HTML completo, meta tag, structured data, contenuto indicizzabile — e JavaScript interviene solo per arricchire l&#39;interattività senza mai sostituire il rendering server-side. Il risultato è un&#39;esperienza utente fluida (navigazione senza reload completo grazie a Turbo Drive) con SEO perfetto by design. GitHub, Shopify, Airbnb e Etsy stessa sono nati su Rails; Hotwire è la risposta moderna di Rails alla sfida delle SPA, senza rinunciare alle convenzioni che rendono Rails così produttivo.</p>
-<p><strong>Dove React ha senso — la dashboard produttore:</strong><br>React rimane la scelta giusta per le interfacce altamente interattive e stateful dove l&#39;SEO non ha rilevanza: la dashboard interna dei produttori (gestione prodotti, ordini, analytics, editor contenuti) beneficia della reattività di React senza alcun impatto sul posizionamento organico. Questa separazione è la soluzione architetturale corretta: rendering server-side Rails + Hotwire per tutte le pagine pubbliche indicizzabili, React per la dashboard operativa dei produttori.</p>
+<p><strong>Anche la dashboard produttore usa Hotwire:</strong><br>Stimulus (il framework JavaScript di Hotwire) gestisce tutta l&#39;interattività della dashboard interna dei produttori — gestione prodotti, ordini, analytics, editor contenuti — con controller JavaScript leggeri che arricchiscono l&#39;HTML server-rendered. Turbo Frames e Turbo Streams permettono aggiornamenti parziali della pagina senza reload, garantendo un&#39;esperienza reattiva con uno stack unico e coerente, senza la complessità di un&#39;applicazione SPA separata.</p>
 <hr>
 <p><strong>Architettura dell&#39;MVP</strong></p>
 <div class="mermaid">
@@ -2279,7 +2279,7 @@ flowchart TD
         p1["Rails + Hotwire · HTML server-side<br>Vetrine · km 0 · Prodotti · Hub territoriali · Checkout"]
     end
     subgraph DASH["Dashboard Produttore — Interna"]
-        d1["React + Tailwind CSS via API JSON<br>Prodotti · Ordini · Analytics · Editor"]
+        d1["Stimulus + Turbo Frames + Tailwind CSS<br>Prodotti · Ordini · Analytics · Editor"]
     end
     subgraph BACK["Backend — Ruby on Rails"]
         b1["Autenticazione · Commissioni · Abbonamenti<br>Trix · Verifica età 18+ · pg_search · S3 · Sitemap"]
@@ -2288,7 +2288,7 @@ flowchart TD
         e1["Stripe Connect · PostgreSQL · AWS S3<br>Google Maps · Mailchimp/Resend · Render/Fly.io"]
     end
     p1 --&gt;|"Rendering MVC"| b1
-    d1 --&gt;|"REST API / JSON"| b1
+    d1 --&gt;|"Turbo Frames / Streams"| b1
     b1 --&gt; e1
 </div>
 <hr>
@@ -2360,7 +2360,7 @@ flowchart TD
 </tbody></table>
 <hr>
 <p><strong>Stima tempi di sviluppo MVP</strong></p>
-<p>Con il team di founder (CTO: Rails + Hotwire per backend e frontend pubblico; frontend developer: dashboard React produttori):</p>
+<p>Con il team di founder (CTO: Rails + Hotwire per backend, frontend pubblico e dashboard):</p>
 <table>
 <thead>
 <tr>
@@ -2387,7 +2387,7 @@ flowchart TD
 <tr>
 <td>Sprint 4</td>
 <td>2 settimane</td>
-<td>Checkout + Stripe Connect + dashboard produttore (React)</td>
+<td>Checkout + Stripe Connect + dashboard produttore (Stimulus)</td>
 </tr>
 <tr>
 <td>Sprint 5</td>
