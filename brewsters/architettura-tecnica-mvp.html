@@ -28,7 +28,7 @@
     <main class="container">
         <section>
             <h2 id="executive-summary">Executive Summary</h2>
-            <p class="lead">Architettura completa per marketplace bevande artigianali con modello puro intermediario. Stack scelto: <strong>Rails 8 + Hotwire + PostgreSQL + Redis + Stripe Connect</strong>. Priorità: SEO-first, time-to-market veloce, costi infrastruttura minimi.</p>
+            <p class="lead">Architettura completa per marketplace bevande artigianali con modello puro intermediario. Stack scelto: <strong>Rails 8 + Hotwire + PostgreSQL + Solid Queue/Cache/Cable + Stripe Connect</strong>. Priorità: SEO-first, time-to-market veloce, costi infrastruttura minimi.</p>
             
             <div class="metrics">
                 <div class="metric">
@@ -36,8 +36,8 @@
                     <div class="metric-label">Timeline sviluppo (1 founder full-time)</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">~€115</div>
-                    <div class="metric-label">Costo infrastruttura MVP/mese (hosting + storage + email + monitoring)</div>
+                    <div class="metric-value">~€45</div>
+                    <div class="metric-label">Costo infrastruttura MVP/mese (hosting + monitoring)</div>
                 </div>
                 <div class="metric">
                     <div class="metric-value">1.000+</div>
@@ -83,29 +83,32 @@
                 </div>
                 
                 <div class="tech-item">
-                    <h4>Database: PostgreSQL 15</h4>
+                    <h4>Database: PostgreSQL 18</h4>
                     <ul>
                         <li>Relazioni complesse produttore-prodotto-ordine-commissione</li>
-                        <li>Estensioni: <code>pg_search</code> (full-text), <code>earthdistance</code> (geo-filtering km 0)</li>
-                        <li>Backup automatizzato su S3</li>
+                        <li>Estensioni: <code>earthdistance</code> (geo-filtering km 0)</li>
+                        <li>Ricerca full-text: <strong>Meilisearch</strong> (search engine esterno, typo-tolerant, faceting, filtri avanzati)</li>
+                        <li>Backup automatizzato su Cloudflare R2</li>
                     </ul>
                 </div>
                 
                 <div class="tech-item">
-                    <h4>Cache/Queue: Redis 7</h4>
+                    <h4>Background Jobs / Cache / Real-time: Rails 8 Solid Stack</h4>
                     <ul>
-                        <li>Fragment caching (pagine produttore, liste prodotti)</li>
-                        <li>Background jobs (email, analytics, export)</li>
-                        <li>Session store</li>
+                        <li><strong>Solid Queue</strong> — job asincroni (email, indicizzazione Meilisearch, geocoding) su PostgreSQL, zero Redis</li>
+                        <li><strong>Solid Cache</strong> — fragment caching durable su database (256MB namespace)</li>
+                        <li><strong>Solid Cable</strong> — WebSocket per aggiornamenti real-time (notifiche ordini)</li>
+                        <li>Mission Control Jobs per UI gestione code</li>
                     </ul>
                 </div>
                 
                 <div class="tech-item">
-                    <h4>Storage: AWS S3</h4>
+                    <h4>Storage: ActiveStorage + Cloudflare R2</h4>
                     <ul>
-                        <li>Immagini prodotti/produttori (via ActiveStorage)</li>
+                        <li>Sviluppo: storage locale su disco</li>
+                        <li>Produzione: Cloudflare R2 (S3-compatible, free tier 10GB + 10M reads/mese)</li>
+                        <li>Image processing: libvips (ruby-vips) + mini_magick fallback</li>
                         <li>PDF fatture/ricevute</li>
-                        <li>Costo: ~€5-10/mese per primi 1.000 produttori</li>
                     </ul>
                 </div>
             </div>
@@ -113,8 +116,8 @@
             <h3>2.2 Frontend</h3>
             <ul>
                 <li><strong>View Layer:</strong> ERB templates + Hotwire (server-rendered HTML per SEO nativo)</li>
-                <li><strong>CSS:</strong> Tailwind CSS 3 (utility-first, build rapido)</li>
-                <li><strong>JavaScript:</strong> Vanilla JS + Stimulus (bundle &lt; 50KB)</li>
+                <li><strong>CSS:</strong> Tailwind CSS 4 (utility-first, via tailwindcss-rails)</li>
+                <li><strong>JavaScript:</strong> Importmap + Stimulus controllers (zero bundler, bundle minimo)</li>
                 <li><strong>Maps:</strong> Leaflet.js + OpenStreetMap (zero API costs)</li>
                 <li><strong>Checkout:</strong> Stripe.js (PCI compliance out-of-the-box)</li>
             </ul>
@@ -132,10 +135,11 @@
             <div class="code-block">
                 <h4>Users</h4>
                 <ul class="list-compact">
-                    <li>id, email (unique, index)</li>
+                    <li>id (UUID), email (unique, index)</li>
                     <li>password_digest (bcrypt)</li>
                     <li>role (enum: consumer, producer, admin)</li>
-                    <li>stripe_customer_id, stripe_account_id</li>
+                    <li>OAuth identities (Google, Facebook, LinkedIn)</li>
+                    <li>avatar (ActiveStorage attachment)</li>
                     <li>timestamps</li>
                 </ul>
             </div>
@@ -143,12 +147,11 @@
             <div class="code-block">
                 <h4>Producers</h4>
                 <ul class="list-compact">
-                    <li>id, user_id (FK)</li>
-                    <li>business_name, slug (unique, SEO-friendly URLs)</li>
-                    <li>story, production_process (Action Text)</li>
-                    <li>address, city, region, postal_code</li>
+                    <li>id (UUID), user_id (FK)</li>
+                    <li>business_name, slug (unique via friendly_id, SEO-friendly URLs)</li>
+                    <li>ProducerProfile (modello separato per dati editoriali)</li>
+                    <li>ProducerAddress (indirizzo + geocoding asincrono via Nominatim)</li>
                     <li>latitude, longitude (per km 0)</li>
-                    <li>vat_number, license_number</li>
                     <li>commission_rate (decimal, default 12% — scala a 8% oltre soglia volume)</li>
                     <li>plan (enum: free, pro, partner)</li>
                 </ul>
@@ -157,14 +160,17 @@
             <div class="code-block">
                 <h4>Products</h4>
                 <ul class="list-compact">
-                    <li>id, producer_id (FK, index)</li>
-                    <li>name, slug (scoped to producer)</li>
-                    <li>description (Action Text)</li>
-                    <li>category, subcategory (enums)</li>
-                    <li>alcohol_percentage, volume_ml</li>
-                    <li>price_cents (Money gem)</li>
+                    <li>id (UUID), producer_id (FK, index)</li>
+                    <li>name, slug (scoped to producer, via friendly_id)</li>
+                    <li>description (Markdown via Redcarpet)</li>
+                    <li>category, style, region, product_attributes</li>
+                    <li>ABV (alcohol_percentage), volume_ml</li>
+                    <li>price_cents</li>
                     <li>stock_quantity, published (boolean)</li>
-                    <li>ingredients (text o JSONB)</li>
+                    <li>images (ActiveStorage, has_many_attached)</li>
+                    <li>tags (Gutentag — genere, stile, attributi)</li>
+                    <li>ProductListing (modello separato per arricchimento editoriale SEO)</li>
+                    <li>Indicizzato su Meilisearch (name, description, producer_name, category)</li>
                 </ul>
             </div>
 
@@ -280,16 +286,28 @@
                             <td>1.5% + €0.25/tx</td>
                         </tr>
                         <tr>
-                            <td><strong>Email Transazionale</strong></td>
-                            <td>SendGrid / Mailgun</td>
-                            <td>Conferme ordine, shipped, ricevute</td>
-                            <td>€10-20/mese</td>
+                            <td><strong>Ricerca</strong></td>
+                            <td>Meilisearch</td>
+                            <td>Full-text search prodotti (typo-tolerant, faceting)</td>
+                            <td>Self-hosted (Fly Machine dedicata)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Contenuti</strong></td>
+                            <td>Anthropic (Claude API)</td>
+                            <td>Generazione testi, traduzioni, arricchimento prodotti</td>
+                            <td>Pay-per-use</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Geocoding</strong></td>
+                            <td>Nominatim (OpenStreetMap)</td>
+                            <td>Geolocalizzazione produttori per filtro km 0</td>
+                            <td>Gratuito</td>
                         </tr>
                         <tr>
                             <td><strong>Storage</strong></td>
-                            <td>AWS S3 + CloudFlare CDN</td>
-                            <td>Immagini prodotti/produttori</td>
-                            <td>€5-10/mese</td>
+                            <td>Cloudflare R2</td>
+                            <td>Immagini prodotti/produttori (ActiveStorage)</td>
+                            <td>Free tier 10GB; poi ~€0.015/GB/mese</td>
                         </tr>
                         <tr>
                             <td><strong>Analytics</strong></td>
@@ -305,8 +323,8 @@
                         </tr>
                         <tr>
                             <td><strong>SEO</strong></td>
-                            <td>Schema.org + sitemap_generator</td>
-                            <td>LocalBusiness, Product markup</td>
+                            <td>meta-tags + json-ld + sitemap_generator</td>
+                            <td>Dynamic meta tags, Schema.org (LocalBusiness, Product), XML sitemap</td>
                             <td>Gratuito</td>
                         </tr>
                     </tbody>
@@ -317,17 +335,18 @@
         <section>
             <h2 id="infrastruttura">7. Infrastruttura e Deployment</h2>
             
-            <h3>7.1 Hosting (MVP)</h3>
+            <h3>7.1 Hosting e Deploy (MVP)</h3>
             <div class="comparison">
                 <div class="option">
                     <h4>Fly.io (scelta MVP)</h4>
                     <ul>
-                        <li>1 shared CPU, 256MB RAM (~$10/mese)</li>
-                        <li>+ Managed Postgres (~$15/mese)</li>
-                        <li>+ Redis (~$5/mese)</li>
-                        <li><strong>= ~$30/mese (~€28)</strong></li>
+                        <li>Fly Machines per app Rails (~$5-15/mo shared CPU)</li>
+                        <li>Fly Postgres (managed, 1GB free tier)</li>
+                        <li>Meilisearch su Fly Machine dedicata</li>
+                        <li>Cloudflare R2 per storage file (S3-compatible, free tier generoso)</li>
+                        <li>Zero Redis — Rails 8 Solid Stack su PostgreSQL</li>
                     </ul>
-                    <p>✅ Deploy con <code>fly deploy</code>, SSL automatico, logging, metrics. Ottimo rapporto costo/prestazioni per MVP Rails.</p>
+                    <p>✅ Deploy con <code>fly deploy</code>, SSL automatico, edge networking globale. Scaling orizzontale semplice con Fly Machines. CDN e R2 via Cloudflare.</p>
                 </div>
             </div>
 
@@ -340,9 +359,9 @@
 
             <h3>7.3 Monitoring (MVP)</h3>
             <ul>
-                <li><strong>Fly.io Metrics:</strong> CPU, memory, response time</li>
                 <li><strong>Sentry:</strong> Error tracking (€26/mese tier base)</li>
                 <li><strong>Uptime Robot:</strong> Gratuito, ping ogni 5 minuti</li>
+                <li><strong>Health check:</strong> endpoint <code>/up</code> integrato Rails 8</li>
             </ul>
         </section>
 
@@ -354,7 +373,7 @@
                 <li><strong>Devise gem</strong> (Rails standard)</li>
                 <li>Password: bcrypt hashing</li>
                 <li>Session: signed cookies (Rails encrypted)</li>
-                <li>OAuth: OmniAuth (Google, Facebook post-MVP)</li>
+                <li>OAuth: OmniAuth (Google, Facebook, LinkedIn) — già implementato</li>
             </ul>
 
             <h3>8.2 Verifica Età (Compliance Alcol)</h3>
@@ -395,11 +414,11 @@
 
             <h3>9.2 Ottimizzazioni MVP</h3>
             <ul>
-                <li>Fragment caching produttori/prodotti (Redis, TTL 1h, invalidazione automatica on update)</li>
+                <li>Fragment caching produttori/prodotti (Solid Cache, TTL 1h, invalidazione automatica on update)</li>
                 <li>HTTP headers: <code>Cache-Control: no-cache</code> per pagine dinamiche (browser richiede sempre ultima versione)</li>
-                <li>Database connection pooling (PgBouncer integrato in Fly Postgres)</li>
-                <li>Image optimization: ImageMagick resize on upload, WebP format, lazy loading</li>
-                <li>CDN: CloudFlare free tier in front di Fly.io (caching solo assets statici CSS/JS/immagini, HTML sempre fresco)</li>
+                <li>Database connection pooling (PostgreSQL native)</li>
+                <li>Image optimization: libvips resize on upload, WebP format, lazy loading</li>
+                <li>CDN: CloudFlare free tier (caching solo assets statici CSS/JS/immagini, HTML sempre fresco)</li>
             </ul>
         </section>
 
@@ -410,11 +429,11 @@
                 <div class="timeline-item">
                     <h3>Mese 1 - Setup & Core (Settimane 1-4)</h3>
                     <ul>
-                        <li>Setup progetto Rails 8 + PostgreSQL + Redis</li>
-                        <li>Schema database migrations</li>
+                        <li>Setup progetto Rails 8 + PostgreSQL + Solid Queue/Cache/Cable</li>
+                        <li>Schema database migrations (UUID primary keys)</li>
                         <li>Models: User, Producer, Product, Order, OrderItem</li>
-                        <li>Autenticazione (Devise) + Autorizzazione (Pundit)</li>
-                        <li>Layout base + Tailwind CSS setup</li>
+                        <li>Autenticazione (Devise + OmniAuth Google/Facebook/LinkedIn)</li>
+                        <li>Layout base + Tailwind CSS 4 + Importmap setup</li>
                     </ul>
                 </div>
 
@@ -432,12 +451,12 @@
                 <div class="timeline-item">
                     <h3>Mese 3 - Polish & Launch (Settimane 9-12)</h3>
                     <ul>
-                        <li>Action Text per storytelling produttore</li>
-                        <li>Image upload (ActiveStorage + S3)</li>
-                        <li>Email transazionali (SendGrid)</li>
-                        <li>SEO: sitemap, schema.org, meta tags</li>
+                        <li>Redcarpet (Markdown) per storytelling produttore</li>
+                        <li>Image upload (ActiveStorage + libvips)</li>
+                        <li>Email transazionali</li>
+                        <li>SEO: sitemap_generator, meta-tags, json-ld (Schema.org)</li>
                         <li>Testing: RSpec suite core flows</li>
-                        <li>Deploy staging + produzione Fly.io</li>
+                        <li>Deploy staging + produzione via Fly.io</li>
                         <li>Onboarding manuale primi 5 produttori (beta)</li>
                     </ul>
                 </div>
@@ -459,23 +478,8 @@
                     <tbody>
                         <tr>
                             <td>Fly.io (hosting)</td>
-                            <td>$30</td>
-                            <td>App + Postgres + Redis</td>
-                        </tr>
-                        <tr>
-                            <td>AWS S3 (storage)</td>
-                            <td>$5-10</td>
-                            <td>Immagini prodotti/produttori</td>
-                        </tr>
-                        <tr>
-                            <td>SendGrid (email)</td>
-                            <td>$15</td>
-                            <td>Up to 10k email/mese</td>
-                        </tr>
-                        <tr>
-                            <td>Stripe (payment)</td>
-                            <td>Variabile</td>
-                            <td>1.5% + €0.25 per transazione (assorbito)</td>
+                            <td>~€30</td>
+                            <td>App + Postgres + Meilisearch Machines</td>
                         </tr>
                         <tr>
                             <td>Sentry (monitoring)</td>
@@ -488,9 +492,14 @@
                             <td>Registrazione annuale / 12</td>
                         </tr>
                         <tr>
+                            <td>Stripe (payment)</td>
+                            <td>Variabile</td>
+                            <td>1.5% + €0.25 per transazione (assorbito)</td>
+                        </tr>
+                        <tr>
                             <td><strong>Totale fisso</strong></td>
-                            <td><strong>~$126/mese</strong></td>
-                            <td><strong>~€115/mese</strong></td>
+                            <td><strong>~€55-60/mese</strong></td>
+                            <td><strong>R2 free tier; email da aggiungere quando necessario</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -521,7 +530,7 @@
                     <li>Indici ottimizzati su query critiche</li>
                     <li>Fragment caching aggressivo (invalidazione smart on update)</li>
                     <li>Monitoring query N+1 (Bullet gem)</li>
-                    <li>Upgrade database plan se necessario (Fly.io scaling verticale semplice)</li>
+                    <li>Upgrade Fly Machine se necessario (scaling verticale/orizzontale semplice)</li>
                 </ul>
             </div>
 
@@ -580,7 +589,7 @@
                         <tr>
                             <td>Database query time (p95)</td>
                             <td>&lt; 100ms</td>
-                            <td>Fly.io Metrics</td>
+                            <td>Sentry + Fly Metrics</td>
                         </tr>
                         <tr>
                             <td>Bugs critical (Mese 1)</td>
@@ -596,12 +605,12 @@
             <h2 id="conclusioni">Conclusioni</h2>
             <div class="callout">
                 <p><strong>Architettura tecnica validata e pronta per execution.</strong></p>
-                <p>Stack scelto (Rails + Hotwire + PostgreSQL + Stripe Connect) è:</p>
+                <p>Stack scelto (Rails 8 + Hotwire + PostgreSQL + Solid Stack + Fly.io + Cloudflare R2 + Stripe Connect) è:</p>
                 <ul>
                     <li>✅ Maturo e battle-tested per marketplace</li>
                     <li>✅ SEO-first nativo (server-rendering)</li>
                     <li>✅ Veloce da sviluppare (3 mesi per MVP completo)</li>
-                    <li>✅ Costi fissi bassi (~€115/mese)</li>
+                    <li>✅ Costi fissi bassi (~€55-60/mese)</li>
                     <li>✅ Scalabile fino a 1.000 produttori senza rewrite</li>
                 </ul>
                 <p><strong>Prossimo step:</strong> Start sviluppo Mese 1.</p>
@@ -615,22 +624,25 @@
             <h3>Framework e Linguaggi</h3>
             <ul>
                 <li><strong>Ruby on Rails 8</strong> — <a href="https://rubyonrails.org" target="_blank">rubyonrails.org</a> | <a href="https://guides.rubyonrails.org" target="_blank">Rails Guides</a><br>
-                <em>Motivazione scelta:</em> server-rendering nativo (SEO-first), convention over configuration, ecosistema maturo per marketplace (Stripe, Devise, Pundit, ActionMailer).</li>
+                <em>Motivazione scelta:</em> server-rendering nativo (SEO-first), convention over configuration, ecosistema maturo per marketplace (Stripe, Devise, ActionMailer). Rails 8 Solid Stack elimina dipendenza da Redis.</li>
 
                 <li><strong>Hotwire (Turbo + Stimulus)</strong> — <a href="https://hotwired.dev" target="_blank">hotwired.dev</a><br>
                 <em>Motivazione:</em> SPA-like UX senza JavaScript framework separato; reduce complexity; stessa base Rails.</li>
             </ul>
 
-            <h3>Database e Storage</h3>
+            <h3>Database, Search e Storage</h3>
             <ul>
-                <li><strong>PostgreSQL 15</strong> — <a href="https://www.postgresql.org/docs/15/" target="_blank">postgresql.org/docs/15</a><br>
-                <em>Motivazione:</em> Full-text search nativo (tsvector), PostGIS per geolocalizzazione km 0, ACID transactions per pagamenti.</li>
+                <li><strong>PostgreSQL 18</strong> — <a href="https://www.postgresql.org/docs/" target="_blank">postgresql.org/docs</a><br>
+                <em>Motivazione:</em> earthdistance per geolocalizzazione km 0, ACID transactions per pagamenti, UUID primary keys. Database separati per cache (Solid Cache), queue (Solid Queue) e cable (Solid Cable).</li>
 
-                <li><strong>Redis 7</strong> — <a href="https://redis.io/docs/" target="_blank">redis.io/docs</a><br>
-                <em>Usato per:</em> caching fragment (TTL 1h), Sidekiq queue per job asincroni (email, Stripe webhook processing).</li>
+                <li><strong>Meilisearch</strong> — <a href="https://www.meilisearch.com/docs" target="_blank">meilisearch.com/docs</a><br>
+                <em>Usato per:</em> ricerca full-text prodotti (typo-tolerant, faceting, filtri per categoria e stato pubblicazione). Integrazione via gem <code>meilisearch-rails</code>.</li>
 
-                <li><strong>AWS S3</strong> — <a href="https://aws.amazon.com/s3/" target="_blank">aws.amazon.com/s3</a><br>
-                <em>Usato per:</em> storage immagini prodotti e profili produttori (~€5-10/mese per primi 1.000 produttori).</li>
+                <li><strong>Rails 8 Solid Stack</strong> — Solid Queue, Solid Cache, Solid Cable<br>
+                <em>Motivazione:</em> background jobs, caching e WebSocket senza Redis. Database-backed, zero infrastruttura aggiuntiva.</li>
+
+                <li><strong>ActiveStorage + Cloudflare R2</strong> — storage locale in sviluppo, Cloudflare R2 (S3-compatible) in produzione.<br>
+                Image processing via <strong>libvips</strong> (ruby-vips) con mini_magick fallback. R2: free tier 10GB storage + 10M reads/mese, zero egress fees.</li>
             </ul>
 
             <h3>Pagamenti</h3>
@@ -644,17 +656,19 @@
 
             <h3>Hosting e Infrastruttura</h3>
             <ul>
-                <li><strong>Fly.io (MVP)</strong> — <a href="https://fly.io/docs/about/pricing/" target="_blank">fly.io/docs/about/pricing</a><br>
-                App + Managed Postgres + Redis = ~$30/mese (~€28). Con Sentry e SendGrid: ~€75/mese totale. Motivazione: costi contenuti, deploy con <code>fly deploy</code>, PostgreSQL managed, SSL automatico.</li>
+                <li><strong>Fly.io</strong> — <a href="https://fly.io/docs/about/pricing/" target="_blank">fly.io/pricing</a><br>
+                Fly Machines per app Rails e Meilisearch. Fly Postgres managed. Deploy con <code>fly deploy</code>, SSL automatico, edge networking. ~€30/mese base stack.</li>
 
-                <li><strong>CloudFlare (CDN)</strong> — <a href="https://www.cloudflare.com/plans/" target="_blank">cloudflare.com/plans</a><br>
-                Free tier: caching asset statici (CSS/JS/immagini), DDoS protection, SSL automatico. HTML sempre servito fresco (no cache HTML su CDN).</li>
+                <li><strong>Cloudflare R2 + CDN</strong> — <a href="https://www.cloudflare.com/developer-platform/r2/" target="_blank">cloudflare.com/r2</a> | <a href="https://www.cloudflare.com/plans/" target="_blank">CDN plans</a><br>
+                R2: object storage S3-compatible, free tier 10GB + 10M reads/mese, zero egress fees. CDN: caching asset statici, DDoS protection, SSL. HTML sempre servito fresco.</li>
+
+                <li><strong>Docker</strong> — Multi-stage build (ruby:4.0.1-slim), container per app + worker Solid Queue + Meilisearch + PostgreSQL.</li>
             </ul>
 
             <h3>Monitoring e Qualità</h3>
             <ul>
                 <li><strong>Sentry</strong> — <a href="https://sentry.io/pricing/" target="_blank">sentry.io/pricing</a> — Error tracking, performance monitoring. Team tier ~€26/mese.</li>
-                <li><strong>SendGrid</strong> — <a href="https://sendgrid.com/pricing/" target="_blank">sendgrid.com/pricing</a> — Transactional email (conferme ordine, onboarding produttori, notifiche pagamento). Free tier 100 email/giorno; Essentials ~€15/mese oltre la soglia.</li>
+                <li><strong>ActionMailer + letter_opener (dev)</strong> — Email transazionali via Rails ActionMailer. In sviluppo: letter_opener per preview in browser. Produzione: servizio SMTP da configurare (es. Postmark, SendGrid).</li>
                 <li><strong>SimpleCov</strong> — <a href="https://github.com/simplecov-ruby/simplecov" target="_blank">github.com/simplecov-ruby/simplecov</a> — Code coverage Ruby. Target: >80% su models/controllers.</li>
                 <li><strong>RuboCop</strong> — <a href="https://rubocop.org" target="_blank">rubocop.org</a> — Linter e formatter Ruby standard.</li>
             </ul>
@@ -662,7 +676,13 @@
             <h3>Autenticazione e Sicurezza</h3>
             <ul>
                 <li><strong>Devise gem</strong> — <a href="https://github.com/heartcombo/devise" target="_blank">github.com/heartcombo/devise</a> — Authentication standard Rails: registrazione, login, password reset, email verification.</li>
-                <li><strong>Pundit gem</strong> — <a href="https://github.com/varvet/pundit" target="_blank">github.com/varvet/pundit</a> — Authorization policies (produttore può gestire solo la propria vetrina).</li>
+                <li><strong>OmniAuth</strong> — OAuth login: Google, Facebook, LinkedIn. CSRF protection via omniauth-rails_csrf_protection.</li>
+            </ul>
+
+            <h3>AI e Contenuti</h3>
+            <ul>
+                <li><strong>Anthropic (Claude API)</strong> — <a href="https://docs.anthropic.com" target="_blank">docs.anthropic.com</a> — Generazione contenuti produttore, traduzioni editoriali, arricchimento schede prodotto. Gem <code>anthropic</code>.</li>
+                <li><strong>Redcarpet</strong> — <a href="https://github.com/vmg/redcarpet" target="_blank">github.com/vmg/redcarpet</a> — Parser Markdown per storytelling produttore e descrizioni prodotti.</li>
             </ul>
 
             <h3>SEO e Performance</h3>
