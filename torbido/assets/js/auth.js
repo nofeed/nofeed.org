@@ -3,7 +3,7 @@
     
     const VALID_USERNAME_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918';
     const VALID_PASSWORD_HASH = '084f1cadd37c14b43f0170ede90a2a3d7f8165142536a9f5a10d94beda9fb6c9';
-    const AUTH_KEY = 'brewsters_auth';
+    const AUTH_KEY = 'torbido_auth';
     
     async function hashString(str) {
         const encoder = new TextEncoder();
@@ -18,7 +18,7 @@
     }
     
     const style = document.createElement('style');
-    style.id = 'brewsters-auth-style';
+    style.id = 'torbido-auth-style';
     style.textContent = 'body { display: none !important; }';
     document.head.appendChild(style);
     
@@ -55,7 +55,7 @@
             
             if (usernameHash === VALID_USERNAME_HASH && passwordHash === VALID_PASSWORD_HASH) {
                 localStorage.setItem(AUTH_KEY, 'authenticated');
-                const authStyle = document.getElementById('brewsters-auth-style');
+                const authStyle = document.getElementById('torbido-auth-style');
                 if (authStyle) {
                     authStyle.remove();
                 }
@@ -73,7 +73,7 @@
         function showAccessDenied(message = 'Autenticazione richiesta.') {
             document.body.innerHTML = '<div style="padding: 2rem; text-align: center; font-family: sans-serif;"><h1>Accesso Negato</h1><p>' + message + '</p></div>';
             document.body.style.display = 'block';
-            const authStyle = document.getElementById('brewsters-auth-style');
+            const authStyle = document.getElementById('torbido-auth-style');
             if (authStyle) {
                 authStyle.remove();
             }

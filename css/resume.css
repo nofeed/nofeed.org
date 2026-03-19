@@ -1,17 +1,17 @@
-/* Modern Resume CSS - No Bootstrap Required */
+/* Resume CSS — matches nofeed.org homepage style */
 
 :root {
-  --color-bg: #ffffff;
-  --color-fg: #1f2937;
-  --color-primary: #3b82f6;
-  --color-accent: #06b6d4;
-  --color-muted: #9ca3af;
-  --color-border: #e5e7eb;
-  --color-card: #fafbfc;
+  --color-bg: #cbd5e1;       /* slate-300 */
+  --color-fg: #1e293b;       /* slate-800 */
+  --color-primary: #0f766e;  /* teal-700 */
+  --color-accent: #0d9488;   /* teal-600 */
+  --color-muted: #64748b;    /* slate-500 */
+  --color-border: #94a3b8;   /* slate-400 */
+  --color-card: #e2e8f0;     /* slate-200 */
   --color-success: #22c55e;
   
-  --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'Roboto Mono', 'Monaco', 'Courier New', monospace;
+  --font-head: 'Rubik', sans-serif;
+  --font-body: 'Roboto Mono', monospace;
   
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
@@ -32,18 +32,6 @@
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #f8fafc;
-    --color-fg: #1e293b;
-    --color-primary: #3b82f6;
-    --color-accent: #0ea5e9;
-    --color-muted: #94a3b8;
-    --color-border: #e2e8f0;
-    --color-card: #ffffff;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -56,8 +44,8 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  font-size: 1.0625rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--color-fg);
   background: var(--color-bg);
@@ -76,18 +64,11 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(203, 213, 225, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  .nav {
-    background: rgba(10, 10, 10, 0.8);
-  }
 }
 
 .nav-container {
@@ -101,12 +82,12 @@ body {
 }
 
 .nav-logo {
+  font-family: var(--font-head);
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--color-fg);
   text-decoration: none;
   letter-spacing: -0.025em;
-  transition: color 0.2s ease;
 }
 
 .nav-logo:hover {
@@ -124,35 +105,20 @@ body {
   text-decoration: none;
   font-size: 0.9375rem;
   font-weight: 500;
-  transition: color 0.2s ease;
-  position: relative;
 }
 
 .nav-link:hover {
   color: var(--color-primary);
+  text-decoration: underline;
 }
 
 .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
+  display: none;
 }
 
 .nav-link.active {
   color: var(--color-primary);
-}
-
-.nav-link.active::after {
-  width: 100%;
+  text-decoration: underline;
 }
 
 /* Container */
@@ -173,6 +139,7 @@ body {
 }
 
 .hero-title {
+  font-family: var(--font-head);
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
@@ -182,15 +149,12 @@ body {
 
 .name-primary {
   display: block;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-fg);
 }
 
 .name-accent {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.5em;
   color: var(--color-muted);
   margin-top: var(--space-sm);
@@ -198,6 +162,7 @@ body {
 }
 
 .hero-subtitle {
+  font-family: var(--font-head);
   font-size: 1.5rem;
   color: var(--color-muted);
   font-weight: 500;
@@ -210,7 +175,7 @@ body {
 }
 
 .hero-meta time {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.875rem;
   color: var(--color-primary);
 }
@@ -222,6 +187,7 @@ body {
 }
 
 .section-title {
+  font-family: var(--font-head);
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -237,7 +203,7 @@ body {
   left: 0;
   width: 50%;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  background: var(--color-primary);
   border-radius: 99px;
 }
 
@@ -251,7 +217,6 @@ body {
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  animation: fadeInUp 0.6s ease-out;
 }
 
 .positions-index a {
@@ -264,19 +229,12 @@ body {
   border-radius: 99px;
   font-size: 0.875rem;
   font-weight: 500;
-  transition: all 0.2s ease;
 }
 
 .positions-index a:hover {
   background: var(--color-primary);
   color: white;
   border-color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.positions-index a:active {
-  transform: translateY(0);
 }
 
 /* Contact */
@@ -314,13 +272,11 @@ body {
 
 .info-item a {
   color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.2s ease;
+  text-decoration: underline;
 }
 
 .info-item a:hover {
   color: var(--color-accent);
-  text-decoration: underline;
 }
 
 .profile-img {
@@ -329,13 +285,11 @@ body {
   object-fit: cover;
   border-radius: var(--radius-xl);
   border: 3px solid var(--color-border);
-  box-shadow: var(--shadow-lg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-md);
 }
 
 .profile-img:hover {
-  transform: scale(1.05) rotate(2deg);
-  box-shadow: var(--shadow-xl);
+  transform: rotate(5deg);
 }
 
 /* Skills */
@@ -377,12 +331,9 @@ body {
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  transition: all 0.3s ease;
 }
 
 .job-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
   border-color: var(--color-primary);
 }
 
@@ -400,6 +351,7 @@ body {
 }
 
 .job-card .jobtitle {
+  font-family: var(--font-head);
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: var(--space-sm);
@@ -413,9 +365,8 @@ body {
 
 .job-card h4 + p a {
   color: var(--color-primary);
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: 600;
-  transition: color 0.2s ease;
 }
 
 .job-card h4 + p a:hover {
@@ -423,7 +374,7 @@ body {
 }
 
 .job-card time {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.875rem;
   color: var(--color-muted);
 }
@@ -444,14 +395,12 @@ body {
 
 .description a {
   color: var(--color-primary);
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: 500;
-  transition: color 0.2s ease;
 }
 
 .description a:hover {
   color: var(--color-accent);
-  text-decoration: underline;
 }
 
 .job-card img {
@@ -462,7 +411,6 @@ body {
   object-fit: contain;
   border-radius: var(--radius-md);
   opacity: 0.85;
-  transition: opacity 0.2s ease;
 }
 
 .job-card img:hover {
@@ -841,22 +789,6 @@ body {
     color: #000;
     font-weight: 600;
   }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.section {
-  animation: fadeIn 0.6s ease-out;
 }
 
 /* Selection */

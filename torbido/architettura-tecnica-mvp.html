@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architettura Tecnica MVP - Brewsters</title>
-    <meta name="description" content="Documentazione tecnica completa dell'architettura Brewsters: stack, database, integrazioni, deployment e timeline">
+    <title>Architettura Tecnica MVP - Torbido</title>
+    <meta name="description" content="Documentazione tecnica completa dell'architettura Torbido: stack, database, integrazioni, deployment e timeline">
     <meta name="robots" content="noindex, nofollow">
     <script src="assets/js/auth.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/brewsters.css">
+    <link rel="stylesheet" href="assets/css/torbido.css">
 </head>
 <body>
     <header class="document-header">
@@ -64,7 +64,7 @@
                 <li>❌ Micro-services (monolite Rails fino a 100k utenti)</li>
                 <li>❌ Real-time notifications (email + polling sufficiente)</li>
                 <li>❌ ML/AI recommendations (curation manuale iniziale)</li>
-                <li>❌ Multi-currency/i18n (solo Italia/€ per MVP — dominio iniziale <code>brewsters.it</code>; domini nazionali ccTLD per mercato, con lingua e catalogo prodotti localizzati per dominio, attivati con l’espansione internazionale)</li>
+                <li>❌ Multi-currency/i18n (solo Italia/€ per MVP — dominio iniziale <code>torbido.it</code>; domini nazionali ccTLD per mercato, con lingua e catalogo prodotti localizzati per dominio, attivati con l’espansione internazionale)</li>
             </ul>
         </section>
 
@@ -212,9 +212,9 @@
             <h3>4.1 Pubbliche (SEO-critical)</h3>
             <ol>
                 <li><strong>Home (<code>/</code>):</strong> Hero con value proposition, Featured producers, "Scopri per regione"</li>
-                <li><strong>Produttori Index (<code>/produttori</code>):</strong> Lista con filtri (regione, prodotto, km 0), paginazione</li>
+                <li><strong>Produttori Index (<code>/produttori</code>):</strong> Lista con navigazione per regione, tipo, km 0 (ogni stile/tipo è una pagina dedicata), paginazione</li>
                 <li><strong>Produttore Single (<code>/produttori/:slug</code>):</strong> Storia, processo produttivo, territorio + lista prodotti + Schema.org LocalBusiness markup</li>
-                <li><strong>Prodotti Index (<code>/prodotti</code>):</strong> Lista cross-produttori con filtri categoria, regione, prezzo, km 0</li>
+                <li><strong>Prodotti Index (<code>/prodotti</code>):</strong> Lista cross-produttori con navigazione per categoria, stile, regione, prezzo, km 0 (ogni stile carica la pagina stile dedicata)</li>
                 <li><strong>Prodotto Single (<code>/produttori/:producer_slug/prodotti/:product_slug</code>):</strong> Foto, descrizione, ingredients + pricing + Schema.org Product markup</li>
                 <li><strong>Carrello (<code>/cart</code>):</strong> Session-based, raggruppato per produttore</li>
                 <li><strong>Checkout (<code>/checkout</code>):</strong> Login/signup required, Stripe Payment Intent</li>
@@ -225,7 +225,7 @@
                 <li><strong>Dashboard (<code>/dashboard</code>):</strong> Ordini recenti, analytics vendite</li>
                 <li><strong>Prodotti (<code>/dashboard/prodotti</code>):</strong> CRUD prodotti, upload foto, gestione inventario</li>
                 <li><strong>Ordini (<code>/dashboard/ordini</code>):</strong> Lista ordini da evadere, azioni spedizione</li>
-                <li><strong>Profilo (<code>/dashboard/profilo</code>):</strong> Modifica storia, processo produttivo, foto + <em>export PDF profilo stampabile (con QR code per marketing offline)</em> + <strong>[Post-MVP Fase 2]</strong> <em>ordina copie stampate e rilegati professionalmente (Brewsters Print)</em></li>
+                <li><strong>Profilo (<code>/dashboard/profilo</code>):</strong> Modifica storia, processo produttivo, foto + <em>export PDF profilo stampabile (con QR code per marketing offline)</em> + <strong>[Post-MVP Fase 2]</strong> <em>ordina copie stampate e rilegati professionalmente (Torbido Print)</em></li>
                 <li><strong>Analytics (<code>/dashboard/analytics</code>):</strong> [Post-MVP] Grafici vendite, breakdown prodotto (Hotwire + Stimulus + Chart.js)</li>
             </ol>
         </section>
@@ -258,8 +258,8 @@
 
             <h3>5.3 Gestione Commissioni (Stripe Connect)</h3>
             <ul>
-                <li><strong>Application fee model:</strong> Brewsters trattiene commissione al momento del pagamento</li>
-                <li><strong>Split payment:</strong> Consumer paga 100% a Brewsters → transfer (100% - commission) a produttore</li>
+                <li><strong>Application fee model:</strong> Torbido trattiene commissione al momento del pagamento</li>
+                <li><strong>Split payment:</strong> Consumer paga 100% a Torbido → transfer (100% - commission) a produttore</li>
                 <li><strong>Payout produttore:</strong> automatico via Stripe (settimanale o mensile)</li>
                 <li><strong>Costi Stripe:</strong> 1.5% + €0.25 transazione (EU cards) → assorbito nella commissione 8%</li>
             </ul>
@@ -390,7 +390,7 @@
             </ul>
 
             <h3>8.4 Payment Security</h3>
-            <p><strong>PCI Compliance:</strong> gestito da Stripe (zero PCI scope per Brewsters, usiamo Stripe.js). <strong>No credit card data stored</strong> on Brewsters servers.</p>
+            <p><strong>PCI Compliance:</strong> gestito da Stripe (zero PCI scope per Torbido, usiamo Stripe.js). <strong>No credit card data stored</strong> on Torbido servers.</p>
         </section>
 
         <section>
@@ -636,7 +636,7 @@
                 <em>Motivazione:</em> earthdistance per geolocalizzazione km 0, ACID transactions per pagamenti, UUID primary keys. Database separati per cache (Solid Cache), queue (Solid Queue) e cable (Solid Cable).</li>
 
                 <li><strong>Meilisearch</strong> — <a href="https://www.meilisearch.com/docs" target="_blank">meilisearch.com/docs</a><br>
-                <em>Usato per:</em> ricerca full-text prodotti (typo-tolerant, faceting, filtri per categoria e stato pubblicazione). Integrazione via gem <code>meilisearch-rails</code>.</li>
+                <em>Usato per:</em> ricerca full-text prodotti (typo-tolerant, faceting, filtri per stato pubblicazione). Gli stili caricano pagine dedicate. Integrazione via gem <code>meilisearch-rails</code>.</li>
 
                 <li><strong>Rails 8 Solid Stack</strong> — Solid Queue, Solid Cache, Solid Cable<br>
                 <em>Motivazione:</em> background jobs, caching e WebSocket senza Redis. Database-backed, zero infrastruttura aggiuntiva.</li>
@@ -648,10 +648,10 @@
             <h3>Pagamenti</h3>
             <ul>
                 <li><strong>Stripe Connect</strong> — <a href="https://stripe.com/connect" target="_blank">stripe.com/connect</a> | <a href="https://stripe.com/it/pricing" target="_blank">Pricing EU</a><br>
-                <em>Usato per:</em> split payment (consumer → Brewsters → produttore), KYC produttori via Stripe Express, payout automatici. Costo: 1,5% + €0,25/tx (EU cards).</li>
+                <em>Usato per:</em> split payment (consumer → Torbido → produttore), KYC produttori via Stripe Express, payout automatici. Costo: 1,5% + €0,25/tx (EU cards).</li>
 
                 <li><strong>Stripe.js / Stripe Elements</strong> — <a href="https://stripe.com/docs/stripe-js" target="_blank">stripe.com/docs/stripe-js</a><br>
-                <em>Motivazione:</em> PCI DSS compliance out-of-the-box; zero card data stored su server Brewsters.</li>
+                <em>Motivazione:</em> PCI DSS compliance out-of-the-box; zero card data stored su server Torbido.</li>
             </ul>
 
             <h3>Hosting e Infrastruttura</h3>
