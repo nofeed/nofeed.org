@@ -411,6 +411,7 @@ body {
   object-fit: contain;
   border-radius: var(--radius-md);
   opacity: 0.85;
+  mix-blend-mode: multiply;
 }
 
 .job-card img:hover {
