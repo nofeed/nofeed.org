@@ -3,285 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torbido — Birra artigianale e spirits dal produttore a casa tua</title>
-    <meta name="description" content="Il primo marketplace italiano dedicato a birre artigianali e liquori locali. Compra direttamente da chi produce, vendi senza intermediari.">
+    <title>Landing Page — Contenuti</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/torbido.css">
-    <style>
-        /* Landing-specific overrides */
-        body { padding: 0; }
-
-        .landing-hero {
-            text-align: center;
-            padding: var(--spacing-3xl) var(--spacing-md);
-        }
-
-        .landing-hero h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            color: var(--color-primary-dark);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .landing-hero .lead {
-            font-size: 1.15rem;
-            line-height: 1.7;
-            color: var(--color-text-secondary);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: var(--spacing-md);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .hero-ctas a {
-            display: inline-block;
-            padding: 0.75rem 1.75rem;
-            border-radius: var(--radius-md);
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background: var(--color-primary);
-            color: #fff;
-        }
-        .btn-primary:hover { background: var(--color-primary-dark); }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--color-primary);
-            border: 2px solid var(--color-primary);
-        }
-        .btn-outline:hover { background: var(--color-primary); color: #fff; }
-
-        .landing-section {
-            padding: var(--spacing-3xl) 0;
-        }
-
-        .landing-section .section-label {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-xl);
-        }
-
-        @media (min-width: 640px) {
-            .card-grid { grid-template-columns: 1fr 1fr 1fr; }
-        }
-
-        .landing-card {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-xl);
-        }
-
-        .landing-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: var(--spacing-sm);
-            color: var(--color-heading);
-        }
-
-        .landing-card p {
-            font-size: 0.925rem;
-            line-height: 1.75;
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-
-        .cta-box {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-xl);
-            margin-top: var(--spacing-xl);
-            text-align: center;
-        }
-
-        .cta-box h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: var(--spacing-md);
-            color: var(--color-heading);
-        }
-
-        .email-form {
-            display: flex;
-            gap: var(--spacing-sm);
-            max-width: 420px;
-            margin: 0 auto var(--spacing-sm);
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .email-form input[type="email"] {
-            flex: 1;
-            min-width: 200px;
-            padding: 0.65rem 0.85rem;
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            font-size: 0.925rem;
-            font-family: var(--font-sans);
-        }
-
-        .email-form input[type="email"]:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-
-        .email-form button {
-            padding: 0.65rem 1.25rem;
-            background: var(--color-primary);
-            color: #fff;
-            border: none;
-            border-radius: var(--radius-md);
-            font-size: 0.925rem;
-            font-weight: 600;
-            font-family: var(--font-sans);
-            cursor: pointer;
-        }
-
-        .email-form button:hover { background: var(--color-primary-dark); }
-
-        .cta-note {
-            font-size: 0.8rem;
-            color: var(--color-text-muted);
-            line-height: 1.6;
-            margin-top: var(--spacing-sm);
-        }
-
-        .landing-footer {
-            text-align: center;
-            padding: var(--spacing-xl) var(--spacing-md);
-            border-top: 1px solid var(--color-border);
-            font-size: 0.875rem;
-            color: var(--color-text-secondary);
-        }
-
-        .landing-footer strong { color: var(--color-heading); }
-
-        .landing-footer a {
-            color: var(--color-text-muted);
-            text-decoration: none;
-        }
-        .landing-footer a:hover { color: var(--color-primary); }
-
-        .landing-divider {
-            border: none;
-            border-top: 1px solid var(--color-border);
-            margin: 0;
-        }
-    </style>
+    <script src="assets/js/auth.js"></script>
 </head>
 <body>
 
 <div class="markdown-content">
-
-    <!-- HERO -->
-    <div class="landing-hero">
-        <h1>Birra artigianale e spirits<br>che non trovi altrove.</h1>
-        <p class="lead">Il primo marketplace italiano dedicato a birre artigianali e liquori locali.<br>Compra direttamente da chi produce, vendi senza intermediari.</p>
-        <div class="hero-ctas">
-            <a href="#consumatori" class="btn-primary">Cerco birra artigianale</a>
-            <a href="#produttori" class="btn-outline">Sono un produttore</a>
+    <div class="doc-header">
+        <span class="doc-header-brand">Torbido</span>
+        <div class="doc-header-meta">
+            <span class="doc-badge">Landing Page</span>
+            <span class="doc-date">Marzo 2026</span>
         </div>
     </div>
 
-    <hr class="landing-divider">
+    <div class="doc-body">
 
-    <!-- PER CHI BEVE -->
-    <div class="doc-body landing-section" id="consumatori">
-        <p class="section-label">Per chi ama bere bene</p>
-        <h2>Scopri produttori che non conoscevi</h2>
-        <p>In Italia ci sono oltre 1.000 microbirrifici e 800 distillerie artigianali. Producono birre e spirits eccezionali — ma non li trovi al supermercato e non li trovi su Amazon. Su Torbido sì.</p>
+        <h1>Landing Page — Contenuti</h1>
 
-        <div class="card-grid">
-            <div class="landing-card">
-                <h3>Centinaia di produttori</h3>
-                <p>Birrifici e distillerie artigianali in un unico posto. Naviga per stile, regione, produttore.</p>
-            </div>
-            <div class="landing-card">
-                <h3>Sai cosa bevi e chi l'ha fatto</h3>
-                <p>Ogni produttore racconta la sua storia, gli ingredienti, il processo. Non compri "una IPA" — compri la IPA di Marco, fatta a mano in Franciacorta.</p>
-            </div>
-            <div class="landing-card">
-                <h3>Direttamente da chi produce</h3>
-                <p>Nessun intermediario. Il produttore riceve il tuo ordine e te lo spedisce. Il prezzo è il suo, il margine resta a chi fa il lavoro.</p>
-            </div>
-        </div>
+        <h2>Hero</h2>
+        <p><strong>Headline:</strong> Birra artigianale e spirits che non trovi altrove.</p>
+        <p><strong>Sottotitolo:</strong> Il primo marketplace italiano dedicato a birre artigianali e liquori locali. Compra direttamente da chi produce, vendi senza intermediari.</p>
+        <p><strong>CTA 1:</strong> Cerco birra artigianale → ancora a sezione consumatori</p>
+        <p><strong>CTA 2:</strong> Sono un produttore → ancora a sezione produttori</p>
 
-        <div class="cta-box">
-            <h3>Iscriviti — ti avvisiamo quando apriamo</h3>
-            <form class="email-form" action="https://formspree.io/f/CAMBIA_CON_TUO_ID" method="POST">
-                <input type="hidden" name="_subject" value="Torbido waitlist — consumatore">
-                <input type="hidden" name="tipo" value="consumatore">
-                <input type="email" name="email" placeholder="La tua email" required>
-                <button type="submit">Avvisami</button>
-            </form>
-            <p class="cta-note">I primi iscritti avranno accesso anticipato e spedizione gratuita sul primo ordine.<br>Niente spam, solo un'email quando siamo pronti.</p>
-        </div>
+        <hr>
+
+        <h2>Sezione Consumatori — Per chi ama bere bene</h2>
+        <p><strong>Titolo:</strong> Scopri produttori che non conoscevi</p>
+        <p><strong>Testo intro:</strong> In Italia ci sono oltre 1.000 microbirrifici e 800 distillerie artigianali. Producono birre e spirits eccezionali — ma non li trovi al supermercato e non li trovi su Amazon. Su Torbido sì.</p>
+
+        <h3>Card 1 — Centinaia di produttori</h3>
+        <p>Birrifici e distillerie artigianali in un unico posto. Naviga per stile, regione, produttore.</p>
+
+        <h3>Card 2 — Sai cosa bevi e chi l'ha fatto</h3>
+        <p>Ogni produttore racconta la sua storia, gli ingredienti, il processo. Non compri "una IPA" — compri la IPA di Marco, fatta a mano in Franciacorta.</p>
+
+        <h3>Card 3 — Direttamente da chi produce</h3>
+        <p>Nessun intermediario. Il produttore riceve il tuo ordine e te lo spedisce. Il prezzo è il suo, il margine resta a chi fa il lavoro.</p>
+
+        <p><strong>CTA:</strong> Iscriviti — ti avvisiamo quando apriamo [campo email] [bottone: Avvisami]</p>
+        <p><strong>Nota sotto:</strong> I primi iscritti avranno accesso anticipato e spedizione gratuita sul primo ordine. Niente spam, solo un'email quando siamo pronti.</p>
+
+        <hr>
+
+        <h2>Sezione Produttori — Per chi produce</h2>
+        <p><strong>Titolo:</strong> Fatti trovare da chi ti cerca</p>
+        <p><strong>Testo intro:</strong> Vendi birra o spirits artigianali? Sai fare un prodotto eccezionale, ma farti trovare online è un altro mestiere. Torbido ti dà una vetrina digitale dove racconti la tua storia e vendi direttamente — senza costruire un sito, senza cedere il margine a un distributore.</p>
+
+        <h3>Card 1 — La tua vetrina, la tua storia</h3>
+        <p>Una pagina dedicata al tuo birrificio o distilleria: chi sei, come produci, cosa ti rende diverso. I clienti ti scoprono e tornano da te.</p>
+
+        <h3>Card 2 — Tu spedisci, noi portiamo i clienti</h3>
+        <p>Zero magazzino, zero logistica da parte nostra. Tu spedisci come fai già. Noi portiamo gente che cerca esattamente quello che produci.</p>
+
+        <h3>Card 3 — Paghi solo quando vendi</h3>
+        <p>Nessun costo fisso, nessun abbonamento obbligatorio. Commissione solo sulle vendite effettive.</p>
+
+        <p><strong>CTA:</strong> Lascia la tua email — ti avvisiamo quando apriamo ai produttori [campo email] [bottone: Avvisami]</p>
+        <p><strong>Nota sotto:</strong> Stiamo partendo con un gruppo selezionato di birrifici e distillerie. Ti scriviamo quando è il momento.</p>
+
+        <hr>
+
+        <h2>Footer</h2>
+        <p><strong>Brand:</strong> Torbido</p>
+        <p><strong>Tagline:</strong> Un marketplace per chi produce birra e spirits artigianali con passione, e per chi vuole trovarli e berli.</p>
+        <p><strong>Credit:</strong> Un progetto di Nicholas Wieland — ngw@nofeed.org</p>
+
     </div>
-
-    <hr class="landing-divider">
-
-    <!-- PER CHI PRODUCE -->
-    <div class="doc-body landing-section" id="produttori">
-        <p class="section-label">Per chi produce</p>
-        <h2>Fatti trovare da chi ti cerca</h2>
-        <p>Vendi birra o spirits artigianali? Sai fare un prodotto eccezionale, ma farti trovare online è un altro mestiere. Torbido ti dà una vetrina digitale dove racconti la tua storia e vendi direttamente — senza costruire un sito, senza cedere il margine a un distributore.</p>
-
-        <div class="card-grid">
-            <div class="landing-card">
-                <h3>La tua vetrina, la tua storia</h3>
-                <p>Una pagina dedicata al tuo birrificio o distilleria: chi sei, come produci, cosa ti rende diverso. I clienti ti scoprono e tornano da te.</p>
-            </div>
-            <div class="landing-card">
-                <h3>Tu spedisci, noi portiamo i clienti</h3>
-                <p>Zero magazzino, zero logistica da parte nostra. Tu spedisci come fai già. Noi portiamo gente che cerca esattamente quello che produci.</p>
-            </div>
-            <div class="landing-card">
-                <h3>Paghi solo quando vendi</h3>
-                <p>Nessun costo fisso, nessun abbonamento obbligatorio. Commissione solo sulle vendite effettive.</p>
-            </div>
-        </div>
-
-        <div class="cta-box">
-            <h3>Lascia la tua email — ti avvisiamo quando apriamo ai produttori</h3>
-            <form class="email-form" action="https://formspree.io/f/CAMBIA_CON_TUO_ID" method="POST">
-                <input type="hidden" name="_subject" value="Torbido waitlist — produttore">
-                <input type="hidden" name="tipo" value="produttore">
-                <input type="email" name="email" placeholder="La tua email" required>
-                <button type="submit">Avvisami</button>
-            </form>
-            <p class="cta-note">Stiamo partendo con un gruppo selezionato di birrifici e distillerie.<br>Ti scriviamo quando è il momento.</p>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="landing-footer">
-        <p><strong>Torbido</strong> — Un marketplace per chi produce birra e spirits artigianali con passione, e per chi vuole trovarli e berli.</p>
-        <p>Un progetto di Nicholas Wieland — <a href="mailto:ngw@nofeed.org">ngw@nofeed.org</a></p>
-    </div>
-
 </div>
 
 </body>
