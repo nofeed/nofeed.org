@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoke Test — torbido.co | Torbido</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="assets/js/auth.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/torbido.css">
+</head>
+<body>
+
+<div class="markdown-content">
+    <div class="doc-header">
+        <span class="doc-header-brand">Torbido</span>
+        <div class="doc-header-meta">
+            <span class="doc-badge">Validazione</span>
+            <span class="doc-date">Marzo 2026</span>
+        </div>
+    </div>
+
+    <div class="doc-body">
+
+        <h1>Smoke Test — torbido.co</h1>
+
+        <p>Landing page pubblicata su <a href="https://torbido.co">torbido.co</a> con l'obiettivo di validare la domanda prima di costruire il prodotto. Due CTA distinte: una per consumatori (lista d'attesa) e una per produttori (richiesta accesso).</p>
+
+        <hr>
+
+        <h2>Screenshot</h2>
+
+        <p><img src="assets/images/smoke-test-torbido-co.png" alt="Screenshot della landing page torbido.co" style="max-width: 100%; border: 1px solid #ddd; border-radius: 8px;"></p>
+
+        <hr>
+
+        <h2>Struttura della pagina</h2>
+
+        <table>
+            <thead>
+                <tr><th>Sezione</th><th>Contenuto</th><th>Obiettivo</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Hero</strong></td>
+                    <td>"Birra artigianale e spirits locali, direttamente da chi li produce." + badge "Consegna dal produttore" e "Craft 100% italiano"</td>
+                    <td>Chiarire la value proposition in 1 frase</td>
+                </tr>
+                <tr>
+                    <td><strong>CTA Consumatore</strong></td>
+                    <td>"Entra nella lista d'attesa" — campo email + "Avvisami al lancio"</td>
+                    <td>Catturare email di potenziali clienti</td>
+                </tr>
+                <tr>
+                    <td><strong>4 pillar</strong></td>
+                    <td>Scoperta, Trasparenza, Prezzo giusto, Km zero</td>
+                    <td>Comunicare i vantaggi chiave</td>
+                </tr>
+                <tr>
+                    <td><strong>Come funziona</strong></td>
+                    <td>3 step: Cerca → Scopri la storia → Ordina diretto</td>
+                    <td>Ridurre la complessità percepita</td>
+                </tr>
+                <tr>
+                    <td><strong>Per produttori</strong></td>
+                    <td>Pagina dedicata, vendita diretta, tu spedisci noi portiamo clienti, valorizza produzioni limitate</td>
+                    <td>Attrarre produttori dall'altra parte del marketplace</td>
+                </tr>
+                <tr>
+                    <td><strong>CTA Produttore</strong></td>
+                    <td>"Porta il tuo birrificio o distilleria su Torbido" — campo email + "Richiedi accesso produttore"</td>
+                    <td>Catturare lead produttori separatamente</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Setup tecnico</h2>
+
+        <table>
+            <tbody>
+                <tr><td><strong>Dominio</strong></td><td>torbido.co</td></tr>
+                <tr><td><strong>Hosting</strong></td><td>Da verificare</td></tr>
+                <tr><td><strong>Form consumatori</strong></td><td>Da verificare (Formspree / Mailchimp / altro)</td></tr>
+                <tr><td><strong>Form produttori</strong></td><td>Da verificare</td></tr>
+                <tr><td><strong>Analytics</strong></td><td>Da verificare</td></tr>
+                <tr><td><strong>Data pubblicazione</strong></td><td>Marzo 2026</td></tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Metriche da tracciare</h2>
+
+        <h3>Metriche landing page</h3>
+
+        <table>
+            <thead>
+                <tr><th>Metrica</th><th>Target</th><th>Attuale</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Visitatori unici / settimana</td>
+                    <td>200+</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Conversion rate consumatori (email / visitatori)</td>
+                    <td>5-10%</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Conversion rate produttori (email / visitatori)</td>
+                    <td>2-5%</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Email consumatori totali</td>
+                    <td>200 in 4 settimane</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Email produttori totali</td>
+                    <td>15-20 in 4 settimane</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Bounce rate</td>
+                    <td>&lt; 60%</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Tempo medio sulla pagina</td>
+                    <td>&gt; 45 secondi</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Metriche Meta Ads</h3>
+
+        <table>
+            <thead>
+                <tr><th>Metrica</th><th>Target</th><th>Attuale</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CPM (costo per 1.000 impression)</td>
+                    <td>&lt; €8</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>CTR (click-through rate)</td>
+                    <td>&gt; 1,5%</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>CPC (costo per click)</td>
+                    <td>&lt; €0,50</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>CPL (costo per lead / email)</td>
+                    <td>&lt; €3</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Landing page view rate (click → visualizzazione pagina)</td>
+                    <td>&gt; 70%</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Frequenza (impression / utente unico)</td>
+                    <td>&lt; 3 in 7 giorni</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>ROAS simulato (lead × valore stimato / spesa)</td>
+                    <td>Benchmark da stabilire</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Metriche per creative</h3>
+
+        <table>
+            <thead>
+                <tr><th>Metrica</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CTR per singola ad</td>
+                    <td>Confrontare le creative tra loro, spegnere le peggiori</td>
+                </tr>
+                <tr>
+                    <td>CPL per singola ad</td>
+                    <td>Identificare la creative con il costo per lead più basso</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Strategia Meta Ads</h2>
+
+        <h3>Setup campagna</h3>
+
+        <table>
+            <tbody>
+                <tr><td><strong>Piattaforma</strong></td><td>Meta Ads Manager (Facebook + Instagram)</td></tr>
+                <tr><td><strong>Obiettivo campagna</strong></td><td>Traffic → Landing page views (non link clicks)</td></tr>
+                <tr><td><strong>Budget</strong></td><td>€10/giorno → €70/settimana per 4 settimane = €280 totali</td></tr>
+                <tr><td><strong>Pixel</strong></td><td>Meta Pixel su torbido.co — eventi: PageView, Lead (submit form)</td></tr>
+                <tr><td><strong>Conversioni custom</strong></td><td>Email consumatore = Lead, Email produttore = Lead (separare con parametro)</td></tr>
+                <tr><td><strong>Attribution window</strong></td><td>7-day click, 1-day view</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Target audience</h3>
+
+        <table>
+            <thead>
+                <tr><th>Ad set</th><th>Audience</th><th>Placement</th><th>Budget</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>A — Craft beer lovers</strong></td>
+                    <td>25-50 anni, Italia. Interessi: birra artigianale, craft beer, birrificio, homebrew, Untappd, Ratebeer</td>
+                    <td>Instagram Feed + Stories + Reels, Facebook Feed</td>
+                    <td>€5/giorno</td>
+                </tr>
+                <tr>
+                    <td><strong>B — Food &amp; drink enthusiasts</strong></td>
+                    <td>28-50 anni, Italia. Interessi: food &amp; wine, prodotti tipici, slow food, gin, spirits, aperitivo. Esclusi: interessi birra (evitare overlap)</td>
+                    <td>Instagram Feed + Stories + Reels, Facebook Feed</td>
+                    <td>€3/giorno</td>
+                </tr>
+                <tr>
+                    <td><strong>C — Broad (Advantage+)</strong></td>
+                    <td>25-50 anni, Italia. Nessun interesse specifico, lasciare ottimizzare l'algoritmo</td>
+                    <td>Advantage+ placements</td>
+                    <td>€2/giorno</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Creative</h3>
+
+        <p>Testare 3-4 varianti per ad set. Dopo 5-7 giorni spegnere le creative con CTR &lt; 1% o CPL &gt; €5.</p>
+
+        <table>
+            <thead>
+                <tr><th>#</th><th>Formato</th><th>Visual</th><th>Copy</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Immagine statica</td>
+                    <td>Foto bottiglia artigianale su sfondo rustico, logo Torbido</td>
+                    <td>"Birra artigianale italiana, direttamente da chi la produce. Niente intermediari, niente ricarichi. Entra nella lista d'attesa."</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Carosello (3-4 slide)</td>
+                    <td>Slide 1: prodotto, Slide 2: "Dal produttore a casa tua", Slide 3: "100% craft italiano", Slide 4: CTA</td>
+                    <td>"Scopri birrifici e distillerie artigianali italiane. Ordina diretto, senza intermediari."</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Immagine statica (produttori)</td>
+                    <td>Birraio al lavoro / botti / fermentatori</td>
+                    <td>"Hai un birrificio o una distilleria? Vendi diretto ai tuoi clienti, senza marketplace generici. Richiedi accesso produttore."</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Canali complementari (€0)</h3>
+
+        <table>
+            <thead>
+                <tr><th>Canale</th><th>Status</th><th>Note</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Post organici (Reddit, gruppi Facebook)</td>
+                    <td>Da attivare</td>
+                    <td>r/birra, gruppi FB birra artigianale, forum homebrew Italia</td>
+                </tr>
+                <tr>
+                    <td>Condivisione diretta con produttori</td>
+                    <td>Da attivare</td>
+                    <td>Inviare link agli intervistati e chiedere feedback sulla pagina</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Criteri di validazione</h2>
+
+        <h3>Il smoke test è positivo se (dopo 4 settimane):</h3>
+        <ul>
+            <li>200+ email consumatori raccolte</li>
+            <li>15+ richieste produttori</li>
+            <li>Conversion rate consumatori &gt; 5%</li>
+            <li>CPL medio &lt; €3</li>
+            <li>CTR Meta Ads &gt; 1,5%</li>
+            <li>Almeno 3/5 dei produttori contattati rispondono positivamente</li>
+        </ul>
+
+        <h3>Il smoke test è negativo se:</h3>
+        <ul>
+            <li>&lt; 50 email consumatori dopo 4 settimane (con €280 spesi in Meta Ads)</li>
+            <li>0 richieste produttori</li>
+            <li>Conversion rate &lt; 2% (il messaggio non convince nessuno)</li>
+            <li>CPL &gt; €6 (troppo costoso acquisire lead a questo stadio)</li>
+            <li>CTR &lt; 0,5% (creative o audience non funzionano)</li>
+            <li>Bounce rate &gt; 80% (la pagina non è rilevante per chi ci arriva)</li>
+        </ul>
+
+        <h3>Se il test è negativo, le possibili cause sono:</h3>
+        <ul>
+            <li><strong>Messaggio sbagliato:</strong> la value proposition non risuona → riscrivere copy, A/B test headline</li>
+            <li><strong>Audience sbagliata:</strong> il traffico non è qualificato → testare nuovi interessi, provare Advantage+ audience</li>
+            <li><strong>Creative deboli:</strong> CTR basso, hook rate &lt; 20% → nuove immagini/video, copy diverso</li>
+            <li><strong>Problema non sentito:</strong> la gente non cerca birra artigianale online → pivot o stop</li>
+            <li><strong>Troppa concorrenza:</strong> Maltese, Beery Christmas, 1001birre già risolvono il problema → differenziare o stop</li>
+        </ul>
+
+        <hr>
+
+        <h2>Prossimi passi</h2>
+
+        <ol>
+            <li>Installare Meta Pixel su torbido.co e verificare con Pixel Helper</li>
+            <li>Configurare evento Lead custom per i due form (consumatore / produttore)</li>
+            <li>Verificare analytics on-site (Google Analytics o Plausible)</li>
+            <li>Collegare i form a un foglio di raccolta (Google Sheet o Airtable)</li>
+            <li>Creare Business Manager + Ad Account + Pagina Facebook Torbido</li>
+            <li>Preparare 3-4 creative (immagini + 1 video breve)</li>
+            <li>Lanciare campagna Meta Ads — €10/giorno per 4 settimane</li>
+            <li>Dopo 5-7 giorni: review performance creative, spegnere le peggiori</li>
+            <li>Condivisione diretta link con produttori intervistati (Devi15, altri)</li>
+            <li>Review settimanale metriche (CPL, CTR, conversion rate, email totali)</li>
+            <li>Decisione go/no-go a fine settimana 4</li>
+        </ol>
+
+    </div>
+</div>
+
+</body>
+</html>
