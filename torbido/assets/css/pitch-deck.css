@@ -606,6 +606,75 @@ tr:last-child td {
 }
 
 /* ══════════════════════════════════════════════════
+   SMALL PHONE PORTRAIT (≤ 480px)
+   ══════════════════════════════════════════════════ */
+
+@media screen and (max-width: 480px) {
+    .deck {
+        padding: 0.5rem 0;
+    }
+
+    .slide {
+        padding: 1.25rem 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .slide.cover h1 {
+        font-size: 2rem;
+        letter-spacing: -0.03em;
+    }
+
+    .slide.cover .tagline {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .slide h2 {
+        font-size: 1.25rem;
+    }
+
+    .slide h3 {
+        font-size: 1.0625rem;
+    }
+
+    p.lead {
+        font-size: 1rem;
+    }
+
+    p, li {
+        font-size: 0.9375rem;
+        line-height: 1.75;
+    }
+
+    .metric-value {
+        font-size: 1.5rem;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .slide-nav {
+        bottom: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .slide-nav-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+
+    .slide-progress {
+        bottom: 0.75rem;
+        left: 0.75rem;
+        font-size: 0.75rem;
+        padding: 0.5rem 0.875rem;
+    }
+}
+
+/* ══════════════════════════════════════════════════
    MOBILE LANDSCAPE ORIENTATION
    ══════════════════════════════════════════════════ */
 
