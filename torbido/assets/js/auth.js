@@ -2,7 +2,7 @@
     'use strict';
     
     const VALID_USERNAME_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918';
-    const VALID_PASSWORD_HASH = '084f1cadd37c14b43f0170ede90a2a3d7f8165142536a9f5a10d94beda9fb6c9';
+    const VALID_PASSWORD_HASH = 'c49d5a6db4d0440bb792466488e2d5918f4b28c6091c86207186bc3ab12055f7';
     const AUTH_KEY = 'torbido_auth';
     
     async function hashString(str) {
