@@ -213,16 +213,16 @@
             <h2 id="pagine">4. Pagine Principali (MVP)</h2>
             
             <h3>4.1 Pubbliche (SEO-critical)</h3>
-            <p class="text-muted-italic">Tutte le route pubbliche sono locale-scoped: <code>/:locale/...</code> (es. <code>/it/birrifici/</code>, <code>/en/breweries/</code>). Il middleware <code>LocaleDomain</code> inietta il locale dal dominio (torbido.it → <code>/it/</code>) in modo trasparente per il browser.</p>
+            <p class="text-muted-italic">Gli URL nel browser non hanno il prefisso lingua: il middleware <code>LocaleDomain</code> lo inietta silenziosamente su Rails dall'hostname (<code>torbido.it</code> → Rails gestisce come <code>/it/…</code>) senza alcun redirect. Il visitatore vede sempre URL puliti.</p>
             <ol>
                 <li><strong>Home (<code>/</code>):</strong> Hero con value proposition, Featured producers, "Scopri per regione"</li>
-                <li><strong>Produttori Index (<code>/:locale/produttori/</code>):</strong> Lista con navigazione per regione, tipo, km 0 (ogni stile/tipo è una pagina dedicata), paginazione</li>
-                <li><strong>Produttore Single (<code>/:locale/produttori/:slug/</code>):</strong> Storia, processo produttivo, territorio + lista prodotti + recensioni + Schema.org LocalBusiness markup</li>
-                <li><strong>Prodotti Index (<code>/:locale/birre/</code>, <code>/:locale/distillati/</code>, <code>/:locale/cocktail-pronti/</code>):</strong> Lista cross-produttori con navigazione per categoria, stile, pillar (km0/bio/artigianale/stagionale), regione, prezzo</li>
-                <li><strong>Prodotto Single (<code>/:locale/produttori/:producer_slug/products/:product_slug/</code>):</strong> Foto, descrizione, ingredients + pricing + recensioni + Schema.org Product markup</li>
-                <li><strong>Recensioni pubbliche (<code>/:locale/reviews-page/</code>):</strong> Pagina pubblica con tutte le recensioni della piattaforma</li>
-                <li><strong>Pillar pages (<code>/:locale/km0/</code>, <code>/:locale/bio/</code>…):</strong> Pagine editoriali cross-categoria per SEO long-tail</li>
-                <li><strong>FAQ (<code>/:locale/faq/</code>):</strong> FAQ i18n con FAQPage JSON-LD, HTTP caching</li>
+                <li><strong>Produttori Index (<code>/produttori/</code>):</strong> Lista con navigazione per regione, tipo, km 0 (ogni stile/tipo è una pagina dedicata), paginazione</li>
+                <li><strong>Produttore Single (<code>/produttori/:slug/</code>):</strong> Storia, processo produttivo, territorio + lista prodotti + recensioni + Schema.org LocalBusiness markup</li>
+                <li><strong>Prodotti Index (<code>/birre/</code>, <code>/distillati/</code>, <code>/cocktail-pronti/</code>):</strong> Lista cross-produttori con navigazione per categoria, stile, pillar (km0/bio/artigianale/stagionale), regione, prezzo</li>
+                <li><strong>Prodotto Single (<code>/produttori/:producer_slug/products/:product_slug/</code>):</strong> Foto, descrizione, ingredients + pricing + recensioni + Schema.org Product markup</li>
+                <li><strong>Recensioni pubbliche (<code>/reviews-page/</code>):</strong> Pagina pubblica con tutte le recensioni della piattaforma</li>
+                <li><strong>Pillar pages (<code>/km0/</code>, <code>/bio/</code>, <code>/artigianale/</code>…):</strong> Pagine editoriali cross-categoria per SEO long-tail</li>
+                <li><strong>FAQ (<code>/faq/</code>):</strong> FAQ i18n con FAQPage JSON-LD, HTTP caching</li>
                 <li><strong>Carrello (<code>/cart</code>):</strong> Session-based, raggruppato per produttore</li>
                 <li><strong>Checkout (<code>/checkout</code>):</strong> Login/signup required, Stripe Payment Intent</li>
             </ol>
