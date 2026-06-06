@@ -2261,7 +2261,7 @@ flowchart TD
 <p><strong>Regione pilota: Lombardia</strong> — scelta per la massima densità di produttori artigianali in Italia (~200 microbirrifici + 80 distillerie attivi), mercato urbano maturo (Milano), alta propensione all&#39;acquisto online, e presenza consolidata di una community craft beverage attiva (eventi, festival, taproom).</p>
 <h4>Scelta tecnologica: Ruby on Rails + Hotwire (Turbo + Stimulus)</h4>
 <p>La scelta di costruire l&#39;MVP su <strong>Ruby on Rails con rendering server-side</strong> è deliberata e direttamente collegata alla strategia di crescita organica di Torbido: una SPA classica — dove il server restituisce un HTML vuoto e tutto il contenuto viene costruito da JavaScript nel browser — sarebbe tecnicamente incompatibile con la strategia SEO che è il principale motore di acquisizione della piattaforma.</p>
-<p><strong>Il problema della SPA e la SEO:</strong><br>Una Single Page Application pura presenta un problema strutturale per una piattaforma come Torbido: i crawler di Google vedono inizialmente una shell HTML vuota, senza contenuto. Questo significa che URL come <code>torbido.it/it/produttori/birrificio-xyz/products/ipa-montana</code> — che nel modello SEO di Torbido devono essere pagine indicizzabili con meta tag, schema.org e contenuto ricco — risulterebbero invisibili o degradate agli occhi dei motori di ricerca. Tutta l&#39;architettura di URL semantici, le pagine hub territoriali, i meta tag dinamici e il link building costruito sui profili dei produttori perderebbero gran parte del proprio valore. In sintesi: scegliere una SPA per le pagine pubbliche significa sabotare il principale vantaggio competitivo di Torbido.</p>
+<p><strong>Il problema della SPA e la SEO:</strong><br>Una Single Page Application pura presenta un problema strutturale per una piattaforma come Torbido: i crawler di Google vedono inizialmente una shell HTML vuota, senza contenuto. Questo significa che URL come <code>torbido.it/produttori/birrificio-xyz/products/ipa-montana</code> — che nel modello SEO di Torbido devono essere pagine indicizzabili con meta tag, schema.org e contenuto ricco — risulterebbero invisibili o degradate agli occhi dei motori di ricerca. Tutta l&#39;architettura di URL semantici, le pagine hub territoriali, i meta tag dinamici e il link building costruito sui profili dei produttori perderebbero gran parte del proprio valore. In sintesi: scegliere una SPA per le pagine pubbliche significa sabotare il principale vantaggio competitivo di Torbido.</p>
 <p><strong>Perché Rails con Hotwire è la scelta corretta:</strong><br>Rails oggi adotta Hotwire (Turbo + Stimulus) come approccio moderno al frontend: ogni pagina viene renderizzata completamente lato server — HTML completo, meta tag, structured data, contenuto indicizzabile — e JavaScript interviene solo per arricchire l&#39;interattività senza mai sostituire il rendering server-side. Il risultato è un&#39;esperienza utente fluida (navigazione senza reload completo grazie a Turbo Drive) con SEO perfetto by design. GitHub, Shopify, Airbnb e Etsy stessa sono nati su Rails; Hotwire è la risposta moderna di Rails alla sfida delle SPA, senza rinunciare alle convenzioni che rendono Rails così produttivo.</p>
 <p><strong>Anche la dashboard produttore usa Hotwire:</strong><br>Stimulus (il framework JavaScript di Hotwire) gestisce tutta l&#39;interattività della dashboard interna dei produttori — gestione prodotti, ordini, analytics, editor contenuti — con controller JavaScript leggeri che arricchiscono l&#39;HTML server-rendered. Turbo Frames e Turbo Streams permettono aggiornamenti parziali della pagina senza reload, garantendo un&#39;esperienza reattiva con uno stack unico e coerente, senza la complessità di un&#39;applicazione SPA separata.</p>
 <hr>
@@ -2693,42 +2693,42 @@ flowchart TD
 <hr>
 <h3>Il Produttore come Narratore: la Vetrina Contenuto</h3>
 <p>Ogni produttore su Torbido non ha solo una &quot;scheda negozio&quot; — ha un <strong>profilo editoriale completo</strong>, composto da sezioni strutturate che Torbido guida e suggerisce durante l&#39;onboarding:</p>
-<p><strong>1. La Storia del Birrificio</strong><br>Chi siete, da dove venite, perché avete iniziato. Non un comunicato stampa, ma una narrazione autentica. Il produttore fornisce le informazioni chiave durante l'onboarding, e <strong>l'AI di Torbido (Claude via API Anthropic) genera un testo originale</strong> — unico, ottimizzato SEO, e stilisticamente coerente con il tono del produttore. Il contenuto non viene mai copiato dal sito del produttore: viene riscritto da zero per evitare penalizzazioni da contenuto duplicato e garantire valore SEO proprio. Il produttore può rivedere e modificare il testo con un editor Markdown (Redcarpet) che supporta testo, immagini e formattazione ricca. Ogni storia è una pagina indicizzata da Google con URL univoco: <code>torbido.it/it/produttori/birrificio-del-monte</code>.</p>
+<p><strong>1. La Storia del Birrificio</strong><br>Chi siete, da dove venite, perché avete iniziato. Non un comunicato stampa, ma una narrazione autentica. Il produttore fornisce le informazioni chiave durante l'onboarding, e <strong>l'AI di Torbido (Claude via API Anthropic) genera un testo originale</strong> — unico, ottimizzato SEO, e stilisticamente coerente con il tono del produttore. Il contenuto non viene mai copiato dal sito del produttore: viene riscritto da zero per evitare penalizzazioni da contenuto duplicato e garantire valore SEO proprio. Il produttore può rivedere e modificare il testo con un editor Markdown (Redcarpet) che supporta testo, immagini e formattazione ricca. Ogni storia è una pagina indicizzata da Google con URL univoco: <code>torbido.it/produttori/birrificio-del-monte</code>.</p>
 <p><strong>2. Il Processo di Produzione</strong><br>Come nasce la birra, in dettaglio. Le materie prime, la fermentazione, la maturazione, le scelte stilistiche. Questo contenuto è altamente specifico, difficile da replicare automaticamente, e ricchissimo di keyword di coda lunga che nessun competitor presidia: &quot;fermentazione spontanea con luppolo Nostrano Trentino&quot;, &quot;birra agricola con farro monococco lombardo&quot;, &quot;doppio malto affinato in botte di rovere&quot;.</p>
 <p><strong>3. Gli Ingredienti e il Territorio</strong><br>Dove vengono coltivati i cereali, chi fornisce il luppolo, l&#39;acqua di quale sorgente. Questo crea contenuto iper-locale che intercetta ricerche geografiche estremamente specifiche e quasi prive di concorrenza SEO.</p>
-<p><strong>4. Le Schede Prodotto</strong><br>Ogni birra ha la propria pagina con: descrizione organolettica, storia della ricetta, abbinamenti consigliati, note di degustazione. Non &quot;birra ambrata 6.2%&quot; ma una pagina di 500–800 parole generate dall'AI a partire dai dati del produttore — contenuto originale che non duplica il sito del produttore e che intercetta keyword di coda lunga specifiche. URL strutturato: <code>torbido.it/it/produttori/birrificio-del-monte/products/ambrata-autunnale</code>.</p>
+<p><strong>4. Le Schede Prodotto</strong><br>Ogni birra ha la propria pagina con: descrizione organolettica, storia della ricetta, abbinamenti consigliati, note di degustazione. Non &quot;birra ambrata 6.2%&quot; ma una pagina di 500–800 parole generate dall'AI a partire dai dati del produttore — contenuto originale che non duplica il sito del produttore e che intercetta keyword di coda lunga specifiche. URL strutturato: <code>torbido.it/produttori/birrificio-del-monte/products/ambrata-autunnale</code>.</p>
 <p><strong>5. Il Diario del Birrificio</strong> <em>(feature post-lancio)</em><br>Un blog leggero integrato nel profilo del produttore: nuove uscite stagionali, partecipazione a festival, collaborazioni con altri produttori. Ogni post è nuovo contenuto indicizzabile, prodotto dal produttore stesso a costo zero per Torbido.</p>
 <hr>
 <h3>Architettura SEO della Piattaforma</h3>
 <p>Rails permette di costruire un&#39;architettura SEO solida fin dall&#39;inizio, con logiche automatizzate che non richiedono intervento manuale post-lancio.</p>
 <p><strong>URL semantici e gerarchici — content cluster (esempio dominio italiano):</strong></p>
 <p>L’architettura è organizzata per <strong>cluster di contenuti</strong>: ogni categoria di prodotto (birre, distillati, cocktail pronti) ha il proprio albero navigabile per regione e stile — ogni stile è una pagina dedicata, non un filtro. I produttori hanno un albero separato, navigabile per tipo e regione. Le pagine pillar editoriali (km 0, bio, artigianale, stagionale) completano la rete di contenuti interconnessi.</p>
-<pre><code>torbido.it/it/                                          → Homepage Italia
+<pre><code>torbido.it/                                             → Homepage Italia
 
 ── Cluster prodotti (per categoria) ───────────────────────────────────
-torbido.it/it/birre/                                     → Tutti i prodotti birra
-torbido.it/it/birre/lombardia/                           → Birre della Lombardia
-torbido.it/it/birre/lombardia/ipa/                       → IPA della Lombardia
-torbido.it/it/birre/lombardia/ipa/km0                    → IPA km 0 della Lombardia
-torbido.it/it/distillati/                                → Tutti i distillati
-torbido.it/it/distillati/piemonte/                       → Distillati del Piemonte
-torbido.it/it/cocktail-pronti/                           → RTD / cocktail pronti
+torbido.it/birre/                                        → Tutti i prodotti birra
+torbido.it/birre/lombardia/                              → Birre della Lombardia
+torbido.it/birre/lombardia/ipa/                          → IPA della Lombardia
+torbido.it/birre/lombardia/ipa/km0                       → IPA km 0 della Lombardia
+torbido.it/distillati/                                   → Tutti i distillati
+torbido.it/distillati/piemonte/                          → Distillati del Piemonte
+torbido.it/cocktail-pronti/                              → RTD / cocktail pronti
 
 ── Cluster produttori ─────────────────────────────────────────────
-torbido.it/it/produttori/                                → Directory produttori italiani
-torbido.it/it/produttori/birrifici/                      → Tutti i birrifici
-torbido.it/it/produttori/birrifici/lombardia/            → Birrifici della Lombardia
-torbido.it/it/produttori/distillerie/                    → Tutte le distillerie
-torbido.it/it/produttori/birrificio-del-monte            → Profilo produttore
-torbido.it/it/produttori/birrificio-del-monte/products/ambrata-autunnale → Scheda prodotto
+torbido.it/produttori/                                   → Directory produttori italiani
+torbido.it/produttori/birrifici/                         → Tutti i birrifici
+torbido.it/produttori/birrifici/lombardia/               → Birrifici della Lombardia
+torbido.it/produttori/distillerie/                       → Tutte le distillerie
+torbido.it/produttori/birrificio-del-monte               → Profilo produttore
+torbido.it/produttori/birrificio-del-monte/products/ambrata-autunnale → Scheda prodotto
 
 ── Pagine pillar editoriali ───────────────────────────────────────
-torbido.it/it/km0/                                       → Pagina filosofia km 0
-torbido.it/it/bio/                                       → Pagina biologico / certificazioni
-torbido.it/it/artigianale/                               → Pagina artigianale
-torbido.it/it/stagionale/                                → Pagina produzioni stagionali
+torbido.it/km0/                                          → Pagina filosofia km 0
+torbido.it/bio/                                          → Pagina biologico / certificazioni
+torbido.it/artigianale/                                  → Pagina artigianale
+torbido.it/stagionale/                                   → Pagina produzioni stagionali
 </code></pre>
-<p>La stessa struttura si replica su ogni dominio nazionale con segmenti URL nella lingua locale: <code>torbido.de/de/produzenten/brauereien/bayern/</code> mostra i birrifici bavaresi in tedesco, <code>torbido.fr/fr/producteurs/brasseries/bretagne/</code> i birrifici bretoni in francese. I tag <code>hreflang</code> collegano le versioni equivalenti tra domini per evitare cannibalizzazione SEO cross-country.</p>
+<p>La stessa struttura si replica su ogni dominio nazionale con segmenti URL nella lingua locale: <code>torbido.de/produzenten/brauereien/bayern/</code> mostra i birrifici bavaresi in tedesco. I tag <code>hreflang</code> collegano le versioni equivalenti tra domini per evitare cannibalizzazione SEO cross-country.</p>
 <p>Ogni livello dell&#39;URL è una pagina indicizzabile con contenuto proprio, titolo H1 unico, meta description dinamica generata da Rails, e breadcrumb strutturati.</p>
 <p><strong>Meta tag e structured data automatici:</strong><br>Rails genera automaticamente per ogni pagina:</p>
 <ul>
@@ -2738,7 +2738,7 @@ torbido.it/it/stagionale/                                → Pagina produzioni s
 <li><strong>Sitemap XML dinamica</strong> aggiornata ad ogni nuovo produttore o prodotto aggiunto (gem <code>sitemap_generator</code>)</li>
 <li><strong>Canonical tag</strong> per evitare contenuto duplicato tra filtri e pagine categorie</li>
 </ul>
-<p><strong>Pagine Hub territoriali ad alto potenziale SEO:</strong><br>Le pagine di categoria filtrate per regione (<code>torbido.it/it/birre/lombardia/</code>, <code>torbido.it/it/distillati/piemonte/</code>) e le pagine produttori per tipo e regione (<code>torbido.it/it/produttori/birrifici/lombardia/</code>) sono <strong>pagine server-side</strong> con contenuto strutturato: tutti i prodotti o produttori di quell’area, testo introduttivo ottimizzato sul territorio, navigazione per stile (ogni stile ha la propria pagina dedicata). Il loro contenuto è identico per qualsiasi visitatore — utente, bot di Google, crawler — indipendentemente dalla sua posizione geografica. Non c’è geolocalizzazione: sono pagine tradizionali, pienamente indicizzabili. Intercettano ricerche come &quot;birra artigianale Lombardia&quot;, &quot;birrifici Milano&quot;, &quot;distillerie Piemonte&quot;, &quot;IPA km 0 Lombardia&quot; — query con volume significativo e concorrenza limitata.</p>
+<p><strong>Pagine Hub territoriali ad alto potenziale SEO:</strong><br>Le pagine di categoria filtrate per regione (<code>torbido.it/birre/lombardia/</code>, <code>torbido.it/distillati/piemonte/</code>) e le pagine produttori per tipo e regione (<code>torbido.it/produttori/birrifici/lombardia/</code>) sono <strong>pagine server-side</strong> con contenuto strutturato: tutti i prodotti o produttori di quell’area, testo introduttivo ottimizzato sul territorio, navigazione per stile (ogni stile ha la propria pagina dedicata). Il loro contenuto è identico per qualsiasi visitatore — utente, bot di Google, crawler — indipendentemente dalla sua posizione geografica. Non c’è geolocalizzazione: sono pagine tradizionali, pienamente indicizzabili. Intercettano ricerche come &quot;birra artigianale Lombardia&quot;, &quot;birrifici Milano&quot;, &quot;distillerie Piemonte&quot;, &quot;IPA km 0 Lombardia&quot; — query con volume significativo e concorrenza limitata.</p>
 <p><em>Nota architetturale:</em> il <strong>filtro km 0 geolocalizzato</strong> (ricerca per raggio a partire dalla posizione dell&#39;utente) è una funzionalità separata dell&#39;<strong>interfaccia utente</strong> — attiva solo per utenti loggati, generata client-side con browser Geolocation API + Nominatim/OSM, <strong>non indicizzabile e non necessario che lo sia</strong>. Le due cose risolvono bisogni diversi: le pagine hub per la scoperta organica via Google, il filtro UI per trovare il produttore più vicino in tempo reale.</p>
 <hr>
 <h3>La Strategia Backlink: il Volano Organico</h3>
