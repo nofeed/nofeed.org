@@ -18,9 +18,9 @@
             <a href="index.html" class="back-link">← Torna al documento principale</a>
             <h1>Architettura Tecnica MVP</h1>
             <div class="document-meta">
-                <span><strong>Data:</strong> Marzo 2026</span>
+                <span><strong>Data:</strong> Giugno 2026</span>
                 <span><strong>Autore:</strong> Nicholas Wieland (CTO)</span>
-                <span><strong>Status:</strong> Definita e validata, pronta per implementation</span>
+                <span><strong>Status:</strong> MVP completato — in sviluppo attivo (PR #153, 185+ commit)</span>
             </div>
         </div>
     </header>
@@ -32,12 +32,12 @@
             
             <div class="metrics">
                 <div class="metric">
-                    <div class="metric-value">3 mesi</div>
-                    <div class="metric-label">Timeline sviluppo (1 founder full-time)</div>
+                    <div class="metric-value">153+</div>
+                    <div class="metric-label">Pull request merged (Jan–Jun 2026)</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">~€45</div>
-                    <div class="metric-label">Costo infrastruttura MVP/mese (hosting + monitoring)</div>
+                    <div class="metric-value">~€55</div>
+                    <div class="metric-label">Costo infrastruttura/mese (hosting + monitoring)</div>
                 </div>
                 <div class="metric">
                     <div class="metric-value">1.000+</div>
@@ -58,13 +58,13 @@
                 <li><strong>Costi fissi minimi:</strong> Nessuna infrastruttura enterprise, scale-up solo quando necessario</li>
             </ul>
 
-            <h3>1.2 Non-Requirements (MVP)</h3>
+            <h3>1.2 Non-Requirements (MVP) — stato aggiornato</h3>
             <ul>
-                <li>❌ App mobile nativa (web-first, responsive)</li>
-                <li>❌ Micro-services (monolite Rails fino a 100k utenti)</li>
-                <li>❌ Real-time notifications (email + polling sufficiente)</li>
-                <li>❌ ML/AI recommendations (curation manuale iniziale)</li>
-                <li>❌ Multi-currency/i18n (solo Italia/€ per MVP — dominio iniziale <code>torbido.it</code>; domini nazionali ccTLD per mercato, con lingua e catalogo prodotti localizzati per dominio, attivati con l’espansione internazionale)</li>
+                <li>❌ App mobile nativa (web-first, responsive) — confermato</li>
+                <li>❌ Micro-services (monolite Rails fino a 100k utenti) — confermato</li>
+                <li>❌ Real-time notifications via WebSocket attive (Solid Cable presente ma non esposto in UI ancora)</li>
+                <li>✅ <strong>ML/AI recommendations — IMPLEMENTATO</strong> (PR #153: personalised product recommendations con ranking e caching)</li>
+                <li>✅ <strong>i18n multi-locale — IMPLEMENTATO</strong> (routing <code>/:locale</code> con constraint it/en, LocaleDomain middleware per ccTLD, hreflang full SEO overhaul — PR #150)</li>
             </ul>
         </section>
 
@@ -423,41 +423,50 @@
         </section>
 
         <section>
-            <h2 id="timeline">10. Timeline Sviluppo</h2>
+            <h2 id="timeline">10. Timeline Sviluppo — Stato Attuale</h2>
+
+            <div class="callout">
+                <p><strong>MVP completato e in sviluppo attivo.</strong> La timeline a 3 mesi pianificata a marzo 2026 è stata rispettata. L'app è ora al PR #153 con 185+ commit. Le feature elencate sotto riflettono ciò che è stato costruito.</p>
+            </div>
             
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Mese 1 - Setup & Core (Settimane 1-4)</h3>
+                    <h3>✅ Core Foundation — Completato</h3>
                     <ul>
-                        <li>Setup progetto Rails 8 + PostgreSQL + Solid Queue/Cache/Cable</li>
-                        <li>Schema database migrations (UUID primary keys)</li>
-                        <li>Models: User, Producer, Product, Order, OrderItem</li>
-                        <li>Autenticazione (Devise + OmniAuth Google/Facebook/LinkedIn)</li>
-                        <li>Layout base + Tailwind CSS 4 + Importmap setup</li>
+                        <li>Rails 8 + PostgreSQL + Solid Queue/Cache/Cable (4 database separati: primary, cache, queue, cable)</li>
+                        <li>Auth: Devise + OmniAuth (Google, Facebook, LinkedIn) con finish-signup flow per OmniAuth</li>
+                        <li>Multi-locale routing <code>/:locale</code> (it/en) con LocaleDomain middleware per ccTLD (torbido.it, torbido.de, …)</li>
+                        <li>Modelli core: User, Producer, Product, Order, OrderItem, Cart, CartItem, Checkout</li>
+                        <li>Layout Tailwind CSS + Importmap + Hotwire (Turbo + Stimulus)</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Mese 2 - Features MVP (Settimane 5-8)</h3>
+                    <h3>✅ Storefront & Marketplace — Completato</h3>
                     <ul>
-                        <li>CRUD Produttori (admin) + CRUD Prodotti (producer dashboard)</li>
-                        <li>Pagine pubbliche: home, produttori index/show, prodotti index/show</li>
-                        <li>Carrello (session-based)</li>
-                        <li>Checkout + Stripe Payment Intent integration</li>
-                        <li>Order management (producer dashboard)</li>
+                        <li>Pagine pubbliche SEO: home, produttori index/show, prodotti index/show, style pages, category pages</li>
+                        <li>Routing IA v1.0: <code>/{category}/{style}/{pillar}/</code> con constraint localizzati per it/en</li>
+                        <li>Carrello + Checkout + Stripe Payment Intent</li>
+                        <li>Produttori browse per tipo, regione, stile con constraint locale-aware</li>
+                        <li>Full-text search via Meilisearch (typo-tolerant, faceting)</li>
+                        <li>Geocoding produttori (Nominatim) + filtro km 0 Haversine</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Mese 3 - Polish & Launch (Settimane 9-12)</h3>
+                    <h3>✅ Producer Dashboard & Post-MVP — Completato</h3>
                     <ul>
-                        <li>Redcarpet (Markdown) per storytelling produttore</li>
-                        <li>Image upload (ActiveStorage + libvips)</li>
-                        <li>Email transazionali</li>
-                        <li>SEO: sitemap_generator, meta-tags, json-ld (Schema.org)</li>
-                        <li>Testing: RSpec suite core flows</li>
-                        <li>Deploy staging + produzione via Fly.io</li>
-                        <li>Onboarding manuale primi 5 produttori (beta)</li>
+                        <li>Producer onboarding multi-step con AI bio generation (Claude API)</li>
+                        <li>Producer memberships (multi-user per produttore) + invitation system</li>
+                        <li>Analytics dashboard redesign + plans comparison page (PR #151)</li>
+                        <li>ProducerAnalyticsSnapshot (giornaliero: ordini, payout, visite prodotti/profilo)</li>
+                        <li>Sistema recensioni consumer → produttore + producer review invitations</li>
+                        <li>Product offers (sconti a tempo — PR #140)</li>
+                        <li>Public user profile pages (PR #149)</li>
+                        <li>Share buttons su producer e product profiles (PR #147)</li>
+                        <li>Personalised product recommendations con ranking e caching (PR #153)</li>
+                        <li>SEO overhaul: editorial content, hreflang completo, noindex strategico (PR #150)</li>
+                        <li>User saved products, followed producers, favorite styles</li>
                     </ul>
                 </div>
             </div>
@@ -604,16 +613,16 @@
         <section>
             <h2 id="conclusioni">Conclusioni</h2>
             <div class="callout">
-                <p><strong>Architettura tecnica validata e pronta per execution.</strong></p>
-                <p>Stack scelto (Rails 8 + Hotwire + PostgreSQL + Solid Stack + Fly.io + Cloudflare R2 + Stripe Connect) è:</p>
+                <p><strong>MVP completato. Stack confermato in produzione.</strong></p>
+                <p>Stack (Rails 8 + Hotwire + PostgreSQL + Solid Stack + Fly.io + Cloudflare R2 + Stripe Connect) ha retto allo sviluppo intensivo (153 PR, 185+ commit, Jan–Jun 2026):</p>
                 <ul>
-                    <li>✅ Maturo e battle-tested per marketplace</li>
-                    <li>✅ SEO-first nativo (server-rendering)</li>
-                    <li>✅ Veloce da sviluppare (3 mesi per MVP completo)</li>
-                    <li>✅ Costi fissi bassi (~€55-60/mese)</li>
-                    <li>✅ Scalabile fino a 1.000 produttori senza rewrite</li>
+                    <li>✅ Maturo e battle-tested — zero rewrite necessario</li>
+                    <li>✅ SEO-first nativo — routing locale-aware, hreflang, Schema.org</li>
+                    <li>✅ MVP sviluppato nei tempi (3 mesi) — poi evoluto significativamente</li>
+                    <li>✅ Costi infrastruttura ~€55-60/mese confermati</li>
+                    <li>✅ Scalabile — architettura regge feature non pianificate (AI recs, multi-locale)</li>
                 </ul>
-                <p><strong>Prossimo step:</strong> Start sviluppo Mese 1.</p>
+                <p><strong>Stato attuale (Giugno 2026):</strong> Piattaforma funzionante, in fase di onboarding produttori pilota Lombardia (Fase 1). Prossimi step: prime transazioni reali, validazione GMV, attivazione Stripe Connect produttori.</p>
             </div>
         </section>
 
@@ -694,7 +703,7 @@
 
         <footer class="document-footer">
             <p><strong>Documento redatto da:</strong> Nicholas Wieland (CTO)</p>
-            <p><strong>Ultimo aggiornamento:</strong> Marzo 2026</p>
+            <p><strong>Ultimo aggiornamento:</strong> Giugno 2026</p>
         </footer>
     </main>
 </body>
