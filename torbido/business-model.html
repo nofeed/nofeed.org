@@ -171,7 +171,64 @@
 
 <p><em>La vendita internazionale (cross-border intra-UE) è inclusa nei piani Pro e Partner. Si attiva contestualmente al lancio dei mercati DACH (mese 12), senza costi aggiuntivi. Il piano Free rimane limitato al mercato italiano.</em></p>
 
-<h3>Add-on e servizi aggiuntivi</h3>
+<h3>Feature già live sulla piattaforma</h3>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Feature</th><th>Descrizione</th><th>Stato</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>AI bio generation</strong></td>
+            <td>Claude API genera automaticamente la bio del produttore (storytelling territorio, processo produttivo, flagship product) durante l'onboarding. Il produttore risponde a domande guidate; l'AI produce testi SEO-ready e originali.</td>
+            <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>Raccomandazioni personalizzate</strong></td>
+            <td>Suggerimenti prodotti su misura basati su stili preferiti, produttori seguiti e storico acquisti. Ranking con caching per performance.</td>
+            <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>Analytics dashboard produttori</strong></td>
+            <td>Snapshot giornalieri: ordini, payout, visite profilo e pagine prodotto. Grafici storici, plans comparison page.</td>
+            <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>Sistema recensioni</strong></td>
+            <td>Consumer sottomette recensione post-consegna. Il produttore riceve notifica e può inviare inviti di review ai propri clienti.</td>
+            <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>Product offers</strong></td>
+            <td>Sconti a tempo configurabili per prodotto (discount_percentage + ends_at opzionale). Visibili in listing e pagina prodotto.</td>
+            <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>Multi-locale routing (it/en)</strong></td>
+            <td>Routing <code>/:locale</code> con LocaleDomain middleware per ccTLD (torbido.it, torbido.de…). Hreflang completo, SEO per ogni lingua/mercato.</td>
+            <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>Filtro km 0 Haversine</strong></td>
+            <td>Geocoding produttori via Nominatim + filtro geospaziale per distanza. Integrato in browse produttori e homepage.</td>
+            <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>Meilisearch full-text search</strong></td>
+            <td>Ricerca typo-tolerant con faceting per categoria, stile, regione, prezzo. Indicizzazione asincrona via Solid Queue.</td>
+            <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>Share buttons / public profiles</strong></td>
+            <td>Share su social per pagine produttore e prodotto. Public user profile pages per i consumatori.</td>
+            <td>✅ Live</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<h3>Add-on in roadmap</h3>
 
 <div class="table-wrapper">
 <table>
@@ -180,29 +237,24 @@
     </thead>
     <tbody>
         <tr>
-            <td><strong>AI Translation — Piani Global</strong></td>
-            <td>Traduzione automatica vetrine in DE/EN/FR (Claude API) — aggiuntivo al piano base</td>
-            <td>19–99 €/mese</td>
-            <td>Fase 3 (mese 12+)</td>
-        </tr>
-        <tr>
             <td><strong>Featured listing</strong></td>
             <td>Visibilità prioritaria in homepage e risultati di ricerca</td>
             <td>€49–99 / mese</td>
             <td>Fase 2 (mese 8+)</td>
         </tr>
         <tr>
-            <td><strong>Torbido Print</strong></td>
-            <td>Export PDF del profilo produttore in formato rilegato (softcover/hardcover) — per taproom, eventi, gifting</td>
-            <td>€18–35 / copia</td>
-            <td>Fase 2–3</td>
+            <td><strong>AI Translation — Piani Global</strong></td>
+            <td>Traduzione automatica vetrine in DE/EN/FR (Claude API) — aggiuntivo al piano base, attivo con espansione DACH</td>
+            <td>19–99 €/mese</td>
+            <td>Fase 3 (mese 12+)</td>
         </tr>
     </tbody>
 </table>
 </div>
 
 <div class="callout">
-<p><strong>Revenue mix target (Anno 3):</strong> commissioni + abbonamenti Pro/Partner ~85% del fatturato, AI Translation + featured listing ~9%, Torbido Print ~6%.</p>
+<p><strong>Revenue mix target (Anno 3):</strong> commissioni + abbonamenti Pro/Partner ~85% del fatturato, AI Translation + featured listing ~15%.</p>
+<p class="text-muted-italic"><strong>Già live:</strong> piani Free/Pro/Partner con commissione scalare, analytics producer dashboard, sistema recensioni, product offers, raccomandazioni personalizzate, AI bio generation (Claude API), routing multi-locale it/en, filtro km 0 Haversine, Meilisearch full-text search. — <strong>Roadmap:</strong> featured listing (Fase 2), AI Translation storefronts DE/EN/FR (Fase 3).</p>
 </div>
 
 <hr>
