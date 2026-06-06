@@ -406,35 +406,102 @@ body {
 
 /* ── Print ──────────────────────────────────────── */
 @media print {
+    @page { margin: 1.8cm 1.5cm; }
+
     body { background: white; padding: 0; }
-    .markdown-content { max-width: 100%; margin: 0; box-shadow: none; border: none; border-radius: 0; }
+    .markdown-content {
+        max-width: 100%; margin: 0;
+        box-shadow: none; border: none; border-radius: 0;
+        overflow: visible;
+    }
     .doc-header { background: white; }
     .doc-body { padding: 0; }
 
-    .markdown-content h1 { font-size: 22pt; color: black; page-break-after: avoid; }
-    .markdown-content h2 { font-size: 16pt; color: black; page-break-after: avoid; border-left: 3pt solid black; }
-    .markdown-content h3 { font-size: 13pt; color: black; page-break-after: avoid; }
-    .markdown-content h4 { font-size: 11pt; color: black; page-break-after: avoid; }
-    .markdown-content p, .markdown-content li { color: black; orphans: 3; widows: 3; }
+    /* ── Headings ── */
+    .markdown-content h1 { font-size: 20pt; color: black; page-break-after: avoid; }
+    .markdown-content h2 { font-size: 14pt; color: black; page-break-after: avoid; border-left: 3pt solid black; }
+    .markdown-content h3 { font-size: 12pt; color: black; page-break-after: avoid; }
+    .markdown-content h4 { font-size: 10pt; color: black; page-break-after: avoid; }
+
+    /* ── Body text ── */
+    .markdown-content p, .markdown-content li { color: black; font-size: 9pt; line-height: 1.5; orphans: 3; widows: 3; }
     .markdown-content strong { color: black; font-weight: 700; }
     .markdown-content em { color: #444; }
+
+    /* ── Links: show URL only for external, not anchors ── */
     .markdown-content a { color: black; text-decoration: underline; }
-    .markdown-content a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 0.8em; font-style: italic; }
+    .markdown-content a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 7.5pt; font-style: italic; }
     .markdown-content a[href^="#"]:after { content: ""; }
-    .markdown-content code { background: #f5f5f5; border: 1pt solid #ccc; color: black; }
-    .markdown-content pre { background: #f5f5f5; border: 1pt solid #ccc; padding: 10pt; page-break-inside: avoid; white-space: pre-wrap; }
+
+    /* ── Code ── */
+    .markdown-content code { background: #f5f5f5; border: 1pt solid #ccc; color: black; font-size: 8pt; }
+    .markdown-content pre { background: #f5f5f5; border: 1pt solid #ccc; padding: 8pt; page-break-inside: avoid; white-space: pre-wrap; }
     .markdown-content pre code { background: transparent; border: none; color: black; }
+
+    /* ── Blockquote ── */
     .markdown-content blockquote { border-left: 3pt solid #666; color: #444; background: transparent; }
-    .markdown-content table { border-collapse: collapse; width: 100%; page-break-inside: avoid; }
-    .markdown-content thead { background: #f0f0f0; }
-    .markdown-content th { background: #f0f0f0; color: black; border: 1pt solid black; padding: 6pt 10pt; font-weight: 700; }
-    .markdown-content td { border: 1pt solid black; padding: 6pt 10pt; color: black; }
-    .markdown-content tbody tr:nth-child(even) { background: #fafafa; }
+
+    /* ── Tables: remove scroll wrapper, collapse to page width ── */
+    .table-wrapper {
+        overflow: visible !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin: 0.5em 0 !important;
+        /* let large tables flow across pages */
+        page-break-inside: auto;
+    }
+    .markdown-content table {
+        border-collapse: collapse;
+        width: 100% !important;
+        min-width: 0 !important;   /* override screen's min-width: max-content */
+        font-size: 8pt;
+        table-layout: fixed;
+        page-break-inside: auto;
+    }
+    .markdown-content thead { background: #eeeeee !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .markdown-content th {
+        background: #eeeeee !important;
+        color: black !important;
+        border: 0.75pt solid #555 !important;
+        padding: 4pt 6pt !important;
+        font-size: 7.5pt !important;
+        font-weight: 700;
+        white-space: normal !important;   /* override screen's nowrap */
+        text-transform: none;
+        letter-spacing: 0;
+    }
+    .markdown-content td {
+        border: 0.75pt solid #aaa !important;
+        padding: 4pt 6pt !important;
+        color: black !important;
+        font-size: 8pt !important;
+        word-break: break-word;
+    }
+    .markdown-content tbody tr { page-break-inside: avoid; }
+    .markdown-content tbody tr:nth-child(even) { background: #f7f7f7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .markdown-content tbody tr:hover { background: transparent !important; }
+
+    /* ── Callout boxes ── */
+    .callout {
+        border: 1pt solid #aaa !important;
+        border-left: 3pt solid #555 !important;
+        background: #f9f9f9 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        page-break-inside: avoid;
+    }
+    .callout.warning { border-left-color: #b45309 !important; }
+    .callout.success { border-left-color: #166534 !important; }
+
+    /* ── Metrics / stat blocks ── */
+    .metrics { display: flex; flex-wrap: wrap; gap: 8pt; }
+    .metric { border: 1pt solid #ccc !important; background: #f5f5f5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
+
+    /* ── Misc ── */
     .markdown-content hr { border-top: 1pt solid #999; }
     * { box-shadow: none !important; }
     h1,h2,h3,h4,h5,h6 { page-break-after: avoid; }
-    table, figure, img, blockquote { page-break-inside: avoid; }
-    @page { margin: 2cm; }
+    figure, img, blockquote { page-break-inside: avoid; }
 }
 
 /* ── Utility Classes ────────────────────────────── */
