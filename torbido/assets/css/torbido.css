@@ -481,6 +481,9 @@ body {
     .markdown-content tbody tr:nth-child(even) { background: #f7f7f7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .markdown-content tbody tr:hover { background: transparent !important; }
 
+    /* ── Hide TOC in print (links don't work in PDF, causes blank first page) ── */
+    .doc-toc { display: none !important; }
+
     /* ── Callout boxes ── */
     .callout {
         border: 1pt solid #aaa !important;
