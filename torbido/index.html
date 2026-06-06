@@ -648,6 +648,11 @@
             .markdown-content a[href^="#"]:after {
                 content: "";
             }
+
+            /* Hide TOC — links don't work in PDF */
+            .doc-toc {
+                display: none !important;
+            }
         }
     </style>
 </head>
