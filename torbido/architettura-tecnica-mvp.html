@@ -56,13 +56,14 @@
                 <li><strong>Scalabilità graduale:</strong> MVP semplice che evolve con i ricavi, non over-engineering</li>
                 <li><strong>Developer velocity:</strong> Un solo dev (founder) deve poter mantenere e evolvere la piattaforma</li>
                 <li><strong>Costi fissi minimi:</strong> Nessuna infrastruttura enterprise, scale-up solo quando necessario</li>
+                <li><strong>Accessibilità WCAG 2.1 AA:</strong> Conformance su tutte le pagine pubbliche — skip link, landmark semantici, aria-label, contrasto colori, focus management</li>
             </ul>
 
             <h3>1.2 Non-Requirements (MVP) — stato aggiornato</h3>
             <ul>
                 <li>❌ App mobile nativa (web-first, responsive) — confermato</li>
                 <li>❌ Micro-services (monolite Rails fino a 100k utenti) — confermato</li>
-                <li>❌ Real-time notifications via WebSocket attive (Solid Cable presente ma non esposto in UI ancora)</li>
+                <li>❌ Real-time notifications via WebSocket attive in UI (Solid Cable presente nel DB, non esposto in frontend ancora)</li>
                 <li>✅ <strong>ML/AI recommendations — IMPLEMENTATO</strong> (PR #153: personalised product recommendations con ranking e caching)</li>
                 <li>✅ <strong>i18n multi-locale — IMPLEMENTATO</strong> (routing <code>/:locale</code> con constraint it/en, LocaleDomain middleware per ccTLD, hreflang full SEO overhaul — PR #150)</li>
             </ul>
@@ -194,6 +195,8 @@
                 <li><strong>Order</strong> <code>belongs_to</code> <strong>User</strong> (consumer)</li>
                 <li><strong>Order</strong> <code>belongs_to</code> <strong>Producer</strong></li>
                 <li><strong>Order</strong> <code>has_many</code> <strong>OrderItems</strong></li>
+                <li><strong>Review</strong> polymorphic su <code>Product</code> o <code>Producer</code> (un tipo per ogni reviewable)</li>
+                <li><strong>ProducerAnalyticsSnapshot</strong> — snapshot giornalieri per storico trend (piano Pro)</li>
             </ul>
 
             <h3>3.3 Indici Critici per Performance</h3>
@@ -210,23 +213,28 @@
             <h2 id="pagine">4. Pagine Principali (MVP)</h2>
             
             <h3>4.1 Pubbliche (SEO-critical)</h3>
+            <p class="text-muted-italic">Tutte le route pubbliche sono locale-scoped: <code>/:locale/...</code> (es. <code>/it/birrifici/</code>, <code>/en/breweries/</code>). Il middleware <code>LocaleDomain</code> inietta il locale dal dominio (torbido.it → <code>/it/</code>) in modo trasparente per il browser.</p>
             <ol>
                 <li><strong>Home (<code>/</code>):</strong> Hero con value proposition, Featured producers, "Scopri per regione"</li>
-                <li><strong>Produttori Index (<code>/produttori</code>):</strong> Lista con navigazione per regione, tipo, km 0 (ogni stile/tipo è una pagina dedicata), paginazione</li>
-                <li><strong>Produttore Single (<code>/produttori/:slug</code>):</strong> Storia, processo produttivo, territorio + lista prodotti + Schema.org LocalBusiness markup</li>
-                <li><strong>Prodotti Index (<code>/prodotti</code>):</strong> Lista cross-produttori con navigazione per categoria, stile, regione, prezzo, km 0 (ogni stile carica la pagina stile dedicata)</li>
-                <li><strong>Prodotto Single (<code>/produttori/:producer_slug/prodotti/:product_slug</code>):</strong> Foto, descrizione, ingredients + pricing + Schema.org Product markup</li>
+                <li><strong>Produttori Index (<code>/:locale/produttori/</code>):</strong> Lista con navigazione per regione, tipo, km 0 (ogni stile/tipo è una pagina dedicata), paginazione</li>
+                <li><strong>Produttore Single (<code>/:locale/produttori/:slug/</code>):</strong> Storia, processo produttivo, territorio + lista prodotti + recensioni + Schema.org LocalBusiness markup</li>
+                <li><strong>Prodotti Index (<code>/:locale/birre/</code>, <code>/:locale/distillati/</code>, <code>/:locale/cocktail-pronti/</code>):</strong> Lista cross-produttori con navigazione per categoria, stile, pillar (km0/bio/artigianale/stagionale), regione, prezzo</li>
+                <li><strong>Prodotto Single (<code>/:locale/produttori/:producer_slug/products/:product_slug/</code>):</strong> Foto, descrizione, ingredients + pricing + recensioni + Schema.org Product markup</li>
+                <li><strong>Recensioni pubbliche (<code>/:locale/reviews-page/</code>):</strong> Pagina pubblica con tutte le recensioni della piattaforma</li>
+                <li><strong>Pillar pages (<code>/:locale/km0/</code>, <code>/:locale/bio/</code>…):</strong> Pagine editoriali cross-categoria per SEO long-tail</li>
+                <li><strong>FAQ (<code>/:locale/faq/</code>):</strong> FAQ i18n con FAQPage JSON-LD, HTTP caching</li>
                 <li><strong>Carrello (<code>/cart</code>):</strong> Session-based, raggruppato per produttore</li>
                 <li><strong>Checkout (<code>/checkout</code>):</strong> Login/signup required, Stripe Payment Intent</li>
             </ol>
 
             <h3>4.2 Autenticate (Produttori)</h3>
             <ol>
-                <li><strong>Dashboard (<code>/dashboard</code>):</strong> Ordini recenti, analytics vendite</li>
-                <li><strong>Prodotti (<code>/dashboard/prodotti</code>):</strong> CRUD prodotti, upload foto, gestione inventario</li>
-                <li><strong>Ordini (<code>/dashboard/ordini</code>):</strong> Lista ordini da evadere, azioni spedizione</li>
-                <li><strong>Profilo (<code>/dashboard/profilo</code>):</strong> Modifica storia, processo produttivo, foto, AI bio generation (Claude API), piani abbonamento (Free/Pro/Partner)</li>
-                <li><strong>Analytics (<code>/dashboard/analytics</code>):</strong> [Post-MVP] Grafici vendite, breakdown prodotto (Hotwire + Stimulus + Chart.js)</li>
+                <li><strong>Dashboard / Analytics (<code>/producer/profile/analytics</code>):</strong> Snapshot giornalieri ordini/payout/visite, grafici storici, breakdown prodotto, plans comparison. Sezioni avanzate gated su piano Pro.</li>
+                <li><strong>Prodotti (<code>/producer/products</code>):</strong> CRUD prodotti, upload foto, gestione inventario, preview pubblica</li>
+                <li><strong>Ordini (<code>/producer/orders</code>):</strong> Lista ordini da evadere, azioni spedizione, tracking URL</li>
+                <li><strong>Recensioni (<code>/producer/reviews</code>):</strong> Lista recensioni ricevute (prodotto + produttore), risposta pubblica per ogni recensione</li>
+                <li><strong>Share page (<code>/producer/share</code>):</strong> QR code e link condivisione per canali fisici/social</li>
+                <li><strong>Profilo (<code>/producer/profile</code>):</strong> Modifica storia, processo produttivo, foto, rigenerazione AI bio, piani abbonamento (Free/Pro/Partner)</li>
             </ol>
         </section>
 
@@ -255,8 +263,17 @@
                 <li>Produttore spedisce → segna "shipped" con tracking URL</li>
                 <li>Consumer riceve email con tracking</li>
             </ol>
+            <h3>5.4 Post-consegna: Recensioni</h3>
+            <ol>
+                <li>Ordine transita a <code>delivered</code> (produttore marca consegnato)</li>
+                <li>Job <code>Reviews::SendRequestJob</code> si attiva 3 giorni dopo: email al consumer con link firmato (token, no login richiesto)</li>
+                <li>Consumer recensisce uno o più prodotti dell'ordine + può recensire il produttore (se ha ordinato ≥2 prodotti distinti dallo stesso)</li>
+                <li>Produttore riceve notifica email per ogni recensione</li>
+                <li>Produttore può rispondere pubblicamente dalla dashboard (<code>/producer/reviews</code>)</li>
+                <li>Recensioni e risposte visibili sulle pagine pubbliche prodotto/produttore e nella pagina consumer (<code>/account/reviews</code>)</li>
+            </ol>
 
-            <h3>5.3 Gestione Commissioni (Stripe Connect)</h3>
+
             <ul>
                 <li><strong>Application fee model:</strong> Torbido trattiene commissione al momento del pagamento</li>
                 <li><strong>Split payment:</strong> Consumer paga 100% a Torbido → transfer (100% - commission) a produttore</li>

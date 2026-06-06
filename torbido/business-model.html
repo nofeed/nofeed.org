@@ -17,7 +17,7 @@
         <span class="doc-header-brand">Torbido</span>
         <div class="doc-header-meta">
             <span class="doc-badge">Riservato &amp; Confidenziale</span>
-            <span class="doc-date">Marzo 2026</span>
+            <span class="doc-date">Giugno 2026</span>
         </div>
     </div>
     <div class="doc-body">
@@ -111,7 +111,7 @@
         <tr>
             <td><strong>Produttore piccolo</strong></td>
             <td>Invisibile online, distributori prendono 40–60% del margine, Shopify €19–79/mese + commission</td>
-            <td>Vetrina immediata, commissione 5–12% (vs 40–60%), backlink SEO gratuiti, zero costi fissi</td>
+            <td>Vetrina immediata, commissione 5–12% (vs 40–60%), backlink SEO gratuiti, zero costi fissi. <strong>Relazione diretta con i clienti</strong>: recensioni, risposte pubbliche, inviti di review — non solo locali, ma anche acquirenti da tutta Italia e (in Fase 2) dall'estero.</td>
         </tr>
         <tr>
             <td><strong>Produttore con e-commerce proprio</strong></td>
@@ -195,8 +195,8 @@
             <td>✅ Live</td>
         </tr>
         <tr>
-            <td><strong>Sistema recensioni</strong></td>
-            <td>Consumer sottomette recensione post-consegna. Il produttore riceve notifica e può inviare inviti di review ai propri clienti.</td>
+            <td><strong>Sistema recensioni + dialogo diretto</strong></td>
+            <td>Recensioni su prodotti <em>e</em> sul produttore (due tipi distinti). Il cliente riceve email con link firmato 3 giorni dopo la consegna. Il produttore riceve notifica e può <strong>rispondere pubblicamente</strong> alla recensione dalla propria dashboard. Inviti di review inviabili a clienti abituali. Canale diretto produttore↔consumatore, zero intermediari.</td>
             <td>✅ Live</td>
         </tr>
         <tr>
@@ -205,9 +205,9 @@
             <td>✅ Live</td>
         </tr>
         <tr>
-            <td><strong>Multi-locale routing (it/en)</strong></td>
-            <td>Routing <code>/:locale</code> con LocaleDomain middleware per ccTLD (torbido.it, torbido.de…). Hreflang completo, SEO per ogni lingua/mercato.</td>
-            <td>✅ Live</td>
+            <td><strong>Multi-locale routing + multi-domain</strong></td>
+            <td>Architettura multi-dominio live nel codice: <code>torbido.it</code> (IT), <code>torbido.com</code> (US/en), <code>torbido.co.uk</code> (UK/en_gb) — stesso Rails app, mercati separati a livello Rack middleware, taxonomy distinta per mercato (stili US/UK diversi da IT). Hreflang completo. <strong>Lancio: torbido.it.</strong> Landing internazionale su torbido.co già online per raccogliere interesse UK/US.</td>
+            <td>✅ Architettura live<br><em>Lancio: torbido.it</em></td>
         </tr>
         <tr>
             <td><strong>Filtro km 0 Haversine</strong></td>
@@ -220,9 +220,19 @@
             <td>✅ Live</td>
         </tr>
         <tr>
-            <td><strong>Share buttons / public profiles</strong></td>
-            <td>Share su social per pagine produttore e prodotto. Public user profile pages per i consumatori.</td>
+            <td><strong>Share buttons</strong></td>
+            <td>Condivisione social su pagine produttore e prodotto (nativi, zero dipendenze JS esterne).</td>
             <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>Public user profiles</strong></td>
+            <td>Ogni consumatore ha un profilo pubblico: lista produttori preferiti, recensioni lasciate, community visibile. I produttori possono vedere chi li segue e chi ha recensito i propri prodotti.</td>
+            <td>✅ Live</td>
+        </tr>
+        <tr>
+            <td><strong>RTD/RTS — terza categoria navigabile</strong></td>
+            <td>Cocktail pronti da bere e spirit RTD hanno pagine dedicate (<code>/cocktail-pronti/</code>, <code>/ready-to-drink/</code>) con taxonomy market-specific per IT/US/UK. Infrastruttura live, in attesa di primi produttori.</td>
+            <td>✅ Infrastruttura live</td>
         </tr>
     </tbody>
 </table>
