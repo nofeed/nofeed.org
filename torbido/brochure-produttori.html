@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Torbido — Perché entrare nel marketplace</title>
+    <script src="assets/js/auth.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --teal: #0f766e;
+            --teal-light: #f0fdf4;
+            --teal-mid: #d1fae5;
+            --ink: #111827;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 10pt;
+            color: var(--ink);
+            background: white;
+            line-height: 1.55;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 14mm 16mm 14mm 16mm;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--teal);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .brand {
+            font-size: 22pt;
+            font-weight: 800;
+            color: var(--teal);
+            letter-spacing: -0.04em;
+            line-height: 1;
+        }
+        .brand-sub {
+            font-size: 8.5pt;
+            color: var(--muted);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+        .header-right {
+            text-align: right;
+            font-size: 8pt;
+            color: var(--muted);
+        }
+
+        /* ── INTRO ── */
+        .intro {
+            margin-bottom: 18px;
+        }
+        .intro h1 {
+            font-size: 15pt;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+            line-height: 1.2;
+            margin-bottom: 7px;
+        }
+        .intro p {
+            font-size: 9.5pt;
+            color: #374151;
+            max-width: 160mm;
+            line-height: 1.6;
+        }
+
+        /* ── HIGHLIGHT BOX ── */
+        .highlight {
+            background: var(--teal-light);
+            border-left: 3px solid var(--teal);
+            border-radius: 3px;
+            padding: 9px 12px;
+            margin-bottom: 20px;
+            font-size: 9pt;
+            color: #064e3b;
+        }
+        .highlight strong { color: var(--teal); }
+
+        /* ── SECTION TITLE ── */
+        .section-title {
+            font-size: 8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--teal);
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--teal-mid);
+        }
+
+        /* ── ARGUMENT GRID ── */
+        .arg-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .arg-item {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 10px 11px;
+        }
+        .arg-item h3 {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+        .arg-num {
+            font-size: 7.5pt;
+            font-weight: 800;
+            background: var(--teal);
+            color: white;
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .arg-item p {
+            font-size: 8.5pt;
+            color: #374151;
+            line-height: 1.5;
+        }
+
+        /* ── STATS ROW ── */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .stat {
+            text-align: center;
+            border: 1px solid var(--teal-mid);
+            border-radius: 4px;
+            padding: 8px 6px;
+            background: var(--teal-light);
+        }
+        .stat-val {
+            font-size: 14pt;
+            font-weight: 800;
+            color: var(--teal);
+            line-height: 1.1;
+            display: block;
+        }
+        .stat-lbl {
+            font-size: 7.5pt;
+            color: #064e3b;
+            margin-top: 2px;
+            line-height: 1.35;
+        }
+
+        /* ── PRICING ── */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .plan {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 10px 11px;
+        }
+        .plan.featured {
+            border-color: var(--teal);
+            background: var(--teal-light);
+        }
+        .plan-name {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 2px;
+        }
+        .plan-price {
+            font-size: 13pt;
+            font-weight: 800;
+            color: var(--teal);
+            line-height: 1.1;
+        }
+        .plan-price span {
+            font-size: 8pt;
+            font-weight: 400;
+            color: var(--muted);
+        }
+        .plan-commission {
+            font-size: 8pt;
+            color: #374151;
+            margin: 3px 0 6px;
+        }
+        .plan ul {
+            list-style: none;
+            font-size: 7.5pt;
+            color: #374151;
+        }
+        .plan ul li::before {
+            content: "✓ ";
+            color: var(--teal);
+            font-weight: 700;
+        }
+        .plan ul li { line-height: 1.6; }
+
+        /* ── VS TABLE ── */
+        .vs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8.5pt;
+            margin-bottom: 16px;
+        }
+        .vs-table th {
+            background: var(--ink);
+            color: white;
+            padding: 6px 9px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 8pt;
+        }
+        .vs-table th:first-child { border-radius: 3px 0 0 0; }
+        .vs-table th:last-child { border-radius: 0 3px 0 0; }
+        .vs-table td {
+            padding: 6px 9px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        .vs-table tr:last-child td { border-bottom: none; }
+        .vs-table tr.highlight-row td {
+            background: var(--teal-light);
+            font-weight: 500;
+            color: #064e3b;
+        }
+        .vs-table .bad { color: #b91c1c; }
+        .vs-table .good { color: var(--teal); font-weight: 600; }
+
+        /* ── CTA ── */
+        .cta {
+            background: var(--ink);
+            color: white;
+            border-radius: 5px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .cta-text h3 {
+            font-size: 10.5pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .cta-text p {
+            font-size: 8.5pt;
+            color: #d1d5db;
+        }
+        .cta-contact {
+            text-align: right;
+            flex-shrink: 0;
+            font-size: 8.5pt;
+        }
+        .cta-contact a {
+            color: #6ee7b7;
+            text-decoration: none;
+        }
+        .cta-contact strong {
+            display: block;
+            color: white;
+            font-size: 9pt;
+            margin-bottom: 2px;
+        }
+
+        /* ── PRINT ── */
+        @media print {
+            body { font-size: 10pt; }
+            .page { margin: 0; padding: 12mm 14mm; }
+            a { text-decoration: none; color: inherit; }
+            .cta-contact a { color: #6ee7b7; }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+        }
+
+        /* Screen preview */
+        @media screen {
+            body { background: #f3f4f6; }
+            .page {
+                box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+                margin: 24px auto;
+            }
+            .print-hint {
+                text-align: center;
+                font-family: 'Inter', sans-serif;
+                font-size: 13px;
+                color: #6b7280;
+                padding: 12px;
+            }
+        }
+        @media print { .print-hint { display: none; } }
+    </style>
+</head>
+<body>
+
+<p class="print-hint">Per esportare in PDF: File → Stampa → Salva come PDF &nbsp;·&nbsp; Imposta carta A4, margini Nessuno o Minimi</p>
+
+<div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div>
+            <div class="brand">Torbido</div>
+            <div class="brand-sub">Il marketplace di birre artigianali e spirits locali</div>
+        </div>
+        <div class="header-right">
+            torbido.it<br>
+            Giugno 2026
+        </div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="intro">
+        <h1>Vendi direttamente ai tuoi clienti.<br>Senza intermediari, senza costi fissi.</h1>
+        <p>Torbido è il marketplace italiano dedicato a birre artigianali e spirits locali. Ogni produttore ha la propria vetrina, racconta il territorio, e vende direttamente — con una commissione solo sul venduto. Niente magazzino nostro, niente logistica nostra: spedisci tu, noi portiamo i clienti.</p>
+    </div>
+
+    <!-- HIGHLIGHT -->
+    <div class="highlight">
+        <strong>Mercato craft beer Italia: ~€450M (+27% all'anno).</strong> Oltre 1.000 microbirrifici e 800+ distillerie artigianali producono bevande di qualità eccezionale — ma la maggior parte sono invisibili online. Torbido risolve esattamente questo.
+    </div>
+
+    <!-- PERCHÉ TORBIDO -->
+    <div class="section-title">Perché scegliere Torbido</div>
+
+    <div class="arg-grid">
+        <div class="arg-item">
+            <h3><span class="arg-num">1</span> La forza della rete</h3>
+            <p>Non sei solo. Ogni produttore che entra aumenta il traffico, i backlink e l'autorevolezza della piattaforma — e tutti ne beneficiano. Più siamo, più Google ci trova.</p>
+        </div>
+        <div class="arg-item">
+            <h3><span class="arg-num">2</span> I tuoi clienti, la tua reputazione</h3>
+            <p>Recensioni verificate post-acquisto, legate all'ordine reale. Puoi rispondere pubblicamente — costruisci brand in modo indipendente dai distributori.</p>
+        </div>
+        <div class="arg-item">
+            <h3><span class="arg-num">3</span> Zero costi fissi per iniziare</h3>
+            <p>Il piano Free è gratuito. Paghi una commissione solo quando vendi. Niente setup, niente manutenzione, niente agenzia: profilo attivo in poche ore.</p>
+        </div>
+        <div class="arg-item">
+            <h3><span class="arg-num">4</span> La tua storia raccontata bene</h3>
+            <p>L'AI genera automaticamente bio e descrizioni prodotto ottimizzate per il marketplace — diverse da quelle del tuo sito, senza contenuto duplicato.</p>
+        </div>
+        <div class="arg-item">
+            <h3><span class="arg-num">5</span> SEO che cresce da sola</h3>
+            <p>Ogni produttore che linka Torbido dai propri canali aumenta l'autorevolezza del dominio. Più siamo, più saliamo su "birra artigianale [regione]" — keyword che nessun sito singolo può vincere da solo.</p>
+        </div>
+        <div class="arg-item">
+            <h3><span class="arg-num">6</span> Dati che nessun distributore ti dà</h3>
+            <p>Vedi chi compra, cosa compra, da dove. E Torbido può raggiungere — per conto tuo — acquirenti già verificati del tuo stile nella tua regione, con campagne mirate sul venduto.</p>
+        </div>
+        <div class="arg-item">
+            <h3><span class="arg-num">7</span> Più forza con i distributori</h3>
+            <p>Un canale diretto attivo cambia il rapporto di forza in ogni negoziazione. Non è una minaccia — è un BATNA reale che i distributori sentono.</p>
+        </div>
+        <div class="arg-item">
+            <h3><span class="arg-num">8</span> Lanci prodotto con dati veri</h3>
+            <p>Carica un nuovo prodotto il giorno stesso che lo imbottigli. Misura interesse, conversioni e feedback reali — prima di decidere quanto produrre del prossimo lotto.</p>
+        </div>
+        <div class="arg-item">
+            <h3><span class="arg-num">9</span> Indipendenza dagli algoritmi</h3>
+            <p>La tua pagina Torbido non dipende da Meta. Non scompare dai feed, non viene penalizzata se non pubblichi per due settimane. Quello che costruisci resta.</p>
+        </div>
+        <div class="arg-item">
+            <h3><span class="arg-num">10</span> Il mercato dei regali</h3>
+            <p>"Idee regalo birra artigianale" — migliaia di ricerche mensili su Google che oggi vanno ad Amazon. Su Torbido, nelle selezioni tematiche curate, ci sei anche tu.</p>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-row">
+        <div class="stat">
+            <span class="stat-val">€450M</span>
+            <div class="stat-lbl">mercato craft beer Italia (Assobirra 2025)</div>
+        </div>
+        <div class="stat">
+            <span class="stat-val">+27%</span>
+            <div class="stat-lbl">crescita annua del segmento artigianale</div>
+        </div>
+        <div class="stat">
+            <span class="stat-val">68%</span>
+            <div class="stat-lbl">degli under 40 cerca prodotti locali entro 50 km</div>
+        </div>
+        <div class="stat">
+            <span class="stat-val">0</span>
+            <div class="stat-lbl">marketplace km 0 specializzati prima di Torbido</div>
+        </div>
+    </div>
+
+    <!-- CONFRONTO COSTI -->
+    <div class="section-title">Confronto costi: Torbido vs le alternative</div>
+
+    <table class="vs-table">
+        <thead>
+            <tr>
+                <th>Canale</th>
+                <th>Costo fisso annuo</th>
+                <th>Margine/commissione ceduta</th>
+                <th>Traffico incluso</th>
+                <th>Controllo brand</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Distributore tradizionale</strong></td>
+                <td>€0</td>
+                <td class="bad">40–60% del prezzo</td>
+                <td>Sì (non gestito da te)</td>
+                <td class="bad">Nessuno</td>
+            </tr>
+            <tr>
+                <td><strong>Shopify + agenzia</strong></td>
+                <td class="bad">€3.500–8.000 (primo anno)</td>
+                <td>~3% gateway</td>
+                <td class="bad">No — devi comprarlo</td>
+                <td>Totale</td>
+            </tr>
+            <tr>
+                <td><strong>Maltese / 1001birre</strong></td>
+                <td>€0</td>
+                <td class="bad">Vendita grossista (margine fisso basso)</td>
+                <td>Sì (non gestito da te)</td>
+                <td class="bad">Nessuno</td>
+            </tr>
+            <tr class="highlight-row">
+                <td><strong>Torbido Free</strong></td>
+                <td class="good">€0</td>
+                <td class="good">12% solo su venduto</td>
+                <td class="good">Sì — traffico aggregato</td>
+                <td class="good">Totale</td>
+            </tr>
+            <tr class="highlight-row">
+                <td><strong>Torbido Pro</strong></td>
+                <td class="good">€348/anno</td>
+                <td class="good">8% solo su venduto</td>
+                <td class="good">Sì + priorità in ricerca</td>
+                <td class="good">Totale</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- PIANI -->
+    <div class="section-title">I piani</div>
+
+    <div class="pricing-grid">
+        <div class="plan">
+            <div class="plan-name">Free</div>
+            <div class="plan-price">€0 <span>/ mese</span></div>
+            <div class="plan-commission">Commissione 12% sul venduto</div>
+            <ul>
+                <li>Vetrina produttore</li>
+                <li>Fino a 10 prodotti</li>
+                <li>Analytics base (ordini, visite)</li>
+                <li>Recensioni verificate</li>
+                <li>AI bio generation</li>
+            </ul>
+        </div>
+        <div class="plan featured">
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">€29 <span>/ mese</span></div>
+            <div class="plan-commission">Commissione 8% sul venduto</div>
+            <ul>
+                <li>Tutto Free +</li>
+                <li>Prodotti illimitati</li>
+                <li>Badge Verificato</li>
+                <li>Priorità nei risultati di ricerca</li>
+                <li>Vendita internazionale</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <div class="plan-name">Partner</div>
+            <div class="plan-price">€79 <span>/ mese</span></div>
+            <div class="plan-commission">Commissione 5% sul venduto</div>
+            <ul>
+                <li>Tutto Pro +</li>
+                <li>Newsletter Torbido</li>
+                <li>Campagne social</li>
+                <li>Redazione storia del birrificio</li>
+                <li>Supporto prioritario</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+        <div class="cta-text">
+            <h3>Entra tra i Founding Producer</h3>
+            <p>I primi 50 birrifici e distillerie ottengono visibilità prioritaria in homepage e posizione riservata nelle selezioni regionali. Scrivici per una demo live — in 10 minuti vedi come appare il tuo profilo.</p>
+        </div>
+        <div class="cta-contact">
+            <strong>Nicholas Wieland</strong>
+            <a href="mailto:ngw@nofeed.org">ngw@nofeed.org</a><br>
+            +39 375 809 1178<br>
+            torbido.it
+        </div>
+    </div>
+
+</div><!-- /page -->
+
+</body>
+</html>
