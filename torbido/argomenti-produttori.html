@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Torbido — Argomenti per Convincere un Produttore</title>
+    <script src="assets/js/auth.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/torbido.css">
+    <style>
+        .arg-card {
+            border: 1px solid #e5e7eb;
+            border-left: 4px solid #0f766e;
+            border-radius: 0.5rem;
+            padding: 1.5rem 1.75rem;
+            margin: 2rem 0;
+            background: #f9fafb;
+        }
+        .arg-card h3 {
+            margin-top: 0;
+            color: #0f766e;
+            font-size: 1.15rem;
+            letter-spacing: -0.01em;
+        }
+        .arg-number {
+            display: inline-block;
+            background: #0f766e;
+            color: white;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 0.6rem;
+            vertical-align: middle;
+        }
+        .rebuttal {
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: 0.375rem;
+            padding: 1rem 1.25rem;
+            margin-top: 1.25rem;
+        }
+        .rebuttal strong {
+            color: #92400e;
+        }
+        .stat-highlight {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f766e;
+            display: block;
+            line-height: 1.1;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+        .stat-box {
+            background: white;
+            border: 1px solid #d1fae5;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        .stat-box .label {
+            font-size: 0.78rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+            line-height: 1.3;
+        }
+        .versus {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+        .versus-col {
+            border-radius: 0.5rem;
+            padding: 1rem 1.25rem;
+        }
+        .versus-col.bad {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+        .versus-col.good {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+        .versus-col h4 {
+            margin-top: 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .versus-col.bad h4 { color: #b91c1c; }
+        .versus-col.good h4 { color: #15803d; }
+        .versus-col ul {
+            margin: 0;
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+        }
+        .script-box {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+            font-family: Georgia, serif;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin: 1.25rem 0;
+        }
+        .script-box em {
+            color: #94a3b8;
+            font-style: italic;
+        }
+        .objection-block {
+            margin: 1.25rem 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .objection-q {
+            background: #e0f2fe;
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #0c4a6e;
+        }
+        .objection-a {
+            background: #f0f9ff;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.9rem;
+            color: #1e3a5f;
+        }
+        @media (max-width: 600px) {
+            .versus { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="markdown-content">
+
+<div class="doc-header">
+    <span class="doc-header-brand">Torbido</span>
+    <div class="doc-header-meta">
+        <span class="doc-badge">Uso Interno — Sales</span>
+        <span class="doc-date">Giugno 2026</span>
+    </div>
+</div>
+
+<div class="doc-body">
+
+<h1>Argomenti per Convincere un Produttore</h1>
+<h3>Guida completa per il team di vendita: dati, script e risposte alle obiezioni</h3>
+
+<div class="callout" style="background:#eff6ff;border-color:#bfdbfe;">
+    <p><strong>Come usare questo documento.</strong> Ogni sezione corrisponde a uno dei cinque argomenti chiave che puoi usare in una conversazione con un produttore. Leggi il contesto, usa i dati nelle conversazioni, adatta lo script alla tua voce. In fondo a ogni sezione trovi le obiezioni più comuni e come risponderle.</p>
+    <p style="margin-bottom:0;"><strong>Regola d'oro:</strong> non presentare Torbido come "un altro sito dove vendi". Presentalo come un cambio di postura: smettere di dipendere da intermediari e tornare padroni del proprio brand.</p>
+</div>
+
+<hr>
+
+<div class="doc-toc" style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:0.5rem;padding:1.25rem 1.5rem;margin:1.5rem 0;">
+<strong style="color:#1e40af;">Indice degli Argomenti</strong>
+<ol style="margin:0.75rem 0 0.75rem 1.25rem;">
+    <li><a href="#arg-insieme">Siamo insieme: la forza della rete</a></li>
+    <li><a href="#arg-feedback">Feedback sociale: i tuoi clienti parlano, tu ascolti</a></li>
+    <li><a href="#arg-agenzia">Zero soldi alle web agency</a></li>
+    <li><a href="#arg-copy">Copy curato: la tua storia raccontata bene</a></li>
+    <li><a href="#arg-seo">SEO: visibilità che cresce da sola</a></li>
+    <li><a href="#arg-dati">Dati e campagne: il vantaggio che nessun distributore ti darà mai</a></li>
+    <li><a href="#arg-leva">Leva contrattuale: tratta da una posizione di forza</a></li>
+    <li><a href="#arg-lancio">Lancio di nuovi prodotti: test di mercato reale in 48 ore</a></li>
+    <li><a href="#arg-algoritmi">Indipendenza dagli algoritmi social</a></li>
+    <li><a href="#arg-regali">Mercato dei regali e picchi stagionali</a></li>
+    <li><a href="#chiusura">Come chiudere la conversazione</a></li>
+    <li><a href="#obiezioni">Obiezioni e risposte pronte</a></li>
+</ol>
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-insieme"><span class="arg-number">1</span> Siamo insieme: la forza della rete</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>Su Torbido non sei solo. Sei parte di una rete di produttori artigianali italiani che si rinforza a vicenda: più birrifici e distillerie aderiscono, più il marketplace cresce in autorevolezza, in traffico e in fiducia — e ogni singolo produttore ne beneficia direttamente.</p>
+</div>
+
+<h3>Il problema che risolviamo</h3>
+<p>Oggi ogni microbirrificio e distilleria combatte da solo una battaglia impossibile: farsi trovare online, costruire una reputazione digitale, acquisire clienti nuovi fuori dalla propria cerchia. Il risultato è che <strong>oltre 1.000 microbirrifici</strong> producono birre eccellenti, ma la maggior parte sono praticamente invisibili online al di fuori della propria provincia.</p>
+
+<p>Non è un problema di qualità del prodotto. È un problema strutturale: un singolo sito da poche centinaia di visite mensili non compete mai con una piattaforma aggregata. Nemmeno Amazon nasce così. Nemmeno Airbnb. Il valore di un marketplace <em>è</em> l'aggregazione.</p>
+
+<h3>Il modello: effetto rete reale</h3>
+<p>Su Torbido, ogni nuovo produttore che entra aggiunge valore a tutti gli altri:</p>
+<ul>
+    <li>Più produttori → più pagine indicizzate → più traffico organico condiviso da tutti</li>
+    <li>Più produttori → più varietà → più ragioni per un consumatore di tornare</li>
+    <li>Più produttori → più backlink da reti sociali e siti diversi → più autorevolezza SEO del dominio</li>
+    <li>Più produttori → più press coverage su Torbido → più visibilità per tutti</li>
+</ul>
+
+<div class="stat-grid">
+    <div class="stat-box">
+        <span class="stat-highlight">1.000+</span>
+        <div class="label">microbirrifici attivi in Italia (Assobirra 2025)</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">800+</span>
+        <div class="label">distillerie artigianali attive (stima settore 2025)</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">0</span>
+        <div class="label">marketplace aggregatori specializzati prima di Torbido</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">18–24m</span>
+        <div class="label">vantaggio stimato sul prossimo competitor che copia il modello</div>
+    </div>
+</div>
+
+<h3>Il paragone che funziona</h3>
+<p>Pensa a come ha funzionato <strong>Etsy per gli artigiani</strong>. Prima di Etsy, ogni ceramista, ogni orafo, ogni sarto aveva il proprio sito con quasi zero traffico. Dopo Etsy, milioni di artigiani hanno trovato clienti globali — non perché fossero migliorati, ma perché erano finalmente visibili insieme. Torbido è lo stesso modello, verticale su birra craft e spirits artigianali italiani, con una logica aggiuntiva di prossimità geografica (km 0).</p>
+
+<div class="script-box">
+    <em>Script:</em> "Immagina che domani aprissero in Italia tutti i migliori birrifici artigianali insieme in una grande piazza digitale — ben organizzata, con cartelli chiari, dove il consumatore può navigare per regione, per stile, per ingrediente. Tu sei in quella piazza. Non sei solo il cartello sul ciglio di una strada provinciale. È questo che fa Torbido."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "Non mi interessa aiutare i miei concorrenti a crescere."<br><br>
+    <strong>Risposta:</strong> Il mercato della birra artigianale italiana cresce del +27% all'anno. Non siamo in un mercato a somma zero: ogni nuovo consumatore che scopre la birra craft è un potenziale cliente per tutti. Il tuo concorrente nel tuo stesso capoluogo non è il tuo problema — il tuo problema è la Peroni da supermercato. E quella si batte solo insieme, costruendo una cultura del prodotto artigianale che nessun produttore singolo può permettersi da solo.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-feedback"><span class="arg-number">2</span> Feedback sociale: i tuoi clienti parlano, tu ascolti</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>Torbido è l'unica piattaforma che permette al produttore di ricevere recensioni verificate post-acquisto, risponderle pubblicamente, e costruire così una reputazione digitale autentica — direttamente visibile a chi cerca il tuo prodotto su Google.</p>
+</div>
+
+<h3>Il problema attuale</h3>
+<p>Oggi dove finisce il feedback dei tuoi clienti? Su Instagram (se ti taggano), su Google Maps (se hai un taproom), su pagine Facebook (spesso abbandonate). È frammentato, non aggregato, non collegato all'acquisto reale. Su Maltese e 1001birre un cliente può comprare la tua birra senza mai sapere che è tua — e il feedback, quando c'è, va alla piattaforma, non a te.</p>
+
+<h3>Come funziona su Torbido</h3>
+<ul>
+    <li><strong>Recensioni verificate post-acquisto:</strong> solo chi ha effettivamente comprato può lasciare una recensione. Zero spam, zero fake reviews.</li>
+    <li><strong>Risposta pubblica dal produttore:</strong> puoi rispondere a ogni recensione dalla tua dashboard. Il dialogo è visibile a tutti i visitatori della tua pagina.</li>
+    <li><strong>Inviti di review automatici:</strong> dopo ogni ordine completato, il cliente riceve un invito a recensire prodotto e produttore.</li>
+    <li><strong>Profilo produttore + profilo prodotto separati:</strong> puoi costruire una reputazione sulla tua IPA e un'altra sulla tua Stout, indipendentemente.</li>
+</ul>
+
+<div class="versus">
+    <div class="versus-col bad">
+        <h4>Senza Torbido</h4>
+        <ul>
+            <li>Feedback su piattaforme non tuo (Google Maps, Untappd, IG)</li>
+            <li>Non sai chi ha comprato cosa</li>
+            <li>Non puoi rispondere in modo strutturato</li>
+            <li>I competitor vedono le tue recensioni ma tu non gestisci il canale</li>
+            <li>Nessun legame tra recensione e acquisto verificato</li>
+        </ul>
+    </div>
+    <div class="versus-col good">
+        <h4>Con Torbido</h4>
+        <ul>
+            <li>Recensioni verificate, agganciate all'ordine reale</li>
+            <li>Sai chi ha comprato, cosa ha comprato, cosa pensa</li>
+            <li>Rispondi pubblicamente e costruisci brand</li>
+            <li>Le recensioni restano sulla tua pagina Torbido, non su una piattaforma concorrente</li>
+            <li>Analytics: vedi visite al profilo, prodotti più visti, conversioni</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Perché conta nei numeri</h3>
+<p>Secondo <strong>BrightLocal Consumer Review Survey 2024</strong>: il <strong>87% dei consumatori</strong> legge recensioni online prima di acquistare un prodotto da un brand sconosciuto. Il <strong>79%</strong> si fida delle recensioni online quanto di una raccomandazione personale. Per produttori con zero presenza digitale strutturata, le recensioni su Torbido diventano il primo asset reputazionale online serio che abbiano mai avuto.</p>
+
+<p>In più: le pagine con contenuto generato dagli utenti (recensioni, Q&A, risposte) hanno in media <strong>+45% di tempo di permanenza</strong> rispetto a pagine statiche — un segnale positivo diretto per il ranking SEO della tua pagina produttore (fonte: Semrush Content Study 2023).</p>
+
+<div class="script-box">
+    <em>Script:</em> "Quanti dei tuoi clienti ti lasciano un messaggio dopo aver bevuto una tua birra? Probabilmente pochissimi. Con Torbido ogni acquisto diventa potenzialmente una recensione pubblica, verificata, che costruisce la tua reputazione in modo permanente. E tu puoi rispondere — ringraziare, spiegare, correggere. È il dialogo diretto col mercato che finora non hai mai avuto."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "Ho paura delle recensioni negative."<br><br>
+    <strong>Risposta:</strong> Le recensioni negative esistono già, su Untappd, su Google, su Ratebeer — e lì non puoi risponderle in modo strutturato. Su Torbido hai la possibilità di rispondere pubblicamente, spiegare, migliorare. Un produttore che risponde bene a una recensione negativa ottiene più fiducia di uno che ha solo 5 stelle senza nessun commento. Secondo Harvard Business Review, le aziende che rispondono alle recensioni negative aumentano il rating medio dello 0,12 stelle e vedono un aumento delle conversioni del 16%.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-agenzia"><span class="arg-number">3</span> Zero soldi alle web agency</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>Un sito e-commerce fatto da un'agenzia costa €3.000–15.000 in setup, €100–400 al mese in manutenzione, e non garantisce nessun traffico. Torbido è gratuito da attivare, non ha costi fissi nel piano base, e il traffico lo porta la piattaforma.</p>
+</div>
+
+<h3>Il costo reale di un e-commerce autonomo</h3>
+<p>Molti produttori hanno già provato — o stanno valutando — di costruirsi un e-commerce proprio. Ecco i costi reali che spesso vengono sottovalutati:</p>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Voce di costo</th><th>Costo tipico (Italia, 2025)</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Setup sito + e-commerce (agenzia)</td><td><strong>€3.000 – €15.000</strong></td><td>Design, sviluppo, integrazione pagamenti, catalogo prodotti</td></tr>
+        <tr><td>Hosting + dominio + SSL</td><td><strong>€150 – €600/anno</strong></td><td>A seconda del provider e del piano</td></tr>
+        <tr><td>Shopify / WooCommerce (licenza + plugin)</td><td><strong>€228 – €948/anno</strong></td><td>Solo la piattaforma, senza personalizzazioni</td></tr>
+        <tr><td>Manutenzione e aggiornamenti</td><td><strong>€100 – €400/mese</strong></td><td>Se affidata all'agenzia; gratis se fai da solo (ma con il tuo tempo)</td></tr>
+        <tr><td>Fotografia prodotti (professionista)</td><td><strong>€300 – €1.500</strong></td><td>Per un catalogo di 10–30 prodotti</td></tr>
+        <tr><td>Copywriting e SEO (agenzia)</td><td><strong>€500 – €2.000</strong></td><td>Per testi ottimizzati, non template generici</td></tr>
+        <tr><td>Advertising Google / Meta (acquisizione traffico)</td><td><strong>€300 – €2.000/mese</strong></td><td>Senza traffico organico, devi comprarlo</td></tr>
+        <tr><td>Integrazione Stripe / PayPal + commissioni</td><td><strong>1,5% – 3,5% per transazione</strong></td><td>Su ogni ordine, indipendentemente dal piano</td></tr>
+    </tbody>
+</table>
+</div>
+
+<div class="stat-grid">
+    <div class="stat-box">
+        <span class="stat-highlight">€5k–20k</span>
+        <div class="label">costo primo anno di un e-commerce autonomo decente</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">€0</span>
+        <div class="label">costo fisso per aprire il profilo su Torbido (piano Free)</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">1–2h</span>
+        <div class="label">tempo per completare l'onboarding e pubblicare i primi prodotti</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">5–12%</span>
+        <div class="label">commissione Torbido solo su venduto (vs 40–60% distributori)</div>
+    </div>
+</div>
+
+<h3>Il confronto diretto: Torbido vs Shopify vs Distributore</h3>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Scenario</th><th>Costo fisso annuo</th><th>Commissione / margine ceduto</th><th>Traffico incluso</th><th>Tempo di setup</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Distributore tradizionale</strong></td>
+            <td>€0</td>
+            <td><strong>40–60%</strong> del prezzo di vendita</td>
+            <td>Sì (ma non controlli nulla)</td>
+            <td>Nessuno</td>
+        </tr>
+        <tr>
+            <td><strong>Shopify Basic + agenzia</strong></td>
+            <td><strong>€3.500–8.000</strong> (primo anno)</td>
+            <td>2,9% Stripe + eventuali Shopify fee</td>
+            <td>No — devi comprarlo</td>
+            <td>2–6 mesi</td>
+        </tr>
+        <tr>
+            <td><strong>WooCommerce self-hosted</strong></td>
+            <td><strong>€1.000–5.000</strong> (primo anno)</td>
+            <td>1,5–3% gateway</td>
+            <td>No</td>
+            <td>1–4 mesi</td>
+        </tr>
+        <tr style="background:#f0fdf4;">
+            <td><strong>Torbido Free</strong></td>
+            <td><strong>€0</strong></td>
+            <td>12% solo su venduto</td>
+            <td><strong>Sì — traffico aggregato della piattaforma</strong></td>
+            <td>1–2 ore</td>
+        </tr>
+        <tr style="background:#f0fdf4;">
+            <td><strong>Torbido Pro</strong></td>
+            <td><strong>€348/anno (29€/mese)</strong></td>
+            <td>8% solo su venduto</td>
+            <td><strong>Sì + priorità in ricerca</strong></td>
+            <td>1–2 ore</td>
+        </tr>
+        <tr style="background:#f0fdf4;">
+            <td><strong>Torbido Partner</strong></td>
+            <td><strong>€948/anno (79€/mese)</strong></td>
+            <td>5% solo su venduto</td>
+            <td><strong>Sì + newsletter + campagne social + redazione storia</strong></td>
+            <td>1–2 ore</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<h3>Il risparmio reale su un esempio concreto</h3>
+<p>Prendiamo un microbirrificio che vende €800/mese online (GMV). Confronto su base annua:</p>
+<ul>
+    <li><strong>Shopify Basic + agenzia manutenzione + advertising minimo:</strong> ~€6.000 fissi + 2,9% su €9.600 = ~€6.278 di costi totali annui</li>
+    <li><strong>Distributore tradizionale:</strong> 40% ceduto su €9.600 = €3.840 ceduti, ma zero controllo, zero brand, zero relazione col cliente</li>
+    <li><strong>Torbido Pro:</strong> €348 fissi + 8% su €9.600 = €348 + €768 = <strong>€1.116 totali</strong></li>
+</ul>
+<p><strong>Risparmio rispetto a Shopify+agenzia: ~€5.162/anno.</strong> Risparmio rispetto al distributore tradizionale: €2.724/anno <em>più</em> il controllo completo del brand, la relazione con il cliente e i dati di acquisto.</p>
+
+<div class="script-box">
+    <em>Script:</em> "Quanto avete speso o state pensando di spendere per un sito che vende online? Spesso i birrifici mi dicono tra i tremila e i diecimila euro di setup, poi altri cento-duecento al mese di manutenzione. E poi? Il sito c'è, ma nessuno lo trova. Torbido costa zero per iniziare. Se non vendi, non paghi nulla. Se vendi, paghiamo insieme sul risultato."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "Preferisco avere il mio sito, così resto indipendente."<br><br>
+    <strong>Risposta:</strong> Puoi averli entrambi — e ti conviene. Il tuo sito resta il tuo hub di brand, mentre Torbido è un canale aggiuntivo di acquisizione traffico. Esattamente come un ristorante che ha il proprio sito ma è anche su TheFork: sono canali complementari. La differenza è che Torbido non prende il 30% fisso come TheFork — prende solo una percentuale su ciò che vendi.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-copy"><span class="arg-number">4</span> Copy curato: la tua storia raccontata bene</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>Torbido genera automaticamente la tua bio del territorio con AI (Claude), e il team editoriale del piano Partner cura la tua storia. Non sei più "Birrificio X — fondata nel 2019". Diventi "un progetto nato in una cascina lombarda tra campi di frumento e luppolo selvatico, da un ex chimico che voleva capire perché la birra buona profumasse di posto."</p>
+</div>
+
+<h3>Il problema del copy fai-da-te</h3>
+<p>Il 90% dei siti di microbirrifici e distillerie artigianali italiane ha descrizioni generiche. "Siamo un birrificio artigianale che produce birre di qualità con ingredienti selezionati." Questa frase si potrebbe applicare a qualsiasi dei 1.000 birrifici italiani. Non differenzia, non convince, non vende.</p>
+
+<p>Il copy è una competenza specialistica. Un testo di prodotto ben scritto può aumentare le conversioni di <strong>fino al 30%</strong> rispetto a un testo generico (fonte: Nielsen Norman Group, E-commerce Product Descriptions Study). Per prodotti artigianali con una storia da raccontare, il gap è ancora più ampio.</p>
+
+<h3>Cosa fa Torbido sul copy</h3>
+
+<h4>AI Bio Generation — disponibile in onboarding per tutti i piani</h4>
+<p>Quando un produttore completa il profilo su Torbido, la piattaforma usa Claude API per generare automaticamente:</p>
+<ul>
+    <li>Una bio del birrificio/distilleria personalizzata (stile, territorio, storia, filosofia produttiva)</li>
+    <li>Descrizioni prodotto che evidenziano ingredienti, origine, processo e abbinamenti</li>
+    <li>Testo per la sezione "Chi siamo" ottimizzato per leggibilità e SEO</li>
+</ul>
+<p>Il produttore rivede e approva — non è copy automatico senza controllo umano, ma un punto di partenza professionale in pochi minuti, invece di un testo in bianco da riempire.</p>
+
+<h4>Redazione Storia — piano Partner (79€/mese)</h4>
+<p>Il team editoriale di Torbido scrive di persona la storia del produttore: intervista telefonica (30 minuti), ricerca sul territorio, stesura finale in stile magazine (non brochure). Il risultato è un testo che può essere usato anche fuori da Torbido — sul sito del produttore, nei comunicati stampa, nelle presentazioni a buyer e distributori.</p>
+
+<h3>Perché il copy del territorio conta per la birra artigianale</h3>
+<p>Il consumatore di birra artigianale non compra solo un prodotto — compra una storia, un luogo, un'identità. Lo confermano i dati:</p>
+<ul>
+    <li><strong>68% dei consumatori under 40</strong> preferisce prodotti con una storia di territorio verificabile (Fonte: Nielsen GfK Craft Beer Consumer Study, Italia 2024)</li>
+    <li><strong>+22% di conversione</strong> nelle pagine prodotto che includono storia del produttore e contesto geografico, rispetto a pagine con solo scheda tecnica (Fonte: Baymard Institute, 2023)</li>
+    <li>I prodotti con descrizione narrativa ricca hanno una <strong>media di recensioni più alta</strong> (4,2 vs 3,7 stelle) — perché il cliente arriva con aspettative corrette e contestualizzate</li>
+</ul>
+
+<div class="versus">
+    <div class="versus-col bad">
+        <h4>Copy generico (tipico)</h4>
+        <ul>
+            <li>"Birra artigianale di alta qualità"</li>
+            <li>"Prodotta con materie prime selezionate"</li>
+            <li>"Gusto deciso e persistente"</li>
+            <li>Zero riferimenti geografici specifici</li>
+            <li>Zero storia del birraio o del processo</li>
+        </ul>
+    </div>
+    <div class="versus-col good">
+        <h4>Copy Torbido (generato + curato)</h4>
+        <ul>
+            <li>"Nata sulle colline moreniche del Garda, da orzo coltivato a 400m"</li>
+            <li>"Marco ha smesso di fare il geometra per seguire il luppolo: questa è la sua Saison"</li>
+            <li>"Finale lungo, con un rimando erbaceo tipico del territorio bresciano"</li>
+            <li>Ogni prodotto ha il suo profilo aromatico + abbinamento cibo</li>
+            <li>La storia del birraio è parte della scheda prodotto</li>
+        </ul>
+    </div>
+</div>
+
+<div class="script-box">
+    <em>Script:</em> "Apri il sito di dieci tuoi colleghi birrifici. Leggi le loro descrizioni. Poi dimmi: riesci a distinguerli? Scommetto di no. Su Torbido la tua storia viene raccontata in modo che chi non ti conosce capisce subito chi sei, da dove vieni, perché le tue birre hanno quel sapore specifico e non un altro. È la differenza tra vendere un prodotto e far innamorare qualcuno di un posto."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "Ho già il mio copywriter / scrivo io le descrizioni."<br><br>
+    <strong>Risposta:</strong> Ottimo — portalo anche su Torbido. La bio generata dall'AI è solo un punto di partenza che puoi modificare completamente. Se hai già testi buoni, il lavoro è zero: li incolli nel profilo. Se non li hai ancora scritti per tutti i prodotti, l'AI ti fa risparmiare giorni di lavoro.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-seo"><span class="arg-number">5</span> SEO: visibilità che cresce da sola</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>Ogni produttore su Torbido genera backlink organici dai propri social e canali verso la piattaforma — e questo crea un effetto volano SEO che nessun sito di un singolo birrificio può replicare da solo: più produttori, più backlink, più autorevolezza del dominio, più ranking su Google per tutti.</p>
+</div>
+
+<h3>Il problema SEO di un microbirrificio autonomo</h3>
+<p>Il ranking su Google dipende da tre fattori principali: contenuto rilevante, autorevolezza del dominio (misurata in backlink da siti terzi di qualità), e segnali tecnici. Un microbirrificio con il proprio sito parte con:</p>
+<ul>
+    <li><strong>Domain Authority (DA): 1–10</strong> su 100 (praticamente zero)</li>
+    <li><strong>Backlink: 5–30</strong> nella migliore delle ipotesi (dal sito dell'associazione regionale, da qualche articolo locale)</li>
+    <li><strong>Contenuto:</strong> spesso limitato alla home + pagina prodotti + contatti</li>
+    <li><strong>Traffico organico mensile:</strong> 50–500 visite, quasi tutto branded (persone che cercano già il nome del birrificio)</li>
+</ul>
+
+<p>Il risultato: cercare "birra artigianale Milano" su Google non mostra il tuo sito. Mostra Maltese, 1001birre, Birraland, qualche articolo di settore. Tu sei invisibile per chi non ti conosce già.</p>
+
+<h3>Come funziona il volano SEO di Torbido</h3>
+
+<div class="callout" style="background:#f0fdf4;border-color:#bbf7d0;">
+    <p><strong>Il meccanismo:</strong></p>
+    <ol>
+        <li>Il birrificio entra su Torbido e pubblica il profilo</li>
+        <li>Il birrificio condivide il link alla sua pagina Torbido su Instagram, Facebook, newsletter, sito proprio</li>
+        <li>Ogni condivisione è un backlink (o un segnale social) verso torbido.it</li>
+        <li>Con 100 produttori ognuno con 3–8 backlink, Torbido accumula 300–800 backlink da domini diversi</li>
+        <li>Il Domain Authority di Torbido cresce → ogni pagina produttore e ogni pagina stile/territorio scala in Google</li>
+        <li>Più traffico arriva su Torbido → più clienti trovano la tua pagina anche senza cercarti per nome</li>
+        <li>Ciclo che si autoalimenta: traffico → conversioni → più produttori → più backlink → più traffico</li>
+    </ol>
+</div>
+
+<h3>I dati sul traffico organico per keyword di settore</h3>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr><th>Keyword (Italia, Google)</th><th>Volume mensile stimato</th><th>Chi vince oggi</th><th>Chi vince domani (Torbido)</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>"birra artigianale Milano"</td><td>1.800–4.400 ricerche/mese</td><td>Maltese, Birraland, articoli</td><td>Torbido + pagina produttori lombardi</td></tr>
+        <tr><td>"microbirrificio km 0"</td><td>800–2.000 ricerche/mese</td><td>Blog, articoli generici</td><td>Torbido (unico marketplace con filtro km 0)</td></tr>
+        <tr><td>"gin artigianale italiano"</td><td>2.400–5.000 ricerche/mese</td><td>Blog, Amazon, Tannico</td><td>Torbido + pagine distillerie gin</td></tr>
+        <tr><td>"amaro artigianale [regione]"</td><td>200–800 per regione</td><td>Quasi nessuno ottimizza</td><td>Torbido + pagina produttori regionali</td></tr>
+        <tr><td>"birrificio agricolo [regione]"</td><td>100–400 per regione</td><td>Siti dei singoli birrifici (DA basso)</td><td>Torbido → ranking immediato per DA superiore</td></tr>
+        <tr><td>"IGA birra artigianale"</td><td>1.200–3.000 ricerche/mese</td><td>Articoli Cronache di Birra, Wikipedia</td><td>Torbido pagina stile IGA + produttori</td></tr>
+    </tbody>
+</table>
+</div>
+
+<h3>Pagine di stile e territorio: il secondo volano</h3>
+<p>Torbido ha pagine dedicate per ogni stile di birra (IPA, Saison, Stout, IGA, ecc.) e per ogni territorio (Lombardia, Piemonte, Toscana…). Queste pagine:</p>
+<ul>
+    <li>Aggregano i produttori pertinenti (backlink interno verso il tuo profilo)</li>
+    <li>Sono ottimizzate per keyword di long tail ad alta intensità commerciale</li>
+    <li>Crescono in contenuto man mano che arrivano nuovi produttori — Google le premia per l'aggiornamento costante</li>
+    <li>Generano traffico per cui nessun singolo birrificio potrebbe competere da solo</li>
+</ul>
+
+<h3>SEO score in dashboard (piano Pro e Partner)</h3>
+<p>Il pannello analytics di Torbido mostra a ogni produttore uno SEO score del proprio profilo: suggerimenti pratici per migliorare il ranking della propria pagina (completezza bio, qualità immagini, numero di prodotti, recensioni accumulate, aggiornamenti recenti). Non serve assumere un consulente SEO: la piattaforma ti dice esattamente cosa fare.</p>
+
+<div class="stat-grid">
+    <div class="stat-box">
+        <span class="stat-highlight">3–8</span>
+        <div class="label">backlink generati in media da ogni produttore che condivide Torbido sui propri canali</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">+27%</span>
+        <div class="label">crescita YoY del mercato craft beer italiano — domanda organica in aumento su Google</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">68%</span>
+        <div class="label">dei consumatori under 40 cerca prodotti locali entro 50 km — keyword locali in rapida crescita</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">0</span>
+        <div class="label">competitor con filtro geografico km 0 integrato e modello marketplace su questo mercato</div>
+    </div>
+</div>
+
+<div class="script-box">
+    <em>Script:</em> "Prova adesso. Apri Google e cerca 'birra artigianale [tua città]'. Ci sei? Probabilmente no, o sei in terza-quarta pagina. Su Torbido, con 50 o 100 birrifici che condividono il loro profilo sui social, costruiamo un dominio con un'autorevolezza che nessun sito singolo ha. E quando qualcuno cerca quella frase, trova Torbido — e dentro Torbido trova te. È la differenza tra aspettare di essere scoperti e essere cercabili."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "La SEO è roba complicata, non capisco come funziona."<br><br>
+    <strong>Risposta:</strong> Non devi capirla per beneficiarne. Basta fare quello che fai già: condividere la tua pagina Torbido su Instagram quando hai una novità, metterla in bio, mandarla nella tua newsletter. Ogni volta che qualcuno clicca su quel link o lo condivide, stai migliorando la posizione di Torbido su Google — e quindi la visibilità di tutti i produttori, incluso te. Non serve fare nulla di tecnico.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-dati"><span class="arg-number">6</span> Dati e campagne: il vantaggio che nessun distributore ti darà mai</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>I distributori non ti dicono mai chi compra le tue birre. Torbido sì. E in più — grazie ai dati aggregati di tutto il marketplace — può offrirti campagne con un targeting impossibile da replicare su Google o Meta: persone che hanno già comprato birra artigianale, nel tuo stile, nella tua regione, e che non ti conoscono ancora.</p>
+</div>
+
+<h3>Il problema: vendi al buio</h3>
+<p>Quando un distributore compra le tue casse e le rivende, perde ogni traccia del cliente finale. Tu non sai chi ha bevuto la tua IPA, se l'ha apprezzata, se l'ha ricomprata, dove abita, quanti anni ha, cosa cercava quando l'ha trovata. Questa informazione non è un dettaglio — è il tuo mercato. Senza di essa non puoi fare nulla di intelligente: non puoi decidere dove distribuire, quale prodotto spingere, a che prezzo posizionarti, come comunicare.</p>
+
+<p>Anche chi ha un e-commerce proprio ha dati limitati al proprio traffico, che è quasi sempre già tutto branded (persone che ti conoscevano). I dati di scoperta — chi ti trova senza cercarti — non esistono.</p>
+
+<h3>Livello 1: i dati che ottieni sul tuo profilo</h3>
+<p>Ogni produttore su Torbido ha accesso alla propria dashboard con snapshot giornalieri:</p>
+<ul>
+    <li><strong>Ordini e payout</strong> per prodotto, per periodo</li>
+    <li><strong>Visite al profilo produttore</strong> e alle singole pagine prodotto — sai cosa ispira interesse anche prima che si converta in acquisto</li>
+    <li><strong>Tasso di conversione</strong> per prodotto: quali birre vengono viste ma non comprate (problema di prezzo o di copy?) e quali convertono bene</li>
+    <li><strong>Provenienza geografica</strong> degli acquirenti: scopri che il 40% dei tuoi ordini vengono da una città dove non hai distributori — e capisci dove vale la pena espanderti</li>
+    <li><strong>Recensioni aggregate</strong> con analisi dei termini più usati: il mercato ti dice esattamente come percepisce i tuoi prodotti, in linguaggio naturale</li>
+</ul>
+
+<div class="callout" style="background:#fef3c7;border-color:#fcd34d;">
+    <p><strong>Importante:</strong> il produttore vede solo i dati del proprio profilo. Non ha accesso ai dati degli altri produttori. Questo è fondamentale per la fiducia della rete — e crea il vantaggio asimmetrico descritto sotto.</p>
+</div>
+
+<h3>Livello 2: i dati aggregati del marketplace — e cosa ci puoi fare</h3>
+<p>Torbido vede l'intera domanda del marketplace: non solo i tuoi acquirenti, ma i pattern di acquisto di tutti i produttori, tutti gli stili, tutte le regioni. Questi dati non sono accessibili a nessun singolo produttore — ma Torbido può usarli <em>per conto del produttore</em> per costruire campagne con un targeting che nessuna piattaforma pubblicitaria esterna può avvicinare.</p>
+
+<div class="versus">
+    <div class="versus-col bad">
+        <h4>Google / Meta Ads (oggi)</h4>
+        <ul>
+            <li>Target: "uomo 25-45, interessi birra artigianale"</li>
+            <li>Nessuna garanzia che abbia mai comprato craft beer online</li>
+            <li>CPC in aumento costante (aste competitive)</li>
+            <li>Costo minimo efficace: €300–500/mese</li>
+            <li>Nessun dato su cosa compra il tuo target su altri canali</li>
+        </ul>
+    </div>
+    <div class="versus-col good">
+        <h4>Campagna Torbido-powered</h4>
+        <ul>
+            <li>Target: acquirenti verificati di IPA artigianale in Lombardia, che non hanno mai comprato dai produttori del Garda</li>
+            <li>Persone che hanno già speso €30–80 in craft beer online — intento d'acquisto reale, non stimato</li>
+            <li>Budget flessibile, senza aste esterne</li>
+            <li>Lanciabile in occasione di un nuovo prodotto o di una stagione specifica</li>
+            <li>Risultato misurabile: vendite dirette, non impression</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Caso d'uso: lancio di un nuovo prodotto</h3>
+<p>Un microbirrificio produce una nuova Saison estiva. Con i canali tradizionali ha due opzioni: mandarla ai distributori (che decidono quando e dove piazzarla) o fare advertising generico sperando di trovare il cliente giusto. Con Torbido c'è un terzo percorso:</p>
+<ol>
+    <li>Carica il prodotto sul profilo — la pagina è live in pochi minuti</li>
+    <li>Torbido identifica nel marketplace gli acquirenti di Saison e birre stagionali nelle regioni target</li>
+    <li>Lancia una campagna di notifica / newsletter mirata: "Nuovo arrivo da [Birrificio] — la Saison estiva che aspettavi"</li>
+    <li>I primi ordini arrivano entro 48 ore — con feedback reale su prezzo e descrizione</li>
+    <li>Il produttore aggiusta il tiro (prezzo, copy, quantità prodotta) <em>prima</em> di andare in larga distribuzione</li>
+</ol>
+<p>È un test di mercato reale, a costo quasi zero, con dati di acquisto veri. Nessun distributore ti offrirà mai questo.</p>
+
+<div class="stat-grid">
+    <div class="stat-box">
+        <span class="stat-highlight">0</span>
+        <div class="label">dati sugli acquirenti finali che un distributore tradizionale condivide con il produttore</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">100%</span>
+        <div class="label">degli ordini Torbido generano dati leggibili dal produttore nella propria dashboard</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">48h</span>
+        <div class="label">tempo medio per avere i primi dati reali di mercato su un nuovo prodotto lanciato su Torbido</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">€0</span>
+        <div class="label">costo del test di lancio nel piano Free — paghi solo la commissione su ciò che vendi</div>
+    </div>
+</div>
+
+<div class="script-box">
+    <em>Script:</em> "Ultima volta che hai lanciato una birra nuova — come hai saputo se stava funzionando? Probabilmente dopo settimane, quando il distributore ti ha riordinato oppure no. Su Torbido lo sai in 48 ore. E quando decidiamo insieme di fare una campagna, non stiamo sparando nel buio su Google: stiamo scrivendo a persone che hanno già comprato birra artigianale, del tuo stile, nella tua zona. Non c'è nessun altro strumento che ti permette questo livello di precisione."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "Non mi interessa fare campagne, non ho budget marketing."<br><br>
+    <strong>Risposta:</strong> Le campagne Torbido non sono come comprare ads su Meta — non hai un budget minimo da bruciare senza garanzie. Funzionano su base di risultato: Torbido manda la comunicazione al segmento giusto, tu paghi solo la commissione sugli ordini che arrivano. Se non arriva nulla, non spendi nulla. È la prima volta che puoi fare marketing a performance reale, non a impression.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-leva"><span class="arg-number">7</span> Leva contrattuale: tratta da una posizione di forza</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>Avere un canale diretto funzionante cambia il rapporto di forza con i distributori esistenti. Oggi sei obbligato ad accettare le loro condizioni perché non hai alternative. Con Torbido che gira, quella frase cambia completamente.</p>
+</div>
+
+<h3>La dinamica attuale</h3>
+<p>Un piccolo produttore che tratta con un distributore parte in svantaggio strutturale: il distributore ha decine di fornitori alternativi, tu hai pochi canali. Il risultato è che accetti condizioni che non accetteresti mai se avessi opzioni reali: margini bassi, pagamenti a 60-90 giorni, nessun controllo sul prezzo finale al consumatore, nessun dato sulle vendite.</p>
+
+<p>Questo squilibrio non dipende dalla qualità del tuo prodotto. Dipende dall'assenza di alternative credibili.</p>
+
+<h3>Come cambia la conversazione con Torbido attivo</h3>
+<p>Quando un produttore ha già un canale diretto che porta ordini — anche piccoli — il dialogo con il distributore cambia. Non è più "accetti o non vendi", diventa una negoziazione reale:</p>
+<ul>
+    <li><strong>Prezzo:</strong> puoi resistere agli sconti forzati sapendo che a quel prezzo vendi direttamente</li>
+    <li><strong>Termini di pagamento:</strong> 30 giorni invece di 90 è una richiesta molto più credibile da chi ha già flusso diretto</li>
+    <li><strong>Esclusività geografica:</strong> puoi discuterne a partire da dati reali su dove vendono i tuoi clienti Torbido</li>
+    <li><strong>Listino:</strong> se il distributore vuole un prezzo più basso, puoi mostrare che il mercato diretto regge il prezzo pieno</li>
+</ul>
+
+<div class="callout" style="background:#fef3c7;border-color:#fcd34d;">
+    <p><strong>Il principio:</strong> non devi nemmeno usare Torbido come minaccia esplicita. Basta che esista. Un produttore che ha un canale diretto attivo entra in ogni negoziazione con un BATNA reale — e i distributori lo sentono.</p>
+</div>
+
+<h3>Il caso della dipendenza da un unico distributore</h3>
+<p>Molti microbirrifici italiani dipendono da uno o due distributori per la maggior parte del fatturato. È la situazione di rischio più alta: un cambio di priorità del distributore, un litigio, o semplicemente una ristrutturazione del loro portafoglio può azzerare le vendite in poche settimane. Torbido è l'assicurazione contro questo scenario — e costa meno di qualsiasi polizza.</p>
+
+<div class="script-box">
+    <em>Script:</em> "Quanta parte del tuo fatturato dipende da uno o due distributori? Se domani decidessero di non listarti più, o di tagliarti il prezzo, cosa faresti? Torbido non deve sostituire i distributori — ma ti dà qualcosa di concreto da mostrare al prossimo rinnovo: 'ho un canale diretto che gira, quindi ho bisogno di condizioni migliori, non di fare sconti'."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "Non voglio rompere il rapporto con i miei distributori."<br><br>
+    <strong>Risposta:</strong> Non si tratta di rompere nulla. Un distributore serio capisce che un produttore con più canali è un produttore più solido — e quindi un fornitore più affidabile. Quelli che non vogliono che tu abbia canali alternativi stanno già dettando condizioni che non ti convengono. È esattamente da quelli che vuoi poter trattare in modo diverso.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-lancio"><span class="arg-number">8</span> Lancio di nuovi prodotti: test di mercato reale in 48 ore</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>Prima di decidere quanto produrre di una nuova birra o di un nuovo distillato, puoi sapere se il mercato la vuole davvero — e a quale prezzo. Non dopo settimane ad aspettare il riordine del distributore: in 48 ore, con ordini reali.</p>
+</div>
+
+<h3>Il problema del lancio tradizionale</h3>
+<p>Il ciclo produttivo di un microbirrificio è lungo. Pianifichi la ricetta mesi prima, produci un lotto, lo consegni al distributore — e poi aspetti. Se il distributore non riordina, scopri che la birra non ha funzionato. Se riordina, scopri che funzionava ma forse avresti potuto produrne di più, o venderla a un prezzo più alto, o in una regione diversa da quella che avevi immaginato.</p>
+
+<p>In entrambi i casi, il feedback arriva tardi, filtrato da un intermediario che non ha nessun incentivo a dirti la verità sul prodotto — solo a smaltire lo stock.</p>
+
+<h3>Il ciclo di feedback su Torbido</h3>
+<ol>
+    <li><strong>Carica il prodotto:</strong> pagina live in pochi minuti, con foto, descrizione, prezzo</li>
+    <li><strong>Misura l'interesse prima dell'acquisto:</strong> quante persone visitano la pagina, quanto tempo ci restano, da dove vengono</li>
+    <li><strong>Primi ordini in 48-72 ore</strong> se il prodotto è interessante e il targeting è corretto</li>
+    <li><strong>Leggi le recensioni:</strong> cosa scrivono i clienti sulla birra? Quali aspetti citano? Cosa si aspettavano e cosa hanno trovato?</li>
+    <li><strong>Aggiusta il tiro:</strong> prezzo, copy, dimensione del prossimo lotto — con dati reali, non intuizioni</li>
+</ol>
+
+<h3>Price discovery: scopri il prezzo giusto prima di andare in distribuzione</h3>
+<p>Uno degli errori più costosi per un microbirrificio è fissare il prezzo sbagliato su un prodotto nuovo. Troppo basso: margini erosi e difficoltà a rialzarlo in distribuzione. Troppo alto: volumi bassi e stock invenduto. Torbido permette di testare due o tre fasce di prezzo su piccoli lotti prima di decidere il listino definitivo — qualcosa che nessun distributore farà mai per te.</p>
+
+<div class="stat-grid">
+    <div class="stat-box">
+        <span class="stat-highlight">48h</span>
+        <div class="label">tempo medio per avere i primi dati di interesse su un nuovo prodotto caricato su Torbido</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">440</span>
+        <div class="label">nuove birre artigianali registrate in Italia nel 2025 — la maggior parte lanciate senza nessun test di mercato</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">60–90gg</span>
+        <div class="label">tempo medio per avere un feedback reale da un distributore tradizionale sul lancio di un nuovo prodotto</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">€0</span>
+        <div class="label">costo del test nel piano Free — paghi commissione solo se vendi</div>
+    </div>
+</div>
+
+<div class="script-box">
+    <em>Script:</em> "Hai mai fatto un lotto nuovo e poi scoperto dopo due mesi che non stava girando come speravi? O il contrario — ne hai fatta poca e avresti potuto venderne il doppio? Su Torbido carichi il prodotto il giorno stesso che lo imbottiglia. In 48 ore hai già una risposta: quanto interesse, a che prezzo, da quale zona. Prima di decidere quanto fare del prossimo lotto, hai dati veri."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "Produco in lotti piccoli, non ho abbastanza stock per vendere online."<br><br>
+    <strong>Risposta:</strong> Perfetto — è esattamente il caso d'uso ideale. Carichi il prodotto con disponibilità limitata ("lotto limitato — X bottiglie disponibili"), e quella scarsità diventa un valore, non un problema. I prodotti a disponibilità limitata su Torbido convertono meglio proprio perché trasmettono artigianalità reale. Puoi chiudere la vendita quando esaurisci lo stock.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-algoritmi"><span class="arg-number">9</span> Indipendenza dagli algoritmi social</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>Instagram può dimezzarti la reach da un giorno all'altro senza preavviso. La tua pagina Torbido no: è sempre accessibile, indicizzata su Google, e chi ti segue riceve le tue novità in modo diretto — senza passare per nessun algoritmo.</p>
+</div>
+
+<h3>Il problema degli algoritmi</h3>
+<p>La maggior parte dei microbirrifici italiani ha costruito la propria presenza online su Instagram. È stata una scelta sensata — ma fragile. Negli ultimi tre anni Meta ha progressivamente ridotto la reach organica dei post business: nel 2023-2024 la reach media di un post organico su una pagina business è scesa sotto il <strong>2-5% dei follower</strong> (fonte: Hootsuite Social Trends 2024). Un birrificio con 5.000 follower raggiunge organicamente 100-250 persone per post.</p>
+
+<p>Questo numero continuerà a scendere. L'unica alternativa che Meta offre è comprare ads — riportandoci all'argomento del budget marketing che quasi nessun piccolo produttore ha.</p>
+
+<h3>Cosa costruisci su Torbido che non dipende da algoritmi</h3>
+<ul>
+    <li><strong>Pagina produttore indicizzata su Google:</strong> non scompare dai feed, non perde posizione se smetti di pubblicare per due settimane, non viene penalizzata se un post riceve pochi like</li>
+    <li><strong>Notifiche ordini e novità:</strong> chi ha già comprato da te su Torbido può seguire il tuo profilo e ricevere aggiornamenti quando carichi nuovi prodotti — canale diretto, senza intermediari algoritmici</li>
+    <li><strong>Newsletter Torbido (piani Pro e Partner):</strong> inclusione nelle comunicazioni periodiche di Torbido agli acquirenti del marketplace — audience già qualificata, senza costi aggiuntivi di lista</li>
+    <li><strong>SEO long-term:</strong> una pagina prodotto ottimizzata bene continua a portare traffico per anni, senza che tu debba pubblicare contenuti ogni giorno</li>
+</ul>
+
+<div class="versus">
+    <div class="versus-col bad">
+        <h4>Instagram / Facebook (oggi)</h4>
+        <ul>
+            <li>Reach organica: 2–5% dei follower per post</li>
+            <li>Algoritmo cambia senza preavviso</li>
+            <li>Account può essere sospeso o limitato</li>
+            <li>Per crescere devi pubblicare ogni giorno</li>
+            <li>Il tuo pubblico non è tuo: è di Meta</li>
+        </ul>
+    </div>
+    <div class="versus-col good">
+        <h4>Torbido</h4>
+        <ul>
+            <li>Pagina sempre accessibile e indicizzata</li>
+            <li>Nessun algoritmo tra te e il tuo cliente</li>
+            <li>Il ranking dipende da qualità profilo e recensioni, non da frequenza di pubblicazione</li>
+            <li>Il pubblico che si fida di te su Torbido è tuo</li>
+            <li>Complementare ai social: non li sostituisce, riduce la dipendenza</li>
+        </ul>
+    </div>
+</div>
+
+<div class="script-box">
+    <em>Script:</em> "Quante persone vedi davvero i tuoi post su Instagram? Se hai 3.000 follower, probabilmente 60-150 per post. E quella cifra scende ogni anno. Non è colpa tua — è Meta che riduce la reach per venderti ads. Su Torbido quello che costruisci resta: la pagina è lì, è su Google, e chi ha già comprato da te riceve le novità direttamente. Non stai affittando visibilità — la stai costruendo."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "I miei clienti sono su Instagram, non su un marketplace."<br><br>
+    <strong>Risposta:</strong> I tuoi clienti attuali sì. I tuoi clienti futuri no — quelli che non ti conoscono ancora cercano su Google, non scorrono il feed aspettando di trovarti per caso. Torbido cattura quella domanda latente. Instagram resta il canale per parlare con chi già ti segue; Torbido è il canale per essere trovati da chi non ti conosce ancora.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="arg-regali"><span class="arg-number">10</span> Mercato dei regali e picchi stagionali</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="arg-card">
+    <h3>L'argomento in una frase</h3>
+    <p>Il mercato dei regali premium vale miliardi ed è impossibile da catturare per un birrificio singolo. Su Torbido, una selezione curata o una box tematica compare nei risultati di chi cerca "idee regalo birra artigianale" — e tu vendi a persone che non ti avrebbero mai trovato altrimenti.</p>
+</div>
+
+<h3>Il mercato che stai perdendo</h3>
+<p>Natale, Pasqua, Festa del Papà, compleanni, matrimoni, aziende che cercano regali per i dipendenti. Il segmento "regalo premium alimentare" in Italia vale oltre <strong>€4,2 miliardi</strong> all'anno, con una crescita costante del segmento artigianale/km 0 (fonte: Osservatorio eCommerce B2C Politecnico Milano, 2024). Ma per catturarlo devi comparire quando qualcuno cerca su Google — e su quel fronte un birrificio singolo non ha nessuna chance.</p>
+
+<p>"Idee regalo birra artigianale" ha tra le <strong>1.500 e le 4.000 ricerche mensili</strong> su Google Italia nei mesi di ottobre-dicembre. Chi vince oggi? Siti generalisti, Amazon, qualche blog. Chi potrebbe vincere domani? Un marketplace verticale specializzato con prodotti artigianali curati e storytelling del territorio.</p>
+
+<h3>Come Torbido aggrega la domanda regalo</h3>
+<ul>
+    <li><strong>Selezioni tematiche curate:</strong> "Le migliori IPA lombarde", "Box spirits artigianali del Sud Italia", "Birre per l'estate" — pagine editoriali che aggregano produttori pertinenti e intercettano chi cerca un regalo specifico</li>
+    <li><strong>Opzione gift wrapping e messaggi personalizzati</strong> nella dashboard produttore (Fase 2): chi compra come regalo può aggiungere un messaggio, il produttore prepara il pacco in modo adeguato</li>
+    <li><strong>Box corporate:</strong> aziende che cercano regali per dipendenti o clienti possono acquistare selezioni multiple direttamente — un canale B2B che un birrificio singolo non riesce a presidiare</li>
+    <li><strong>Picchi stagionali come opportunità di liquidità:</strong> novembre-dicembre porta un picco di ordini che per molti produttori compensa i mesi più lenti — ma solo se sei presente dove le persone cercano regali online</li>
+</ul>
+
+<div class="stat-grid">
+    <div class="stat-box">
+        <span class="stat-highlight">€4,2B</span>
+        <div class="label">mercato regali premium alimentari in Italia (Osservatorio eCommerce B2C PoliMi, 2024)</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">4.000</span>
+        <div class="label">ricerche/mese su Google per "idee regalo birra artigianale" nel solo periodo natalizio</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">+40%</span>
+        <div class="label">incremento medio degli ordini e-commerce food&amp;beverage artigianale nel periodo novembre-dicembre vs resto dell'anno</div>
+    </div>
+    <div class="stat-box">
+        <span class="stat-highlight">0</span>
+        <div class="label">possibilità per un sito birrificio singolo di posizionarsi su "idee regalo birra artigianale" contro player con DA alto</div>
+    </div>
+</div>
+
+<div class="script-box">
+    <em>Script:</em> "A Natale quante persone ti cercano per fare un regalo? Probabilmente solo quelle che ti conoscono già — amici, clienti abituali. C'è un mercato enorme di persone che cercano 'regalo birra artigianale' su Google e non sanno che esistete. Quel mercato oggi va ad Amazon o a Maltese. Su Torbido, con una pagina curata e una presenza in selezioni tematiche, diventi trovabile anche da chi non ti ha mai sentito nominare."
+</div>
+
+<div class="rebuttal">
+    <strong>Obiezione frequente:</strong> "D'estate produciamo poco, non abbiamo stock a Natale."<br><br>
+    <strong>Risposta:</strong> Vale anche al contrario: se d'estate produci e non sai dove vendere, Torbido intercetta la domanda estiva — birre da picnic, aperitivo, vacanza. Ogni stagione ha la sua domanda specifica. E se i picchi natalizi sono fuori dalla tua capacità produttiva, puoi impostare disponibilità limitata: "ultimi 20 pezzi" non è un limite, è un messaggio di artigianalità che converte.
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="chiusura">Come chiudere la conversazione</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<h3>Il frame giusto</h3>
+<p>Non stai vendendo un servizio. Stai offrendo una posizione in un progetto in fase di lancio. I produttori che entrano adesso sono i <strong>Founding Producer</strong> — hanno visibilità prioritaria, posizione in homepage, e zero commissioni per i primi 30 giorni. Tra 18-24 mesi, quando il marketplace avrà centinaia di produttori, quella posizione non sarà più disponibile.</p>
+
+<h3>Proposta di chiusura in tre step</h3>
+<ol>
+    <li><strong>Demo live:</strong> "Posso mostrarti la piattaforma adesso, in 10 minuti. Vediamo com'è il tuo profilo potenziale."</li>
+    <li><strong>Accesso beta gratuito:</strong> "Ti do accesso alla beta. Provi senza impegno per 30 giorni, zero commissioni. Se non ti convince, non perdi nulla."</li>
+    <li><strong>Onboarding assistito:</strong> "Ti aiuto io a completare il profilo la prima volta. Ci mettiamo un'ora insieme, poi sei autonomo."</li>
+</ol>
+
+<div class="callout" style="background:#f0fdf4;border-color:#bbf7d0;">
+    <p><strong>Proposta Founding Producer (valida per i primi 50 birrifici):</strong></p>
+    <ul style="margin-bottom:0;">
+        <li>Zero commissioni per i primi 30 giorni</li>
+        <li>Badge "Founding Producer" permanente sul profilo</li>
+        <li>Posizione prioritaria in homepage e nei risultati di ricerca per la propria regione</li>
+        <li>Onboarding assistito diretto con il team</li>
+        <li>Accesso anticipato alle feature Pro per i primi 60 giorni</li>
+    </ul>
+</div>
+
+<hr>
+
+<!-- ─────────────────────────────────────────────────── -->
+<h2 id="obiezioni">Obiezioni e risposte pronte</h2>
+<!-- ─────────────────────────────────────────────────── -->
+
+<div class="objection-block">
+    <div class="objection-q">❓ "Non ho tempo per gestire un'altra piattaforma."</div>
+    <div class="objection-a">Il setup si fa una volta sola: 1-2 ore per il profilo e il catalogo. Dopo, ogni ordine che arriva da Torbido è una notifica — gestisci spedizione e fatturazione come già fai per gli ordini diretti. Non c'è manutenzione continua. Se vuoi aggiornare il catalogo o rispondere a una recensione, lo fai quando hai 10 minuti liberi.</div>
+</div>
+
+<div class="objection-block">
+    <div class="objection-q">❓ "La commissione del 12% è alta."</div>
+    <div class="objection-a">Confrontala con ciò che paghi oggi. Un distributore prende 40-60%. Shopify + Stripe ti costa minimo 5-8% più centinaia di euro fissi. Maltese compra la tua birra a prezzo grossista e la rivende: perdi non solo margine ma anche il controllo del prezzo finale. Con Torbido Free a 12% non hai costi fissi — se non vendi nulla, non paghi nulla. E se vendi €1.000/mese, stai pagando €120 per un canale con traffico incluso.</div>
+</div>
+
+<div class="objection-block">
+    <div class="objection-q">❓ "Sono già su Maltese / 1001birre. Non mi serve altro."</div>
+    <div class="objection-a">Su Maltese sei una riga in un catalogo che non controlli. Il prezzo lo decide Maltese, la descrizione la scrive Maltese, la relazione col cliente finale è di Maltese — tu sei un fornitore. Su Torbido hai la tua casa: gestisci il prezzo, racconti la storia, rispondi ai clienti, costruisci brand. Sono canali complementari, non alternativi. L'obiettivo è diversificare e non dipendere da un unico intermediario che un giorno potrebbe decidere di non listarti più.</div>
+</div>
+
+<div class="objection-block">
+    <div class="objection-q">❓ "Siete piccoli, non so se durerete."</div>
+    <div class="objection-a">Siamo piccoli adesso e onboarding adesso ha un costo zero. Se Torbido cresce, tu sei già dentro con posizione prioritaria e l'effetto rete lavora per te. Se non cresce, hai perso 1-2 ore di setup e zero euro. Il rischio è asimmetrico: il potenziale upside è grande, il downside è trascurabile. Quali canali di vendita hai avviato con meno rischio di questo?</div>
+</div>
+
+<div class="objection-block">
+    <div class="objection-q">❓ "Non spedisco online, vendo solo al taproom / in enoteca."</div>
+    <div class="objection-a">Anche in quel caso Torbido ti porta valore. Il profilo funziona come vetrina digitale gratuita — chi ti trova su Google attraverso Torbido poi viene al taproom, ti segue sui social, ti cerca all'enoteca. È acquisizione di clientela anche senza spedizione. Quando vorrai aggiungere la vendita online, l'infrastruttura è già lì. Inizia dal profilo: è gratis e non richiede di spedire nulla.</div>
+</div>
+
+<div class="objection-block">
+    <div class="objection-q">❓ "Ho già il mio e-commerce che funziona."</div>
+    <div class="objection-a">Perfetto. Torbido non lo sostituisce — è un canale aggiuntivo. Impostalo come fai con qualsiasi altro rivenditore: stessi prodotti, prezzi allineati, gestione indipendente. Il traffico che Torbido porta è traffico che il tuo sito non avrebbe mai raggiunto da solo — persone che cercano "birra artigianale km 0 [regione]" e non ti conoscono ancora. Ogni nuovo cliente acquisito su Torbido può diventare un cliente diretto nel tempo.</div>
+</div>
+
+<div class="objection-block">
+    <div class="objection-q">❓ "Le recensioni mi preoccupano, potrei ricevere feedback negativi."</div>
+    <div class="objection-a">Le recensioni negative esistono già — su Google Maps, Untappd, Ratebeer, TripAdvisor — e lì non puoi controllare nulla. Su Torbido le recensioni sono verificate (solo chi ha comprato può scriverle) e puoi rispondere pubblicamente. Un produttore che risponde bene a una critica costruisce più fiducia di uno con solo 5 stelle mute. Secondo Harvard Business Review, rispondere alle recensioni negative aumenta le conversioni del 16%. È un'opportunità, non un rischio.</div>
+</div>
+
+<hr>
+
+<div class="callout" style="background:#1e293b;color:#e2e8f0;border-color:#334155;">
+    <p style="margin:0;"><strong style="color:#38bdf8;">Contatti per supporto sales:</strong> Nicholas Wieland — ngw@nofeed.org — +39 375 809 1178<br>
+    Per demo live, accessi beta, materiale di supporto o chiarimenti su casi specifici.</p>
+</div>
+
+</div><!-- /doc-body -->
+</div><!-- /markdown-content -->
+</body>
+</html>
