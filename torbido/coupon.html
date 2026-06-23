@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Torbido — Coupon Stampabile</title>
+    <title>Torbido — Come funziona per i produttori</title>
     <script src="assets/js/auth.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,161 +13,108 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --teal:       #0f766e;
-            --teal-dark:  #064e3b;
+            --teal: #0f766e;
             --teal-light: #f0fdf4;
-            --teal-mid:   #d1fae5;
-            --teal-border:#6ee7b7;
-            --ink:        #111827;
-            --ink-mid:    #374151;
-            --muted:      #6b7280;
-            --border:     #e5e7eb;
-            --amber:      #92400e;
-            --amber-bg:   #fef3c7;
-            --amber-brd:  #fcd34d;
+            --teal-mid: #d1fae5;
+            --ink: #111827;
+            --ink-mid: #374151;
+            --muted: #6b7280;
+            --border: #e5e7eb;
         }
 
-        /* ── SCREEN WRAPPER ──────────────────────────── */
         body {
             font-family: 'Inter', sans-serif;
-            background: #e5e7eb;
-            padding: 24px 16px 40px;
+            font-size: 10pt;
             color: var(--ink);
+            background: white;
+            line-height: 1.55;
         }
 
-        .print-hint {
-            text-align: center;
-            font-size: 12px;
-            color: #6b7280;
-            margin-bottom: 18px;
-            line-height: 1.5;
-        }
-        .print-hint kbd {
-            background: #f3f4f6;
-            border: 1px solid #d1d5db;
-            border-radius: 3px;
-            padding: 1px 5px;
-            font-family: inherit;
-            font-size: 11px;
-        }
-
-        /* ── A4 SHEET (contains 2 coupons) ──────────── */
-        .sheet {
+        .page {
             width: 210mm;
             min-height: 297mm;
             margin: 0 auto;
-            background: white;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+            padding: 13mm 16mm;
             display: flex;
             flex-direction: column;
+            gap: 13px;
         }
 
-        /* ── COUPON CARD ─────────────────────────────── */
-        .coupon {
-            flex: 1;
-            width: 100%;
-            padding: 11mm 14mm 10mm;
-            display: flex;
-            flex-direction: column;
-            gap: 7mm;
-            position: relative;
-        }
-        /* dashed separator between the two coupons */
-        .coupon + .coupon {
-            border-top: 1.5px dashed #9ca3af;
-        }
-        .coupon + .coupon::before {
-            content: "✂";
-            position: absolute;
-            top: -9px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            padding: 0 6px;
-            font-size: 12px;
-            color: #9ca3af;
-            line-height: 1;
-        }
-
-        /* ── HEADER ─────────────────────────────────── */
-        .c-header {
+        .header {
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
             border-bottom: 2px solid var(--teal);
-            padding-bottom: 5px;
+            padding-bottom: 7px;
         }
-        .c-brand {
-            font-size: 20pt;
+        .brand {
+            font-size: 22pt;
             font-weight: 800;
             color: var(--teal);
             letter-spacing: -0.04em;
             line-height: 1;
         }
-        .c-tagline {
-            font-size: 7.5pt;
+        .brand-sub {
+            font-size: 8pt;
             color: var(--muted);
             margin-top: 2px;
         }
-        .c-header-right {
+        .header-right {
             text-align: right;
             font-size: 7.5pt;
             color: var(--muted);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* ── HERO TEXT ──────────────────────────────── */
-        .c-hero h1 {
-            font-size: 13pt;
+        .intro h1 {
+            font-size: 14pt;
             font-weight: 800;
             letter-spacing: -0.03em;
             line-height: 1.2;
-            color: var(--ink);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
-        .c-hero p {
-            font-size: 8.5pt;
+        .intro p {
+            font-size: 9.5pt;
             color: var(--ink-mid);
-            line-height: 1.55;
-            max-width: 145mm;
+            line-height: 1.6;
+            max-width: 165mm;
         }
 
-        /* ── HOW IT WORKS ───────────────────────────── */
-        .section-label {
+        .section-title {
             font-size: 7pt;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--teal);
+            padding-bottom: 4px;
             border-bottom: 1px solid var(--teal-mid);
-            padding-bottom: 3px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 6px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 7px;
         }
         .step {
             background: var(--teal-light);
             border: 1px solid var(--teal-mid);
             border-radius: 4px;
-            padding: 7px 9px;
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
+            padding: 8px 10px;
         }
         .step-num {
-            font-size: 15pt;
+            font-size: 16pt;
             font-weight: 800;
             color: var(--teal);
             line-height: 1;
+            display: block;
+            margin-bottom: 3px;
         }
         .step-title {
             font-size: 8.5pt;
             font-weight: 700;
             color: var(--ink);
+            margin-bottom: 3px;
         }
         .step-desc {
             font-size: 7.5pt;
@@ -175,716 +122,276 @@
             line-height: 1.45;
         }
 
-        /* ── REASONS ────────────────────────────────── */
-        .reasons {
+        .feature-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5px 10px;
+            gap: 6px 12px;
         }
-        .reason {
+        .feature {
             display: flex;
+            gap: 6px;
             align-items: flex-start;
-            gap: 5px;
         }
-        .reason-icon {
+        .feature-dot {
             flex-shrink: 0;
-            width: 14px;
-            height: 14px;
+            width: 13px;
+            height: 13px;
             background: var(--teal);
             border-radius: 50%;
+            margin-top: 1px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1px;
         }
-        .reason-icon svg {
-            width: 8px;
-            height: 8px;
-            fill: white;
+        .feature-dot svg {
+            width: 7px;
+            height: 7px;
         }
-        .reason-text {
+        .feature-text {
             font-size: 8pt;
             color: var(--ink-mid);
             line-height: 1.45;
         }
-        .reason-text strong {
+        .feature-text strong {
             color: var(--ink);
             font-weight: 600;
         }
 
-        /* ── STATS ROW ──────────────────────────────── */
-        .stats {
+        .plans {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px;
         }
-        .stat {
-            text-align: center;
-            border: 1px solid var(--teal-mid);
+        .plan {
+            border: 1px solid var(--border);
             border-radius: 4px;
-            padding: 6px 4px;
+            padding: 9px 11px;
+        }
+        .plan.featured {
+            border-color: var(--teal);
             background: var(--teal-light);
         }
-        .stat-val {
+        .plan-name {
+            font-size: 8.5pt;
+            font-weight: 700;
+            margin-bottom: 1px;
+        }
+        .plan-price {
             font-size: 13pt;
             font-weight: 800;
             color: var(--teal);
             line-height: 1.1;
-            display: block;
         }
-        .stat-lbl {
-            font-size: 6.5pt;
-            color: var(--teal-dark);
-            line-height: 1.35;
-            margin-top: 1px;
+        .plan-price span {
+            font-size: 8pt;
+            font-weight: 400;
+            color: var(--muted);
+        }
+        .plan-comm {
+            font-size: 7.5pt;
+            color: var(--ink-mid);
+            margin: 3px 0 6px;
+        }
+        .plan ul {
+            list-style: none;
+            font-size: 7.5pt;
+            color: var(--ink-mid);
+            line-height: 1.65;
+        }
+        .plan ul li::before {
+            content: "✓  ";
+            color: var(--teal);
+            font-weight: 700;
         }
 
-        /* ── COUPON STUB ────────────────────────────── */
-        .stub {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .cta {
             background: var(--ink);
             color: white;
             border-radius: 5px;
-            padding: 9px 13px;
-            gap: 12px;
-        }
-        .stub-left {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-        .stub-label {
-            font-size: 6.5pt;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--teal-border);
-        }
-        .stub-offer {
-            font-size: 10pt;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-        .stub-note {
-            font-size: 7pt;
-            color: #9ca3af;
-            margin-top: 1px;
-        }
-        .stub-code {
-            background: white;
-            color: var(--ink);
-            border-radius: 4px;
-            padding: 6px 10px;
-            text-align: center;
-            flex-shrink: 0;
-        }
-        .stub-code .code-label {
-            font-size: 6.5pt;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .stub-code .code-value {
-            font-size: 11pt;
-            font-weight: 800;
-            color: var(--teal);
-            letter-spacing: 0.08em;
-        }
-        .stub-qr {
-            flex-shrink: 0;
-            width: 38px;
-            height: 38px;
-            background: white;
-            border-radius: 4px;
+            padding: 11px 14px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: auto;
         }
-        /* Placeholder QR grid */
-        .qr-placeholder {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1px;
-            width: 28px;
-            height: 28px;
+        .cta h3 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            margin-bottom: 3px;
         }
-        .qr-placeholder span {
-            background: var(--ink);
-            border-radius: 1px;
+        .cta p {
+            font-size: 8pt;
+            color: #d1d5db;
+            line-height: 1.5;
         }
-        .qr-placeholder span.w { background: white; }
+        .cta-contact {
+            text-align: right;
+            flex-shrink: 0;
+            font-size: 8.5pt;
+            line-height: 1.6;
+        }
+        .cta-contact strong { display: block; color: white; }
+        .cta-contact a { color: #6ee7b7; text-decoration: none; }
 
-        /* ── PRINT ──────────────────────────────────── */
         @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            .print-hint { display: none; }
-            .sheet {
-                box-shadow: none;
-                width: 210mm;
-                height: 297mm;
-                margin: 0;
-            }
-            .coupon + .coupon::before {
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
+            body { background: white; }
+            .page { margin: 0; }
             a { color: inherit; text-decoration: none; }
-            @page {
-                size: A4 portrait;
-                margin: 0;
+            .cta-contact a { color: #6ee7b7; }
+            .print-hint { display: none; }
+            @page { size: A4 portrait; margin: 0; }
+        }
+
+        @media screen {
+            body { background: #f3f4f6; padding: 24px 16px 40px; }
+            .page { box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+            .print-hint {
+                text-align: center;
+                font-family: 'Inter', sans-serif;
+                font-size: 12px;
+                color: #6b7280;
+                margin-bottom: 16px;
+            }
+            .print-hint kbd {
+                background: #f3f4f6;
+                border: 1px solid #d1d5db;
+                border-radius: 3px;
+                padding: 1px 5px;
+                font-family: inherit;
+                font-size: 11px;
             }
         }
     </style>
 </head>
 <body>
 
-<p class="print-hint">
-    Stampa: <kbd>Cmd</kbd>+<kbd>P</kbd> → Carta A4 · Margini: Nessuno · Scala: 100%<br>
-    Taglia lungo il tratteggio per ottenere due coupon A5 separati.
-</p>
+<p class="print-hint"><kbd>Cmd</kbd>+<kbd>P</kbd> → A4 · Margini: Nessuno · Scala: 100%</p>
 
-<div class="sheet">
+<div class="page">
 
-    <!-- ══════════════════════ COUPON 1 ══════════════════════ -->
-    <div class="coupon">
-
-        <div class="c-header">
-            <div>
-                <div class="c-brand">Torbido</div>
-                <div class="c-tagline">Il marketplace di birre artigianali e spirits locali</div>
-            </div>
-            <div class="c-header-right">
-                torbido.it<br>
-                Giugno 2026
-            </div>
-        </div>
-
-        <div class="c-hero">
-            <h1>Birra artigianale e spirits che non trovi altrove.</h1>
-            <p>Torbido è il primo marketplace italiano dedicato a chi produce — e a chi vuole bere — birra artigianale e spirits locali. Compra direttamente da chi produce, scopri i birrifici e le distillerie della tua regione, conosci la storia dietro ogni bottiglia.</p>
-        </div>
-
-        <!-- HOW IT WORKS -->
+    <div class="header">
         <div>
-            <div class="section-label">Come funziona</div>
-            <div class="steps">
-                <div class="step">
-                    <span class="step-num">1</span>
-                    <div class="step-title">Cerca</div>
-                    <div class="step-desc">Filtra per stile, regione o produttore. Naviga centinaia di birre e spirits artigianali italiani in un solo posto.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">2</span>
-                    <div class="step-title">Compra</div>
-                    <div class="step-desc">Ordine diretto al produttore. Zero intermediari: il tuo denaro va a chi ha fatto la birra, non a un grossista.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">3</span>
-                    <div class="step-title">Ricevi</div>
-                    <div class="step-desc">Il produttore spedisce direttamente a casa tua. Fresca, curata, con la storia del birrificio nella scatola.</div>
-                </div>
+            <div class="brand">Torbido</div>
+            <div class="brand-sub">Il marketplace di birre artigianali e spirits locali</div>
+        </div>
+        <div class="header-right">
+            torbido.it &nbsp;·&nbsp; Giugno 2026<br>
+            Nicholas Wieland — ngw@nofeed.org
+        </div>
+    </div>
+
+    <div class="intro">
+        <h1>Il tuo shop online è già pronto.<br>Ci vogliono poche ore, non mesi.</h1>
+        <p>Torbido è un e-commerce completo per birrifici e distillerie artigianali. Crei il profilo, carichi i prodotti, e inizi a vendere direttamente ai tuoi clienti — senza costruire un sito, senza gestire pagamenti, senza logistica nostra. Tu produci. Tu spedisci. Noi portiamo i clienti.</p>
+    </div>
+
+    <div>
+        <div class="section-title">Come funziona — in 4 passi</div>
+        <div class="steps">
+            <div class="step">
+                <span class="step-num">1</span>
+                <div class="step-title">Crea il profilo</div>
+                <div class="step-desc">Rispondi al questionario di onboarding. L'AI (Claude) genera storia, territorio, valori e descrizione SEO del tuo profilo in italiano e inglese. Tu controlli e approvi prima che vada live.</div>
+            </div>
+            <div class="step">
+                <span class="step-num">2</span>
+                <div class="step-title">Carica i prodotti</div>
+                <div class="step-desc">Aggiungi bottiglie con prezzo, stock e foto. L'AI genera le descrizioni di ogni prodotto e delle box regalo. Tutto dalla dashboard — nessun codice, nessuna agenzia.</div>
+            </div>
+            <div class="step">
+                <span class="step-num">3</span>
+                <div class="step-title">Ricevi l'ordine</div>
+                <div class="step-desc">Notifica immediata in dashboard e via email. Il pagamento è già incassato da Stripe Connect — nessun rischio insoluto, nessuna fattura da inseguire.</div>
+            </div>
+            <div class="step">
+                <span class="step-num">4</span>
+                <div class="step-title">Spedisci e incassi</div>
+                <div class="step-desc">Spedisci con il tuo corriere come già fai. Il ricavato (prezzo meno commissione Torbido) viene accreditato sul tuo conto secondo i tempi Stripe standard.</div>
             </div>
         </div>
+    </div>
 
-        <!-- REASONS -->
+    <div>
+        <div class="section-title">Cosa ottieni</div>
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="feature-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="feature-text"><strong>Zero costi fissi per iniziare.</strong> Piano Free gratuito: commissione 12% solo sul venduto. Nessun setup, nessuna manutenzione.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="feature-text"><strong>Zero magazzino nostro.</strong> Tu gestisci stock e spedizioni come già fai. Noi non tocchiamo il prodotto.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="feature-text"><strong>AI genera tutto il copy.</strong> Claude scrive profilo (5 sezioni) + descrizioni prodotti + box in it/en. Diverso dal tuo sito: nessun contenuto duplicato per Google.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="feature-text"><strong>Recensioni verificate.</strong> Solo chi ha comprato può recensire. Puoi rispondere pubblicamente: costruisci reputazione digitale reale.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="feature-text"><strong>Dashboard analitica.</strong> Vedi chi compra, cosa, da dove. Dati che nessun distributore ti darà mai.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="feature-text"><strong>SEO aggregato.</strong> La tua pagina scala su Google insieme a tutta la rete — keyword regionali che nessun sito singolo può vincere da solo.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="feature-text"><strong>Box e confezioni regalo.</strong> Crea assortimenti tematici dal tuo catalogo. Ticket medio 2–4× la singola bottiglia, stessa logistica.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="feature-text"><strong>Produttore solidale (opzionale).</strong> Dichiari la tua missione, Torbido la verifica e ti assegna un badge sul profilo. In cambio: commissione ridotta sul venduto.</div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="section-title">I piani</div>
+        <div class="plans">
+            <div class="plan">
+                <div class="plan-name">Free</div>
+                <div class="plan-price">€0 <span>/ mese</span></div>
+                <div class="plan-comm">Commissione 12% sul venduto</div>
+                <ul>
+                    <li>Vetrina produttore completa</li>
+                    <li>Fino a 10 prodotti</li>
+                    <li>AI profile + product generation</li>
+                    <li>Recensioni verificate + risposta</li>
+                    <li>Analytics base (ordini, visite, conversioni)</li>
+                </ul>
+            </div>
+            <div class="plan featured">
+                <div class="plan-name">Pro</div>
+                <div class="plan-price">€29 <span>/ mese</span></div>
+                <div class="plan-comm">Commissione 8% sul venduto</div>
+                <ul>
+                    <li>Tutto Free +</li>
+                    <li>Prodotti illimitati</li>
+                    <li>Badge Verificato in ricerca</li>
+                    <li>Priorità nei risultati di ricerca</li>
+                    <li>Analytics pro + campagne mirate</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
         <div>
-            <div class="section-label">Perché usare Torbido</div>
-            <div class="reasons">
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>1.000+ microbirrifici</strong> e 800+ distillerie artigianali italiane — in un solo posto.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Filtro km 0:</strong> trova i produttori nella tua regione. Sostieni l'artigianato locale.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Recensioni verificate</strong> di chi ha davvero comprato — non bottiglie sconosciute.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Acquisto diretto:</strong> il produttore ti conosce e costruisce un rapporto diretto con te.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Raccomandazioni AI:</strong> la piattaforma impara i tuoi gusti dagli acquisti e ti suggerisce produttori e birre nuove in linea con il tuo stile.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Badge produttore solidale:</strong> alcuni produttori hanno una missione solidale dichiarata e verificata da Torbido. Riconoscibili da un badge sul profilo — scegli chi supportare.</div>
-                </div>
-            </div>
+            <h3>Entra tra i Founding Producer</h3>
+            <p>I primi 50 birrifici e distillerie ottengono visibilità prioritaria in homepage e posizione riservata nelle selezioni regionali. Scrivici per una demo — in 10 minuti vedi come appare il tuo profilo.</p>
         </div>
-
-        <!-- STATS -->
-        <div class="stats">
-            <div class="stat">
-                <span class="stat-val">1.000+</span>
-                <div class="stat-lbl">microbirrifici artigianali attivi in Italia</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">800+</span>
-                <div class="stat-lbl">distillerie artigianali italiane</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">€450M</span>
-                <div class="stat-lbl">mercato craft beer Italia (+27%/anno)</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">0</span>
-                <div class="stat-lbl">intermediari tra te e il produttore</div>
-            </div>
+        <div class="cta-contact">
+            <strong>Nicholas Wieland</strong>
+            <a href="mailto:ngw@nofeed.org">ngw@nofeed.org</a><br>
+            +39 375 809 1178
         </div>
+    </div>
 
-        <!-- STUB -->
-        <div class="stub">
-            <div class="stub-left">
-                <div class="stub-label">Offerta di benvenuto</div>
-                <div class="stub-offer">Spedizione gratuita sul primo ordine</div>
-                <div class="stub-note">Valido per i primi iscritti · Un utilizzo per account · Nessuna scadenza fino al lancio</div>
-            </div>
-            <div class="stub-code">
-                <div class="code-label">Codice</div>
-                <div class="code-value">TORBIDO1</div>
-            </div>
-            <div class="stub-qr">
-                <!-- QR placeholder: sostituire con QR reale per torbido.it -->
-                <div class="qr-placeholder">
-                    <span></span><span></span><span></span><span class="w"></span><span></span>
-                    <span class="w"></span><span></span><span class="w"></span><span></span><span class="w"></span>
-                    <span></span><span class="w"></span><span></span><span class="w"></span><span></span>
-                    <span class="w"></span><span></span><span class="w"></span><span></span><span class="w"></span>
-                    <span></span><span></span><span></span><span class="w"></span><span></span>
-                </div>
-            </div>
-        </div>
-
-    </div><!-- /coupon 1 -->
-
-    <!-- ══════════════════════ COUPON 2 ══════════════════════ -->
-    <div class="coupon">
-
-        <div class="c-header">
-            <div>
-                <div class="c-brand">Torbido</div>
-                <div class="c-tagline">Il marketplace di birre artigianali e spirits locali</div>
-            </div>
-            <div class="c-header-right">
-                torbido.it<br>
-                Giugno 2026
-            </div>
-        </div>
-
-        <div class="c-hero">
-            <h1>Birra artigianale e spirits che non trovi altrove.</h1>
-            <p>Torbido è il primo marketplace italiano dedicato a chi produce — e a chi vuole bere — birra artigianale e spirits locali. Compra direttamente da chi produce, scopri i birrifici e le distillerie della tua regione, conosci la storia dietro ogni bottiglia.</p>
-        </div>
-
-        <div>
-            <div class="section-label">Come funziona</div>
-            <div class="steps">
-                <div class="step">
-                    <span class="step-num">1</span>
-                    <div class="step-title">Cerca</div>
-                    <div class="step-desc">Filtra per stile, regione o produttore. Naviga centinaia di birre e spirits artigianali italiani in un solo posto.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">2</span>
-                    <div class="step-title">Compra</div>
-                    <div class="step-desc">Ordine diretto al produttore. Zero intermediari: il tuo denaro va a chi ha fatto la birra, non a un grossista.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">3</span>
-                    <div class="step-title">Ricevi</div>
-                    <div class="step-desc">Il produttore spedisce direttamente a casa tua. Fresca, curata, con la storia del birrificio nella scatola.</div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="section-label">Perché usare Torbido</div>
-            <div class="reasons">
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>1.000+ microbirrifici</strong> e 800+ distillerie artigianali italiane — in un solo posto.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Filtro km 0:</strong> trova i produttori nella tua regione. Sostieni l'artigianato locale.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Recensioni verificate</strong> di chi ha davvero comprato — non bottiglie sconosciute.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Acquisto diretto:</strong> il produttore ti conosce e costruisce un rapporto diretto con te.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Raccomandazioni AI:</strong> la piattaforma impara i tuoi gusti dagli acquisti e ti suggerisce produttori e birre nuove in linea con il tuo stile.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Badge produttore solidale:</strong> alcuni produttori hanno una missione solidale dichiarata e verificata da Torbido. Riconoscibili da un badge sul profilo — scegli chi supportare.</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stat">
-                <span class="stat-val">1.000+</span>
-                <div class="stat-lbl">microbirrifici artigianali attivi in Italia</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">800+</span>
-                <div class="stat-lbl">distillerie artigianali italiane</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">€450M</span>
-                <div class="stat-lbl">mercato craft beer Italia (+27%/anno)</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">0</span>
-                <div class="stat-lbl">intermediari tra te e il produttore</div>
-            </div>
-        </div>
-
-        <div class="stub">
-            <div class="stub-left">
-                <div class="stub-label">Offerta di benvenuto</div>
-                <div class="stub-offer">Spedizione gratuita sul primo ordine</div>
-                <div class="stub-note">Valido per i primi iscritti · Un utilizzo per account · Nessuna scadenza fino al lancio</div>
-            </div>
-            <div class="stub-code">
-                <div class="code-label">Codice</div>
-                <div class="code-value">TORBIDO1</div>
-            </div>
-            <div class="stub-qr">
-                <div class="qr-placeholder">
-                    <span></span><span></span><span></span><span class="w"></span><span></span>
-                    <span class="w"></span><span></span><span class="w"></span><span></span><span class="w"></span>
-                    <span></span><span class="w"></span><span></span><span class="w"></span><span></span>
-                    <span class="w"></span><span></span><span class="w"></span><span></span><span class="w"></span>
-                    <span></span><span></span><span></span><span class="w"></span><span></span>
-                </div>
-            </div>
-        </div>
-
-    </div><!-- /coupon 2 -->
-
-</div><!-- /sheet consumatori -->
-
-<!-- ════════════════════════════════════════════════════════════
-     FOGLIO 2 — PRODUTTORI (stampare su pagina separata)
-     ════════════════════════════════════════════════════════════ -->
-<div class="sheet" style="margin-top: 24px;">
-
-    <!-- ══════════════════════ COUPON PRODUTTORI 1 ══════════════════════ -->
-    <div class="coupon">
-
-        <div class="c-header">
-            <div>
-                <div class="c-brand">Torbido</div>
-                <div class="c-tagline">Il marketplace di birre artigianali e spirits locali — per i produttori</div>
-            </div>
-            <div class="c-header-right">
-                torbido.it<br>
-                Giugno 2026
-            </div>
-        </div>
-
-        <div class="c-hero">
-            <h1>Il tuo shop online è già pronto.<br>Ci vogliono poche ore, non mesi.</h1>
-            <p>Torbido è un e-commerce completo per birrifici e distillerie artigianali. Crei il profilo, carichi i prodotti, e inizi a vendere direttamente ai tuoi clienti — senza costruire un sito, senza gestire pagamenti, senza logistica nostra. Tu produci. Tu spedisci. Noi portiamo i clienti.</p>
-        </div>
-
-        <!-- HOW IT WORKS -->
-        <div>
-            <div class="section-label">Come funziona — in 4 passi</div>
-            <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
-                <div class="step">
-                    <span class="step-num">1</span>
-                    <div class="step-title">Crea il profilo</div>
-                    <div class="step-desc">Registri birrificio o distilleria, carichi foto, racconti la tua storia. L'AI ti aiuta con le descrizioni.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">2</span>
-                    <div class="step-title">Carica i prodotti</div>
-                    <div class="step-desc">Aggiungi le bottiglie con prezzo, stock e descrizione. Gestisci tutto dalla dashboard.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">3</span>
-                    <div class="step-title">Ricevi l'ordine</div>
-                    <div class="step-desc">Notifica immediata. Il pagamento è già stato incassato da Stripe — il cliente ha già pagato.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">4</span>
-                    <div class="step-title">Spedisci e incassi</div>
-                    <div class="step-desc">Spedisci con il tuo corriere come fai già. Il ricavato (meno commissione) arriva sul tuo conto.</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- REASONS -->
-        <div>
-            <div class="section-label">Perché vale la pena</div>
-            <div class="reasons">
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Commissione solo sul venduto.</strong> Nessun costo fisso, nessun abbonamento obbligatorio per iniziare.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Zero magazzino nostro.</strong> Tu gestisci lo stock come sempre. Noi non tocchiamo il prodotto.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Pagamenti gestiti.</strong> Stripe Connect: incassi in modo sicuro, nessun rischio insoluti, nessuna fattura da inseguire.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Dashboard analitica.</strong> Vedi chi compra, cosa compra, da dove viene. Dati che nessun distributore ti darà mai.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Recensioni verificate.</strong> Solo chi ha comprato può recensire. Rispondi pubblicamente, costruisci reputazione.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>AI genera tutto il copy.</strong> Claude scrive storia, artigianato, territorio, valori e SEO del tuo profilo + le descrizioni di ogni prodotto e box, in italiano e inglese. Tu controlli, non scrivi da zero.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Produttore solidale.</strong> Dichiarati, scrivi la tua missione, Torbido approva e ti assegna il badge. In cambio: commissione ridotta sul tuo venduto.</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- STATS -->
-        <div class="stats">
-            <div class="stat">
-                <span class="stat-val">12%</span>
-                <div class="stat-lbl">commissione piano Free (max 10 prodotti)</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">8%</span>
-                <div class="stat-lbl">commissione piano Pro (€29/mese, illimitato)</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">48h</span>
-                <div class="stat-lbl">per caricare un nuovo prodotto e iniziare a venderlo</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">€0</span>
-                <div class="stat-lbl">costo setup, nessuna web agency</div>
-            </div>
-        </div>
-
-        <!-- STUB -->
-        <div class="stub">
-            <div class="stub-left">
-                <div class="stub-label">Entra adesso — posti limitati</div>
-                <div class="stub-offer">Primi 50 produttori: commissione ridotta a vita</div>
-                <div class="stub-note">Scrivici entro il lancio · Una sola candidatura per birrificio/distilleria</div>
-            </div>
-            <div class="stub-code">
-                <div class="code-label">Contatto</div>
-                <div class="code-value" style="font-size:8pt; letter-spacing:0;">ngw@nofeed.org</div>
-            </div>
-            <div class="stub-qr">
-                <div class="qr-placeholder">
-                    <span></span><span></span><span></span><span class="w"></span><span></span>
-                    <span class="w"></span><span></span><span class="w"></span><span></span><span class="w"></span>
-                    <span></span><span class="w"></span><span></span><span class="w"></span><span></span>
-                    <span class="w"></span><span></span><span class="w"></span><span></span><span class="w"></span>
-                    <span></span><span></span><span></span><span class="w"></span><span></span>
-                </div>
-            </div>
-        </div>
-
-    </div><!-- /coupon produttori 1 -->
-
-    <!-- ══════════════════════ COUPON PRODUTTORI 2 ══════════════════════ -->
-    <div class="coupon">
-
-        <div class="c-header">
-            <div>
-                <div class="c-brand">Torbido</div>
-                <div class="c-tagline">Il marketplace di birre artigianali e spirits locali — per i produttori</div>
-            </div>
-            <div class="c-header-right">
-                torbido.it<br>
-                Giugno 2026
-            </div>
-        </div>
-
-        <div class="c-hero">
-            <h1>Il tuo shop online è già pronto.<br>Ci vogliono poche ore, non mesi.</h1>
-            <p>Torbido è un e-commerce completo per birrifici e distillerie artigianali. Crei il profilo, carichi i prodotti, e inizi a vendere direttamente ai tuoi clienti — senza costruire un sito, senza gestire pagamenti, senza logistica nostra. Tu produci. Tu spedisci. Noi portiamo i clienti.</p>
-        </div>
-
-        <div>
-            <div class="section-label">Come funziona — in 4 passi</div>
-            <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
-                <div class="step">
-                    <span class="step-num">1</span>
-                    <div class="step-title">Crea il profilo</div>
-                    <div class="step-desc">Registri birrificio o distilleria, carichi foto, racconti la tua storia. L'AI ti aiuta con le descrizioni.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">2</span>
-                    <div class="step-title">Carica i prodotti</div>
-                    <div class="step-desc">Aggiungi le bottiglie con prezzo, stock e descrizione. Gestisci tutto dalla dashboard.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">3</span>
-                    <div class="step-title">Ricevi l'ordine</div>
-                    <div class="step-desc">Notifica immediata. Il pagamento è già stato incassato da Stripe — il cliente ha già pagato.</div>
-                </div>
-                <div class="step">
-                    <span class="step-num">4</span>
-                    <div class="step-title">Spedisci e incassi</div>
-                    <div class="step-desc">Spedisci con il tuo corriere come fai già. Il ricavato (meno commissione) arriva sul tuo conto.</div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="section-label">Perché vale la pena</div>
-            <div class="reasons">
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Commissione solo sul venduto.</strong> Nessun costo fisso, nessun abbonamento obbligatorio per iniziare.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Zero magazzino nostro.</strong> Tu gestisci lo stock come sempre. Noi non tocchiamo il prodotto.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Pagamenti gestiti.</strong> Stripe Connect: incassi in modo sicuro, nessun rischio insoluti, nessuna fattura da inseguire.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Dashboard analitica.</strong> Vedi chi compra, cosa compra, da dove viene. Dati che nessun distributore ti darà mai.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Recensioni verificate.</strong> Solo chi ha comprato può recensire. Rispondi pubblicamente, costruisci reputazione.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>AI genera tutto il copy.</strong> Claude scrive storia, artigianato, territorio, valori e SEO del tuo profilo + le descrizioni di ogni prodotto e box, in italiano e inglese. Tu controlli, non scrivi da zero.</div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon">
-                        <svg viewBox="0 0 10 10"><path d="M2 5.5L4 7.5L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div class="reason-text"><strong>Produttore solidale.</strong> Dichiarati, scrivi la tua missione, Torbido approva e ti assegna il badge. In cambio: commissione ridotta sul tuo venduto.</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stat">
-                <span class="stat-val">12%</span>
-                <div class="stat-lbl">commissione piano Free (max 10 prodotti)</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">8%</span>
-                <div class="stat-lbl">commissione piano Pro (€29/mese, illimitato)</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">48h</span>
-                <div class="stat-lbl">per caricare un nuovo prodotto e iniziare a venderlo</div>
-            </div>
-            <div class="stat">
-                <span class="stat-val">€0</span>
-                <div class="stat-lbl">costo setup, nessuna web agency</div>
-            </div>
-        </div>
-
-        <div class="stub">
-            <div class="stub-left">
-                <div class="stub-label">Entra adesso — posti limitati</div>
-                <div class="stub-offer">Primi 50 produttori: commissione ridotta a vita</div>
-                <div class="stub-note">Scrivici entro il lancio · Una sola candidatura per birrificio/distilleria</div>
-            </div>
-            <div class="stub-code">
-                <div class="code-label">Contatto</div>
-                <div class="code-value" style="font-size:8pt; letter-spacing:0;">ngw@nofeed.org</div>
-            </div>
-            <div class="stub-qr">
-                <div class="qr-placeholder">
-                    <span></span><span></span><span></span><span class="w"></span><span></span>
-                    <span class="w"></span><span></span><span class="w"></span><span></span><span class="w"></span>
-                    <span></span><span class="w"></span><span></span><span class="w"></span><span></span>
-                    <span class="w"></span><span></span><span class="w"></span><span></span><span class="w"></span>
-                    <span></span><span></span><span></span><span class="w"></span><span></span>
-                </div>
-            </div>
-        </div>
-
-    </div><!-- /coupon produttori 2 -->
-
-</div><!-- /sheet produttori -->
-
+</div>
 </body>
 </html>
