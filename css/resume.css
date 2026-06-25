@@ -452,11 +452,7 @@ body {
   display: block;
 }
 
-.available {
-  margin-top: var(--space-md);
-  font-size: 0.875rem;
-  color: var(--color-muted);
-}
+
 
 .entry {
   all: unset;
