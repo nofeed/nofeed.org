@@ -38,6 +38,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
@@ -439,12 +443,19 @@ body {
 /* Remove Bootstrap classes that might still be there */
 .col-md-12,
 .col-md-9,
+.col-md-5,
 .col-md-2,
 .col-md-6,
 .col-md-offset-2,
 .col-md-3 {
   all: unset;
   display: block;
+}
+
+.available {
+  margin-top: var(--space-md);
+  font-size: 0.875rem;
+  color: var(--color-muted);
 }
 
 .entry {
@@ -464,7 +475,7 @@ body {
   }
   
   .nav-menu {
-    gap: var(--space-lg);
+    gap: var(--space-md);
   }
   
   .nav-link {
@@ -476,8 +487,8 @@ body {
   }
   
   .hero {
-    padding: var(--space-2xl) 0;
-    margin-bottom: var(--space-2xl);
+    padding: var(--space-xl) 0;
+    margin-bottom: var(--space-xl);
   }
   
   .hero-title {
@@ -568,8 +579,15 @@ body {
 }
 
 @media (max-width: 480px) {
+  .nav-container {
+    padding: 0 var(--space-sm);
+  }
+
   .nav-menu {
-    gap: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .nav-link {
     font-size: 0.8125rem;
   }
   
