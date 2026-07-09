@@ -26,3 +26,42 @@ header address {
   font-size: 1.4em;
   font-family: 'Mr Dafoe';
 }
+
+/* Print styles */
+@page {
+  margin: 2cm;
+}
+
+@media print {
+  body {
+    font-size: 11pt;
+    color: #000;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a[href]:after {
+    content: none !important;
+  }
+
+  header {
+    page-break-after: avoid;
+  }
+
+  #content p {
+    orphans: 3;
+    widows: 3;
+  }
+}
