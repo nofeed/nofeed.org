@@ -20,6 +20,7 @@
       <div class="nav-container">
         <a href="#top" class="nav-logo">NGW</a>
         <ul class="nav-menu">
+          <li><a href="#featured-projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#education" class="nav-link">Education</a></li>
@@ -40,6 +41,48 @@
           <p class='hero-meta'>Last updated: <time datetime="2026-07-08">July 8, 2026</time></p>
         </div>
       </header>
+
+      <section id='featured-projects' class='section'>
+        <h2 class='section-title'>Featured Projects</h2>
+        <p class='section-intro'>The two projects I'm proudest of and most actively building right now.</p>
+
+        <div class='featured-projects-grid'>
+          <article class='featured-project' itemscope itemtype="http://schema.org/Product">
+            <span class='featured-project-badge'>Founder &amp; Lead Developer</span>
+            <div class='featured-project-header'>
+              <img src="/img/resume/logo-torbido.svg" itemprop="image" alt="Torbido logo" class='featured-project-logo' />
+              <h3 itemprop="name">Torbido</h3>
+            </div>
+            <p class='featured-project-tagline'>The marketplace for Italian craft beer &amp; artisanal spirits</p>
+            <div itemprop="description">
+              <p>Built and launched a full marketplace from scratch: producer storefronts, checkout, commissions, review system, AI-powered recommendations, and geo (km 0) search. Targeting a €800M+ underserved Italian craft beverage market.</p>
+              <p>153+ PRs merged, 185+ commits, in production. Sole developer.</p>
+            </div>
+            <p class='featured-project-stack'><strong>Stack:</strong> Ruby on Rails 8, Hotwire, PostgreSQL, Stripe Connect, Meilisearch, Claude API</p>
+            <p class='featured-project-links'>
+              <a href="https://torbido.it" itemprop="url">torbido.it</a>
+            </p>
+          </article>
+
+          <article class='featured-project' itemscope itemtype="http://schema.org/Product">
+            <span class='featured-project-badge'>Creator &amp; Maintainer</span>
+            <div class='featured-project-header'>
+              <img src="/img/resume/logo-cicerone.svg" itemprop="image" alt="Cicerone logo" class='featured-project-logo' />
+              <h3 itemprop="name">Cicerone</h3>
+            </div>
+            <p class='featured-project-tagline'>Open-source, self-hosted batch recommender engine</p>
+            <div itemprop="description">
+              <p>Spun out of Torbido's recommendation needs into a standalone, generic open-source project: trains offline, writes top-K recommendations, and optionally serves them via a read-only HTTP API with an OpenAPI-documented interface and ops dashboard.</p>
+              <p>Hybrid strategies (collaborative filtering, item KNN, content cold-start fallback, popularity, latest) with priority or RRF fusion, plus policies, AutoML backtesting, and Prometheus metrics.</p>
+            </div>
+            <p class='featured-project-stack'><strong>Stack:</strong> Python, FastAPI, LightFM, PostgreSQL, Prometheus</p>
+            <p class='featured-project-links'>
+              <a href="https://cicerone.dev" itemprop="url">cicerone.dev</a> &middot;
+              <a href="https://github.com/torbido-hq/cicerone">GitHub</a>
+            </p>
+          </article>
+        </div>
+      </section>
 
       <section id='contact' class='section'>
         <h2 class='section-title'>Contact</h2>

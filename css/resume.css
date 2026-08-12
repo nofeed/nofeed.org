@@ -440,6 +440,95 @@ body {
   justify-content: center;
 }
 
+/* Featured Projects */
+.section-intro {
+  font-size: 1.0625rem;
+  color: var(--color-muted);
+  margin-top: calc(-1 * var(--space-lg));
+  margin-bottom: var(--space-xl);
+}
+
+.featured-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+@media (max-width: 800px) {
+  .featured-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-project {
+  position: relative;
+  padding: var(--space-xl);
+  background: var(--color-card);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.featured-project-badge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  margin-bottom: var(--space-md);
+}
+
+.featured-project-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+.featured-project-logo {
+  max-height: 40px;
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.featured-project-header h3 {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-fg);
+}
+
+.featured-project-tagline {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.featured-project p {
+  margin-bottom: var(--space-sm);
+}
+
+.featured-project-stack {
+  margin-top: var(--space-md);
+}
+
+.featured-project-links a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.featured-project-links a:hover {
+  color: var(--color-accent);
+}
+
 /* Remove Bootstrap classes that might still be there */
 .col-md-12,
 .col-md-9,
