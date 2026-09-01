@@ -2,6 +2,12 @@ url: "https://nofeed.org"
 title: "NoFeed Ltd ~ Nicholas Wieland (ngw)"
 tagline: "Nicholas Wieland and NoFeed Ltd's tiny home on the interwebs."
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/ngw_avatar.svg
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
