@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       datasets: [{
         label: 'Level of expertise and knowledge',
-        data: [10, 10, 8, 7, 3, 4, 7, 10, 8, 5, 4, 9, 7, 7, 8, 6, 8, 7, 9, 5, 5, 8, 9, 3, 5, 8, 6],
+        data: [10, 10, 8, 7, 3, 4, 7, 10, 8, 5, 4, 9, 7, 7, 8, 6, 8, 7, 9, 5, 8, 8, 9, 3, 5, 8, 6],
         borderWidth: 1,
         backgroundColor: ['#FF9F29', '#1A4D2E']
       }]
