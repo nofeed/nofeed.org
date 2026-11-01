@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/resume.css" type="text/css" media="screen" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/resume.css" type="text/css" media="all" />
     <link rel="canonical" href="https://nofeed.org/resume/" />
     <title>Nicholas George Wieland — Software Developer</title>
     <link href="/img/resume/favicon.ico" rel="icon" type="image/x-icon" />
-    <meta name="description" content="Nicholas George Wieland (ngw) resume. Last update 8/12/2022.">
+    <meta name="description" content="Nicholas George Wieland (ngw) resume. Backend Developer &amp; Team Lead specializing in Ruby, Elixir, and Python. Last update October 2026.">
     <meta name="author" content="Nicholas George Wieland (ngw)">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
@@ -19,6 +20,7 @@
       <div class="nav-container">
         <a href="#top" class="nav-logo">NGW</a>
         <ul class="nav-menu">
+          <li><a href="#featured-projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#education" class="nav-link">Education</a></li>
@@ -35,9 +37,52 @@
             <span class='name-accent'>ngw</span>
           </h1>
           <p class='hero-subtitle'>Software Developer & Team Lead</p>
-          <p class='hero-meta'>Last updated: <time datetime="2022-12-8 10:46:05.09548 +0100">December 8, 2022</time></p>
+          <p class='hero-summary'>Backend-focused engineer with 20+ years of experience shipping and leading production systems in <strong>Ruby</strong>, <strong>Elixir</strong>, and <strong>Python</strong>. Comfortable stepping into legacy codebases, leading microservices migrations, and mentoring teams, with a track record across startups, agencies, and government digital services in the UK and beyond.</p>
+          <p class='hero-meta'>Last updated: <time datetime="2026-10-26">October 26, 2026</time></p>
         </div>
       </header>
+
+      <section id='featured-projects' class='section'>
+        <h2 class='section-title'>Featured Projects</h2>
+        <p class='section-intro'>The two projects I'm proudest of and most actively building right now.</p>
+
+        <div class='featured-projects-grid'>
+          <article class='featured-project' itemscope itemtype="http://schema.org/Product">
+            <span class='featured-project-badge'>Founder &amp; Lead Developer</span>
+            <div class='featured-project-header'>
+              <img src="/img/resume/logo-torbido.svg" itemprop="image" alt="Torbido logo" class='featured-project-logo' />
+              <h3 itemprop="name">Torbido</h3>
+            </div>
+            <p class='featured-project-tagline'>The marketplace for Italian craft beer &amp; artisanal spirits</p>
+            <div itemprop="description">
+              <p>Built and launched a full marketplace from scratch: producer storefronts, checkout, commissions, review system, AI-powered recommendations, and geo (km 0) search. Targeting a €800M+ underserved Italian craft beverage market.</p>
+              <p>153+ PRs merged, 185+ commits, in production. Sole developer.</p>
+            </div>
+            <p class='featured-project-stack'><strong>Stack:</strong> Ruby on Rails 8, Hotwire, PostgreSQL, Stripe Connect, Meilisearch, Claude API</p>
+            <p class='featured-project-links'>
+              <a href="https://torbido.it" itemprop="url">torbido.it</a>
+            </p>
+          </article>
+
+          <article class='featured-project' itemscope itemtype="http://schema.org/Product">
+            <span class='featured-project-badge'>Creator &amp; Maintainer</span>
+            <div class='featured-project-header'>
+              <img src="/img/resume/logo-cicerone.svg" itemprop="image" alt="Cicerone logo" class='featured-project-logo' />
+              <h3 itemprop="name">Cicerone</h3>
+            </div>
+            <p class='featured-project-tagline'>Open-source, self-hosted batch recommender engine</p>
+            <div itemprop="description">
+              <p>Spun out of Torbido's recommendation needs into a standalone, generic open-source project: trains offline, writes top-K recommendations, and optionally serves them via a read-only HTTP API with an OpenAPI-documented interface and ops dashboard.</p>
+              <p>Hybrid strategies (collaborative filtering, item KNN, content cold-start fallback, popularity, latest) with priority or RRF fusion, plus policies, AutoML backtesting, and Prometheus metrics.</p>
+            </div>
+            <p class='featured-project-stack'><strong>Stack:</strong> Python, FastAPI, LightFM, PostgreSQL, Prometheus</p>
+            <p class='featured-project-links'>
+              <a href="https://cicerone.dev" itemprop="url">cicerone.dev</a> &middot;
+              <a href="https://github.com/torbido-hq/cicerone">GitHub</a>
+            </p>
+          </article>
+        </div>
+      </section>
 
       <section id='contact' class='section'>
         <h2 class='section-title'>Contact</h2>
@@ -55,7 +100,6 @@
               <div class='info-item'>
                 <dt>Location</dt>
                 <dd itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                  <span itemprop="streetAddress">Corso Vittorio Emanuele II, 73</span><br>
                   <span itemprop="addressLocality">Mantova</span>, <span itemprop="postalCode">46100</span>
                 </dd>
               </div>
@@ -71,6 +115,14 @@
                 <dt>Web</dt>
                 <dd><a href="https://nofeed.org" itemprop="url">nofeed.org</a></dd>
               </div>
+              <div class='info-item'>
+                <dt>GitHub</dt>
+                <dd><a href="https://github.com/ngw" itemprop="sameAs">github.com/ngw</a></dd>
+              </div>
+              <div class='info-item'>
+                <dt>LinkedIn</dt>
+                <dd><a href="https://www.linkedin.com/in/nwieland/" itemprop="sameAs">linkedin.com/in/nwieland</a></dd>
+              </div>
             </dl>
           </div>
           <div class='contact-photo'>
@@ -83,19 +135,15 @@
         <h2 class='section-title'>Skills</h2>
 
         <div class='skills-content'>
-          <p>I'm an experienced developer with <strong>Ruby</strong>, <strong>Elixir</strong>, <strong>Go</strong> and I'm studying with great interest <strong>Rust</strong>. I don't like working on the frontend, but
-          lately I got interested in <strong>Elm</strong> and I've used it very successfully in one of my latest gigs.</p>
-          <p>I have a lot of experience with <strong>RubyOnRails</strong> and <strong>Sinatra</strong>, and I also did some Padrino in the past with great pleasure.</p>
-          <p>I love design, I can work with <strong>HTML</strong> and <strong>CSS</strong> proficiently. I also love studing the subject and I am a strong proposer of accessibility.
-          I’ve conducted some usability tests in the past and I would love to repeat the experience.</p>
-          <p>I enjoy database systems, and I’ve used most of them during my work life: MySQL, SQLServer, Oracle are just some names.
-          I strongly support <strong>PostgreSQL</strong> as my DB server of choice. I'm also fond of NoSQL databases, especially <strong>Redis</strong>,
-          which I used in production.</p>
-          <p>I can work on any kind of Unix system, and even if I’m not a sysadmin I can also administer them.
-          I prefer working on Linux, but I've been an OS X user for 15 years. Then they started shipping terrible keyboards.</p>
-          <p>I can operate successfully in an <strong>AWS</strong> environment.</p>
-          <p class='note'><strong>Note:</strong> I do not enjoy working on Windows, so please, don't be silly and give me an environment I'm productive with.</p>
+          <p>Backend developer specializing in <strong>Ruby</strong>, <strong>Elixir</strong>, and <strong>Python</strong> (FastAPI), with active exploration of <strong>Rust</strong>. Also delivered frontend work using <strong>Elm</strong> for functional reactive programming.</p>
+          <p>Daily user of AI coding tools (<strong>Claude Code</strong>, GitHub Copilot) since early 2026 to build and ship production systems end to end.</p>
+          <p>Deep expertise in <strong>Ruby on Rails</strong> and <strong>Sinatra</strong>, with production experience in Padrino. Proficient in modern <strong>HTML</strong> and <strong>CSS</strong>, with a strong focus on accessibility standards and usability testing.</p>
+          <p>Broad database experience across MySQL, SQL Server, and Oracle, with <strong>PostgreSQL</strong> as primary choice. Comfortable with NoSQL, particularly <strong>Redis</strong> for caching and session management.</p>
+          <p>15+ years on macOS with deep Linux experience, including system administration when needed.</p>
+          <p>Deploying and managing infrastructure on <strong>AWS</strong>, including EC2, S3, RDS, and Kubernetes clusters.</p>
+          <p class='note'><strong>Best fit:</strong> Unix/Linux-based teams and infrastructure.</p>
         </div>
+
       </section>
 
       <section id='education' class='section'>
@@ -107,14 +155,109 @@
 
       <section id='experience' class='section'>
         <h2 class='section-title'>Work Experience</h2>
+        
+        <nav class='positions-index'>
+          <a href='#job-indigo'>indigo.ai</a>
+          <a href='#job-safer'>Safer</a>
+          <a href='#job-tenable'>Telecom Italia</a>
+          <a href='#job-chorally'>Chorally</a>
+          <a href='#job-ifad'>IFAD</a>
+          <a href='#job-cabinet'>Cabinet Office</a>
+          <a href='#job-mara'>Mara</a>
+          <a href='#job-soho'>Soho House</a>
+          <a href='#job-dfe'>Dept. Education</a>
+          <a href='#job-fc'>Funding Circle</a>
+          <a href='#job-lawbite'>Lawbite</a>
+          <a href='#job-moj'>Ministry of Justice</a>
+          <a href='#job-vzaar'>Vzaar</a>
+          <a href='#job-utelier'>Utelier</a>
+          <a href='#job-mgage'>mGage</a>
+          <a href='#job-fool'>The Fool</a>
+          <a href='#job-antonioli'>Antonioli</a>
+          <a href='#job-sportboom'>Sportboom</a>
+          <a href='#job-stylejam'>StyleJam</a>
+          <a href='#job-zooppa'>Zooppa</a>
+          <a href='#job-hotchalk'>Hotchalk</a>
+          <a href='#job-assembla'>Assembla</a>
+          <a href='#job-apogeo'>Apogeo</a>
+          <a href='#job-consultant'>Consultant</a>
+          <a href='#job-neato'>Neato</a>
+        </nav>
+        
         <div class='timeline'>
 
-        <article class='job-card'>
+        <article class='job-card' id='job-indigo'>
+          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+
+            <h4 class='jobtitle' itemprop="jobTitle">Software Engineer</h4>
+            <p><a href="https://indigo.ai" itemprop="name">indigo.ai</a></p>
+            <p><time datetime="2025-09-01T00:00:00+00:00">September 2025</time> - <time datetime="2026-07-31T00:00:00+00:00">July 2026</time></p>
+            <p itemprop="address">
+              <span>Smart working</span>
+            </p>
+
+            <div itemprop="description" class='description'>
+              <div class="job-content">
+                <div itemtype="http://schema.org/Product">
+                  <div>
+                    <p>Joined as the engineer responsible for the test suite: audited, fixed, and expanded test coverage across the codebase, raising it from <strong>16% to 40%</strong> and helping establish a stronger testing culture within the team.</p>
+                    <p>Subsequently moved onto major platform features, contributing to core product development on the <strong>Elixir / Phoenix</strong> stack.</p>
+                    <p><strong>Stack:</strong> Elixir, Phoenix</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class='job-card' id='job-safer'>
+          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+            <h4 class='jobtitle' itemprop="jobTitle">Freelance Developer</h4>
+            <p><a href="https://www.safersaldatura.com/index.html" itemprop="name url">Safer</a></p>
+            <p><time datetime="2026-02-01T00:00:00+00:00">February 2026</time> - <time datetime="2026-03-31T00:00:00+00:00">March 2026</time></p>
+            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Suzzara, Italy</span>
+            </p>
+            <div itemprop="description" class='description'>
+              <div class="job-content">
+                <div itemtype="http://schema.org/Product">
+                  <div >
+                    <p>Built a <strong>Django</strong> dashboard for Safer to manage work orders, tracking how many pieces were produced and in what time. Now in production.</p>
+                    <p><strong>Stack:</strong> Python, Django</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class='job-card' id='job-tenable'>
+          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+            <h4 class='jobtitle' itemprop="jobTitle">Freelance Developer</h4>
+            <p><span itemprop="name">Telecom Italia</span></p>
+            <p><time datetime="2025-09-01T00:00:00+00:00">September 2025</time> - <time datetime="2026-02-28T00:00:00+00:00">February 2026</time></p>
+            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Italy</span>
+            </p>
+            <div itemprop="description" class='description'>
+              <div class="job-content">
+                <div itemtype="http://schema.org/Product">
+                  <div >
+                    <p>Developed a <strong>Python</strong> system integrating with <a href="https://www.tenable.com/">Tenable</a> to check the security posture of the company's machines, and helped deploy it to production.</p>
+                    <p><strong>Stack:</strong> Python, Tenable</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class='job-card' id='job-chorally'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
             <h4 class='jobtitle' itemprop="jobTitle">Team Lead</h4>
             <p><a href="https://chorally.com" itemprop="name">Chorally</a></p>
-            <p><time datetime="2023-09-10T00:00:00+00:00">10 September 2023</time> - Current position</p>
+            <p><time datetime="2023-09-10T00:00:00+00:00">10 September 2023</time> - <time datetime="2025-09-01T00:00:00+00:00">September 2025</time></p>
             <p itemprop="address">
               <span>Smart working</span>
             </p>
@@ -136,10 +279,10 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-ifad'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
-            <h4 class='jobtitle' itemprop="jobTitle">Lead backend engineer</h4>
+            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
             <p><a href="https://ifad.org" itemprop="name">IFAD</a></p>
             <p><time datetime="2023-05-29T00:00:00+00:00">29 May 2023</time> - <time datetime="2023-09-10T00:00:00+00:00">10 September 2023</time></p>
             <p itemprop="address">
@@ -164,10 +307,10 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-cabinet'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
-            <h4 class='jobtitle' itemprop="jobTitle">Lead backend engineer</h4>
+            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
             <p><a href="https://www.gov.uk/government/organisations/cabinet-office" itemprop="name">Cabinet Office</a></p>
             <p><time datetime="2023-02-01T00:00:00+00:00">1 February 2023</time> - <time datetime="2023-05-26T00:00:00+00:00">26 May 2023</time></p>
             <p itemprop="address">
@@ -192,10 +335,10 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-mara'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
-            <h4 class='jobtitle' itemprop="jobTitle">Lead backend engineer</h4>
+            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
             <p><a href="https://mara.xyz" itemprop="name">Mara</a></p>
             <p><time datetime="2022-10-11T00:00:00+00:00">11 October 2022</time> - <time datetime="2023-01-10T00:00:00+00:00">10 January 2023</time></p>
             <p itemprop="address">
@@ -207,8 +350,8 @@
                 <div itemtype="http://schema.org/Product">
                   <div >
                     <p>Backend architect for MVP launch across web, iOS, and Android platforms, bringing cryptocurrency wallet access to African markets.</p>
-                    <p>Developed critical microservices including administration service (Rails with SSO authentication) and user management service. Orchestrated service communication via HTTP APIs across distributed architecture.</p>
-                    <p>Successfully scaled infrastructure in response to rapid user growth, collaborating with DevOps team to handle increased traffic loads.</p>
+                    <p>Developed critical microservices including administration service (Rails with SSO authentication) and user management service. Orchestrated service-to-service communication via HTTP APIs.</p>
+                    <p>Scaled infrastructure in response to rapid user growth, collaborating with the DevOps team to handle increased traffic loads.</p>
                     <p><strong>Stack:</strong> Ruby on Rails, Grape, PostgreSQL, Docker, AWS</p>
                   </div>
                   <div >
@@ -220,11 +363,11 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-soho'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
-            <h4 class='jobtitle' itemprop="jobTitle">Lead backend engineer</h4>
-            <p><a href="hhttps://www.sohohouse.com/en-us/" itemprop="name">Soho House</a></p>
+            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
+            <p><a href="https://www.sohohouse.com/en-us/" itemprop="name">Soho House</a></p>
             <p><time datetime="2022-02-01T00:00:00+00:00">1 February 2022</time> - <time datetime="2022-09-30T00:00:00+00:00">30 September 2022</time></p>
             <p itemprop="address">
               <span>Smart working</span>
@@ -234,13 +377,8 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I was part of the connect team, helping on a number of projects and services throughout SohoHouse microservice architecture, most notably 
-                      <em>profile-service</em>, <em>checkin-service</em> and <em>hook</em>.                    
-                    </p>
-
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
-                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://postgresql.org"> PostgreSQL</a>, <a href="https://www.docker.com/">Docker</a>,
-                    <a href="https://www.rabbitmq.com/"></a>, <a href="https://kubernetes.io/">Kubernetes</a> and <a href="https://github.com/">Github</a>.</p>
+                    <p>Backend developer on the Connect team, contributing to multiple microservices across Soho House's distributed architecture, including <em>profile-service</em>, <em>checkin-service</em>, and <em>hook</em>.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, RabbitMQ, Kubernetes</p>
                   </div>
                   <div >
                     <img src="/img/resume/sh.png" height='90px' itemprop="image" alt="Soho House" class="no-print" />
@@ -251,12 +389,12 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-dfe'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
-            <h4 class='jobtitle' itemprop="jobTitle">Lead backend engineer</h4>
+            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
             <p><a href="https://www.gov.uk/government/organisations/department-for-education" itemprop="name">Department for Education</a></p>
-            <p><time datetime="2021-02-22T00:00:00+00:00">1 October 2021</time> - <time datetime="2022-01-28T00:00:00+00:00">28 January 2022</time></p>
+            <p><time datetime="2021-10-01T00:00:00+00:00">1 October 2021</time> - <time datetime="2022-01-28T00:00:00+00:00">28 January 2022</time></p>
             <p itemprop="address">
             <span>Smart working</span>
             </p>
@@ -265,11 +403,8 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I helped to build the <a href="https://github.com/DFE-Digital/early-careers-framework">Early Career Framework</a> application</p>
-
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
-                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://postgresql.org"> PostgreSQL</a>, <a href="https://www.docker.com/">Docker</a>,
-                    and <a href="https://github.com/">Github</a>.</p>
+                    <p>Core contributor to the <a href='https://github.com/DFE-Digital/early-careers-framework'>Early Career Framework</a> application, supporting teacher professional development across England.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, GitHub Actions</p>
                   </div>
                   <div >
                     <img src="/img/resume/doe.svg" height='90px' itemprop="image" alt="Department of Education logo" class="no-print" />
@@ -280,10 +415,10 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-fc'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
-            <h4 class='jobtitle' itemprop="jobTitle">Lead backend engineer</h4>
+            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
             <p><a href="https://www.fundingcircle.com/" itemprop="name">Funding Circle</a></p>
             <p><time datetime="2021-02-22T00:00:00+00:00">22 February 2021</time> - <time datetime="2021-09-30T00:00:00+00:00">30 September 2021</time></p>
             <p itemprop="address">
@@ -294,14 +429,10 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I was in charge of updating a number of applications managing dependencies and fixing security vulnerabilities.</p>
-
-                    <p>These applications had to be dockerized and moved into the cloud, scanned to check for
-                    vulnerabilities, and updated.</p>
-
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
-                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://aws.amazon.com">AWS</a>, <a href="https://www.docker.com/">Docker</a>,
-                    <a href="https://circleci.com/">CircleCI</a> and <a href="https://www.jenkins.io/">Jenkins</a>.</p>
+                    <p>Led dependency management and security vulnerability remediation across multiple production applications.</p>
+                    <p>Orchestrated cloud migration strategy: containerized legacy applications with Docker, implemented security scanning pipelines, and deployed to AWS infrastructure with CI/CD automation via CircleCI and Jenkins.</p>
+                    <p>Maintained several internal services written in <strong>Python</strong>.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, Python, AWS, Docker, CircleCI, Jenkins</p>
                   </div>
                   <div >
                     <img src="/img/resume/funding-circle.png" height='90px' itemprop="image" alt="Funding Circle logo" class="no-print" />
@@ -312,10 +443,10 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-lawbite'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
-            <h4 class='jobtitle' itemprop="jobTitle">Lead backend engineer</h4>
+            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
             <p><a href="https://lawbite.co.uk/" itemprop="name">Lawbite</a></p>
             <p><time datetime="2020-05-11T00:00:00+00:00">11th May 2020</time> - <time datetime="2021-02-19T00:00:00+00:00">19 February 2021</time></p>
             <p itemprop="address">
@@ -326,14 +457,9 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I was for most of the time the main backend developer in charge of the rewrite of the Lawbite platform.</p>
-
-                    <p>Work included building several microservices, writing the administration panel for the company's CMS, helping external
-                    developers in rebuilding the main portal.</p>
-
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
-                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://aws.amazon.com">AWS</a>
-                    with <a href='https://kubernetes.io/'>Kubernetes</a>.</p>
+                    <p>Lead backend developer for complete platform rewrite, architecting microservices-based solution.</p>
+                    <p>Designed and built multiple microservices, developed custom CMS administration panel, and collaborated with external teams on main portal rebuild.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Kubernetes</p>
                   </div>
                   <div >
                     <img src="/img/resume/lawbite.jpg" width='150px' height='90px' itemprop="image" alt="Lawbite logo"  class="no-print" />
@@ -344,12 +470,12 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-moj'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
-            <h4 class='jobtitle' itemprop="jobTitle">Senior developer</h4>
+            <h4 class='jobtitle' itemprop="jobTitle">Senior Developer</h4>
             <p><a href="https://www.justice.gov.uk/" itemprop="name">Ministry of Justice</a></p>
-            <p><time datetime="2019-08-26T00:00:00+00:00">26th August 2019</time> - <time>22nd February 2020</time></p>
+            <p><time datetime="2019-08-26T00:00:00+00:00">26th August 2019</time> - <time datetime="2020-02-22T00:00:00+00:00">22nd February 2020</time></p>
             <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="addressLocality">102 Petty France, London, United Kingdom</span>
             </p>
@@ -358,17 +484,10 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I was for most of the time the only backend developer in charge of the 
-                    <a href='https://github.com/ministryofjustice/hmpps-book-secure-move-api'>book a secure move API application</a>.</p>
-
-                    <p>Work included normalizing the data structure, implementing document uploads with 
-                    <a href='https://edgeguides.rubyonrails.org/active_storage_overview.html'>ActiveStorage</a>, and implememntig Webhooks.</p>
-
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
-                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://aws.amazon.com">AWS</a>
-                    with <a href='https://kubernetes.io/'>Kubernetes</a>. I also acquired some good experience
-                    of <a href='https://swagger.io/'>Swagger</a> and <a href='https://jsonapi.org/'>JSON API</a>.
-                    </p>
+                    <p>Solo backend developer for <a href='https://github.com/ministryofjustice/hmpps-book-secure-move-api'>Book a Secure Move API</a>, managing prisoner transport logistics across UK prison system.</p>
+                    <p>Normalized complex data structures, implemented document upload system with ActiveStorage, and built webhook infrastructure for real-time event notifications.</p>
+                    <p>Gained expertise in API documentation with Swagger and JSON API specification compliance.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Kubernetes, Swagger, JSON API</p>
                   </div>
                   <div >
                     <img src="/img/resume/moj.png" width='150px' height='90px' itemprop="image" alt="Ministry of Justice logo"  class="no-print" />
@@ -379,12 +498,12 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-vzaar'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
             <h4 class='jobtitle' itemprop="jobTitle">Tech Lead</h4>
             <p><a href="https://vzaar.com/" itemprop="name">Vzaar</a></p>
-            <p><time datetime="2018-01-02T00:00:00+00:00">2nd January 2019</time> - <time>August 2019</time></p>
+            <p><time datetime="2019-01-02T00:00:00+00:00">2nd January 2019</time> - <time datetime="2019-08-01T00:00:00+00:00">August 2019</time></p>
             <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="addressLocality">London, United Kingdom</span>
             </p>
@@ -393,16 +512,9 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>
-                    My duties involved maintaining the old application, developing new features and, after the merger
-                    with <a href="https://dacast.com">Dacast</a>, work on splitting the two main applications in
-                    microservices.
-                    </p>
-
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
-                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework, <a href="https://aws.amazon.com">AWS</a>
-                    and the <a href="https://serverless.com">Serverless framework</a>.
-                    </p>
+                    <p>Tech lead maintaining video hosting platform and architecting microservices migration following <a href="https://dacast.com">Dacast</a> merger.</p>
+                    <p>Balanced legacy application maintenance with new feature development while planning and executing service decomposition strategy.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Serverless Framework</p>
                   </div>
                   <div >
                     <img src="/img/resume/vzaar.png" itemprop="image" alt="Vzaar logo"  class="no-print" />
@@ -413,7 +525,7 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-utelier'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
             <h4 class='jobtitle' itemprop="jobTitle">Tech Lead</h4>
@@ -427,23 +539,10 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>
-                    I was involved in evaluating the old application and move development to London.
-                    </p>
-
-                    <p>
-                    My duties involved traveling to Ljubljana to make an evaluation of the software we had in house,
-                    then recruiting a developer to move the development to London.
-                    I could choose my own stack and mentor a junior developer, but also build the whole system, including
-                    rebuilding the AWS infrastructure under the supervision of a senior engineer at
-                    <a href="https://www.scalefactory.com/">The Scale Factory</a>.
-                    </p>
-
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> with the
-                    <a href='http://rubyonrails.org/'>RubyOnRails</a> framework.
-                    I also had the immense pleasure to use <a href='https://elm-lang.org'>the Elm language</a>
-                    to build the frontend.
-                    </p>
+                    <p>Evaluated existing application and led development relocation from Ljubljana to London.</p>
+                    <p>Recruited and mentored junior developer, selected modern technology stack (Rails + Elm), and rebuilt entire platform including AWS infrastructure with guidance from <a href="https://www.scalefactory.com/">The Scale Factory</a> engineers.</p>
+                    <p>Implemented functional reactive programming with <a href='https://elm-lang.org'>Elm</a> on the frontend, demonstrating ability to adopt emerging technologies.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, Elm, AWS</p>
                   </div>
                   <div >
                     <img src="/img/resume/utelier.png" itemprop="image" alt="Utelier logo"  class="no-print" />
@@ -454,12 +553,12 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-mgage'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
             <h4 class='jobtitle' itemprop="jobTitle">Senior Developer</h4>
             <p><a href="http://www.mgage.com/" itemprop="name">mGage, a Vivial company</a></p>
-            <p><time datetime="2016-09-01T00:00:00+00:00">1st August 2016</time> - <time datetime="2017-11-30T00:00:00+00:00">30th November 2017</time></p>
+            <p><time datetime="2016-08-01T00:00:00+00:00">1st August 2016</time> - <time datetime="2017-11-30T00:00:00+00:00">30th November 2017</time></p>
             <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="addressLocality">London, United Kingdom</span>
             </p>
@@ -468,19 +567,9 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>
-                    I worked in the Payments team developing the main administration interface that manages all their services.<br />
-                    The project is built from the ground up using the Phoenix Framework and PostgreSQL.
-                    </p>
-
-                    <p>
-                    As part of my day to day duties I also had to build the authentication layer for all their Ruby API endpoints,
-                    and later an Elixir library to let the administration application query these services.
-                    </p>
-
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> and
-                    <a href="http://elixir-lang.org/">Elixir</a> with the <a href='http://rubyonrails.org/'>RubyOnRails</a>
-                    and <a href="http://www.phoenixframework.org/">Phoenix</a> frameworks.</p>
+                    <p>Payments team member developing unified administration interface for all company services, built from scratch with Phoenix Framework and PostgreSQL.</p>
+                    <p>Built authentication layer for Ruby API endpoints and developed Elixir library enabling cross-service communication between Phoenix admin application and Ruby microservices.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, Elixir, Phoenix Framework, PostgreSQL</p>
                   </div>
                   <div >
                     <img src="/img/resume/mGage_Vivial_logo_rgb.png" itemprop="image" alt="mGage logo"  class="no-print" />
@@ -491,57 +580,56 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-fool'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
 
             <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
             <p><a href="http://thefool.it" itemprop="name">The Fool s.r.l.</a></p>
-            <p><time datetime="2014-09-01T00:00:00+00:00">1st September 2014</time> - <time datetime="datetime="2016-07-01T00:00:00+00:00">15t July 2016</time></p>
+            <p><time datetime="2014-09-01T00:00:00+00:00">1st September 2014</time> - <time datetime="2016-07-15T00:00:00+00:00">15th July 2016</time></p>
             <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="addressLocality">Milan, Italy</span>
             </p>
 
             <div itemprop="description" class='description'>
               <div class="job-content">
-                <p>I developed many projects pertaining digital assets management, copyright protection and personal reputation.</p>
+                <p>Developed several projects spanning digital asset management, copyright protection, and personal reputation monitoring.</p>
               </div>
 
               <div itemtype="http://schema.org/Product">
                 <div >
                   <p>
-                  The most prominent is probably <a href="http://ec.reputationmonitor.it/" itemprop="url"><span itemprop="name">EngagementConsole</span></a>,
+                  The most prominent, <a href="http://ec.reputationmonitor.it/" itemprop="url"><span itemprop="name">EngagementConsole</span></a>,
                   <span itemprop="description">
-                                  an application that acts as a gateway layer to collect all user generated contents from all digital properties (Twitter, Facebook, Instagram,
-                                  Disqus, Wordpress) managed by the customer at hand, that are then presented via a customized dashboard that lets classify, analyze and manage
-                                  all the content by any number of moderators and managers.
+                                  is a gateway layer that collects user-generated content from digital properties (Twitter, Facebook, Instagram,
+                                  Disqus, Wordpress) managed by a given customer, presenting it via a customized dashboard where moderators and managers can classify, analyze, and manage
+                                  all the content.
                   </span>
                   </p>
 
                   <p>
-                  This application is used by many companies to manage their online assets, just to name a few <a href='https://www.bancamediolanum.it/'>Banca Mediolanum </a>,
-                  <a hred='http://www.radio24.ilsole24ore.com/'> Radio24 </a> and <a href='http://en.volkswagen.com/en.html'>Volkswagen</a>.
+                  It's used by companies including <a href='https://www.bancamediolanum.it/'>Banca Mediolanum </a>,
+                  <a href='http://www.radio24.ilsole24ore.com/'> Radio24 </a>, and <a href='http://en.volkswagen.com/en.html'>Volkswagen</a> to manage their online assets.
                   </p>
                 </div>
                 <div >
-                  <img src="/img/resume/logo_ec.png" itemprop="image" alt="Engagement Console logo"  class="no-print"  class="no-print" />
+                  <img src="/img/resume/logo_ec.png" itemprop="image" alt="Engagement Console logo"  class="no-print" />
                 </div>
 
-                <div class="job-content">
-                  <p>I do many other things at <a href="http://thefool.it">The Fool s.r.l.</a>, where I plan, develop, maintain and deploy several web applications, data extraction
-                    tools and services.</p>
+                <div>
+                  <p>Also planned, developed, maintained, and deployed several other web applications and data extraction tools and services at <a href="http://thefool.it">The Fool s.r.l.</a></p>
 
-                  <p>The main language involved is <a href='https://www.ruby-lang.org/'>Ruby</a>, both plain and with frameworks such as <a href='http://rubyonrails.org/'>RubyOnRails</a>
-                  and <a href='http://www.sinatrarb.com/'>Sinatra</a>, and some things have been coded in <a href='https://www.javascript.com/'>Javascript</a>.<br>
-                  We use data stores like <a href='https://www.mysql.com/'>MySQL</a> and <a href='https://www.mongodb.org/'>MongoDB</a> for bigger projects and sometimes smaller embedded
-                  engines like <a href='http://symas.com/mdb/'>LMDB</a> or <a href='http://www.gnu.org.ua/software/gdbm/'>GDBM</a>.<br>
-                  Many projects involve integrating with <a href='https://www.elastic.co/'>Elastic Search</a>.</p>
+                  <p>Primarily worked in <a href='https://www.ruby-lang.org/'>Ruby</a>, both plain and with frameworks such as <a href='http://rubyonrails.org/'>RubyOnRails</a>
+                  and <a href='http://www.sinatrarb.com/'>Sinatra</a>, with some work in <a href='https://www.javascript.com/'>Javascript</a>.<br>
+                  Data stores included <a href='https://www.mysql.com/'>MySQL</a> and <a href='https://www.mongodb.org/'>MongoDB</a> for larger projects, and smaller embedded
+                  engines like <a href='http://symas.com/mdb/'>LMDB</a> or <a href='http://www.gnu.org.ua/software/gdbm/'>GDBM</a> for others.<br>
+                  Many projects integrated with <a href='https://www.elastic.co/'>Elastic Search</a>.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-antonioli'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
             <h4 class='jobtitle' itemprop="jobTitle">Lead Developer</h4>
             <p><a href='https://www.antonioli.eu/en/IT' itemprop='name'>Antonioli.eu</a></p>
@@ -554,17 +642,13 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p> During my short stay I helped in the development of their <a href="https://www.antonioli.eu/en/IT" itemprop="url"><span itemprop="name"> new E-Commerce site </span></a>.
-                      I was the only developer working for them and I had to manage the project with external developers:
-                      <span itemprop="description">
-                        the website was very complex as Antonioli is available worldwide and has to take care of the different tax rates and regulations and also have a very thorough administration interface                           
-                        to allow non techinical users to manage the products and the sale process.
-                      </span>
+                    <p>Sole developer on Antonioli's new e-commerce site, coordinating with external developers on a complex, worldwide platform handling multiple tax rates and regulations, plus a thorough admin interface
+                      <span itemprop="description">for non-technical staff to manage products and the sale process.</span>
                     </p>
 
-                    <p>I also had to maintain their legacy website, which was a disgraceful mess in RubyOnRails 2.0 developed by many people in the time span of more than 6 years.</p>
+                    <p>Also maintained their legacy website, a Ruby on Rails 2.0 codebase built up by many contributors over more than 6 years.</p>
 
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> and <a href='http://rubyonrails.org/'>RubyOnRails</a>, the new website was built using the
+                    <p>The new site was built with <a href='https://www.ruby-lang.org/'>Ruby</a> and <a href='http://rubyonrails.org/'>RubyOnRails</a>, using the
                     <a href="https://spreecommerce.com/">Spree framework</a>.</p>
                   </div>
                   <div >
@@ -576,11 +660,11 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-sportboom'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
             <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
             <p><a href="http://it.sportboom.com/" itemprop="name url">Sportboom</a></p>
-            <p><time datetime="2013-05-01T00:00:00+00:00">1st May 2012</time> - <time datetime="2014-03-29T00:00:00+00:00">29th March 2013</time></p>
+            <p><time datetime="2012-05-01T00:00:00+00:00">1st May 2012</time> - <time datetime="2013-03-29T00:00:00+00:00">29th March 2013</time></p>
             <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="addressLocality">Milan, Italy</span>
             </p>
@@ -589,20 +673,9 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I worked with the founders to build the <a href="http://it.sportboom.com/" itemprop="url"><span itemprop="name">Sportboom</a></span>
-                       website project from the ground up, starting from a website in PHP/MySQL that I was in charge to port to RubyOnRails/PostgreSQL
-                       with many new features.<br />
-                       A very important part of the job was to obtain good rankings on the main search engines, and to accomplish this I had to
-                       work close to a SEO and implement all the features he needed.
-                       <span itemprop="description">The company wanted to build a marketplace for sport enthusiasts were users could find recreation activities to
-                       engage at the cheapest price.</span>
-                    </p>
-
-                    <p>I also had to search and hire a designer and a junior developer to help me out as part of the job.</p>
-
-                    <p>The technologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> and
-                    <a href='http://rubyonrails.org/'>RubyOnRails</a>, with <a href="http://www.postgresql.org/">PostgreSQL</a> as database.<br />
-                      I could also use <a href="http://getbootstrap.com/">Bootstrap</a> for the first time to build the frontend.</p>
+                    <p>Built <a href="http://it.sportboom.com/" itemprop="url"><span itemprop="name">Sportboom</span></a>, a marketplace for sport enthusiasts, porting the site from PHP/MySQL to Ruby on Rails/PostgreSQL and driving SEO strategy for organic growth.</p>
+                    <p>Hired and managed a designer and junior developer to support delivery.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Bootstrap</p>
                   </div>
                   <div >
                     <img src="/img/resume/logo_sportboom.png" itemprop="image" alt="Sportboom logo" class="no-print" />
@@ -613,7 +686,7 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-stylejam'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
             <h4 class='jobtitle' itemprop="jobTitle">BDFL</h4>
             <p><a href="http://stylej.am/" itemprop="name url" class="dead">StyleJam</a></p>
@@ -624,31 +697,13 @@
             <div itemprop="description" class='description'>
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>I obtained a seed fund from <a href="http://www.h-farm.com/">H-Farm</a> to develop an idea I had while at my previous job.</p>
-
-                    <p>I implemented the whole <a href="http://stylej.am" class="dead" itemprop="url"><span itemprop="name">StyleJam platform</a></span> again from the ground up.<br />
-                      <span itemprop="description">The startup was a reinterpretetion of the old <a href="http://www.csszengarden.com/">CSS Zen Garden</a>
-                      where designers could enter their personal data and style with CSS a common page with their data and their own designs, pretty much
-                      like <a href="https://carbonmade.com/">Carbonmade</a> meets the CSS Zen Garden.</span></p>
+                  <div>
+                    <p>Founded <a href="http://stylej.am" class="dead" itemprop="url"><span itemprop="name">StyleJam</span></a> on seed funding from <a href="http://www.h-farm.com/">H-Farm</a>: a reinterpretation of <a href="http://www.csszengarden.com/">CSS Zen Garden</a> where designers styled a shared page with their own data and CSS, similar to <a href="https://carbonmade.com/">Carbonmade</a>.</p>
+                    <p>Sole founder handling development, PR, marketing, sales, accounting, and system administration.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, MongoDB, S3, Goliath.io</p>
                   </div>
-
-                  <div >
-                    <img src="/img/resume/logo_stylejam.png" itemprop="image" alt="StyleJam logo"  class="no-print" />
-                  </div>
-
-                  <div class="job-content">
-                    <p>I also wrote on the blog, took care of public relations, marketing, sales, accounting, system
-                    administration, and pretty much everything you can eventually think someone can do in a company.</p>
-
-                    <p>The tecnhologies I used were <a href='https://www.ruby-lang.org/'>Ruby</a> and <a href='http://rubyonrails.org/'>RubyOnRails</a>
-                    with <a href="https://www.mongodb.org/">MongoDB</a>. The portfolios were static websites hosted on <a href="https://aws.amazon.com/s3">S3</a>
-                                  very cheaply and composed by a service I built with <a http="https://github.com/postrank-labs/goliath">Goliath.io</a>.</p>
-                  </div>
-
-                  <div class="col-md-5 available">
-                    <h4>Code available for review</h4>
-                    <p><a href="mailto: ngw@nofeed.org">Ask me</a> and I'll give you rights for the BitBucket repository</p>
+                  <div>
+                    <img src="/img/resume/logo_stylejam.png" itemprop="image" alt="StyleJam logo" class="no-print" />
                   </div>
                 </div>
               </div>
@@ -656,7 +711,7 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-zooppa'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
             <h4 class='jobtitle' itemprop="jobTitle">CTO</h4>
             <p><a href="http://zooppa.com/" itemprop="name url">Zooppa</a></p>
@@ -669,17 +724,9 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I developed the <a href="http://zooppa.com" itemprop="url"><span itemprop="name">Zooppa website</a></span> from the ground up,
-                                                caring about the implementation, maintenance , architecture, and taking every technological choice from the very beginning.<br />
-                                                <span itemprop="description">Zooppa generates high quality video and graphic design content for advertising campaigns. Marketers and agencies
-                                                                from the world’s top brands use Zooppa’s crowdsourcing platform to connect with an online creative community of over 350,000 members.</span></p>
-
-                    <p>I managed the product for clients like Google, Microsoft, Sun, AT&T, Samsung, Fiat and many others, interacting with their development teams
-                    on a daily basis.<br />
-                    I also built the development team from the very beginning hiring the developers, designers and system administrators I needed.</p>
-
-                    <p>The tecnhologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> and <a href='http://rubyonrails.org/'>RubyOnRails</a>
-                    on a <a href="https://www.mysql.com/">MySQL RDBMS</a>.</p>
+                    <p>Built and owned the architecture of <a href="http://zooppa.com" itemprop="url"><span itemprop="name">Zooppa</span></a> from the ground up, a crowdsourcing platform connecting brands with a creative community of 350,000+ members for video and graphic design campaigns.</p>
+                    <p>Managed client relationships with Google, Microsoft, Sun, AT&T, Samsung, and Fiat, and built the development team from scratch (developers, designers, sysadmins).</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, MySQL</p>
                   </div>
 
                   <div >
@@ -691,7 +738,7 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-hotchalk'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
             <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
             <p><a href="http://www.hotchalk.com/" itemprop="name url">Hotchalk</a></p>
@@ -703,18 +750,8 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I helped the team to startup the company, rewriting a Java application in Ruby on Rails. The rewrite was a huge success, the codebase was
-                    completely covered by tests so we’ve been able to release a product with very few defects and a reduced / cleaner codebase.</p>
-
-                    <p><a href="http://www.hotchalk.com/" itemprop="url"><span itemprop="name">Hotchalk</a></span>
-                      <span itemprop="description">
-                                      leverages data and technology to support all phases of the student life cycle, and enables industry-leading student retention and graduation rates.
-                                      The site had more than 30k registered users on the first day, and is now helping hundreds of schools to keep pupils, teachers and parents connected.
-                      </span>
-                    </p>
-
-                    <p>The tecnhologies involved were <a href='https://www.ruby-lang.org/'>Ruby</a> and <a href='http://rubyonrails.org/'>RubyOnRails</a>
-                    on a <a href="https://www.mysql.com/">MySQL RDBMS</a>.</p>
+                    <p>Helped launch <a href="http://www.hotchalk.com/" itemprop="url"><span itemprop="name">Hotchalk</span></a>, rewriting a Java application in Ruby on Rails with full test coverage, enabling a low-defect release that grew to 30k+ registered users on day one.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, MySQL</p>
                   </div>
 
                   <div >
@@ -726,7 +763,7 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-assembla'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
             <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
             <p><a href="http://www.assembla.com/" itemprop="name url">Assembla</a></p>
@@ -738,16 +775,8 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I worked with the Assembla team to the initial implementation of their <a href="http://www.assembla.com/" itemprop="url"><span itemprop="name">Breakout system</a></span>,
-                    <span itemprop="description">
-                                    a website very similar to what Github became years later, but based on svn and trac, and aimed at helping developers hosting their source code and manage the whole
-                                    development team.
-                    </span>
-                    </p>
-
-                    <p>Initially, Breakout was written in <a href='https://www.ruby-lang.org/'>Ruby</a> and <a href='http://rubyonrails.org/'>RubyOnRails</a>
-                    on a <a href="https://www.mysql.com/">MySQL RDBMS</a>. It also used extensively <a href="https://subversion.apache.org/">Subverision</a>
-                                  and <a href="https://trac.edgewall.org/">Trac</a>.</p>
+                    <p>Contributed to the initial implementation of <a href="http://www.assembla.com/" itemprop="url"><span itemprop="name">Breakout</span></a>, a precursor to GitHub for hosting source code and managing development teams via SVN and Trac.</p>
+                    <p><strong>Stack:</strong> Ruby on Rails, MySQL, Subversion, Trac</p>
                   </div>
 
                   <div >
@@ -759,7 +788,7 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-apogeo'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
             <h4 class='jobtitle' itemprop="jobTitle">Author</h4>
             <p><a href="http://www.apogeonline.com/" itemprop="name url">Apogeo</a></p>
@@ -771,8 +800,7 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I authored a chapter of the first book in italian language about Ruby <span itemprop="name">Ruby per applicazioni web</span>, explaining how to use databases in Ruby.
-                                                                                                             The book is still around and I find mentions of it pretty much everywhere on italian IT groups.</p>
+                    <p>Authored the database chapter of <span itemprop="name">Ruby per applicazioni web</span>, the first Italian-language book about Ruby, still referenced in Italian IT communities today.</p>
                   </div>
 
                   <div >
@@ -784,10 +812,10 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-consultant'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
-            <p>*.*</p>
+            <h4 class='jobtitle' itemprop="jobTitle">Independent Consultant</h4>
+            <p itemprop="name">Freelance / Various Clients</p>
             <p><time datetime="2003-00-00T00:00:00+00:00">2003</time> - <time datetime="2005-00-00T00:00:00+00:00">2005</time></p>
             <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="addressLocality">Italy</span>
@@ -796,14 +824,8 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>After my first work experience I wanted to gain as much experience as I could, so I started to work as a consultant for many italian companies while working myself
-                    on some free software projects like the <a href="http://www.zope.org/">Application Server Zope</a>.</p>
-
-                    <p>My customers included <a href="https://www.mps.it/">Monte dei Paschi di Siena</a> (they still has some of my systems in production), <a href="https://www.tim.it/">Telecom</a>
-                                                      and many others.</p>
-
-                    <p>I wrote everything I could, from websites to client software for Fax Servers. The languages involved were mainly <a href="https://www.python.org/">Python</a>, <a href="http://php.net/">PHP</a>
-                                                                                                                                                 and to a minor extent <a href="https://www.java.com/">Java</a>.</p>
+                    <p>Worked as an independent consultant for Italian companies, building a <strong>Python</strong> + <a href="http://www.zope.org/">Zope</a> website for <a href="https://www.mps.it/">Monte dei Paschi di Siena</a>, and a Fax Server client (<strong>Python</strong> + <strong>wxPython</strong>) for <a href="https://www.tim.it/">Telecom</a>.</p>
+                    <p><strong>Stack:</strong> Python, Zope, wxPython, PHP, Java</p>
                   </div>
 
                   <div >
@@ -815,7 +837,7 @@
           </div>
         </div>
 
-        <div class='job-card'>
+        <div class='job-card' id='job-neato'>
           <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
             <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
             <p><a href="http://www.neato.com/" itemprop="name url">Neato Europe</a></p>
@@ -827,12 +849,8 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>At neato I built their e-commerce, their CRM systems and I administered their servers.<br />
-                    It was my first working experience and I learned a lot.</p>
-
-                    <p>The e-commerce site was in <a href="http://php.net/">PHP</a>, ported from an ASP3 site.
-                                                           The CRM in <a href="http://www.zope.org/">Zope</a>. Their 3 servers were using <a href="http://freebsd.or"g>FreeBSD</a> and
-                                                                               hosting some internal services.</p>
+                    <p>First professional role: built the e-commerce site (ported from ASP3 to PHP) and CRM system, and administered the company's FreeBSD servers.</p>
+                    <p><strong>Stack:</strong> PHP, Zope, FreeBSD</p>
                   </div>
 
                   <div >
@@ -858,13 +876,13 @@
               <div class="job-content">
                 <div itemtype="http://schema.org/Product">
                   <div >
-                    <p>I always loved animals and dogs in particular, and I wanted to build something to help stray dogs find a new home.</p>
+                    <p>A lifelong love of animals, dogs especially, motivated me to build something to help stray dogs find a new home.</p>
 
-                    <p>I developed the <a href="http://petswantpats.com" itemprop="url" class="dead"><span itemprop="name">PetsWantPats</span></a> website to help people
-                                                in search of a new dog to find the perfect match.<br />
+                    <p>Developed the <a href="http://petswantpats.com" itemprop="url" class="dead"><span itemprop="name">PetsWantPats</span></a> website to help people
+                                                find the perfect dog to adopt.<br />
                                                 <span itemprop="description">PetsWantPats is a search engine that lets dog shelters list their dogs for adoption.</span></p>
 
-                    <p>The entire project is financed by me and is a nonprofit.</p>
+                    <p>Self-funded and run as a nonprofit.</p>
 
                     <p>The website is in <a href='http://rubyonrails.org/'>RubyOnRails</a> with some <a href='https://www.javascript.com/'>Javascript</a>.
                     I wanted to experiment a bit and learn in the process, that's why the whole frontend is in <a href="http://haml.info/">HAML</a>.<br />
@@ -872,13 +890,8 @@
                                                                                                                         <a href='https://www.elastic.co/'>Elastic Search</a>.</p>
                   </div>
 
-                  <div >
-                    <img src="/img/resume/logo_pwp.png" itemprop="image" alt="PetsWantPats logo"  class="no-print" />
-                  </div>
-
-                  <div class="col-md-5 available">
-                    <h4>Code available for review</h4>
-                    <p><a href="mailto: ngw@nofeed.org">Ask me</a> and I'll give you rights for the BitBucket repository</p>
+                  <div>
+                    <img src="/img/resume/logo_pwp.png" itemprop="image" alt="PetsWantPats logo" class="no-print" />
                   </div>
                 </div>
               </div>

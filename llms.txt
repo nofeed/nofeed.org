@@ -1,0 +1,25 @@
+# Nicholas Wieland
+
+> Senior Backend Engineer / Tech Lead – Ruby, Elixir. 20+ years building and leading production systems in Ruby on Rails, Elixir/Phoenix and Python. Based in Mantova, Italy.
+
+- Availability: open to contract (B2B, Italian VAT number) or permanent roles, fully remote across Europe (CET). EU citizen.
+- Languages: Italian (native), English (native).
+- Skills: Ruby on Rails, Hotwire, Grape, Karafka, Elixir, Phoenix, Python, FastAPI, Django, PostgreSQL, Redis, AWS, Kubernetes, Docker, microservices, API design, technical leadership and mentoring.
+
+## Key experience
+
+- Torbido (2026–present): founder and sole developer of a Ruby on Rails 8 marketplace for Italian craft beer and artisanal spirits, in production.
+- Cicerone (2026–present): creator of an open-source, self-hosted batch recommender engine in Python (FastAPI, LightFM).
+- indigo.ai (2025–2026): software engineer on Elixir/Phoenix; raised test coverage from 16% to 40%.
+- Chorally (2023–2025): team lead of 6; rebuilt the legacy architecture as Ruby microservices on Kubernetes, cutting resource consumption by 70%.
+- 2020–2023: Lead Backend Engineer for IFAD, Cabinet Office, Mara, Soho House, Department for Education and Funding Circle (contracts via NoFeed Ltd), and Lawbite.
+- Ministry of Justice (2019–2020): sole backend developer of the Book a Secure Move API.
+- Earlier: tech lead in London (Utelier, Vzaar), Elixir/Phoenix at mGage, CTO of Zooppa (2007–2010), co-author of the first Italian-language book on Ruby.
+
+## Links
+
+- [Resume](https://nofeed.org/resume/): full CV (HTML)
+- [CV (PDF)](https://nofeed.org/resume/cv.pdf): 2-page PDF
+- [GitHub](https://github.com/ngw)
+- [LinkedIn](https://www.linkedin.com/in/nwieland/)
+- Email: ngw@nofeed.org

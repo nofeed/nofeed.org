@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /cover/
+
+Sitemap: https://nofeed.org/sitemap.xml

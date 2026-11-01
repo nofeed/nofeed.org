@@ -1,941 +1,436 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/resume.css" type="text/css" media="all" />
-    <link rel="canonical" href="https://nofeed.org/resume/" />
-    <title>Nicholas George Wieland — Software Developer</title>
-    <link href="/img/resume/favicon.ico" rel="icon" type="image/x-icon" />
-    <meta name="description" content="Nicholas George Wieland (ngw) resume. Backend Developer &amp; Team Lead specializing in Ruby, Elixir, and Python. Last update October 2026.">
-    <meta name="author" content="Nicholas George Wieland (ngw)">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nicholas Wieland — Senior Backend Engineer</title>
+    <meta name="description" content="Nicholas Wieland: Senior Backend Engineer and Tech Lead (Ruby on Rails, Elixir, Python) based in Mantova, Italy. Open to contract (B2B) or permanent roles, remote across Europe (CET).">
+    <meta name="author" content="Nicholas Wieland">
     <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://nofeed.org/resume/">
+    <link rel="icon" href="../img/resume/favicon.ico">
+    <link rel="alternate" type="application/pdf" href="cv.pdf" title="Nicholas Wieland CV (PDF)">
+    <link rel="stylesheet" href="../css/resume.css">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Nicholas Wieland — Senior Backend Engineer">
+    <meta property="og:description" content="Senior Backend Engineer / Tech Lead – Ruby, Elixir. 20+ years building and leading production systems. Remote across Europe (CET).">
+    <meta property="og:url" content="https://nofeed.org/resume/">
+    <meta property="og:image" content="https://nofeed.org/img/resume/personal.jpg">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:image:alt" content="Photo of Nicholas Wieland">
+    <meta property="profile:first_name" content="Nicholas">
+    <meta property="profile:last_name" content="Wieland">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nicholas Wieland — Senior Backend Engineer">
+    <meta name="twitter:description" content="Senior Backend Engineer / Tech Lead – Ruby, Elixir. Remote across Europe (CET).">
+    <meta name="twitter:image" content="https://nofeed.org/img/resume/personal.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "url": "https://nofeed.org/resume/",
+      "dateModified": "2026-11-01",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://nofeed.org/#person",
+        "name": "Nicholas Wieland",
+        "alternateName": "ngw",
+        "jobTitle": "Senior Backend Engineer / Tech Lead",
+        "url": "https://nofeed.org/resume/",
+        "image": "https://nofeed.org/img/resume/personal.jpg",
+        "email": "mailto:ngw@nofeed.org",
+        "telephone": "+39 375 809 1178",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mantova",
+          "addressCountry": "IT"
+        },
+        "nationality": "Italian",
+        "knowsLanguage": ["it", "en"],
+        "sameAs": [
+          "https://github.com/ngw",
+          "https://www.linkedin.com/in/nwieland/",
+          "https://nofeed.org/"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Torbido",
+          "url": "https://torbido.it"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Liceo Linguistico Redentore"
+        },
+        "knowsAbout": [
+          "Ruby", "Ruby on Rails", "Hotwire", "Elixir", "Phoenix", "Python", "FastAPI", "Django",
+          "PostgreSQL", "Redis", "AWS", "Kubernetes", "Docker", "Microservices", "API design",
+          "Technical leadership"
+        ]
+      }
+    }
+    </script>
   </head>
 
   <body>
-    <nav class="nav">
-      <div class="nav-container">
-        <a href="#top" class="nav-logo">NGW</a>
-        <ul class="nav-menu">
-          <li><a href="#featured-projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <main class='container'>
-      <header class='hero' id='top'>
-        <div class='hero-content'>
-          <h1 class='hero-title'>
-            <span class='name-primary'>Nicholas George Wieland</span>
-            <span class='name-accent'>ngw</span>
-          </h1>
-          <p class='hero-subtitle'>Software Developer & Team Lead</p>
-          <p class='hero-summary'>Backend-focused engineer with 20+ years of experience shipping and leading production systems in <strong>Ruby</strong>, <strong>Elixir</strong>, and <strong>Python</strong>. Comfortable stepping into legacy codebases, leading microservices migrations, and mentoring teams, with a track record across startups, agencies, and government digital services in the UK and beyond.</p>
-          <p class='hero-meta'>Last updated: <time datetime="2026-10-26">October 26, 2026</time></p>
+    <main class="cv">
+      <header class="cv-header">
+        <div class="cv-header-text">
+          <h1>Nicholas Wieland</h1>
+          <p class="cv-title">Senior Backend Engineer / Tech Lead – Ruby, Elixir</p>
+          <address>
+            <ul class="contact">
+              <li>Mantova, Italy</li>
+              <li><a href="mailto:ngw@nofeed.org">ngw@nofeed.org</a></li>
+              <li><a href="tel:+393758091178">+39 375 809 1178</a></li>
+              <li><a href="https://github.com/ngw">github.com/ngw</a></li>
+              <li><a href="https://www.linkedin.com/in/nwieland/">linkedin.com/in/nwieland</a></li>
+              <li><a href="https://nofeed.org/resume/">nofeed.org/resume</a></li>
+            </ul>
+          </address>
+          <p class="availability">Open to contract (B2B) or permanent roles · Remote, CET · EU citizen</p>
+          <p class="web-only"><a class="pdf-link" href="cv.pdf">Download PDF</a></p>
         </div>
+        <img class="photo web-only" src="../img/resume/personal-240.jpg" width="120" height="120" alt="Photo of Nicholas Wieland">
       </header>
 
-      <section id='featured-projects' class='section'>
-        <h2 class='section-title'>Featured Projects</h2>
-        <p class='section-intro'>The two projects I'm proudest of and most actively building right now.</p>
-
-        <div class='featured-projects-grid'>
-          <article class='featured-project' itemscope itemtype="http://schema.org/Product">
-            <span class='featured-project-badge'>Founder &amp; Lead Developer</span>
-            <div class='featured-project-header'>
-              <img src="/img/resume/logo-torbido.svg" itemprop="image" alt="Torbido logo" class='featured-project-logo' />
-              <h3 itemprop="name">Torbido</h3>
-            </div>
-            <p class='featured-project-tagline'>The marketplace for Italian craft beer &amp; artisanal spirits</p>
-            <div itemprop="description">
-              <p>Built and launched a full marketplace from scratch: producer storefronts, checkout, commissions, review system, AI-powered recommendations, and geo (km 0) search. Targeting a €800M+ underserved Italian craft beverage market.</p>
-              <p>153+ PRs merged, 185+ commits, in production. Sole developer.</p>
-            </div>
-            <p class='featured-project-stack'><strong>Stack:</strong> Ruby on Rails 8, Hotwire, PostgreSQL, Stripe Connect, Meilisearch, Claude API</p>
-            <p class='featured-project-links'>
-              <a href="https://torbido.it" itemprop="url">torbido.it</a>
-            </p>
-          </article>
-
-          <article class='featured-project' itemscope itemtype="http://schema.org/Product">
-            <span class='featured-project-badge'>Creator &amp; Maintainer</span>
-            <div class='featured-project-header'>
-              <img src="/img/resume/logo-cicerone.svg" itemprop="image" alt="Cicerone logo" class='featured-project-logo' />
-              <h3 itemprop="name">Cicerone</h3>
-            </div>
-            <p class='featured-project-tagline'>Open-source, self-hosted batch recommender engine</p>
-            <div itemprop="description">
-              <p>Spun out of Torbido's recommendation needs into a standalone, generic open-source project: trains offline, writes top-K recommendations, and optionally serves them via a read-only HTTP API with an OpenAPI-documented interface and ops dashboard.</p>
-              <p>Hybrid strategies (collaborative filtering, item KNN, content cold-start fallback, popularity, latest) with priority or RRF fusion, plus policies, AutoML backtesting, and Prometheus metrics.</p>
-            </div>
-            <p class='featured-project-stack'><strong>Stack:</strong> Python, FastAPI, LightFM, PostgreSQL, Prometheus</p>
-            <p class='featured-project-links'>
-              <a href="https://cicerone.dev" itemprop="url">cicerone.dev</a> &middot;
-              <a href="https://github.com/torbido-hq/cicerone">GitHub</a>
-            </p>
-          </article>
-        </div>
+      <section aria-labelledby="summary">
+        <h2 id="summary">Summary</h2>
+        <p>Backend engineer and tech lead with 20+ years building and leading production systems in <strong>Ruby on Rails</strong>, <strong>Elixir/Phoenix</strong> and <strong>Python</strong>. Led legacy rewrites and microservices migrations (70% lower resource use at Chorally), raised test coverage from 16% to 40% at indigo.ai, led teams of up to 6, and delivered UK government services for the Cabinet Office, Ministry of Justice and Department for Education. Currently building Torbido, a Rails 8 marketplace, as founder and sole developer.</p>
       </section>
 
-      <section id='contact' class='section'>
-        <h2 class='section-title'>Contact</h2>
-        <div class='contact-grid' itemtype='http://schema.org/Person'>
-          <div class='contact-info'>
-            <dl class='info-list'>
-              <div class='info-item'>
-                <dt>Name</dt>
-                <dd itemprop="name">Nicholas George Wieland</dd>
-              </div>
-              <div class='info-item'>
-                <dt>Role</dt>
-                <dd itemprop="jobTitle">Software Developer</dd>
-              </div>
-              <div class='info-item'>
-                <dt>Location</dt>
-                <dd itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                  <span itemprop="addressLocality">Mantova</span>, <span itemprop="postalCode">46100</span>
-                </dd>
-              </div>
-              <div class='info-item'>
-                <dt>Phone</dt>
-                <dd itemprop="telephone"><a href="tel:+393758091178">+39 375 809 1178</a></dd>
-              </div>
-              <div class='info-item'>
-                <dt>Email</dt>
-                <dd><a href="mailto:ngw@nofeed.org" itemprop="email">ngw@nofeed.org</a></dd>
-              </div>
-              <div class='info-item'>
-                <dt>Web</dt>
-                <dd><a href="https://nofeed.org" itemprop="url">nofeed.org</a></dd>
-              </div>
-              <div class='info-item'>
-                <dt>GitHub</dt>
-                <dd><a href="https://github.com/ngw" itemprop="sameAs">github.com/ngw</a></dd>
-              </div>
-              <div class='info-item'>
-                <dt>LinkedIn</dt>
-                <dd><a href="https://www.linkedin.com/in/nwieland/" itemprop="sameAs">linkedin.com/in/nwieland</a></dd>
-              </div>
-            </dl>
-          </div>
-          <div class='contact-photo'>
-            <img src="/img/resume/personal.jpg" itemprop="image" alt="Photo of Nicholas Wieland" class='profile-img'/>
-          </div>
-        </div>
+      <section aria-labelledby="skills">
+        <h2 id="skills">Skills</h2>
+        <ul class="skills">
+          <li><strong>Languages:</strong> Ruby, Elixir, Python, JavaScript, HTML, CSS, Elm</li>
+          <li><strong>Frameworks:</strong> Ruby on Rails, Hotwire, Sinatra, Padrino, Grape, Karafka, Phoenix, FastAPI, Django</li>
+          <li><strong>Data:</strong> PostgreSQL, Redis, MySQL, MongoDB, SQL Server, Oracle, Elasticsearch, Meilisearch</li>
+          <li><strong>Cloud &amp; DevOps:</strong> AWS (EC2, S3, RDS), Kubernetes, Docker, Heroku, GitHub Actions, CircleCI, Jenkins, Linux</li>
+          <li><strong>Architecture:</strong> microservices, event streaming (Karafka, RabbitMQ), JSON:API, OpenAPI/Swagger, webhooks, background jobs</li>
+          <li class="web-only"><strong>Practices:</strong> legacy rewrites and migrations, automated testing, accessibility and usability, mentoring and hiring</li>
+          <li><strong>AI tooling:</strong> Claude Code and GitHub Copilot daily since early 2026; Claude API integration</li>
+        </ul>
       </section>
 
-      <section id='skills' class='section'>
-        <h2 class='section-title'>Skills</h2>
+      <section aria-labelledby="experience">
+        <h2 id="experience">Experience</h2>
 
-        <div class='skills-content'>
-          <p>Backend developer specializing in <strong>Ruby</strong>, <strong>Elixir</strong>, and <strong>Python</strong> (FastAPI), with active exploration of <strong>Rust</strong>. Also delivered frontend work using <strong>Elm</strong> for functional reactive programming.</p>
-          <p>Daily user of AI coding tools (<strong>Claude Code</strong>, GitHub Copilot) since early 2026 to build and ship production systems end to end.</p>
-          <p>Deep expertise in <strong>Ruby on Rails</strong> and <strong>Sinatra</strong>, with production experience in Padrino. Proficient in modern <strong>HTML</strong> and <strong>CSS</strong>, with a strong focus on accessibility standards and usability testing.</p>
-          <p>Broad database experience across MySQL, SQL Server, and Oracle, with <strong>PostgreSQL</strong> as primary choice. Comfortable with NoSQL, particularly <strong>Redis</strong> for caching and session management.</p>
-          <p>15+ years on macOS with deep Linux experience, including system administration when needed.</p>
-          <p>Deploying and managing infrastructure on <strong>AWS</strong>, including EC2, S3, RDS, and Kubernetes clusters.</p>
-          <p class='note'><strong>Best fit:</strong> Unix/Linux-based teams and infrastructure.</p>
-        </div>
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo-torbido.svg" width="103" height="35" alt="Torbido logo" loading="lazy">
+          <h3>Founder &amp; Lead Developer · <a href="https://torbido.it">Torbido</a></h3>
+          <p class="meta"><time datetime="2026-02">Feb 2026</time> – Present · Italy</p>
+          <ul>
+            <li>Built and launched a marketplace for Italian craft beer and artisanal spirits from scratch as sole developer: producer storefronts, checkout, commissions, reviews, AI-powered recommendations and geo (km 0) search.</li>
+            <li>In production, with 153+ PRs merged and 185+ commits.</li>
+            <li class="web-only">Extracted the recommendation engine into the open-source project Cicerone (see Open source).</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails 8, Hotwire, PostgreSQL, Stripe Connect, Meilisearch, Claude API</p>
+        </article>
 
+        <article class="job">
+          <h3>Software Engineer · <a href="https://indigo.ai">indigo.ai</a></h3>
+          <p class="meta"><time datetime="2025-09">Sep 2025</time> – <time datetime="2026-07">Jul 2026</time> · Remote</p>
+          <ul>
+            <li>Owned the test suite: audited, fixed and expanded it, raising coverage from 16% to 40% and strengthening the testing culture.</li>
+            <li>Moved on to core platform features on the Elixir/Phoenix stack.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Elixir, Phoenix</p>
+        </article>
+
+        <article class="job">
+          <h3>Freelance Developer · <a href="https://www.safersaldatura.com/index.html">Safer</a></h3>
+          <p class="meta"><time datetime="2026-02">Feb 2026</time> – <time datetime="2026-03">Mar 2026</time> · Contract · Suzzara, Italy</p>
+          <ul>
+            <li>Built a Django dashboard to manage work orders, tracking pieces produced and production time; in production.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Python, Django</p>
+        </article>
+
+        <article class="job">
+          <h3>Freelance Developer · Telecom Italia</h3>
+          <p class="meta"><time datetime="2025-09">Sep 2025</time> – <time datetime="2026-02">Feb 2026</time> · Contract · Italy</p>
+          <ul>
+            <li>Built a Python system using <a href="https://www.tenable.com/">Tenable</a> to check the security posture of company machines; helped deploy it to production.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Python, Tenable</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/chorally.png" width="140" height="32" alt="Chorally logo" loading="lazy">
+          <h3>Team Lead · <a href="https://chorally.com">Chorally</a></h3>
+          <p class="meta"><time datetime="2023-09">Sep 2023</time> – <time datetime="2025-09">Sep 2025</time> · Remote</p>
+          <ul>
+            <li>Led a team of 6 rebuilding the legacy architecture as Ruby microservices (Grape, Karafka event streaming) on Kubernetes.</li>
+            <li>Cut resource consumption by 70% and improved system stability and data consistency across all services.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby, Grape, Karafka, Kubernetes, Docker</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/ifad.png" width="73" height="40" alt="IFAD logo" loading="lazy">
+          <h3>Lead Backend Engineer · <a href="https://www.ifad.org">IFAD</a></h3>
+          <p class="meta"><time datetime="2023-05">May 2023</time> – <time datetime="2023-09">Sep 2023</time> · Contract via NoFeed Ltd · Remote</p>
+          <ul>
+            <li>Backend lead for OPEN, a Ruby on Rails procurement management system for IFAD's international operations.</li>
+            <li>Architected multi-locale (English, French, Spanish) and multi-currency support.</li>
+            <li class="web-only">Built a help system (backend and frontend) and file uploads with Active Storage, improved the internal journal system and fixed critical backend bugs.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Active Storage</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_cabinet.png" width="64" height="40" alt="Cabinet Office logo" loading="lazy">
+          <h3>Lead Backend Engineer · <a href="https://www.gov.uk/government/organisations/cabinet-office">Cabinet Office</a></h3>
+          <p class="meta"><time datetime="2023-02">Feb 2023</time> – <time datetime="2023-05">May 2023</time> · Contract via NoFeed Ltd · Remote</p>
+          <ul>
+            <li>Built the Data Catalogue web application from scratch, leading and mentoring a team of 3 junior engineers.</li>
+            <li class="web-only">Designed JSON API endpoints for ministries to upload data catalogues, with background jobs synchronising HTTP endpoints.</li>
+            <li>Containerised the application and set up CI/CD to Heroku; the MVP secured funding for continued development.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, Heroku</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_mara.png" width="30" height="40" alt="Mara logo" loading="lazy">
+          <h3>Lead Backend Engineer · <a href="https://mara.xyz">Mara</a></h3>
+          <p class="meta"><time datetime="2022-10">Oct 2022</time> – <time datetime="2023-01">Jan 2023</time> · Contract via NoFeed Ltd · Remote</p>
+          <ul>
+            <li>Backend architect for the MVP launch (web, iOS, Android) bringing cryptocurrency wallet access to African markets.</li>
+            <li>Built the administration service (Rails with SSO) and the user management service, communicating over HTTP APIs.</li>
+            <li class="web-only">Scaled infrastructure with the DevOps team during rapid user growth.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, Grape, PostgreSQL, Docker, AWS</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/sh.png" width="40" height="40" alt="Soho House logo" loading="lazy">
+          <h3>Lead Backend Engineer · <a href="https://www.sohohouse.com/">Soho House</a></h3>
+          <p class="meta"><time datetime="2022-02">Feb 2022</time> – <time datetime="2022-09">Sep 2022</time> · Contract via NoFeed Ltd · Remote</p>
+          <ul>
+            <li>Lead backend engineer on the Connect team: profile-service, checkin-service, hook and other microservices.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, RabbitMQ, Kubernetes</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/doe.svg" width="40" height="40" alt="Department for Education logo" loading="lazy">
+          <h3>Lead Backend Engineer · <a href="https://www.gov.uk/government/organisations/department-for-education">Department for Education</a></h3>
+          <p class="meta"><time datetime="2021-10">Oct 2021</time> – <time datetime="2022-01">Jan 2022</time> · Contract via NoFeed Ltd · Remote</p>
+          <ul>
+            <li>Lead backend engineer on the <a href="https://github.com/DFE-Digital/early-careers-framework">Early Career Framework</a> app for teacher professional development in England.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, GitHub Actions</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/funding-circle.png" width="124" height="40" alt="Funding Circle logo" loading="lazy">
+          <h3>Lead Backend Engineer · <a href="https://www.fundingcircle.com/">Funding Circle</a></h3>
+          <p class="meta"><time datetime="2021-02">Feb 2021</time> – <time datetime="2021-09">Sep 2021</time> · Contract via NoFeed Ltd · Remote</p>
+          <ul>
+            <li>Led dependency management and security vulnerability remediation across multiple production applications.</li>
+            <li>Drove the cloud migration: containerised legacy applications with Docker, added security scanning pipelines and deployed to AWS with CI/CD (CircleCI, Jenkins).</li>
+            <li>Maintained several internal Python services.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, Python, AWS, Docker, CircleCI, Jenkins</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/lawbite.jpg" width="73" height="40" alt="Lawbite logo" loading="lazy">
+          <h3>Lead Backend Engineer · <a href="https://lawbite.co.uk/">Lawbite</a></h3>
+          <p class="meta"><time datetime="2020-05">May 2020</time> – <time datetime="2021-02">Feb 2021</time> · Remote</p>
+          <ul>
+            <li>Led the backend of a complete platform rewrite, architecting a microservices-based solution.</li>
+            <li>Designed and built multiple microservices and a custom CMS admin panel; worked with external teams on the portal rebuild.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, AWS, Kubernetes</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/moj.png" width="51" height="40" alt="Ministry of Justice logo" loading="lazy">
+          <h3>Senior Developer · <a href="https://www.justice.gov.uk/">Ministry of Justice</a></h3>
+          <p class="meta"><time datetime="2019-08">Aug 2019</time> – <time datetime="2020-02">Feb 2020</time> · London, UK</p>
+          <ul>
+            <li>Sole backend developer for the <a href="https://github.com/ministryofjustice/hmpps-book-secure-move-api">Book a Secure Move API</a>, managing prisoner transport logistics across the UK prison system.</li>
+            <li>Normalised complex data structures; built document uploads (Active Storage) and webhooks for real-time event notifications.</li>
+            <li class="web-only">Documented the API with Swagger, compliant with the JSON:API specification.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, AWS, Kubernetes, Swagger, JSON:API</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/vzaar.png" width="87" height="40" alt="Vzaar logo" loading="lazy">
+          <h3>Tech Lead · <a href="https://vzaar.com/">Vzaar</a></h3>
+          <p class="meta"><time datetime="2019-01">Jan 2019</time> – <time datetime="2019-08">Aug 2019</time> · London, UK</p>
+          <ul>
+            <li>Tech lead on the video hosting platform; planned and executed the microservices migration after the <a href="https://www.dacast.com">Dacast</a> merger.</li>
+            <li class="web-only">Balanced legacy maintenance with new feature development.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, AWS, Serverless Framework</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/utelier.png" width="41" height="40" alt="Utelier logo" loading="lazy">
+          <h3>Tech Lead · <a href="https://utelier.com/">Utelier</a></h3>
+          <p class="meta"><time datetime="2017-12">Dec 2017</time> – <time datetime="2018-12">Dec 2018</time> · London, UK</p>
+          <ul>
+            <li class="web-only">Evaluated the existing application and led the move of development from Ljubljana to London.</li>
+            <li>Led a team of 3, including recruiting and mentoring a junior developer.</li>
+            <li>Chose the stack (Rails + <a href="https://elm-lang.org">Elm</a>) and rebuilt the platform and its AWS infrastructure, with guidance from <a href="https://www.scalefactory.com/">The Scale Factory</a>.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, Elm, AWS</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/mGage_Vivial_logo_rgb.png" width="111" height="40" alt="mGage logo" loading="lazy">
+          <h3>Senior Developer · mGage, a Vivial company</h3>
+          <p class="meta"><time datetime="2016-08">Aug 2016</time> – <time datetime="2017-11">Nov 2017</time> · London, UK</p>
+          <ul>
+            <li>Payments team: built a unified administration interface for all company services from scratch with Phoenix and PostgreSQL.</li>
+            <li>Built the auth layer for Ruby API endpoints and an Elixir library linking the Phoenix admin app to Ruby microservices.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Elixir, Phoenix, Ruby on Rails, PostgreSQL</p>
+        </article>
       </section>
 
-      <section id='education' class='section'>
-        <h2 class='section-title'>Education</h2>
-        <div class='education-content'>
-          <p>Liceo Linguistico Redentore</p>
-        </div>
+      <section aria-labelledby="open-source">
+        <h2 id="open-source">Open source</h2>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo-cicerone.svg" width="128" height="40" alt="Cicerone logo" loading="lazy">
+          <h3>Creator &amp; Maintainer · <a href="https://cicerone.dev">Cicerone</a></h3>
+          <p class="meta"><time datetime="2026-06">Jun 2026</time> – Present · <a href="https://github.com/torbido-hq/cicerone">github.com/torbido-hq/cicerone</a></p>
+          <ul>
+            <li>Open-source, self-hosted batch recommender engine spun out of Torbido: trains offline, writes top-K recommendations and serves them through a read-only, OpenAPI-documented HTTP API with an ops dashboard.</li>
+            <li class="web-only">Hybrid strategies (collaborative filtering, item KNN, content cold-start fallback, popularity, latest) with priority or RRF fusion, plus policies, AutoML backtesting and Prometheus metrics.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Python, FastAPI, LightFM, PostgreSQL, Prometheus</p>
+        </article>
+
+        <article class="job web-only">
+          <img class="logo" src="../img/resume/logo_pwp.png" width="40" height="40" alt="PetsWantPats logo" loading="lazy">
+          <h3>Founder · PetsWantPats</h3>
+          <p class="meta"><time datetime="2015-09">Sep 2015</time> – Present · Italy</p>
+          <ul>
+            <li>Self-funded nonprofit search engine where dog shelters list dogs for adoption, helping people find the right dog to adopt.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, HAML, JavaScript, PostgreSQL, Elasticsearch</p>
+        </article>
       </section>
 
-      <section id='experience' class='section'>
-        <h2 class='section-title'>Work Experience</h2>
-        
-        <nav class='positions-index'>
-          <a href='#job-indigo'>indigo.ai</a>
-          <a href='#job-safer'>Safer</a>
-          <a href='#job-tenable'>Telecom Italia</a>
-          <a href='#job-chorally'>Chorally</a>
-          <a href='#job-ifad'>IFAD</a>
-          <a href='#job-cabinet'>Cabinet Office</a>
-          <a href='#job-mara'>Mara</a>
-          <a href='#job-soho'>Soho House</a>
-          <a href='#job-dfe'>Dept. Education</a>
-          <a href='#job-fc'>Funding Circle</a>
-          <a href='#job-lawbite'>Lawbite</a>
-          <a href='#job-moj'>Ministry of Justice</a>
-          <a href='#job-vzaar'>Vzaar</a>
-          <a href='#job-utelier'>Utelier</a>
-          <a href='#job-mgage'>mGage</a>
-          <a href='#job-fool'>The Fool</a>
-          <a href='#job-antonioli'>Antonioli</a>
-          <a href='#job-sportboom'>Sportboom</a>
-          <a href='#job-stylejam'>StyleJam</a>
-          <a href='#job-zooppa'>Zooppa</a>
-          <a href='#job-hotchalk'>Hotchalk</a>
-          <a href='#job-assembla'>Assembla</a>
-          <a href='#job-apogeo'>Apogeo</a>
-          <a href='#job-consultant'>Consultant</a>
-          <a href='#job-neato'>Neato</a>
-        </nav>
-        
-        <div class='timeline'>
+      <section aria-labelledby="earlier">
+        <h2 id="earlier">Earlier experience</h2>
 
-        <article class='job-card' id='job-indigo'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Software Engineer</h4>
-            <p><a href="https://indigo.ai" itemprop="name">indigo.ai</a></p>
-            <p><time datetime="2025-09-01T00:00:00+00:00">September 2025</time> - <time datetime="2026-07-31T00:00:00+00:00">July 2026</time></p>
-            <p itemprop="address">
-              <span>Smart working</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div>
-                    <p>Joined as the engineer responsible for the test suite: audited, fixed, and expanded test coverage across the codebase, raising it from <strong>16% to 40%</strong> and helping establish a stronger testing culture within the team.</p>
-                    <p>Subsequently moved onto major platform features, contributing to core product development on the <strong>Elixir / Phoenix</strong> stack.</p>
-                    <p><strong>Stack:</strong> Elixir, Phoenix</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_ec.png" width="40" height="40" alt="EngagementConsole logo" loading="lazy">
+          <h3>Developer · The Fool s.r.l.</h3>
+          <p class="meta"><time datetime="2014-09">Sep 2014</time> – <time datetime="2016-07">Jul 2016</time> · Milan, Italy</p>
+          <p class="brief">Built EngagementConsole, a social content moderation dashboard used by Banca Mediolanum, Radio24 and Volkswagen.</p>
+          <div class="web-only">
+            <ul>
+              <li>EngagementConsole collected user-generated content from Twitter, Facebook, Instagram, Disqus and WordPress so moderators and managers could classify, analyse and manage it.</li>
+              <li>Also planned, built, deployed and maintained other web applications and data extraction services for digital asset management, copyright protection and reputation monitoring.</li>
+            </ul>
+            <p class="stack"><strong>Stack:</strong> Ruby, Ruby on Rails, Sinatra, JavaScript, MySQL, MongoDB, LMDB, GDBM, Elasticsearch</p>
           </div>
         </article>
 
-        <article class='job-card' id='job-safer'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Freelance Developer</h4>
-            <p><a href="https://www.safersaldatura.com/index.html" itemprop="name url">Safer</a></p>
-            <p><time datetime="2026-02-01T00:00:00+00:00">February 2026</time> - <time datetime="2026-03-31T00:00:00+00:00">March 2026</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Suzzara, Italy</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Built a <strong>Django</strong> dashboard for Safer to manage work orders, tracking how many pieces were produced and in what time. Now in production.</p>
-                    <p><strong>Stack:</strong> Python, Django</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_antonioli.png" width="40" height="40" alt="Antonioli logo" loading="lazy">
+          <h3>Lead Developer · <a href="https://www.antonioli.eu/">Antonioli.eu</a></h3>
+          <p class="meta"><time datetime="2014-04">Apr 2014</time> – <time datetime="2014-08">Aug 2014</time> · Milan, Italy</p>
+          <p class="brief">Sole developer of a new worldwide Rails/Spree e-commerce site with multiple tax regimes; maintained the legacy Rails 2.0 site.</p>
+          <div class="web-only">
+            <ul>
+              <li>Built a thorough admin interface for non-technical staff to manage products and the sale process, coordinating with external developers.</li>
+              <li>The legacy codebase had been built up by many contributors over more than 6 years.</li>
+            </ul>
           </div>
         </article>
 
-        <article class='job-card' id='job-tenable'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Freelance Developer</h4>
-            <p><span itemprop="name">Telecom Italia</span></p>
-            <p><time datetime="2025-09-01T00:00:00+00:00">September 2025</time> - <time datetime="2026-02-28T00:00:00+00:00">February 2026</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Italy</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Developed a <strong>Python</strong> system integrating with <a href="https://www.tenable.com/">Tenable</a> to check the security posture of the company's machines, and helped deploy it to production.</p>
-                    <p><strong>Stack:</strong> Python, Tenable</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_sportboom.png" width="40" height="40" alt="Sportboom logo" loading="lazy">
+          <h3>Developer · Sportboom</h3>
+          <p class="meta"><time datetime="2012-05">May 2012</time> – <time datetime="2013-03">Mar 2013</time> · Milan, Italy</p>
+          <p class="brief">Ported a marketplace for sport enthusiasts from PHP/MySQL to Rails/PostgreSQL and drove its SEO strategy; hired and managed a team of 2 (designer, junior developer).</p>
+          <div class="web-only">
+            <p class="stack"><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Bootstrap</p>
           </div>
         </article>
 
-        <article class='job-card' id='job-chorally'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Team Lead</h4>
-            <p><a href="https://chorally.com" itemprop="name">Chorally</a></p>
-            <p><time datetime="2023-09-10T00:00:00+00:00">10 September 2023</time> - <time datetime="2025-09-01T00:00:00+00:00">September 2025</time></p>
-            <p itemprop="address">
-              <span>Smart working</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Led complete rebuild of legacy system architecture, migrating to microservices using <strong>Golang</strong> and <strong>Ruby</strong> (Grape framework with Karafka event streaming) deployed on <strong>Kubernetes</strong>.</p>
-                    <p>Delivered significant performance improvements: reduced resource consumption by 70%, improved system stability, and enhanced data consistency across all services.</p>
-                    <p><strong>Stack:</strong> Go, Ruby, Grape, Karafka, Kubernetes, Docker</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/chorally.png" height='90px' itemprop="image" alt="Chorally" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_stylejam.png" width="107" height="40" alt="StyleJam logo" loading="lazy">
+          <h3>Founder &amp; Developer · StyleJam</h3>
+          <p class="meta"><time datetime="2011-01">Jan 2011</time> – <time datetime="2012-02">Feb 2012</time> · Seattle, WA</p>
+          <p class="brief">Sole founder of a seed-funded (H-Farm) design showcase platform, covering development, sales and operations.</p>
+          <div class="web-only">
+            <ul>
+              <li>A reinterpretation of <a href="http://www.csszengarden.com/">CSS Zen Garden</a> where designers styled a shared page with their own data and CSS, similar to <a href="https://carbonmade.com/">Carbonmade</a>.</li>
+              <li>Handled development, PR, marketing, sales, accounting and system administration.</li>
+            </ul>
+            <p class="stack"><strong>Stack:</strong> Ruby on Rails, MongoDB, S3, Goliath</p>
           </div>
-        </div>
-
-        <div class='job-card' id='job-ifad'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
-            <p><a href="https://ifad.org" itemprop="name">IFAD</a></p>
-            <p><time datetime="2023-05-29T00:00:00+00:00">29 May 2023</time> - <time datetime="2023-09-10T00:00:00+00:00">10 September 2023</time></p>
-            <p itemprop="address">
-              <span>Smart working</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Backend lead for OPEN, a complex <strong>Ruby on Rails</strong> procurement management system serving IFAD's international operations.</p>
-                    <p>Key contributions: built comprehensive help system (backend + frontend), implemented file upload functionality with ActiveStorage, enhanced internal journal system, and resolved critical backend bugs impacting system reliability.</p>
-                    <p>Architected multi-locale support (English, French, Spanish) with multi-currency handling for international operations across different regions.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, ActiveStorage</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/ifad.png" height='90px' itemprop="image" alt="IFAD" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-cabinet'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
-            <p><a href="https://www.gov.uk/government/organisations/cabinet-office" itemprop="name">Cabinet Office</a></p>
-            <p><time datetime="2023-02-01T00:00:00+00:00">1 February 2023</time> - <time datetime="2023-05-26T00:00:00+00:00">26 May 2023</time></p>
-            <p itemprop="address">
-              <span>Smart working</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Built Data Catalogue web application from scratch, leading a development team of junior engineers.</p>
-                    <p>Designed and implemented JSON API endpoints enabling ministries to upload data catalogues, with automated background job system for HTTP endpoint synchronization. Containerized entire application and established CI/CD pipeline for Heroku deployment.</p>
-                    <p>Provided technical mentorship to junior developers throughout the project lifecycle. MVP delivered successfully, securing funding for continued development.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, Heroku</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/logo_cabinet.png" height='90px' itemprop="image" alt="Cabinet" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-mara'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
-            <p><a href="https://mara.xyz" itemprop="name">Mara</a></p>
-            <p><time datetime="2022-10-11T00:00:00+00:00">11 October 2022</time> - <time datetime="2023-01-10T00:00:00+00:00">10 January 2023</time></p>
-            <p itemprop="address">
-            <span>Smart working</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Backend architect for MVP launch across web, iOS, and Android platforms, bringing cryptocurrency wallet access to African markets.</p>
-                    <p>Developed critical microservices including administration service (Rails with SSO authentication) and user management service. Orchestrated service-to-service communication via HTTP APIs.</p>
-                    <p>Scaled infrastructure in response to rapid user growth, collaborating with the DevOps team to handle increased traffic loads.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, Grape, PostgreSQL, Docker, AWS</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/logo_mara.png" height='90px' itemprop="image" alt="Mara" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-soho'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
-            <p><a href="https://www.sohohouse.com/en-us/" itemprop="name">Soho House</a></p>
-            <p><time datetime="2022-02-01T00:00:00+00:00">1 February 2022</time> - <time datetime="2022-09-30T00:00:00+00:00">30 September 2022</time></p>
-            <p itemprop="address">
-              <span>Smart working</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Backend developer on the Connect team, contributing to multiple microservices across Soho House's distributed architecture, including <em>profile-service</em>, <em>checkin-service</em>, and <em>hook</em>.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, RabbitMQ, Kubernetes</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/sh.png" height='90px' itemprop="image" alt="Soho House" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-dfe'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
-            <p><a href="https://www.gov.uk/government/organisations/department-for-education" itemprop="name">Department for Education</a></p>
-            <p><time datetime="2021-10-01T00:00:00+00:00">1 October 2021</time> - <time datetime="2022-01-28T00:00:00+00:00">28 January 2022</time></p>
-            <p itemprop="address">
-            <span>Smart working</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Core contributor to the <a href='https://github.com/DFE-Digital/early-careers-framework'>Early Career Framework</a> application, supporting teacher professional development across England.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Docker, GitHub Actions</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/doe.svg" height='90px' itemprop="image" alt="Department of Education logo" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-fc'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
-            <p><a href="https://www.fundingcircle.com/" itemprop="name">Funding Circle</a></p>
-            <p><time datetime="2021-02-22T00:00:00+00:00">22 February 2021</time> - <time datetime="2021-09-30T00:00:00+00:00">30 September 2021</time></p>
-            <p itemprop="address">
-            <span>Smart working</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Led dependency management and security vulnerability remediation across multiple production applications.</p>
-                    <p>Orchestrated cloud migration strategy: containerized legacy applications with Docker, implemented security scanning pipelines, and deployed to AWS infrastructure with CI/CD automation via CircleCI and Jenkins.</p>
-                    <p>Maintained several internal services written in <strong>Python</strong>.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, Python, AWS, Docker, CircleCI, Jenkins</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/funding-circle.png" height='90px' itemprop="image" alt="Funding Circle logo" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-lawbite'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Lead Backend Engineer</h4>
-            <p><a href="https://lawbite.co.uk/" itemprop="name">Lawbite</a></p>
-            <p><time datetime="2020-05-11T00:00:00+00:00">11th May 2020</time> - <time datetime="2021-02-19T00:00:00+00:00">19 February 2021</time></p>
-            <p itemprop="address">
-            <span>Smart working</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Lead backend developer for complete platform rewrite, architecting microservices-based solution.</p>
-                    <p>Designed and built multiple microservices, developed custom CMS administration panel, and collaborated with external teams on main portal rebuild.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Kubernetes</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/lawbite.jpg" width='150px' height='90px' itemprop="image" alt="Lawbite logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-moj'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Senior Developer</h4>
-            <p><a href="https://www.justice.gov.uk/" itemprop="name">Ministry of Justice</a></p>
-            <p><time datetime="2019-08-26T00:00:00+00:00">26th August 2019</time> - <time datetime="2020-02-22T00:00:00+00:00">22nd February 2020</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">102 Petty France, London, United Kingdom</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Solo backend developer for <a href='https://github.com/ministryofjustice/hmpps-book-secure-move-api'>Book a Secure Move API</a>, managing prisoner transport logistics across UK prison system.</p>
-                    <p>Normalized complex data structures, implemented document upload system with ActiveStorage, and built webhook infrastructure for real-time event notifications.</p>
-                    <p>Gained expertise in API documentation with Swagger and JSON API specification compliance.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Kubernetes, Swagger, JSON API</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/moj.png" width='150px' height='90px' itemprop="image" alt="Ministry of Justice logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-vzaar'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Tech Lead</h4>
-            <p><a href="https://vzaar.com/" itemprop="name">Vzaar</a></p>
-            <p><time datetime="2019-01-02T00:00:00+00:00">2nd January 2019</time> - <time datetime="2019-08-01T00:00:00+00:00">August 2019</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">London, United Kingdom</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Tech lead maintaining video hosting platform and architecting microservices migration following <a href="https://dacast.com">Dacast</a> merger.</p>
-                    <p>Balanced legacy application maintenance with new feature development while planning and executing service decomposition strategy.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, AWS, Serverless Framework</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/vzaar.png" itemprop="image" alt="Vzaar logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-utelier'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Tech Lead</h4>
-            <p><a href="https://utelier.com/" itemprop="name">Utelier</a></p>
-            <p><time datetime="2017-12-01T00:00:00+00:00">1st December 2017</time> - <time datetime="2018-12-30T00:00:00+00:00">30th December 2018</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">London, United Kingdom</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Evaluated existing application and led development relocation from Ljubljana to London.</p>
-                    <p>Recruited and mentored junior developer, selected modern technology stack (Rails + Elm), and rebuilt entire platform including AWS infrastructure with guidance from <a href="https://www.scalefactory.com/">The Scale Factory</a> engineers.</p>
-                    <p>Implemented functional reactive programming with <a href='https://elm-lang.org'>Elm</a> on the frontend, demonstrating ability to adopt emerging technologies.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, Elm, AWS</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/utelier.png" itemprop="image" alt="Utelier logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-mgage'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Senior Developer</h4>
-            <p><a href="http://www.mgage.com/" itemprop="name">mGage, a Vivial company</a></p>
-            <p><time datetime="2016-08-01T00:00:00+00:00">1st August 2016</time> - <time datetime="2017-11-30T00:00:00+00:00">30th November 2017</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">London, United Kingdom</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Payments team member developing unified administration interface for all company services, built from scratch with Phoenix Framework and PostgreSQL.</p>
-                    <p>Built authentication layer for Ruby API endpoints and developed Elixir library enabling cross-service communication between Phoenix admin application and Ruby microservices.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, Elixir, Phoenix Framework, PostgreSQL</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/mGage_Vivial_logo_rgb.png" itemprop="image" alt="mGage logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-fool'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-
-            <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
-            <p><a href="http://thefool.it" itemprop="name">The Fool s.r.l.</a></p>
-            <p><time datetime="2014-09-01T00:00:00+00:00">1st September 2014</time> - <time datetime="2016-07-15T00:00:00+00:00">15th July 2016</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Milan, Italy</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <p>Developed several projects spanning digital asset management, copyright protection, and personal reputation monitoring.</p>
-              </div>
-
-              <div itemtype="http://schema.org/Product">
-                <div >
-                  <p>
-                  The most prominent, <a href="http://ec.reputationmonitor.it/" itemprop="url"><span itemprop="name">EngagementConsole</span></a>,
-                  <span itemprop="description">
-                                  is a gateway layer that collects user-generated content from digital properties (Twitter, Facebook, Instagram,
-                                  Disqus, Wordpress) managed by a given customer, presenting it via a customized dashboard where moderators and managers can classify, analyze, and manage
-                                  all the content.
-                  </span>
-                  </p>
-
-                  <p>
-                  It's used by companies including <a href='https://www.bancamediolanum.it/'>Banca Mediolanum </a>,
-                  <a href='http://www.radio24.ilsole24ore.com/'> Radio24 </a>, and <a href='http://en.volkswagen.com/en.html'>Volkswagen</a> to manage their online assets.
-                  </p>
-                </div>
-                <div >
-                  <img src="/img/resume/logo_ec.png" itemprop="image" alt="Engagement Console logo"  class="no-print" />
-                </div>
-
-                <div>
-                  <p>Also planned, developed, maintained, and deployed several other web applications and data extraction tools and services at <a href="http://thefool.it">The Fool s.r.l.</a></p>
-
-                  <p>Primarily worked in <a href='https://www.ruby-lang.org/'>Ruby</a>, both plain and with frameworks such as <a href='http://rubyonrails.org/'>RubyOnRails</a>
-                  and <a href='http://www.sinatrarb.com/'>Sinatra</a>, with some work in <a href='https://www.javascript.com/'>Javascript</a>.<br>
-                  Data stores included <a href='https://www.mysql.com/'>MySQL</a> and <a href='https://www.mongodb.org/'>MongoDB</a> for larger projects, and smaller embedded
-                  engines like <a href='http://symas.com/mdb/'>LMDB</a> or <a href='http://www.gnu.org.ua/software/gdbm/'>GDBM</a> for others.<br>
-                  Many projects integrated with <a href='https://www.elastic.co/'>Elastic Search</a>.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-antonioli'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Lead Developer</h4>
-            <p><a href='https://www.antonioli.eu/en/IT' itemprop='name'>Antonioli.eu</a></p>
-            <p><time datetime="2014-04-01T00:00:00+00:00">1st April 2014</time> - <time datetime="2014-08-29T00:00:00+00:00">29th August 2014</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Milan, Italy</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Sole developer on Antonioli's new e-commerce site, coordinating with external developers on a complex, worldwide platform handling multiple tax rates and regulations, plus a thorough admin interface
-                      <span itemprop="description">for non-technical staff to manage products and the sale process.</span>
-                    </p>
-
-                    <p>Also maintained their legacy website, a Ruby on Rails 2.0 codebase built up by many contributors over more than 6 years.</p>
-
-                    <p>The new site was built with <a href='https://www.ruby-lang.org/'>Ruby</a> and <a href='http://rubyonrails.org/'>RubyOnRails</a>, using the
-                    <a href="https://spreecommerce.com/">Spree framework</a>.</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/logo_antonioli.png" itemprop="image" alt="Antonioli logo" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-sportboom'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
-            <p><a href="http://it.sportboom.com/" itemprop="name url">Sportboom</a></p>
-            <p><time datetime="2012-05-01T00:00:00+00:00">1st May 2012</time> - <time datetime="2013-03-29T00:00:00+00:00">29th March 2013</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Milan, Italy</span>
-            </p>
-
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Built <a href="http://it.sportboom.com/" itemprop="url"><span itemprop="name">Sportboom</span></a>, a marketplace for sport enthusiasts, porting the site from PHP/MySQL to Ruby on Rails/PostgreSQL and driving SEO strategy for organic growth.</p>
-                    <p>Hired and managed a designer and junior developer to support delivery.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, PostgreSQL, Bootstrap</p>
-                  </div>
-                  <div >
-                    <img src="/img/resume/logo_sportboom.png" itemprop="image" alt="Sportboom logo" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-stylejam'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">BDFL</h4>
-            <p><a href="http://stylej.am/" itemprop="name url" class="dead">StyleJam</a></p>
-            <p><time datetime="2011-01-03T00:00:00+00:00">3rd January 2011</time> - <time datetime="2012-02-17T00:00:00+00:00">17th February 2012</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Seattle, WA</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div>
-                    <p>Founded <a href="http://stylej.am" class="dead" itemprop="url"><span itemprop="name">StyleJam</span></a> on seed funding from <a href="http://www.h-farm.com/">H-Farm</a>: a reinterpretation of <a href="http://www.csszengarden.com/">CSS Zen Garden</a> where designers styled a shared page with their own data and CSS, similar to <a href="https://carbonmade.com/">Carbonmade</a>.</p>
-                    <p>Sole founder handling development, PR, marketing, sales, accounting, and system administration.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, MongoDB, S3, Goliath.io</p>
-                  </div>
-                  <div>
-                    <img src="/img/resume/logo_stylejam.png" itemprop="image" alt="StyleJam logo" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-zooppa'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">CTO</h4>
-            <p><a href="http://zooppa.com/" itemprop="name url">Zooppa</a></p>
-            <p><time datetime="2007-04-02T00:00:00+00:00">2nd April 2007</time> - <time datetime="2010-12-24T00:00:00+00:00">24th December 2010</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Treviso, Italy</span>,<br />
-            <span itemprop="addressLocality">Seattle, WA</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Built and owned the architecture of <a href="http://zooppa.com" itemprop="url"><span itemprop="name">Zooppa</span></a> from the ground up, a crowdsourcing platform connecting brands with a creative community of 350,000+ members for video and graphic design campaigns.</p>
-                    <p>Managed client relationships with Google, Microsoft, Sun, AT&T, Samsung, and Fiat, and built the development team from scratch (developers, designers, sysadmins).</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, MySQL</p>
-                  </div>
-
-                  <div >
-                    <img src="/img/resume/logo_zooppa.png" itemprop="image" alt="Zooppa logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-hotchalk'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
-            <p><a href="http://www.hotchalk.com/" itemprop="name url">Hotchalk</a></p>
-            <p><time datetime="2006-10-02T00:00:00+00:00">2nd October 2006</time> - <time datetime="2007-03-30T00:00:00+00:00">30th March 2007</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Campbell, CA</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Helped launch <a href="http://www.hotchalk.com/" itemprop="url"><span itemprop="name">Hotchalk</span></a>, rewriting a Java application in Ruby on Rails with full test coverage, enabling a low-defect release that grew to 30k+ registered users on day one.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, MySQL</p>
-                  </div>
-
-                  <div >
-                    <img src="/img/resume/logo_hotchalk.png" itemprop="image" alt="HotChalk logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-assembla'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
-            <p><a href="http://www.assembla.com/" itemprop="name url">Assembla</a></p>
-            <p><time datetime="2006-03-01T00:00:00+00:00">1st March 2006</time> - <time datetime="2006-09-29T00:00:00+00:00">29th September 2006</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Needham, MA</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Contributed to the initial implementation of <a href="http://www.assembla.com/" itemprop="url"><span itemprop="name">Breakout</span></a>, a precursor to GitHub for hosting source code and managing development teams via SVN and Trac.</p>
-                    <p><strong>Stack:</strong> Ruby on Rails, MySQL, Subversion, Trac</p>
-                  </div>
-
-                  <div >
-                    <img src="/img/resume/logo_assembla.png" itemprop="image" alt="Assembla logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-apogeo'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Author</h4>
-            <p><a href="http://www.apogeonline.com/" itemprop="name url">Apogeo</a></p>
-            <p><time datetime="2006-05-01T00:00:00+00:00">1st May 2006</time> - <time datetime="2006-09-29T00:00:00+00:00">29th September 2006</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Milan, Italy</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Authored the database chapter of <span itemprop="name">Ruby per applicazioni web</span>, the first Italian-language book about Ruby, still referenced in Italian IT communities today.</p>
-                  </div>
-
-                  <div >
-                    <img src="/img/resume/logo_rpaw.png" itemprop="image" alt="Ruby per Applicazioni Web cover"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-consultant'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Independent Consultant</h4>
-            <p itemprop="name">Freelance / Various Clients</p>
-            <p><time datetime="2003-00-00T00:00:00+00:00">2003</time> - <time datetime="2005-00-00T00:00:00+00:00">2005</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Italy</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>Worked as an independent consultant for Italian companies, building a <strong>Python</strong> + <a href="http://www.zope.org/">Zope</a> website for <a href="https://www.mps.it/">Monte dei Paschi di Siena</a>, and a Fax Server client (<strong>Python</strong> + <strong>wxPython</strong>) for <a href="https://www.tim.it/">Telecom</a>.</p>
-                    <p><strong>Stack:</strong> Python, Zope, wxPython, PHP, Java</p>
-                  </div>
-
-                  <div >
-                    <img src="/img/resume/logo_hacker.png" itemprop="image" alt="Hacker logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='job-card' id='job-neato'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">Developer</h4>
-            <p><a href="http://www.neato.com/" itemprop="name url">Neato Europe</a></p>
-            <p><time datetime="2002-00-00T00:00:00+00:00">2002</time> - <time datetime="2003-00-00T00:00:00+00:00">2003</time></p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Mantua, Italy</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>First professional role: built the e-commerce site (ported from ASP3 to PHP) and CRM system, and administered the company's FreeBSD servers.</p>
-                    <p><strong>Stack:</strong> PHP, Zope, FreeBSD</p>
-                  </div>
-
-                  <div >
-                    <img src="/img/resume/logo_neato.png" itemprop="image" alt="Neato logo"  class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h3>Other projects</h3>
-
-        <div class='job-card'>
-          <div itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <h4 class='jobtitle' itemprop="jobTitle">CEO</h4>
-            <p><a href="http://petswantpats.com/" itemprop="name url" class="dead">PetsWantPats</a></p>
-            <p><time datetime="2015-09-01T00:00:00+00:00">1st September 2015</time> - Present</p>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="addressLocality">Italy</span>
-            </p>
-            <div itemprop="description" class='description'>
-              <div class="job-content">
-                <div itemtype="http://schema.org/Product">
-                  <div >
-                    <p>A lifelong love of animals, dogs especially, motivated me to build something to help stray dogs find a new home.</p>
-
-                    <p>Developed the <a href="http://petswantpats.com" itemprop="url" class="dead"><span itemprop="name">PetsWantPats</span></a> website to help people
-                                                find the perfect dog to adopt.<br />
-                                                <span itemprop="description">PetsWantPats is a search engine that lets dog shelters list their dogs for adoption.</span></p>
-
-                    <p>Self-funded and run as a nonprofit.</p>
-
-                    <p>The website is in <a href='http://rubyonrails.org/'>RubyOnRails</a> with some <a href='https://www.javascript.com/'>Javascript</a>.
-                    I wanted to experiment a bit and learn in the process, that's why the whole frontend is in <a href="http://haml.info/">HAML</a>.<br />
-                                                                                                                        The DBMS is <a href="http://www.postgresql.org/">PostgreSQL</a> and the search engine is built around
-                                                                                                                        <a href='https://www.elastic.co/'>Elastic Search</a>.</p>
-                  </div>
-
-                  <div>
-                    <img src="/img/resume/logo_pwp.png" itemprop="image" alt="PetsWantPats logo" class="no-print" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_zooppa.png" width="40" height="40" alt="Zooppa logo" loading="lazy">
+          <h3>CTO · <a href="http://zooppa.com/">Zooppa</a></h3>
+          <p class="meta"><time datetime="2007-04">Apr 2007</time> – <time datetime="2010-12">Dec 2010</time> · Treviso, Italy and Seattle, WA</p>
+          <ul>
+            <li>Built and owned the architecture of Zooppa from the ground up: a crowdsourcing platform connecting brands with a creative community of 350,000+ members for video and graphic design campaigns.</li>
+            <li>Built and led a team of 4 from scratch (developers, designers, sysadmins).</li>
+            <li>Managed client relationships with Google, Microsoft, Sun, AT&amp;T, Samsung and Fiat.</li>
+          </ul>
+          <p class="stack"><strong>Stack:</strong> Ruby on Rails, MySQL</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_hotchalk.png" width="67" height="40" alt="Hotchalk logo" loading="lazy">
+          <h3>Developer · Hotchalk</h3>
+          <p class="meta"><time datetime="2006-10">Oct 2006</time> – <time datetime="2007-03">Mar 2007</time> · Campbell, CA</p>
+          <p class="brief">Rewrote a Java application in Rails with full test coverage for launch; low-defect release with 30k+ registered users on day one.</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_assembla.png" width="67" height="40" alt="Assembla logo" loading="lazy">
+          <h3>Developer · Assembla</h3>
+          <p class="meta"><time datetime="2006-03">Mar 2006</time> – <time datetime="2006-09">Sep 2006</time> · Needham, MA</p>
+          <p class="brief">Contributed to the initial implementation of Breakout, a Rails precursor to GitHub for hosting code via SVN and Trac.</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_rpaw.png" width="29" height="40" alt="Ruby per applicazioni web book cover" loading="lazy">
+          <h3>Author · Apogeo</h3>
+          <p class="meta"><time datetime="2006-05">May 2006</time> – <time datetime="2006-09">Sep 2006</time> · Milan, Italy</p>
+          <p class="brief">Wrote the database chapter of <cite>Ruby per applicazioni web</cite>, the first Italian-language book about Ruby.</p>
+        </article>
+
+        <article class="job">
+          <h3>Independent Consultant · Various clients</h3>
+          <p class="meta"><time datetime="2003">2003</time> – <time datetime="2005">2005</time> · Italy</p>
+          <p class="brief">Built a Python/Zope website for Monte dei Paschi di Siena and a Python/wxPython fax server client for Telecom Italia.</p>
+        </article>
+
+        <article class="job">
+          <img class="logo web-only" src="../img/resume/logo_neato.png" width="47" height="40" alt="Neato logo" loading="lazy">
+          <h3>Developer · Neato Europe</h3>
+          <p class="meta"><time datetime="2002">2002</time> – <time datetime="2003">2003</time> · Mantova, Italy</p>
+          <p class="brief">Built the e-commerce site (ported from ASP 3 to PHP) and a CRM, and administered the company's FreeBSD servers.</p>
+        </article>
       </section>
+
+      <section aria-labelledby="education">
+        <h2 id="education">Education</h2>
+        <p>Liceo Linguistico Redentore (secondary school, modern languages) · <time datetime="1995">1995</time> – <time datetime="2000">2000</time></p>
+      </section>
+
+      <section aria-labelledby="languages">
+        <h2 id="languages">Languages</h2>
+        <p>Italian (native) · English (native)</p>
+      </section>
+
+      <footer class="updated">Last updated <time datetime="2026-11-01">November 2026</time></footer>
     </main>
-
-    <script type="text/javascript">
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
-
-      // Active nav link on scroll
-      const sections = document.querySelectorAll('.section');
-      const navLinks = document.querySelectorAll('.nav-link');
-      
-      window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          if (scrollY >= sectionTop - 100) {
-            current = section.getAttribute('id');
-          }
-        });
-        
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-          }
-        });
-      });
-    </script>
   </body>
 </html>
