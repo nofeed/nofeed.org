@@ -1,6 +1,6 @@
 # Nicholas Wieland
 
-> Senior Backend Engineer / Tech Lead – Ruby, Elixir. 20+ years building and leading production systems in Ruby on Rails, Elixir/Phoenix and Python. Based in Mantova, Italy.
+> Senior Backend Engineer / Tech Lead – Ruby, Elixir, Python. 20+ years building and leading production systems in Ruby on Rails, Elixir/Phoenix and Python. Based in Mantova, Italy.
 
 - Availability: open to contract (B2B, Italian VAT number) or permanent roles, fully remote across Europe (CET). EU citizen.
 - Languages: Italian (native), English (native).
